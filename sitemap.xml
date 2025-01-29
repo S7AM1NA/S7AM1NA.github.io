@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite-url/about/index.html</loc>
+    <loc>http://s7am1na.github.io/about/index.html</loc>
     
     <lastmod>2025-01-25</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite-url/undefined/%E5%AF%92%E5%86%AC%E5%81%87%E6%97%A5%E5%B0%8F%E8%AE%B0-%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87/</loc>
+    <loc>http://s7am1na.github.io/undefined/%E5%AF%92%E5%86%AC%E5%81%87%E6%97%A5%E5%B0%8F%E8%AE%B0-%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87/</loc>
     
     <lastmod>2025-01-24</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite-url/tags/index.html</loc>
+    <loc>http://s7am1na.github.io/tags/index.html</loc>
     
     <lastmod>2025-01-23</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite-url/categories/index.html</loc>
+    <loc>http://s7am1na.github.io/categories/index.html</loc>
     
     <lastmod>2025-01-23</lastmod>
     
@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite-url/404.html</loc>
+    <loc>http://s7am1na.github.io/404.html</loc>
     
     <lastmod>2025-01-23</lastmod>
     
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite-url/cn/Hexo-Theme-LiveMyLife/</loc>
+    <loc>http://s7am1na.github.io/cn/Hexo-Theme-LiveMyLife/</loc>
     
     <lastmod>2020-04-16</lastmod>
     
@@ -56,7 +56,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite-url/en/Hexo-Theme-LiveMyLife/</loc>
+    <loc>http://s7am1na.github.io/en/Hexo-Theme-LiveMyLife/</loc>
     
     <lastmod>2020-04-16</lastmod>
     
@@ -65,7 +65,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite-url/archive/index.html</loc>
+    <loc>http://s7am1na.github.io/archive/index.html</loc>
     
     <lastmod>2017-03-20</lastmod>
     
@@ -75,7 +75,7 @@
   
 
   <url>
-    <loc>http://yoursite-url/</loc>
+    <loc>http://s7am1na.github.io/</loc>
     <lastmod>2025-01-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -83,14 +83,14 @@
 
   
   <url>
-    <loc>http://yoursite-url/tags/Hexo-Theme-LiveMyLife/</loc>
+    <loc>http://s7am1na.github.io/tags/Hexo-Theme-LiveMyLife/</loc>
     <lastmod>2025-01-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://yoursite-url/tags/Life/</loc>
+    <loc>http://s7am1na.github.io/tags/Life/</loc>
     <lastmod>2025-01-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -99,14 +99,14 @@
 
   
   <url>
-    <loc>http://yoursite-url/categories/Hexo-Theme-LiveMyLife/</loc>
+    <loc>http://s7am1na.github.io/categories/Hexo-Theme-LiveMyLife/</loc>
     <lastmod>2025-01-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://yoursite-url/categories/Life/</loc>
+    <loc>http://s7am1na.github.io/categories/Life/</loc>
     <lastmod>2025-01-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
