@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>http://s7am1na.github.io/cn/Hexo-Theme-LiveMyLife/</loc>
+    <loc>http://s7am1na.github.io/en/Hexo-Theme-LiveMyLife/</loc>
     
     <lastmod>2020-04-16</lastmod>
     
@@ -56,7 +56,7 @@
   </url>
   
   <url>
-    <loc>http://s7am1na.github.io/en/Hexo-Theme-LiveMyLife/</loc>
+    <loc>http://s7am1na.github.io/cn/Hexo-Theme-LiveMyLife/</loc>
     
     <lastmod>2020-04-16</lastmod>
     
@@ -83,14 +83,14 @@
 
   
   <url>
-    <loc>http://s7am1na.github.io/tags/Life/</loc>
+    <loc>http://s7am1na.github.io/tags/Hexo-Theme-LiveMyLife/</loc>
     <lastmod>2025-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://s7am1na.github.io/tags/Hexo-Theme-LiveMyLife/</loc>
+    <loc>http://s7am1na.github.io/tags/Life/</loc>
     <lastmod>2025-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -99,14 +99,14 @@
 
   
   <url>
-    <loc>http://s7am1na.github.io/categories/Life/</loc>
+    <loc>http://s7am1na.github.io/categories/Hexo-Theme-LiveMyLife/</loc>
     <lastmod>2025-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://s7am1na.github.io/categories/Hexo-Theme-LiveMyLife/</loc>
+    <loc>http://s7am1na.github.io/categories/Life/</loc>
     <lastmod>2025-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

@@ -247,9 +247,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/about/">
               
-              ARCHIVES
+              ABOUT
               
               
             </a>
@@ -269,9 +269,9 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/archive/">
               
-              ABOUT
+              ARCHIVES
               
               
             </a>
@@ -518,7 +518,7 @@ Every time I trace back my youthful days, those days are like the white snowflak
   <!-- top end -->
   
 
-  <a href="/cn/Hexo-Theme-LiveMyLife/">
+  <a href="/en/Hexo-Theme-LiveMyLife/">
     <h2 class="post-title">
       Hexo-Theme-LiveMyLife
     </h2>
@@ -527,12 +527,8 @@ Every time I trace back my youthful days, those days are like the white snowflak
     </h3>
     <div class="post-content-preview">
       
-移植 Hux Blog 的主题，感谢 Huxpro 设计了如此完美的主题。
-由 Vincent 创建的 LiveMyLife 的主题修改来源 YenYuHsuan，参考主题 dusign、Utone，感谢 dusign、Utone。
-
-仓库
-Github 仓库地址：https://github.com/V-Vincen/hexo-theme-livemylife
-Gitee 仓库地址：ht......
+Ported Theme of Hux Blog, Thank Huxpro for designing such a flawless theme.
+This LiveMyLife theme created by Vincent modified from the original Porter YenYuHsuan , refer to the Themes of dusign、Ut......
     </div>
   </a>
   
@@ -557,7 +553,7 @@ Gitee 仓库地址：ht......
   <!-- top end -->
   
 
-  <a href="/en/Hexo-Theme-LiveMyLife/">
+  <a href="/cn/Hexo-Theme-LiveMyLife/">
     <h2 class="post-title">
       Hexo-Theme-LiveMyLife
     </h2>
@@ -566,8 +562,12 @@ Gitee 仓库地址：ht......
     </h3>
     <div class="post-content-preview">
       
-Ported Theme of Hux Blog, Thank Huxpro for designing such a flawless theme.
-This LiveMyLife theme created by Vincent modified from the original Porter YenYuHsuan , refer to the Themes of dusign、Ut......
+移植 Hux Blog 的主题，感谢 Huxpro 设计了如此完美的主题。
+由 Vincent 创建的 LiveMyLife 的主题修改来源 YenYuHsuan，参考主题 dusign、Utone，感谢 dusign、Utone。
+
+仓库
+Github 仓库地址：https://github.com/V-Vincen/hexo-theme-livemylife
+Gitee 仓库地址：ht......
     </div>
   </a>
   
@@ -629,11 +629,11 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
   <div class="tags">
     
     
-    <a href="/tags/#Life" title="Life" rel="1">Life</a>
-    
-    
-    
     <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife" rel="2">Hexo-Theme-LiveMyLife</a>
+    
+    
+    
+    <a href="/tags/#Life" title="Life" rel="1">Life</a>
     
     
   </div>
@@ -700,11 +700,11 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
       <li>寒冬假日小记&amp;第一篇文</li>
     </a>
     
-    <a href="cn/Hexo-Theme-LiveMyLife/">
+    <a href="en/Hexo-Theme-LiveMyLife/">
       <li>Hexo-Theme-LiveMyLife</li>
     </a>
     
-    <a href="en/Hexo-Theme-LiveMyLife/">
+    <a href="cn/Hexo-Theme-LiveMyLife/">
       <li>Hexo-Theme-LiveMyLife</li>
     </a>
     
@@ -740,12 +740,12 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
 <div class="widget">
   <ul>
     
-    <a href="/categories/#Life">
-      <li>Life</li>
-    </a>
-    
     <a href="/categories/#Hexo-Theme-LiveMyLife">
       <li>Hexo-Theme-LiveMyLife</li>
+    </a>
+    
+    <a href="/categories/#Life">
+      <li>Life</li>
     </a>
     
   </ul>
@@ -1241,5 +1241,20 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	</body>
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>

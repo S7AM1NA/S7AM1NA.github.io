@@ -247,9 +247,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/about/">
               
-              ARCHIVES
+              ABOUT
               
               
             </a>
@@ -269,9 +269,9 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/archive/">
               
-              ABOUT
+              ARCHIVES
               
               
             </a>
@@ -463,7 +463,7 @@
                 post-container
             ">
 
-      <meta name="referrer" content="no-referrer">
+      <meta name="referrer" content="no-referrer"/>
 <h2 id="Talk-To-Me">Talk To Me</h2>
 <blockquote>
 <p><em><strong>I am no bird;</strong></em></p>
@@ -476,13 +476,13 @@
 <p>热爱游戏的生活家</p>
 <p>走独属于自己的路的赶路人…</p>
 </blockquote>
-<p><img src="/about/index/avatar4.jpg" alt="img1"></p>
+<p><img src="avatar4.jpg" alt="img1"></p>
 <h2 id="The-Longest-Way-…">The Longest Way …</h2>
 <blockquote>
 <p>活在当下 然后昂首阔步继续往前走 …</p>
 <p>感谢一路的相遇与陪伴！</p>
 </blockquote>
-<p><img src="/about/index/avatar5.jpg" alt="avatar5"></p>
+<p><img src="avatar5.jpg" alt="avatar5"></p>
 <h2 id="Contact-me">Contact me</h2>
 <blockquote>
 <p>Email：1498453020@qq.com</p>
@@ -492,7 +492,7 @@
 <blockquote>
 <p>If you feel that what I have written is of some value to you, I am glad that you are willing to invite me to drink coffee…</p>
 </blockquote>
-<p><img src="/about/index/TipCode.jpg" alt="about"></p>
+<p><img src="TipCode.jpg" alt="about"></p>
 
 
       <!-- 如果开启评论功能 -->
@@ -537,11 +537,11 @@
   <div class="tags">
     
     
-    <a href="/tags/#Life" title="Life" rel="1">Life</a>
-    
-    
-    
     <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife" rel="2">Hexo-Theme-LiveMyLife</a>
+    
+    
+    
+    <a href="/tags/#Life" title="Life" rel="1">Life</a>
     
     
   </div>
@@ -608,11 +608,11 @@
       <li>寒冬假日小记&amp;第一篇文</li>
     </a>
     
-    <a href="../cn/Hexo-Theme-LiveMyLife/">
+    <a href="../en/Hexo-Theme-LiveMyLife/">
       <li>Hexo-Theme-LiveMyLife</li>
     </a>
     
-    <a href="../en/Hexo-Theme-LiveMyLife/">
+    <a href="../cn/Hexo-Theme-LiveMyLife/">
       <li>Hexo-Theme-LiveMyLife</li>
     </a>
     
@@ -648,12 +648,12 @@
 <div class="widget">
   <ul>
     
-    <a href="/categories/#Life">
-      <li>Life</li>
-    </a>
-    
     <a href="/categories/#Hexo-Theme-LiveMyLife">
       <li>Hexo-Theme-LiveMyLife</li>
+    </a>
+    
+    <a href="/categories/#Life">
+      <li>Life</li>
     </a>
     
   </ul>
@@ -1149,5 +1149,20 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	</body>
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>
