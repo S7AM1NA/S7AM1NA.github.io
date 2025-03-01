@@ -352,19 +352,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/categories_bg.WebP');
-      --intro-header-background-image-url-post: url('/img/header_img/OSpre-header.png');
-      --intro-header-background-image-url-page: url('//img/header_img/OSpre-header.png');
+      --intro-header-background-image-url-post: url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/newhome_bg.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/categories_bg.WebP');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/OSpre-header.png');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/OSpre-header.png');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/newhome_bg.jpg');
     }
 
     header.intro-header {
        /*post*/
         background-image: var(--intro-header-background-image-url-post);
-        /* background-image: url('/img/header_img/OSpre-header.png'); */
+        /* background-image: url('/img/header_img/newhome_bg.jpg'); */
       
     }
 
@@ -538,7 +538,7 @@
 </table>
 </div>
 <h3 id="实用工具介绍"><a href="#实用工具介绍" class="headerlink" title="实用工具介绍"></a>实用工具介绍</h3><h4 id="GCC（GNU-Compiler-Collection，GNU-编译器套件）"><a href="#GCC（GNU-Compiler-Collection，GNU-编译器套件）" class="headerlink" title="GCC（GNU Compiler Collection，GNU 编译器套件）"></a>GCC（GNU Compiler Collection，GNU 编译器套件）</h4><p>​    虽然GCC的用法相当简单，但其中的步骤相当复杂，即从源代码到执行文件，步骤图示如下：</p>
-<p><img src="c-compilation-process.drawio.png" alt="compile"></p>
+<p><img src="c-compilation-process.jpg" alt="compile"></p>
 <p>​    上图中展示了从源代码到执行文件的四个步骤：<strong>预处理→编译→汇编→链接</strong>，而现实中GCC为我们将这些程序封装起来降低了我们操作的复杂度。</p>
 <h4 id="make-amp-Makefile"><a href="#make-amp-Makefile" class="headerlink" title="make &amp; Makefile"></a>make &amp; Makefile</h4><p>​    make是最常用的C语言项目构建工具之一，可将文件编译链接成可执行文件，基本格式如下：</p>
 <figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">target: dependencies</span></span><br><span class="line">    command 1</span><br><span class="line">    command 2</span><br><span class="line">    ...</span><br><span class="line">    command n</span><br></pre></td></tr></table></figure>
