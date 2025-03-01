@@ -139,7 +139,7 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://s7am1na.github.io/archives/2025/02/">
+  <link rel="canonical" href="http://s7am1na.github.io/en/正则表达式检测相关/">
   <title>
     
       just a private corner
@@ -300,29 +300,7 @@
           <!-- LangSelect -->
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      English
-    </span>
-    <select id="lang-select" data-canonical="archives/2025/02/index.html">
-      
-      
-      <option value="en"  selected >
-        English
-      </option>
-      
-      <option value="cn" >
-        简体中文
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -384,9 +362,9 @@
     }
 
     header.intro-header {
-       /*page*/
-        background-image: var(--intro-header-background-image-url-page);
-        /* background-image: url('/img/header_img/archive_bg3.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url(''); */
       
     }
 
@@ -404,10 +382,40 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>S7的温柔时空角</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">我们需要说很多话，然后保持沉默.</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+            </div>
+            <h1></h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by S7AM1NA on
+              2025-02-24
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">3</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">806</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
           </div>
           
         </div>
@@ -448,283 +456,270 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
-    
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+        <p>这段代码使用了 Java 的正则表达式（Regex）功能，用于匹配字符串中是否包含符合特定模式的子串。以下是代码的详细解析：</p>
+<hr>
+<h3 id="代码解析">代码解析</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Matcher</span> <span class="variable">matcher</span> <span class="operator">=</span> Pattern.compile(<span class="string">&quot;[a-z0-9]+&quot;</span>).matcher(s);</span><br><span class="line"><span class="keyword">if</span> (matcher.find()) &#123;</span><br><span class="line">    <span class="comment">// do something...</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// do something...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="1-Pattern-compile-a-z0-9">1. <code>Pattern.compile(&quot;[a-z0-9]+&quot;)</code></h4>
+<ul>
+<li><strong>作用</strong>：编译一个正则表达式，生成一个 <code>Pattern</code> 对象。</li>
+<li><strong>正则表达式 <code>[a-z0-9]+</code></strong>：
+<ul>
+<li><code>[a-z0-9]</code>：匹配任意一个小写字母（<code>a</code> 到 <code>z</code>）或数字（<code>0</code> 到 <code>9</code>）。</li>
+<li><code>+</code>：表示前面的模式（<code>[a-z0-9]</code>）可以出现 <strong>1 次或多次</strong>。</li>
+<li>因此，<code>[a-z0-9]+</code> 匹配的是 <strong>由小写字母和数字组成的连续字符串</strong>。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-matcher-s">2. <code>.matcher(s)</code></h4>
+<ul>
+<li><strong>作用</strong>：将编译好的正则表达式应用到目标字符串 <code>s</code> 上，生成一个 <code>Matcher</code> 对象。</li>
+<li><strong><code>Matcher</code> 对象</strong>：用于在字符串中查找符合正则表达式的子串。</li>
+</ul>
+<h4 id="3-matcher-find">3. <code>matcher.find()</code></h4>
+<ul>
+<li><strong>作用</strong>：在目标字符串 <code>s</code> 中查找是否有符合正则表达式 <code>[a-z0-9]+</code> 的子串。
+<ul>
+<li>如果找到，返回 <code>true</code>。</li>
+<li>如果未找到，返回 <code>false</code>。</li>
+</ul>
+</li>
+<li><strong>特点</strong>：
+<ul>
+<li><code>find()</code> 会从字符串的开头开始查找，找到第一个匹配的子串后停止。</li>
+<li>如果需要查找所有匹配的子串，可以循环调用 <code>matcher.find()</code>。</li>
+</ul>
+</li>
+</ul>
+<h4 id="4-if-else-逻辑">4. <code>if-else</code> 逻辑</h4>
+<ul>
+<li>如果 <code>matcher.find()</code> 返回 <code>true</code>，表示字符串 <code>s</code> 中至少有一个由小写字母和数字组成的子串，执行 <code>if</code> 分支的代码。</li>
+<li>如果 <code>matcher.find()</code> 返回 <code>false</code>，表示字符串 <code>s</code> 中没有符合条件的子串，执行 <code>else</code> 分支的代码。</li>
+</ul>
+<hr>
+<h3 id="示例">示例</h3>
+<p>假设目标字符串 <code>s</code> 的值如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;Hello123 World!&quot;</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="执行过程">执行过程</h4>
+<ol>
+<li><code>Pattern.compile(&quot;[a-z0-9]+&quot;)</code> 编译正则表达式，匹配小写字母和数字的组合。</li>
+<li><code>matcher(s)</code> 将正则表达式应用到字符串 <code>s</code> 上。</li>
+<li><code>matcher.find()</code> 查找字符串 <code>s</code> 中是否有符合 <code>[a-z0-9]+</code> 的子串。
+<ul>
+<li>在 <code>s</code> 中，<code>&quot;ello123&quot;</code> 是一个符合条件的子串（<code>&quot;Hello123&quot;</code> 中的 <code>&quot;ello123&quot;</code>，因为 <code>H</code> 是大写字母，不匹配）。</li>
+<li>因此，<code>matcher.find()</code> 返回 <code>true</code>，程序会执行 <code>if</code> 分支的代码。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="扩展功能">扩展功能</h3>
+<h4 id="1-获取匹配的子串">1. 获取匹配的子串</h4>
+<p>如果需要获取匹配的子串，可以使用 <code>matcher.group()</code>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (matcher.find()) &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">matchedString</span> <span class="operator">=</span> matcher.group(); <span class="comment">// 获取匹配的子串</span></span><br><span class="line">    System.out.println(<span class="string">&quot;Matched: &quot;</span> + matchedString);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;No match found.&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-查找所有匹配的子串">2. 查找所有匹配的子串</h4>
+<p>如果需要查找所有匹配的子串，可以使用循环：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (matcher.find()) &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">matchedString</span> <span class="operator">=</span> matcher.group();</span><br><span class="line">    System.out.println(<span class="string">&quot;Matched: &quot;</span> + matchedString);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-匹配整个字符串">3. 匹配整个字符串</h4>
+<p>如果需要检查整个字符串是否符合正则表达式，可以使用 <code>matcher.matches()</code>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (matcher.matches()) &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;The entire string matches.&quot;</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;The entire string does not match.&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="总结">总结</h3>
+<p>这段代码的核心功能是：</p>
+<ol>
+<li>使用正则表达式 <code>[a-z0-9]+</code> 匹配字符串中是否包含由小写字母和数字组成的子串。</li>
+<li>根据匹配结果执行不同的逻辑。</li>
+</ol>
+<p>正则表达式是处理字符串的强大工具，掌握它可以高效地完成复杂的字符串匹配和提取任务。</p>
 
-      <!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
-      <!-- 归档列表 -->
 
-      
-
-      <!-- 归档列表 -->
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2025">
-          <span class="tag-text">2025</span>
-        </span>
-        <ul>
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
           
-          <li>
-            02-24
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/正则表达式检测相关/" style="color: #0085a1">
-              <span>
-                Untitled
-                
-              </span>
-            </a>
-          </li>
           
-          <li>
-            02-23
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/BUAA-OS-Pre/" style="color: #0085a1">
-              <span>
-                BUAA-OS Pre
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            02-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/炉石传说31-4-2补丁相关/" style="color: #0085a1">
-              <span>
-                炉石传说31.4.2补丁相关
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-30
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/新春快乐之温馨小家庭“日记”/" style="color: #0085a1">
-              <span>
-                新春快乐之温馨小家庭“日记”
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-24
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/寒冬假日小记-第一篇文/" style="color: #0085a1">
-              <span>
-                寒冬假日小记&第一篇文
-                
-              </span>
-            </a>
+          <li class="next">
+            <a href="/en/BUAA-OS-Pre/" data-toggle="tooltip" data-placement="top" title="BUAA-OS Pre">Next Post &rarr;</a>
           </li>
           
         </ul>
-      </div>
-      
-    </div>
-  </div>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+    
+  </p>
 </div>
+<!-- tip end -->
 
+        <!-- tip end -->
+        
 
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Visitors -->
-<h5><a href="/">VISITORS</a></h5>
-
-<div class="widget">
-  <span>
-    Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
-  </span>
-  <br />
-  <span>
-    <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
-  </span>
-</div>
-
-
+        
         <hr>
-    
-        <!-- Featured Tags -->
 
-<section>
-  <h5><a href="/tags/">FEATURED TAGS</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#Life" title="Life" rel="2">Life</a>
-    
-    
-    
-    <a href="/tags/#Game" title="Game" rel="1">Game</a>
-    
-    
-    
-    <a href="/tags/#OS" title="OS" rel="1">OS</a>
-    
-    
-  </div>
-</section>
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
 
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
 
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">ABOUT ME</a></h5>
-  <div class="short-about">
+  <div id="gitalk-container"></div>
 
-    
-    <img id="avatar_pic" src="/img/avatar/avatar3.WebP" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>stay hungry, stay foolish</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/S7AM1NA">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        <!-- RECENT POSTS -->
-
-<h5><a href="/">RECENT POSTS</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../../../en/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A3%80%E6%B5%8B%E7%9B%B8%E5%85%B3/">
-      <li>(no title)</li>
-    </a>
-    
-    <a href="../../../en/BUAA-OS-Pre/">
-      <li>BUAA-OS Pre</li>
-    </a>
-    
-    <a href="../../../en/%E7%82%89%E7%9F%B3%E4%BC%A0%E8%AF%B431-4-2%E8%A1%A5%E4%B8%81%E7%9B%B8%E5%85%B3/">
-      <li>炉石传说31.4.2补丁相关</li>
-    </a>
-    
-    <a href="../../../en/%E6%96%B0%E6%98%A5%E5%BF%AB%E4%B9%90%E4%B9%8B%E6%B8%A9%E9%A6%A8%E5%B0%8F%E5%AE%B6%E5%BA%AD%E2%80%9C%E6%97%A5%E8%AE%B0%E2%80%9D/">
-      <li>新春快乐之温馨小家庭“日记”</li>
-    </a>
-    
-    <a href="../../../en/%E5%AF%92%E5%86%AC%E5%81%87%E6%97%A5%E5%B0%8F%E8%AE%B0-%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87/">
-      <li>寒冬假日小记&amp;第一篇文</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Friends Blog -->
-
-<h5><a href="/">FRIENDS</a></h5>
-<ul class="list-inline">
   
-</ul>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Mon Feb 24 2025 20:13:15 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
 
 
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
         <hr>
-    
-        <!-- Archives -->
 
-<h5><a href="/archives/">archives</a></h5>
-<div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="">February 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../01/">January 2025</a><span class="archive-list-count">2</span></li></ul>
-</div>
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
 
 
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
         <hr>
-    
-        <!-- Categories -->
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
 
-<h5><a href="/categories/">categories</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#Life">
-      <li>Life</li>
-    </a>
-    
-    <a href="/categories/#Game">
-      <li>Game</li>
-    </a>
-    
-    <a href="/categories/#OS">
-      <li>OS</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-</div>
-
-
-    
+          
+        </ul>
+        
+      </div>
+    </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->

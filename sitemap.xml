@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://s7am1na.github.io/en/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A3%80%E6%B5%8B%E7%9B%B8%E5%85%B3/</loc>
+    
+    <lastmod>2025-02-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://s7am1na.github.io/en/BUAA-OS-Pre/</loc>
+    
+    <lastmod>2025-02-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://s7am1na.github.io/en/%E7%82%89%E7%9F%B3%E4%BC%A0%E8%AF%B431-4-2%E8%A1%A5%E4%B8%81%E7%9B%B8%E5%85%B3/</loc>
     
     <lastmod>2025-02-06</lastmod>
@@ -76,7 +94,7 @@
 
   <url>
     <loc>http://s7am1na.github.io/</loc>
-    <lastmod>2025-02-08</lastmod>
+    <lastmod>2025-03-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -84,14 +102,21 @@
   
   <url>
     <loc>http://s7am1na.github.io/tags/Life/</loc>
-    <lastmod>2025-02-08</lastmod>
+    <lastmod>2025-03-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://s7am1na.github.io/tags/Game/</loc>
-    <lastmod>2025-02-08</lastmod>
+    <lastmod>2025-03-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://s7am1na.github.io/tags/OS/</loc>
+    <lastmod>2025-03-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -100,14 +125,21 @@
   
   <url>
     <loc>http://s7am1na.github.io/categories/Life/</loc>
-    <lastmod>2025-02-08</lastmod>
+    <lastmod>2025-03-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://s7am1na.github.io/categories/Game/</loc>
-    <lastmod>2025-02-08</lastmod>
+    <lastmod>2025-03-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://s7am1na.github.io/categories/OS/</loc>
+    <lastmod>2025-03-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

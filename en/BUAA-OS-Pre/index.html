@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://s7am1na.github.io/en/炉石传说31-4-2补丁相关/">
+  <link rel="canonical" href="http://s7am1na.github.io/en/BUAA-OS-Pre/">
   <title>
     
-      炉石传说31.4.2补丁相关 - just a private corner
+      BUAA-OS Pre - just a private corner
     
   </title>
 <meta name="generator" content="Hexo 5.4.2"></head>
@@ -352,19 +352,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/categories_bg.WebP');
-      --intro-header-background-image-url-post: url('/img/header_img/hearthstone31.4.2.png');
-      --intro-header-background-image-url-page: url('//img/header_img/hearthstone31.4.2.png');
+      --intro-header-background-image-url-post: url('/img/header_img/OSpre-header.png');
+      --intro-header-background-image-url-page: url('//img/header_img/OSpre-header.png');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/categories_bg.WebP');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/hearthstone31.4.2.png');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/hearthstone31.4.2.png');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/OSpre-header.png');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/OSpre-header.png');
     }
 
     header.intro-header {
        /*post*/
         background-image: var(--intro-header-background-image-url-post);
-        /* background-image: url('/img/header_img/hearthstone31.4.2.png'); */
+        /* background-image: url('/img/header_img/OSpre-header.png'); */
       
     }
 
@@ -385,14 +385,14 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#Game" title="Game">Game</a>
+              <a class="tag" href="/tags/#OS" title="OS">OS</a>
               
             </div>
-            <h1>炉石传说31.4.2补丁相关</h1>
-            <h2 class="subheading">削是真削，增强难说</h2>
+            <h1>BUAA-OS Pre</h1>
+            <h2 class="subheading">OS预习Linux&amp;&amp;Lab0总结</h2>
             <span class="meta">
               Posted by S7AM1NA on
-              2025-02-06
+              2025-02-23
             </span>
 
 
@@ -400,11 +400,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">4</span> Minutes
+              Estimated Reading Time <span class="post-count">9</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">1.3k</span> In Total
+              Words <span class="post-count">2.5k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -466,116 +466,174 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p>​</p>
-<h2 id="写在前面">写在前面</h2>
+        <h2 id="写在前面">写在前面</h2>
 <blockquote>
-<p><em>整体对本次的更新略感奇怪，有些改动可以理解，另一些改动则感觉匪夷所思哈哈哈，下面我们一起看一下吧！                                                         													——S7</em></p>
+<p>道阻且长，行则将至。</p>
+<p>2025年开学快乐！</p>
 </blockquote>
-<p>​	本次补丁改动旨在提供更多的玩法选择，<strong>削弱了许多强势卡</strong>，增强一些当前弱势类型的随从，如<strong>娜迦、恶魔与龙</strong>。具体的改动不一一细说了，我将分享我自己对这次<strong>部分</strong>改动的想法，包括重要牌池改动、重要卡牌更新等。</p>
-<h2 id="整体趋势把握">整体趋势把握</h2>
-<p>​	只能说暴雪是想尽可能将游戏平衡做好的，但是这也确实是一件不容易的事情。</p>
-<p>​	下表呈现的是本次更新对各类型或玩法的主要影响。</p>
+<p>​	正式开学前，OSpre已经不自觉地进入我的脑子里（对…对吗），pre中的篇幅较大，涉及方面较多，特为2025OSpre写一份复习总结，主要体现一些指导书的难点与自己的思考。:D</p>
+<h2 id="初识Linux系统">初识Linux系统</h2>
+<p>​	以前我对Linux系统的了解仅仅止步于会简单地操作与使用，本次预习的内容让我在Linux更加从容自在地学习、运用。下面来看一下我们学到了什么新要点吧~</p>
+<h3 id="Linux基础操作">Linux基础操作</h3>
+<h4 id="文件操作">文件操作</h4>
+<p>​	在 Linux 的哲学下<strong>一切皆文件</strong>，包括目录、设备等等全部是以文件方式存在于操作系统中的。因此 <em><strong>文件操作</strong></em> 的对象为所有一版文件（包括目录）。</p>
 <table>
 <thead>
 <tr>
-<th>随从类型或玩法（上个版本的特点）</th>
-<th>主要影响</th>
+<th>命令</th>
+<th>用法</th>
+<th>作用</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>野猪人（<strong>毒瘤</strong>）</td>
-<td><strong>大削弱</strong>，前期节奏更丝滑</td>
+<td>touch</td>
+<td><em>touch [选项] 文件名</em></td>
+<td>当文件存在时更新文件的时间戳，<strong>当文件不存在时创建新文件。</strong></td>
 </tr>
 <tr>
-<td>打铁流（鱼人王子+采集者的<strong>bug</strong>体系）</td>
-<td><strong>大削弱</strong>，又削节奏又削身材</td>
+<td>rm</td>
+<td><em>rm [选项] 文件</em></td>
+<td><strong>删除文件。</strong></td>
 </tr>
 <tr>
-<td>甲虫流（升4碰5的野兽<strong>公式</strong>打法）</td>
-<td><strong>大削弱</strong>，但陆行鸟回归使阵容更加多元</td>
+<td>cp</td>
+<td><em>cp [选项] 源文件 目标路径</em></td>
+<td>将源文件（也可以是目录）<strong>复制</strong>为目标路径对应的文件（如果目标路径是文件）或复制到目标路径（如果目标路径是目录）。</td>
 </tr>
 <tr>
-<td>娜迦流（一两个<strong>大哥</strong>带全家）</td>
-<td><strong>小增强</strong>，但滑矛回归使2个六本娜迦都很尴尬</td>
+<td>mv</td>
+<td><em>mv [选项] 源文件 目标路径</em></td>
+<td>将源文件（也可以是目录）<strong>移动</strong>为目标路径对应的文件（如果目标路径是文件）或移动到目标路径（如果目标路径是目录）。</td>
 </tr>
 <tr>
-<td>龙流（前后期过渡生硬，上限太低）</td>
-<td><strong>小增强</strong>，强度回暖，永久圣盾回归</td>
-</tr>
-<tr>
-<td>恶魔流（养酒馆难如登天）</td>
-<td><strong>小增强</strong>，提升了自残收益，但是前期十分弱势</td>
-</tr>
-<tr>
-<td>跳操（配合瑞文以及亡语鱼上限极高）</td>
-<td><strong>已削死</strong>，机制消失，（期待回归</td>
-</tr>
-<tr>
-<td>大威元素（极紫外是唯一的核心）</td>
-<td><strong>小削弱</strong>，极紫外或成全家唯一白板</td>
-</tr>
-<tr>
-<td>机械流（磁力流/自动机…资源很充足）</td>
-<td><strong>小削弱</strong>，获得磁力的能力下降</td>
+<td>diff</td>
+<td><em>diff [选项] 文件1 文件2</em></td>
+<td>对两个文件进行<strong>比较</strong>操作。</td>
 </tr>
 </tbody>
 </table>
-<h2 id="部分牌池改动">部分牌池改动</h2>
+<p>​	其中选项作为一个非必需的指令部分却也有着很重要的用处，可以提供丰富的功能同时，也会带来一定的风险。如<code>rm -r </code>为递归删除目录及其内容，<code>rm -f </code>为强制删除目录，<code>cp -r </code>为递归复制目录中的所有内容。值得一提的是，<code>mv</code>指令无需附加选项<code>-r</code>即可直接完成对目录下所有内容的移动。</p>
+<p>​	对于编辑文件内部，我们使用的工具是<strong>Vim</strong>这款开源文本编辑器，教程说这是一款编辑效率极高的编辑器，给人一种功能强大的感受。篇幅有限，放上官方的Vim教程推荐供参考：<a target="_blank" rel="noopener" href="https://coolshell.cn/articles/5426.html">https://coolshell.cn/articles/5426.html</a></p>
+<h4 id="查找操作">查找操作</h4>
+<p>​	查找操作中涉及两个相似但不相同的指令：<code>find</code> 和 <code>grep</code>。下面给出指令对比：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>用法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>find</td>
+<td><em>find [路径] &lt;选项&gt;</em></td>
+<td>在给定路径下递归地查找文件，输出符合要求的文件的路径。如果没有给定路径，则在当前目录下查找。</td>
+</tr>
+<tr>
+<td>grep</td>
+<td><em>grep [选项] PATTERN FILE</em></td>
+<td>输出匹配PATTERN的文件和相关的行。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="实用工具介绍">实用工具介绍</h3>
+<h4 id="GCC（GNU-Compiler-Collection，GNU-编译器套件）">GCC（GNU Compiler Collection，GNU 编译器套件）</h4>
+<p>​	虽然GCC的用法相当简单，但其中的步骤相当复杂，即从源代码到执行文件，步骤图示如下：</p>
+<p><img src="c-compilation-process.drawio.png" alt="compile"></p>
+<p>​	上图中展示了从源代码到执行文件的四个步骤：<strong>预处理→编译→汇编→链接</strong>，而现实中GCC为我们将这些程序封装起来降低了我们操作的复杂度。</p>
+<h4 id="make-Makefile">make &amp; Makefile</h4>
+<p>​	make是最常用的C语言项目构建工具之一，可将文件编译链接成可执行文件，基本格式如下：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">target: dependencies</span></span><br><span class="line">    command 1</span><br><span class="line">    command 2</span><br><span class="line">    ...</span><br><span class="line">    command n</span><br></pre></td></tr></table></figure>
+<p>​	其中的<code>dependencies</code>文件是必填的，如果不写却在下面的某<code>command</code>中使用到，可能会导致奇怪的编译错误。运行时，下面的<code>command</code>会在<code>make target</code>后显式地在shell中执行相应的命令，换句话说，所有的<code>command</code>都是<code>shell</code>语句，大胆地写就OK，唯一需要注意的是每个<code>command</code>前面必须有一个<code>Tab</code>，否则也会导致出错。</p>
+<p>​	值得一提的是，下面是教程举的栗子：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">all: hello</span></span><br><span class="line"></span><br><span class="line"><span class="section">hello: hello.c</span></span><br><span class="line">    gcc -o hello hello.c</span><br></pre></td></tr></table></figure>
+<p>​	实际上，这里的<code>all</code>也只是一个<em>target</em>的名称，它的效果其实是执行后续的其他<em>target</em>，并没有其他的特殊意义，甚至可以用其它字符串替换，而将它放置在<code>hello</code>前，使得在这种情况下，以下三种命令是等价的：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">make</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">make all</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">make hello</span></span><br></pre></td></tr></table></figure>
+<h4 id="tmux（Terminal-multiplexer）">tmux（Terminal multiplexer）</h4>
+<p>​	终端复用神器。</p>
+<p>​	使用时需要用<code>Ctrl + B</code>做快捷键<em><strong>引子</strong></em>（表格以*代称），常用操作如表格所示：</p>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>* + %</td>
+<td>左右分屏</td>
+</tr>
+<tr>
+<td>* + &quot;</td>
+<td>上下分屏</td>
+</tr>
+<tr>
+<td>*＋Up/Down/Left/Right</td>
+<td>切换窗格</td>
+</tr>
+<tr>
+<td>* + Space</td>
+<td>变换布局</td>
+</tr>
+<tr>
+<td>* + x</td>
+<td>关闭窗格</td>
+</tr>
+<tr>
+<td>* + d</td>
+<td>分离对话</td>
+</tr>
+</tbody>
+</table>
+<p>​	当我们分离离开tmux后，可以使用下述代码返回：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tmux ls # 查询tmux的Num</span><br><span class="line">tmux a -t &lt;Num&gt;</span><br></pre></td></tr></table></figure>
+<p>​	此外，笔者在tmux中遇到<strong>无法滚动页面</strong>的问题，实际上需要使用<code>Ctrl + B +[</code>即可进入滚动页面。</p>
+<h3 id="关于Shell脚本">关于Shell脚本</h3>
+<h4 id="Shell脚本执行">Shell脚本执行</h4>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">touch</span> hello.sh <span class="comment"># 创建新文件hello.sh</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">vim hello.sh <span class="comment"># 进行编辑</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">chmod</span> +X hello.sh <span class="comment"># 添加执行权限</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">./hello.sh <span class="comment"># 执行hello.sh</span></span></span><br></pre></td></tr></table></figure>
+<p>​	其中值得注意的是Linux系统中文件并没有后缀一说，因此<code>.sh</code>作为文件类型的标识符也是文件名的一部分，与前面不可分割。在编辑脚本的过程中，我们需要首先指定脚本的解释器，如<em>Bash</em>。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br></pre></td></tr></table></figure>
+<h4 id="Bash-Shell-语法基础">Bash Shell 语法基础</h4>
+<h5 id="1-变量">1.变量</h5>
+<p>​	Shell本身是弱类型语言，定义普通变量时无需声明变量类型，此外还有脚本参数这种特殊的变量，<strong>用于从脚本外部传递参数</strong>，如<code>$1</code> 、<code>$2</code>，以及<code>$#</code>与<code>$*</code>两种特殊变量，分别代表<strong>传递参数个数</strong>以及<strong>传递的全部参数</strong>，下面笔者用部分代码体现参数的特性：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">shel1.sh</span></span><br><span class="line">var_name=value # 定义变量&lt;var_name&gt;中间不能有空格</span><br><span class="line">echo $&#123;var_name&#125; # $&#123;var_name&#125;即变量值，&#123;&#125;大多数情况可省去</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">shel2.sh</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">str=&quot;Hello, $1 and $2!&quot; # 定义两个脚本参数，注意这里双引号，单引号将无法传递参数</span><br><span class="line">echo $str</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">命令行</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">./shel2.sh world OS <span class="comment"># print: Hello, world and OS!</span></span></span><br></pre></td></tr></table></figure>
+<h5 id="2-条件与循环语句">2.条件与循环语句</h5>
+<p>​	<code>if</code> 语句块格式如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">if condition1</span><br><span class="line">then</span><br><span class="line">    command11</span><br><span class="line">    command12</span><br><span class="line">    ......</span><br><span class="line">elif condition2</span><br><span class="line">then</span><br><span class="line">    command21</span><br><span class="line">    command22</span><br><span class="line">    ......</span><br><span class="line">else</span><br><span class="line">    command31</span><br><span class="line">    command32</span><br><span class="line">    ......</span><br><span class="line">fi # if的倒写</span><br></pre></td></tr></table></figure>
+<p>​	<code>while</code>语句块格式如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">while condition</span><br><span class="line">do</span><br><span class="line">    command1</span><br><span class="line">    command2</span><br><span class="line">    ...</span><br><span class="line">done # do语句的结束符</span><br></pre></td></tr></table></figure>
+<h5 id="3-函数的定义与调用">3.函数的定义与调用</h5>
+<p>​	函数的定义如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function fun_name() &#123; # function与()可选一省略</span><br><span class="line">    body...</span><br><span class="line">    return int_value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="内容编辑和选择输出的自动化">内容编辑和选择输出的自动化</h3>
+<h4 id="sed与awk的使用"><code>sed</code>与<code>awk</code>的使用</h4>
+<p>​	对于<code>sed</code>指令，我理解为可以在shell中直接操作的“Vim”，提供了添加、删除、替换等功能，即可解放双手！实现编辑与输出的自动化！</p>
+<p>​	下面具体举一些笔者实战用的比较到的用法：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">用法：sed [选项] <span class="string">&#x27;命令&#x27;</span> 输入文本</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">其中选项包括[-n]以及[-i],前者是只输出sed处理的内容，而后者是直接修改读取文档，当没有选项时，sed会将整个文件输出出来，并且不会直接修改文件。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">常用指令如下：</span></span><br><span class="line">touch tmp.txt # 内含有许多文本</span><br><span class="line">sed -n &#x27;2p&#x27; tmp.txt # print row 2</span><br><span class="line">sed -n &#x27;3d&#x27; tmp.txt # delete row 3</span><br><span class="line">sed &#x27;s/str1/str2/g&#x27; tmp.txt # swap str2 by str1</span><br></pre></td></tr></table></figure>
+<p>​	这里值得注意的是，如果这句话在shell中包含形参出现需要打<strong>单引号</strong>保护参数，即：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">modify.sh</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">sed &#x27;s/&#x27;$2&#x27;/&#x27;$3&#x27;/g&#x27; $1 &gt; temp # 单引号保护参数</span><br><span class="line">mv temp $1</span><br></pre></td></tr></table></figure>
+<p>​	此外令笔者印象深刻的是，在<code>Lab0</code>实验的<code>hello_os.sh</code>的题目中，要求将某文件的某几行输出到另一个文件中，题目的要求是<em>8，32，128，512，1024</em>行，笔者这里~~<em><strong>想要偷懒</strong></em>~~ 写成一行代码，却老是导致错误，最后唯一的正确写法如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sed -n -e &#x27;8p&#x27; -e &#x27;32p&#x27; -e &#x27;128p&#x27; -e &#x27;512p&#x27; -e &#x27;1024p&#x27; $1 &gt; $2 </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">-e表示多个命令一起执行，且不能只写一个</span></span><br></pre></td></tr></table></figure>
+<p>​	另一方面，便是在教程中略带神秘感的**<code>awk</code>**指令，感兴趣的读者可以前往<a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-awk.html">官方教程</a>，这里笔者只拿Lab0的题目举例，展现其分割的作用：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">touch &quot;$3&quot;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">First you can use grep (-n) to find the number of lines of string.</span></span><br><span class="line">grep -n &quot;$2&quot; $1 &gt; $3</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">Then you can use awk to separate the answer.</span></span><br><span class="line">awk -F: &#x27;&#123;print $1&#125;&#x27; $3 &gt; temp &amp;&amp; mv temp $3 #用&#x27;:&#x27;分割，并取出第一个&#x27;:&#x27;前面的字符串</span><br></pre></td></tr></table></figure>
+<h4 id="重定向与管道">重定向与管道</h4>
+<p>​	其实在上文的不少代码中都有<em><strong>重定向</strong></em>的身影，我认为<code>sed/awk+重定向</code>简直是文件之间的直通车，可以在彼此间交换各种信息，非常的方便快捷，对于自动化大有帮助。对于重定向而言，需要注意两点：</p>
 <ul>
-<li>内陆喷火龙，狂野的拉佐格尔，奥术火炮手和奔波尔霸已从随从池中移除，降低了龙的经济能力与娜迦、鱼人的战力，但是个人感觉拉佐格尔已经退环境许久了，移除是最好的方案吧。</li>
-<li>肌肉领主滑矛，野猪老水手，琥珀守护者，陆行鸟先锋和风暴使者回到了随从池。滑矛与碎地者仍然具有一定冲突，滑矛可以作为刷到碎地者前的下位替代，作为群体增益，但是战力完全不如碎地者。</li>
+<li><code>&gt;</code>其实是<code>1&gt;</code>的简写，意为标准输出，如果想输出标准错误请使用<code>2&gt;</code></li>
+<li><code>&gt;</code>在实际操作中会先把重定向的目标清空，所以无法在重定向符号前后自引用，<s>会发现什么都没有了</s>，此外，如果想在目标文件中追加输出，请使用<em><strong>追加重定向</strong></em>，即<code>&gt;&gt;</code>。</li>
 </ul>
-<p>​	<img src="%E6%BB%91%E7%9F%9B.png" alt="huamao"></p>
-<ul>
-<li>老水手的机制和手牌宝石息息相关，自然是和某摩托车难以相容，但是现在作为5费随从拿来与健身搏猪、野猪玩家配合过渡也可以考虑。</li>
-</ul>
-<p>​	<img src="%E8%80%81%E6%B0%B4%E6%89%8B.png" alt="laoshuishou"></p>
-<ul>
-<li>此外6费刺鬃获得小加强，可以更好地提高宝石的质量，但是作为极少见的回合开始效果，无法和附魔师配合的效果，因此也很难融入目前的野猪体系。</li>
-</ul>
-<p>​	<img src="%E5%88%BA%E9%AC%83.png" alt="cizong"></p>
-<ul>
-<li>琥珀守护者可为龙族的随从提供临时甚至永久的圣盾，而风暴使者的回归则大致确定了龙的加攻流体系为未来的主要体系，而五费的采集者可以为龙族提供更高的血量，不用担心低攻高防的问题了。</li>
-</ul>
-<p>​	<img src="%E9%A3%8E%E6%9A%B4%E4%BD%BF%E8%80%85.png" alt="fengbaoshizhe"></p>
-<h2 id="部分随从微调">部分随从微调</h2>
-<ul>
-<li>
-<p>森林游虫：战吼：<strong>+2</strong>/+1→战吼：<strong>+1</strong>/+1</p>
-<p>这一改动与绿松石保持一致，如此一来甲虫强度便下降许些。作为我的烂分神器之一的甲虫被削，上分又变难啦！QwQ</p>
-</li>
-</ul>
-<p>​	<img src="%E6%A3%AE%E6%9E%97%E6%B8%B8%E8%99%AB.png" alt="senliyouchong"></p>
-<ul>
-<li>老大哥：酒馆随从本回合：+1/<strong>+1</strong>→+1/<strong>+2</strong>；<strong>3</strong>本→<strong>4</strong>本</li>
-</ul>
-<p>​	作为恶魔当今版本少有的养酒馆的随从，增强毫无疑问，但是升到四本对恶魔前期的节奏多少有些影响，后期配合酒馆法术更加丝滑，个人恶魔玩的不多，因为上个版本的恶魔太恶心自己了。</p>
-<p>​	<img src="%E8%80%81%E5%A4%A7%E5%93%A5.png" alt="laodage"></p>
-<ul>
-<li>虚空幼龙：<strong>5</strong>本→<strong>4</strong>本</li>
-</ul>
-<p>​	我预测加攻龙与采集者作为双核心，成为第二种大威天龙。但前期需要配合圣盾龙保证一定的战力，上5后连带附魔师一起寻找。</p>
-<p>​	<img src="%E8%99%9A%E7%A9%BA%E5%B9%BC%E9%BE%99.png" alt="xukongyoulong"></p>
-<ul>
-<li>
-<p>裂地陨星：出售元素：<strong>+2/+2</strong>→ <strong>+3/+3</strong></p>
-<p>前期元素的顶级战力，又得到了加强，虽然是后期的白板，但是吞噬者一吃便可丝滑转型。</p>
-<p><img src="%E8%A3%82%E5%9C%B0%E9%99%A8%E6%98%9F.png" alt="liediyunxing"></p>
-</li>
-<li>
-<p>鱼人王子：获得量增加**+2/+2** → <strong>+2/+1</strong></p>
-<p>王子被誉为最强单卡，如今挨刀其实对鱼人而言损失不会太大，但是打铁流是彻底瘫痪了，如今王子已经变成高攻低防了。</p>
-<p><img src="%E9%B1%BC%E4%BA%BA%E7%8E%8B%E5%AD%90.png" alt="yurenwangzi"></p>
-</li>
-<li>
-<p>野猪玩家：<strong>4本</strong>→<strong>3本</strong>；<strong>每回合</strong>回合结束获得抉择牌1 → <strong>每俩回合</strong>回合结束获得抉择牌*1</p>
-</li>
-</ul>
-<p>​	野猪玩家爆改基猪玩家，大幅削弱了野猪人的强度，但是前期更加舒服了，配合开拓者有不错的过渡效果。</p>
-<p>​	<img src="%E9%87%8E%E7%8C%AA%E7%8E%A9%E5%AE%B6.png" alt="yezhuwanjia"></p>
-<p>+++</p>
-<p>​	此外，还有糯米的热度回升，擎旗海盗的亡语变成了召唤<strong>海盗无赖3-1</strong>，无畏食客被削，开拓者增强以及一系列中立随从的改动，这里就不一一赘述了，2月中旬官方还有一次大补丁修改，让我们一起期待！我们下次再见！</p>
+<p>​	而对于<em><strong>管道</strong></em>，它的用法更加直接，但是应用面较窄，形式为：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">command1 | command2 | command3 | ...</span><br></pre></td></tr></table></figure>
+<p>​	其中，<code>|</code>即为管道，意思是将前一个<code>command</code>的输出，输入到后一个<code>command</code>的标准输入中。</p>
+<p>​	给人的感觉是重定向的高阶用法，实际上也正是如此，所有管道都可以用重定向表示，对于上述的命令，我们可以用下述重定向平替：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">command3 &lt; &lt;(command2 &lt; &lt;(command1))</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">&lt;(command1)：将 command1 的输出作为文件传递给 command2</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">&lt;(command2 &lt; &lt;(command1))：将 command2 的输出作为文件传递给 command3</span></span><br></pre></td></tr></table></figure>
+<h2 id="后记">后记</h2>
+<blockquote>
+<p>**不经一番寒彻骨，怎得梅花扑鼻香。**愿大家都能趁着自己一股心劲儿，在年轻的时候想做什么就做什么，谋事在人，成事在天，谋且试之，久练则成！</p>
+</blockquote>
 
 
         <hr>
@@ -583,12 +641,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/en/BUAA-OS-Pre/" data-toggle="tooltip" data-placement="top" title="BUAA-OS Pre">&larr; Previous Post</a>
+            <a href="/en/正则表达式检测相关/" data-toggle="tooltip" data-placement="top" title="">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/en/新春快乐之温馨小家庭“日记”/" data-toggle="tooltip" data-placement="top" title="新春快乐之温馨小家庭“日记”">Next Post &rarr;</a>
+            <a href="/en/炉石传说31-4-2补丁相关/" data-toggle="tooltip" data-placement="top" title="炉石传说31.4.2补丁相关">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -632,7 +690,7 @@
       repo: '',
       owner: '',
       admin: '',
-      id: 'Thu Feb 06 2025 09:56:47 GMT+0800', // Ensure uniqueness and length less than 50
+      id: 'Sun Feb 23 2025 22:28:29 GMT+0800', // Ensure uniqueness and length less than 50
       distractionFreeMode: false, // Facebook-like distraction free mode
       perPage: 10,
       pagerDirection: 'last',
@@ -685,7 +743,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">写在前面</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%95%B4%E4%BD%93%E8%B6%8B%E5%8A%BF%E6%8A%8A%E6%8F%A1"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">整体趋势把握</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%83%A8%E5%88%86%E7%89%8C%E6%B1%A0%E6%94%B9%E5%8A%A8"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">部分牌池改动</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%83%A8%E5%88%86%E9%9A%8F%E4%BB%8E%E5%BE%AE%E8%B0%83"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">部分随从微调</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">写在前面</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%88%9D%E8%AF%86Linux%E7%B3%BB%E7%BB%9F"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">初识Linux系统</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Linux%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">Linux基础操作</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="toc-nav-number">2.1.1.</span> <span class="toc-nav-text">文件操作</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E6%9F%A5%E6%89%BE%E6%93%8D%E4%BD%9C"><span class="toc-nav-number">2.1.2.</span> <span class="toc-nav-text">查找操作</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7%E4%BB%8B%E7%BB%8D"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">实用工具介绍</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#GCC%EF%BC%88GNU-Compiler-Collection%EF%BC%8CGNU-%E7%BC%96%E8%AF%91%E5%99%A8%E5%A5%97%E4%BB%B6%EF%BC%89"><span class="toc-nav-number">2.2.1.</span> <span class="toc-nav-text">GCC（GNU Compiler Collection，GNU 编译器套件）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#make-Makefile"><span class="toc-nav-number">2.2.2.</span> <span class="toc-nav-text">make &amp; Makefile</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#tmux%EF%BC%88Terminal-multiplexer%EF%BC%89"><span class="toc-nav-number">2.2.3.</span> <span class="toc-nav-text">tmux（Terminal multiplexer）</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B3%E4%BA%8EShell%E8%84%9A%E6%9C%AC"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">关于Shell脚本</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Shell%E8%84%9A%E6%9C%AC%E6%89%A7%E8%A1%8C"><span class="toc-nav-number">2.3.1.</span> <span class="toc-nav-text">Shell脚本执行</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Bash-Shell-%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80"><span class="toc-nav-number">2.3.2.</span> <span class="toc-nav-text">Bash Shell 语法基础</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#1-%E5%8F%98%E9%87%8F"><span class="toc-nav-number">2.3.2.1.</span> <span class="toc-nav-text">1.变量</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#2-%E6%9D%A1%E4%BB%B6%E4%B8%8E%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-nav-number">2.3.2.2.</span> <span class="toc-nav-text">2.条件与循环语句</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#3-%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E8%B0%83%E7%94%A8"><span class="toc-nav-number">2.3.2.3.</span> <span class="toc-nav-text">3.函数的定义与调用</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%86%85%E5%AE%B9%E7%BC%96%E8%BE%91%E5%92%8C%E9%80%89%E6%8B%A9%E8%BE%93%E5%87%BA%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">内容编辑和选择输出的自动化</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#sed%E4%B8%8Eawk%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-nav-number">2.4.1.</span> <span class="toc-nav-text">sed与awk的使用</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%87%8D%E5%AE%9A%E5%90%91%E4%B8%8E%E7%AE%A1%E9%81%93"><span class="toc-nav-number">2.4.2.</span> <span class="toc-nav-text">重定向与管道</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">后记</span></a></li></ol>
         
         </div>
       </aside>
@@ -708,7 +766,7 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#Game" title="Game">Game</a>
+            <a class="tag" href="/tags/#OS" title="OS">OS</a>
             
           </div>
         </section>
