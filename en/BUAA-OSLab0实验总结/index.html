@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://s7am1na.github.io/en/正则表达式检测相关/">
+  <link rel="canonical" href="http://s7am1na.github.io/en/BUAA-OSLab0实验总结/">
   <title>
     
-      just a private corner
+      BUAA-OSLab0实验总结 - just a private corner
     
   </title>
 <meta name="generator" content="Hexo 5.4.2"></head>
@@ -386,11 +386,11 @@
             <div class="tags">
               
             </div>
-            <h1></h1>
+            <h1>BUAA-OSLab0实验总结</h1>
             <h2 class="subheading"></h2>
             <span class="meta">
               Posted by S7AM1NA on
-              2025-02-24
+              2025-03-13
             </span>
 
 
@@ -398,11 +398,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">3</span> Minutes
+              Estimated Reading Time <span class="post-count">1</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">806</span> In Total
+              Words <span class="post-count">0</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -464,81 +464,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p>这段代码使用了 Java 的正则表达式（Regex）功能，用于匹配字符串中是否包含符合特定模式的子串。以下是代码的详细解析：</p>
-<hr>
-<h3 id="代码解析">代码解析</h3>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Matcher</span> <span class="variable">matcher</span> <span class="operator">=</span> Pattern.compile(<span class="string">&quot;[a-z0-9]+&quot;</span>).matcher(s);</span><br><span class="line"><span class="keyword">if</span> (matcher.find()) &#123;</span><br><span class="line">    <span class="comment">// do something...</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// do something...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="1-Pattern-compile-a-z0-9">1. <code>Pattern.compile(&quot;[a-z0-9]+&quot;)</code></h4>
-<ul>
-<li><strong>作用</strong>：编译一个正则表达式，生成一个 <code>Pattern</code> 对象。</li>
-<li><strong>正则表达式 <code>[a-z0-9]+</code></strong>：
-<ul>
-<li><code>[a-z0-9]</code>：匹配任意一个小写字母（<code>a</code> 到 <code>z</code>）或数字（<code>0</code> 到 <code>9</code>）。</li>
-<li><code>+</code>：表示前面的模式（<code>[a-z0-9]</code>）可以出现 <strong>1 次或多次</strong>。</li>
-<li>因此，<code>[a-z0-9]+</code> 匹配的是 <strong>由小写字母和数字组成的连续字符串</strong>。</li>
-</ul>
-</li>
-</ul>
-<h4 id="2-matcher-s">2. <code>.matcher(s)</code></h4>
-<ul>
-<li><strong>作用</strong>：将编译好的正则表达式应用到目标字符串 <code>s</code> 上，生成一个 <code>Matcher</code> 对象。</li>
-<li><strong><code>Matcher</code> 对象</strong>：用于在字符串中查找符合正则表达式的子串。</li>
-</ul>
-<h4 id="3-matcher-find">3. <code>matcher.find()</code></h4>
-<ul>
-<li><strong>作用</strong>：在目标字符串 <code>s</code> 中查找是否有符合正则表达式 <code>[a-z0-9]+</code> 的子串。
-<ul>
-<li>如果找到，返回 <code>true</code>。</li>
-<li>如果未找到，返回 <code>false</code>。</li>
-</ul>
-</li>
-<li><strong>特点</strong>：
-<ul>
-<li><code>find()</code> 会从字符串的开头开始查找，找到第一个匹配的子串后停止。</li>
-<li>如果需要查找所有匹配的子串，可以循环调用 <code>matcher.find()</code>。</li>
-</ul>
-</li>
-</ul>
-<h4 id="4-if-else-逻辑">4. <code>if-else</code> 逻辑</h4>
-<ul>
-<li>如果 <code>matcher.find()</code> 返回 <code>true</code>，表示字符串 <code>s</code> 中至少有一个由小写字母和数字组成的子串，执行 <code>if</code> 分支的代码。</li>
-<li>如果 <code>matcher.find()</code> 返回 <code>false</code>，表示字符串 <code>s</code> 中没有符合条件的子串，执行 <code>else</code> 分支的代码。</li>
-</ul>
-<hr>
-<h3 id="示例">示例</h3>
-<p>假设目标字符串 <code>s</code> 的值如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;Hello123 World!&quot;</span>;</span><br></pre></td></tr></table></figure>
-<h4 id="执行过程">执行过程</h4>
-<ol>
-<li><code>Pattern.compile(&quot;[a-z0-9]+&quot;)</code> 编译正则表达式，匹配小写字母和数字的组合。</li>
-<li><code>matcher(s)</code> 将正则表达式应用到字符串 <code>s</code> 上。</li>
-<li><code>matcher.find()</code> 查找字符串 <code>s</code> 中是否有符合 <code>[a-z0-9]+</code> 的子串。
-<ul>
-<li>在 <code>s</code> 中，<code>&quot;ello123&quot;</code> 是一个符合条件的子串（<code>&quot;Hello123&quot;</code> 中的 <code>&quot;ello123&quot;</code>，因为 <code>H</code> 是大写字母，不匹配）。</li>
-<li>因此，<code>matcher.find()</code> 返回 <code>true</code>，程序会执行 <code>if</code> 分支的代码。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="扩展功能">扩展功能</h3>
-<h4 id="1-获取匹配的子串">1. 获取匹配的子串</h4>
-<p>如果需要获取匹配的子串，可以使用 <code>matcher.group()</code>：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (matcher.find()) &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">matchedString</span> <span class="operator">=</span> matcher.group(); <span class="comment">// 获取匹配的子串</span></span><br><span class="line">    System.out.println(<span class="string">&quot;Matched: &quot;</span> + matchedString);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;No match found.&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="2-查找所有匹配的子串">2. 查找所有匹配的子串</h4>
-<p>如果需要查找所有匹配的子串，可以使用循环：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (matcher.find()) &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">matchedString</span> <span class="operator">=</span> matcher.group();</span><br><span class="line">    System.out.println(<span class="string">&quot;Matched: &quot;</span> + matchedString);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="3-匹配整个字符串">3. 匹配整个字符串</h4>
-<p>如果需要检查整个字符串是否符合正则表达式，可以使用 <code>matcher.matches()</code>：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (matcher.matches()) &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;The entire string matches.&quot;</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;The entire string does not match.&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="总结">总结</h3>
-<p>这段代码的核心功能是：</p>
-<ol>
-<li>使用正则表达式 <code>[a-z0-9]+</code> 匹配字符串中是否包含由小写字母和数字组成的子串。</li>
-<li>根据匹配结果执行不同的逻辑。</li>
-</ol>
-<p>正则表达式是处理字符串的强大工具，掌握它可以高效地完成复杂的字符串匹配和提取任务。</p>
-
+        
 
         <hr>
         <!-- Pager -->
@@ -590,7 +516,7 @@
       repo: '',
       owner: '',
       admin: '',
-      id: 'Mon Feb 24 2025 20:13:15 GMT+0800', // Ensure uniqueness and length less than 50
+      id: 'Thu Mar 13 2025 10:53:58 GMT+0800', // Ensure uniqueness and length less than 50
       distractionFreeMode: false, // Facebook-like distraction free mode
       perPage: 10,
       pagerDirection: 'last',
@@ -637,6 +563,17 @@
 
       <!-- Catalog: Tabe of Content -->
       <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="nav">none</ol>
+        
+        </div>
+      </aside>
+    
 
 
 
