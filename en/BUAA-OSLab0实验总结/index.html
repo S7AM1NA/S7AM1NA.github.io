@@ -247,9 +247,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/categories/">
               
-              ARCHIVES
+              CATEGORIES
               
               
             </a>
@@ -269,9 +269,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/archive/">
               
-              CATEGORIES
+              ARCHIVES
               
               
             </a>
@@ -352,19 +352,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/categories_bg.WebP');
-      --intro-header-background-image-url-post: url('');
-      --intro-header-background-image-url-page: url('/img/header_img/archive_bg3.jpg');
+      --intro-header-background-image-url-post: url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/newhome_bg.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/categories_bg.WebP');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg3.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/newhome_bg.jpg');
     }
 
     header.intro-header {
        /*post*/
         background-image: var(--intro-header-background-image-url-post);
-        /* background-image: url(''); */
+        /* background-image: url('/img/header_img/newhome_bg.jpg'); */
       
     }
 
@@ -385,9 +385,11 @@
           <div class="post-heading">
             <div class="tags">
               
+              <a class="tag" href="/tags/#OS" title="OS">OS</a>
+              
             </div>
             <h1>BUAA-OSLab0实验总结</h1>
-            <h2 class="subheading"></h2>
+            <h2 class="subheading">Lab0_Linux基础</h2>
             <span class="meta">
               Posted by S7AM1NA on
               2025-03-13
@@ -398,11 +400,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">1</span> Minutes
+              Estimated Reading Time <span class="post-count">7</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">0</span> In Total
+              Words <span class="post-count">2.1k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -464,7 +466,78 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        
+        <h1>BUAA-OSLab0实验总结</h1>
+<blockquote>
+<p>Well, I wonder, am I stronger?</p>
+<p>Is it possible to sleep on my own, all alone?</p>
+</blockquote>
+<h2 id="壹-前言">壹 前言</h2>
+<p>​	笔者前两周可谓是被OO折磨的不轻，第二次OO作业的重构耽误了很多时间。于是笔者一周没有学习OS实验，现重温Lab0指导书，趁线上实验开始前，借此机会温习Lab0的知识点。</p>
+<p>​	昨日刚微微熬了个小夜，今日精神状态格外美丽，虽觉备受挫折、时运不济，但也不忘“疾风知劲草”之道理。</p>
+<h2 id="贰-正文">贰 正文</h2>
+<p>​	实验总结共分为三个部分：思考题、难点分析、实验体会。</p>
+<p>​	实验内容包括Linux的基础，shell脚本编程，git的知识，Makefile项目管理。</p>
+<h3 id="一-实验思考题">一 实验思考题</h3>
+<h4 id="Thinking-0-1-思考下列有关-Git-的问题：">Thinking 0.1 思考下列有关 Git 的问题：</h4>
+<ul>
+<li>在前述已初始化的 ~/learnGit 目录下，创建一个名为 README.txt 的文件。执 行命令 git status &gt; Untracked.txt（其中的 &gt; 为输出重定向，我们将在 0.6.3 中 详细介绍）。</li>
+<li>在 README.txt 文件中添加任意文件内容，然后使用 add 命令，再执行命令 git status &gt; Stage.txt。</li>
+<li>提交 README.txt，并在提交说明里写入自己的学号。</li>
+<li>执行命令 cat Untracked.txt 和 cat Stage.txt，对比两次运行的结果，体会 README.txt 两次所处位置的不同。</li>
+<li>修改 README.txt 文件，再执行命令 git status &gt; Modified.txt。</li>
+<li>执行命令 cat Modified.txt，观察其结果和第一次执行 add 命令之前的 status 是 否一样，并思考原因。</li>
+</ul>
+<p>+++</p>
+<p>​	<img src="Untracked.png" alt="Untracked"></p>
+<p>​	如上图所示，<code>git status</code>应显示都在未跟踪的文件中，但是由于已经提交过了README.txt，所以并不在其中。</p>
+<p>​	<img src="Stage.png" alt="Stage"></p>
+<p>​	如上，<code>Untracked.txt</code>进入了暂存区。</p>
+<p>​	<img src="Modified.png" alt="Modified"></p>
+<p>​	被修改的<code>README.txt</code>状态变为Modified，需要使用<code>git add</code>将其状态更新。</p>
+<h4 id="Thinking-0-2-仔细看看0-10，思考一下箭头中的-add-the-file-、stage-the-file-和-commit-分别对应的是-Git-里的哪些命令呢？">Thinking 0.2  仔细看看0.10，思考一下箭头中的 add the file 、stage the file 和 commit 分别对应的是 Git 里的哪些命令呢？</h4>
+<ul>
+<li><code>add the file</code>: 用<code>git add</code>将未跟踪的文件添加进暂存区，状态为<code>Staged</code>。</li>
+<li><code>stage the file</code>: 用<code>git add</code>将已修改的文件加入缓存区，状态也为<code>Staged</code>。</li>
+<li><code>commit</code>: 用<code>git commit</code>将暂存区内容提交储存区，文件不离开了暂存区，变成了<code>Unmodified</code>状态。</li>
+</ul>
+<h4 id="Thinking-0-3-思考下列问题：">Thinking 0.3 思考下列问题：</h4>
+<ol>
+<li>代码文件 print.c 被错误删除时，应当使用什么命令将其恢复？ 2. 代码文件 print.c 被错误删除后，执行了 git rm print.c 命令，此时应当 使用什么命令将其恢复？ 3. 无关文件 hello.txt 已经被添加到暂存区时，如何在不删除此文件的前提下 将其移出暂存区？</li>
+</ol>
+<p>+++</p>
+<p>1.<code>git checkout -- print.c</code>：只是从工作区删除，可以在暂存区<code>checkout</code>回来。</p>
+<p>2.<code>git checkout HEAD print.c</code>：文件不再存在于暂存区当中，可以使用<code>checkout</code>命令将分支中的文件替换进入工作区以及暂存区。</p>
+<p>3.<code>git rm --cached hello.txt</code>：在不改变本地文件的情况下，删除暂存区文件。</p>
+<h4 id="Thinking-0-4-思考下列有关-Git-的问题：">Thinking 0.4 思考下列有关 Git 的问题：</h4>
+<p>• 找到在 /home/22xxxxxx/learnGit 下刚刚创建的 README.txt 文件，若不存 在则新建该文件。 • 在文件里加入 Testing 1，git add，git commit，提交说明记为 1。 • 模仿上述做法，把 1 分别改为 2 和 3，再提交两次。 • 使用 git log 命令查看提交日志，看是否已经有三次提交，记下提交说明为 3 的哈希值a。 • 进行版本回退。执行命令 git reset --hard HEAD^ 后，再执行 git log，观 察其变化。 • 找到提交说明为 1 的哈希值，执行命令 git reset --hard  后，再执 行 git log，观察其变化。 • 现在已经回到了旧版本，为了再次回到新版本，执行 git reset --hard  ，再执行 git log，观察其变化。</p>
+<p>+++</p>
+<p>​	即通过<code>git reset</code>回退到旧版本，<code>git reset --hard HEAD^</code>便是回退到上一个版本。由此可见<code>git log</code>得到的Hashcode可以帮助我们快速改变版本，而且没有对其他版本造成修改或者删除的影响。</p>
+<h4 id="Thinking-0-5-执行如下命令-并查看结果：">Thinking 0.5 执行如下命令, 并查看结果：</h4>
+<p>• echo first • echo second &gt; output.txt • echo third &gt; output.txt • echo forth &gt;&gt; output.txt</p>
+<p><img src="echo.png" alt="echo"></p>
+<p>​	如图，<code>echo</code>便是输出指令，<code>&gt;</code>作为重定向符号，会将指定目标先全部清空，如果想要执行追加重定向需要使用<code>&gt;&gt;</code>，<code>output.txt</code>的内容用<code>cat</code>显现了出来。</p>
+<h4 id="Thinking-0-6">Thinking 0.6</h4>
+<p>使用你知道的方法（包括重定向）创建下图内容的文件（文件命名为 test）， 将创建该文件的命令序列保存在 command 文件中，并将 test 文件作为批处理文件运行，将 运行结果输出至 result 文件中。给出 command 文件和 result 文件的内容，并对最后的结 果进行解释说明（可以从 test 文件的内容入手）. 具体实现的过程中思考下列问题: echo echo Shell Start 与 echo <code>echo Shell Start</code> 效果是否有区别; echo echo $c&gt;file1 与 echo <code>echo $c&gt;file1</code> 效果是否有区别.</p>
+<p>+++</p>
+<ul>
+<li>创造test文件需要将每一条命令都使用echo指令，输出到test文件中即可，例如：<code>echo &quot;echo Shell Start...&quot;</code></li>
+<li>当我们运行test文件，脚本将a，b赋值为1，2，让c=a+b然后将cba的值依次存到file1-3中，然后将file1-3的值输入到file4中，然后将file4的值输入到result中，所以result的结果会是3 2 1</li>
+<li>在第一对命令之间有没有引号执行效果上没有区别。</li>
+<li>而第二对命令中，不加引号的会按照语法执行这个命令，将echo $c输入到file1文件里。单引号内的内容则会被第一个echo直接输出。在指导书中也有指出，若要想让变量实现具体效果，需要使用双引号””</li>
+</ul>
+<h3 id="二-难点分析">二 难点分析</h3>
+<p>​	时隔许久，快把实验忘却了，再看一下当时写的具体内容…笔者遇到的难点出现在<strong>Exercise0.4</strong>，关于Makefile的嵌套以及头文件的处理。</p>
+<p>​	在编译子目录下的<code>fibo.c</code>与<code>main.c</code>文件时，遇到了头文件无法处理的报错，后来在指导书中找到需要使用<code>-I</code>的参数读取头文件的相对路径，我的实现如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">3 SRC = code/fibo.c code/main.c</span><br><span class="line">4 </span><br><span class="line">5 all: fibo key</span><br><span class="line">6 </span><br><span class="line">7 fibo: $(SRC)</span><br><span class="line">8         gcc -o fibo $(SRC) -Iinclude</span><br></pre></td></tr></table></figure>
+<p>​	第二个难点在于如何调用嵌套在子目录下的Makefile，舍友的实现貌似使用了<code>-C</code>的参数实现，我在实际操作中尝试了如下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">	<span class="built_in">cd</span> code <span class="comment"># 进入子目录</span></span><br><span class="line">	make <span class="comment"># 用Makefile编译</span></span><br></pre></td></tr></table></figure>
+<p>​	但是实际上这个操作是不可行的，因为在bash语言中<code>cd code</code>之后如果没有其他操作，系统会自动返回原目录，相当于这个Makefile还是调用自己。后续在AI的帮助下，笔者找到了可实现的写法，即：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">	<span class="built_in">cd</span> code &amp;&amp; make <span class="comment"># 趁它还没出来赶紧执行make操作</span></span><br></pre></td></tr></table></figure>
+<h3 id="三-实验体会">三 实验体会</h3>
+<p>​	在这两周的lab0实验中，我又加深了对gcc、git、Shell以及Makefile的理解，但是由于内容繁杂，自己也没有经常性的复习，很多时候完成实验的实现还是要过分地依赖教程与指导书。其次便是很多操作其实有很多更加简单地实现，从<code>awk</code>指令就可见一斑，有很多非常强大的操作与实现，其实有时间多多学习是有利于我们提升自己的实验效率的。最后，作为一个新入门Linux的学生，还是无时无刻不感受着Linux系统对我的知识体系造成的影响， <strong>“一切皆文件的Linux终极哲学”</strong> 也足够使我终生去感受它、体会它。</p>
+<h2 id="叁-后记">叁 后记</h2>
+<p>​	本次的分享是夹带在OO洪流之中发出的，无论是内容还是排版笔者都觉得欠妥，希望以后有时间能保证相对高质量的帖子吧~本篇帖子到此就结束啦，我们下次OS实验~再见！:D</p>
+
 
         <hr>
         <!-- Pager -->
@@ -569,7 +642,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="nav">none</ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">BUAA-OSLab0实验总结</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%A3%B9-%E5%89%8D%E8%A8%80"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">壹 前言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%B4%B0-%E6%AD%A3%E6%96%87"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">贰 正文</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%80-%E5%AE%9E%E9%AA%8C%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">一 实验思考题</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Thinking-0-1-%E6%80%9D%E8%80%83%E4%B8%8B%E5%88%97%E6%9C%89%E5%85%B3-Git-%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="toc-nav-number">1.2.1.1.</span> <span class="toc-nav-text">Thinking 0.1 思考下列有关 Git 的问题：</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Thinking-0-2-%E4%BB%94%E7%BB%86%E7%9C%8B%E7%9C%8B0-10%EF%BC%8C%E6%80%9D%E8%80%83%E4%B8%80%E4%B8%8B%E7%AE%AD%E5%A4%B4%E4%B8%AD%E7%9A%84-add-the-file-%E3%80%81stage-the-file-%E5%92%8C-commit-%E5%88%86%E5%88%AB%E5%AF%B9%E5%BA%94%E7%9A%84%E6%98%AF-Git-%E9%87%8C%E7%9A%84%E5%93%AA%E4%BA%9B%E5%91%BD%E4%BB%A4%E5%91%A2%EF%BC%9F"><span class="toc-nav-number">1.2.1.2.</span> <span class="toc-nav-text">Thinking 0.2  仔细看看0.10，思考一下箭头中的 add the file 、stage the file 和 commit 分别对应的是 Git 里的哪些命令呢？</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Thinking-0-3-%E6%80%9D%E8%80%83%E4%B8%8B%E5%88%97%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="toc-nav-number">1.2.1.3.</span> <span class="toc-nav-text">Thinking 0.3 思考下列问题：</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Thinking-0-4-%E6%80%9D%E8%80%83%E4%B8%8B%E5%88%97%E6%9C%89%E5%85%B3-Git-%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="toc-nav-number">1.2.1.4.</span> <span class="toc-nav-text">Thinking 0.4 思考下列有关 Git 的问题：</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Thinking-0-5-%E6%89%A7%E8%A1%8C%E5%A6%82%E4%B8%8B%E5%91%BD%E4%BB%A4-%E5%B9%B6%E6%9F%A5%E7%9C%8B%E7%BB%93%E6%9E%9C%EF%BC%9A"><span class="toc-nav-number">1.2.1.5.</span> <span class="toc-nav-text">Thinking 0.5 执行如下命令, 并查看结果：</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Thinking-0-6"><span class="toc-nav-number">1.2.1.6.</span> <span class="toc-nav-text">Thinking 0.6</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BA%8C-%E9%9A%BE%E7%82%B9%E5%88%86%E6%9E%90"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">二 难点分析</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%89-%E5%AE%9E%E9%AA%8C%E4%BD%93%E4%BC%9A"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">三 实验体会</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%8F%81-%E5%90%8E%E8%AE%B0"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">叁 后记</span></a></li></ol></li></ol>
         
         </div>
       </aside>
@@ -591,6 +664,8 @@
             <a href="/tags/">FEATURED TAGS</a>
           </h5>
           <div class="tags">
+            
+            <a class="tag" href="/tags/#OS" title="OS">OS</a>
             
           </div>
         </section>
