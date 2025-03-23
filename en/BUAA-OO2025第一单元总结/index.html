@@ -258,9 +258,9 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/archive/">
               
-              ABOUT
+              ARCHIVES
               
               
             </a>
@@ -269,9 +269,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/about/">
               
-              ARCHIVES
+              ABOUT
               
               
             </a>
@@ -490,138 +490,105 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>BUAA_OO2025第一单元总结</h1>
-<blockquote>
+        <h1 id="BUAA-OO2025第一单元总结"><a href="#BUAA-OO2025第一单元总结" class="headerlink" title="BUAA_OO2025第一单元总结"></a>BUAA_OO2025第一单元总结</h1><blockquote>
 <p>又是一年花开时，亦当进取亦当歌。</p>
 </blockquote>
-<p>+++</p>
-<h2 id="前言">前言</h2>
-<p>​	OO第一单元的迭代已然落下帷幕，余下的是对此的总结与反思。本单元的学习主题是【<strong>表达式展开与化简</strong>】，三次作业迭代让我更熟悉了用类管理对象，也提升了模块化的设计能力。作业内容包括：<strong>多项式展开、三角函数、递推函数、普通函数与求导因子</strong>。</p>
-<p>​	对于快节奏生活当下的我们，总结与反思往往是不可多得的，众人像脱缰野马东奔西走，却少有回望来时路的时候。因此我将借此机会，对我的OO学习生活做一次全面的回顾。:D</p>
-<h2 id="程序结构回顾">程序结构回顾</h2>
-<p>​	迭代作业初始时，参考了OO加油站与往年博客的架构，将整体流程解耦分成三个部分，即<strong>预处理、表达式解析、表达式展开与输出</strong>。在迭代过程中，第二次作业在预处理部分添加<strong>函数解析</strong>，表达式解析与展开添加<strong>三角因子处理</strong>，增添了一些相应的<strong>输出优化</strong>；第三次作业在第二次作业的基础大幅重构<strong>函数解析与替换</strong>（详见BUG反思），增添了<strong>求导因子</strong>。迭代过程整体保证了一定的架构，没有出现很大的结构问题。</p>
-<p>​	请看<strong>类图</strong>：</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​    OO第一单元的迭代已然落下帷幕，余下的是对此的总结与反思。本单元的学习主题是【<strong>表达式展开与化简</strong>】，三次作业迭代让我更熟悉了用类管理对象，也提升了模块化的设计能力。作业内容包括：<strong>多项式展开、三角函数、递推函数、普通函数与求导因子</strong>。</p>
+<p>​    对于快节奏生活当下的我们，总结与反思往往是不可多得的，众人像脱缰野马奔驰，却少有回望来时路的时候。因此我将借此机会，对我的OO学习生活做一次全面的回顾。:D</p>
+<h2 id="程序结构回顾"><a href="#程序结构回顾" class="headerlink" title="程序结构回顾"></a>程序结构回顾</h2><p>​    迭代作业初始时，参考了OO加油站与往年博客的架构，将整体流程解耦分成三个部分，即<strong>预处理、表达式解析、表达式展开与输出</strong>。在迭代过程中，第二次作业在预处理部分添加<strong>函数解析</strong>，表达式解析与展开添加<strong>三角因子处理</strong>，增添了一些相应的<strong>输出优化</strong>；第三次作业在第二次作业的基础大幅重构<strong>函数解析与替换</strong>（详见BUG反思），增添了<strong>求导因子</strong>。迭代过程整体保证了一定的架构，没有出现很大的结构问题。</p>
+<p>​    请看<strong>类图</strong>：</p>
 <p><img src="hw3UML.svg" alt="hw3UML"></p>
 <p>在<strong>输入预处理</strong>部分，我们分别对<strong>目标字符串</strong>与<strong>函数群</strong>进行处理：</p>
 <ul>
-<li>
-<p><code>Main</code>：</p>
-<p>程序的主入口，负责调用<code>Processor</code>与<code>FuncSolver</code>进行预处理，然后通过静态方法 <em><strong>getString</strong></em>进入表达式展开与输出环节。</p>
+<li><p><code>Main</code>：</p>
+<p>程序的主入口，负责调用<code>Processor</code>与<code>FuncSolver</code>进行预处理，然后通过静态方法 <strong><em>getString</em></strong>进入表达式展开与输出环节。</p>
 </li>
-<li>
-<p><code>Processor</code>：</p>
+<li><p><code>Processor</code>：</p>
 <p>负责化简表达式的方法类。在字符串层面化简表达式，化简效果有清除空白符、去除多余负号等。</p>
 </li>
-<li>
-<p><code>FuncSolver</code>：本意是负责解析函数的方法类，在第三次作业前重构时，为了复用此类解析普通函数，为其添加三个属性：<strong>函数名</strong>，<strong>函数序号与函数表达式的键值对</strong>，<strong>函数形参</strong>。</p>
+<li><p><code>FuncSolver</code>：本意是负责解析函数的方法类，在第三次作业前重构时，为了复用此类解析普通函数，为其添加三个属性：<strong>函数名</strong>，<strong>函数序号与函数表达式的键值对</strong>，<strong>函数形参</strong>。</p>
 </li>
 </ul>
 <p>在<strong>表达式解析</strong>部分包括<strong>文法解析</strong>与<strong>词法解析</strong>：</p>
 <ul>
-<li>
-<p><code>Lexer</code>：</p>
-<p>负责文法解析，借鉴第一次上机的写法，将字符串按照<em><strong>token</strong></em>的方式解析。</p>
+<li><p><code>Lexer</code>：</p>
+<p>负责文法解析，借鉴第一次上机的写法，将字符串按照<strong><em>token</em></strong>的方式解析。</p>
 </li>
-<li>
-<p><code>Parser</code>：</p>
-<p>负责语法解析，依赖于文法解析，对不同的<em><strong>token</strong></em>进行不同的解析，运用【<strong>递归下降</strong>】的思想，构建<code>Expr</code>类的目标表达式。</p>
+<li><p><code>Parser</code>：</p>
+<p>负责语法解析，依赖于文法解析，对不同的<strong><em>token</em></strong>进行不同的解析，运用【<strong>递归下降</strong>】的思想，构建<code>Expr</code>类的目标表达式。</p>
 </li>
 </ul>
-<p>在<strong>表达式展开与化简</strong>部分，主体任务便是将<em><em><em>expr</em> 转化为</em>poly</em>**:</p>
+<p>在<strong>表达式展开与化简</strong>部分，主体任务便是将<strong><em>expr</em> 转化为<em>poly</em></strong>:</p>
 <ul>
-<li>
-<p><code>Expr</code>、<code>Term</code>与<code>Factor</code>：</p>
+<li><p><code>Expr</code>、<code>Term</code>与<code>Factor</code>：</p>
 <p>分别代表着<strong>语法树</strong>的三个层次，<code>Expr</code>由<code>Term</code>组成，<code>Term</code>又由<code>Factor</code>组成，而其中<code>Factor</code>仅是一个<strong>接口</strong>，这是出于<strong>归一化多类型因子</strong>的考虑。</p>
 </li>
-<li>
-<p><code>DefFac</code>、<code>PowFac</code>、<code>DerivFac</code>、<code>TriFunc</code>、<code>NormFunc</code>与<code>ConstFac</code>：</p>
+<li><p><code>DefFac</code>、<code>PowFac</code>、<code>DerivFac</code>、<code>TriFunc</code>、<code>NormFunc</code>与<code>ConstFac</code>：</p>
 <p>六种实现<code>Factor</code>接口的因子类型。</p>
 </li>
-<li>
-<p><code>Poly</code>、<code>Fixo</code>、<code>Mono</code>与<code>Trigo</code>：</p>
+<li><p><code>Poly</code>、<code>Fixo</code>、<code>Mono</code>与<code>Trigo</code>：</p>
 <p>是<strong>多项式</strong>的组成类。在多项式输出的时候，已经不存在求导因子、自定义函数，因此<strong>多项式</strong><code>Poly</code>的形式可以由数个<strong>混合积</strong><code>Fixo</code>相加组成，而<strong>混合积</strong><code>Fixo</code>由一个<strong>单项式</strong><code>Mono</code>与数个<strong>三角式</strong><code>Trigo</code>相乘得到。形式化表达可用公式表示如下：</p>
 </li>
 </ul>
-<p>$$<br>
-poly = \sum_{i = 1}^{n} fixo_i<br>
-$$</p>
-<p>$$<br>
-fixo = coef * mono * \prod_{i=1}^{n}trigo_i<br>
-$$</p>
-<p>$$<br>
-mono = x^{exp}<br>
-$$</p>
-<p>$$<br>
-trigo = (\sin {factor})^{exp} or (\cos {factor})^{exp}<br>
-$$</p>
-<ul>
-<li>
-<p><code>Optimizer</code>：</p>
-<p>接受<code>Poly</code>的 <em><strong>toString</strong></em>方法得到的字符串为输入，最后完成一次字符串层面的优化。</p>
+<script type="math/tex; mode=display">
+poly = \sum_{i = 1}^{n} fixo_i</script><script type="math/tex; mode=display">
+fixo = coef * mono * \prod_{i=1}^{n}trigo_i</script><script type="math/tex; mode=display">
+mono = x^{exp}</script><script type="math/tex; mode=display">
+trigo = (\sin {factor})^{exp} or (\cos {factor})^{exp}</script><ul>
+<li><p><code>Optimizer</code>：</p>
+<p>接受<code>Poly</code>的 <strong><em>toString</em></strong>方法得到的字符串为输入，最后完成一次字符串层面的优化。</p>
 </li>
 </ul>
-<h2 id="项目度量分析">项目度量分析</h2>
-<p><img src="Class_metrics.png" alt="Class_metrics"></p>
-<p>​	上图是有关程序中所有类的度量，其中有3-4个类的整体<strong>复杂度偏高</strong>，难以维护，本人确实也在后期调整<code>Main</code>时感到有些困难，作为一个程序的主类，下次作业我会格外注意尽量降低主类的复杂度。</p>
+<h2 id="项目度量分析"><a href="#项目度量分析" class="headerlink" title="项目度量分析"></a>项目度量分析</h2><p><img src="Class_metrics.png" alt="Class_metrics"></p>
+<p>​    上图是有关程序中所有类的度量，其中有3-4个类的整体<strong>复杂度偏高</strong>，难以维护，本人确实也在后期调整<code>Main</code>时感到有些困难，作为一个程序的主类，下次作业我会格外注意尽量降低主类的复杂度。</p>
 <p><img src="Method_metrics.png" alt="Method_metrics"></p>
-<p>​	上图是方法层面的复杂度部分指标，分别为<strong>认知复杂度、本质复杂度、设计复杂度与圈复杂度</strong>，主要截出了复杂度较高的方法做本次总结的参考：</p>
+<p>​    上图是方法层面的复杂度部分指标，分别为<strong>认知复杂度、本质复杂度、设计复杂度与圈复杂度</strong>，主要截出了复杂度较高的方法做本次总结的参考：</p>
 <ul>
-<li>
-<p>其中<em><strong>parseFactor</strong></em>一直是我想要拆分的方法之一，按照因子类型不同细化为<em><strong>parseXxx</strong></em>方法，如此即可保持更高的可读性与逻辑性。</p>
+<li><p>其中<strong><em>parseFactor</em></strong>一直是我想要拆分的方法之一，按照因子类型不同细化为<strong><em>parseXxx</em></strong>方法，如此即可保持更高的可读性与逻辑性。</p>
 </li>
-<li>
-<p>下面的<em><strong>isSame</strong></em>和<em><strong>isSimilar</strong></em>都是极其【炸裂】的存在，自己回头看一遍很难不小，还依稀记得当时写的时候自己绕了半天硬要挑战自己的逻辑。现在一看认知复杂度20+，老实了。在这里放一段我的代码结构，仅供充当反例：</p>
+<li><p>下面的<strong><em>isSame</em></strong>和<strong><em>isSimilar</em></strong>都是极其【炸裂】的存在，自己回头看一遍很难不小，还依稀记得当时写的时候自己绕了半天硬要挑战自己的逻辑。现在一看认知复杂度20+，老实了。在这里放一段我的代码结构，仅供充当反例：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isSame</span><span class="params">(Fixo other)</span> &#123;</span><br><span class="line">	<span class="keyword">if</span>(...) &#123;<span class="keyword">return</span> <span class="literal">false</span>;&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(...) &#123;<span class="keyword">return</span> <span class="literal">false</span>;&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(...) &#123;<span class="keyword">return</span> <span class="literal">false</span>;&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">if</span>(...)&#123;<span class="keyword">return</span> <span class="literal">false</span>;&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">for</span>(...)&#123;</span><br><span class="line">				<span class="comment">// ...</span></span><br><span class="line">				<span class="keyword">for</span>(...)&#123;</span><br><span class="line">					<span class="keyword">if</span>(...)&#123;</span><br><span class="line">						<span class="comment">// ...</span></span><br><span class="line">						<span class="keyword">break</span>;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (...) &#123;<span class="keyword">return</span> <span class="literal">false</span>;&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><s>在AI大人的指引下</s>，我顺利将这两个相似的方法重构拆分成三个方法，更加清晰地展现了这段代码本身的逻辑。给自己也留下一个深刻的教训，不要只顾写代码，而不思考代码本身的可读性与思考量，写完debug的还是自己，只会徒增烦恼。</p>
+<p><del>在AI大人的指引下</del>，我顺利将这两个相似的方法重构拆分成三个方法，更加清晰地展现了这段代码本身的逻辑。给自己也留下一个深刻的教训，不要只顾写代码，而不思考代码本身的可读性与思考量，写完debug的还是自己，只会徒增烦恼。</p>
 </li>
-<li>
-<p>最后的<em><strong>multiply</strong></em>方法也是同理，同样是<code>if</code>和<code>for</code>语句”错落有致“，严重影响了可读性的同时，耦合度和复杂度也高居不下，并不符合我们模块化设计的初衷，也希望自己能在后续的学习中谨记这次关于复杂度的反思，不要在debug与重构时给自己上难度。</p>
-</li>
-</ul>
-<h2 id="架构设计体验">架构设计体验</h2>
-<ul>
-<li>
-<p>在第一次作业中，我感觉难度适中，可能是因为第一次上机的代码框架给人很大的启发与帮助，主要难点位于<strong>递归下降</strong>的解析中，给人一种**【纸上得来终觉浅，绝知此事要躬行】<strong>的感受，听了无数遍递归下降的思想，不如亲手编写出一次<code>Parser</code>收获大。此外，关于表达式的展开，仔细琢磨了</strong>hyggge<strong>学长原创（大抵如此？）的</strong>Mono&amp;Poly**实现方法后，感觉吃透了就写得很快。</p>
-</li>
-<li>
-<p>在第二次作业中，在刚拿上迭代要求时感觉不会很难，但是做起来着实很难，本着尽善尽美的想法，我钻进了优化的牛角尖，在周四晚上还在优化三角函数的输出，周五推翻之前的写法重来，周六开始写递推函数，现在回头想想属实不应该，应该先着眼全局，再尽善尽美。</p>
+<li><p>最后的<strong><em>multiply</em></strong>方法也是同理，同样是<code>if</code>和<code>for</code>语句”错落有致“，严重影响了可读性的同时，耦合度和复杂度也高居不下，并不符合我们模块化设计的初衷，也希望自己能在后续的学习中谨记这次关于复杂度的反思，不要在debug与重构时给自己上难度。</p>
 </li>
 </ul>
-<p>​	噩耗如约而至，第二次作业强测漏洞百出。最大的bug莫过于没有注意到递推函数形参顺序不固定，形如下面的递推函数，我会直接报错。</p>
+<h2 id="架构设计体验"><a href="#架构设计体验" class="headerlink" title="架构设计体验"></a>架构设计体验</h2><ul>
+<li><p>在第一次作业中，我感觉难度适中，可能是因为第一次上机的代码框架给人很大的启发与帮助，主要难点位于<strong>递归下降</strong>的解析中，给人一种<strong>【纸上得来终觉浅，绝知此事要躬行】</strong>的感受，听了无数遍递归下降的思想，不如亲手编写出一次<code>Parser</code>收获大。此外，关于表达式的展开，仔细琢磨了<strong>hyggge</strong>学长原创（大抵如此？）的<strong>Mono&amp;Poly</strong>实现方法后，感觉吃透了就写得很快。</p>
+</li>
+<li><p>在第二次作业中，在刚拿上迭代要求时感觉不会很难，但是做起来着实很难，本着尽善尽美的想法，我钻进了优化的牛角尖，在周四晚上还在优化三角函数的输出，周五推翻之前的写法重来，周六开始写递推函数，现在回头想想属实不应该，应该先着眼全局，再尽善尽美。</p>
+</li>
+</ul>
+<p>​    噩耗如约而至，第二次作业强测漏洞百出。最大的bug莫过于没有注意到递推函数形参顺序不固定，形如下面的递推函数，我会直接报错。</p>
 <figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f&#123;0&#125;(y,x) = ...</span><br><span class="line">f&#123;1&#125;(y,x) = ...</span><br><span class="line">f&#123;n&#125;(y,x) = ... + ... + ... </span><br></pre></td></tr></table></figure>
-<p>​	很难去归咎于时间匆忙还是粗心大意，反正事已至此，当时只想老老实实修bug。后续在反复推敲后，感觉用<strong>ArrayList</strong>存储形参是目前最好的方案，但还是无法干净利落地修复bug。外加第三次作业的要求问世，面对普通函数的迭代工作，我在周四才开始决定：<strong>重构我的<code>FuncSolver</code>类</strong>。</p>
-<p>​	我将<code>FuncSolver</code>视作装载每个函数的<strong>容器</strong>，属性与构造方法如下：</p>
+<p>​    很难去归咎于时间匆忙还是粗心大意，反正事已至此，当时只想老老实实修bug。后续在反复推敲后，感觉用<strong>ArrayList</strong>存储形参是目前最好的方案，但还是无法干净利落地修复bug。外加第三次作业的要求问世，面对普通函数的迭代工作，我在周四才开始决定：<strong>重构我的<code>FuncSolver</code>类</strong>。</p>
+<p>​    我将<code>FuncSolver</code>视作装载每个函数的<strong>容器</strong>，属性与构造方法如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">FuncSolver</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> HashMap&lt;String,Expr&gt; funcs; <span class="comment">// 装载序号与表达式的键值对</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> ArrayList&lt;String&gt; params; <span class="comment">// 形参有序列表</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">FuncSolver</span><span class="params">(ArrayList&lt;String&gt; funcDefs)</span> &#123;</span><br><span class="line">        params = matchParams(funcDefs); <span class="comment">// 匹配参数</span></span><br><span class="line">        funcs = parseDefFunc(funcDefs); <span class="comment">// 解析表达式</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>​	这一部分我且称之为函数的解析。此后便是解析表达式，随后对表达式进行函数的替换。</p>
-<p>​	这里的<strong>函数替换</strong>涉及到一个类似于递归下降的易错点。当我们顺着语法树找到一个又一个函数后，我们需要保证每一个函数都要被替换到位，即<strong>替换到最底层每一个因子</strong>。我最初的实现是在<code>Term</code>的<em><strong>alter</strong></em>方法中列举可能出现的因子，后来想想这无疑是个很糟糕的设计，不仅破坏了<code>Factor</code>接口归一化的统一管理，而且容易遗漏特殊情况，例如函数内部嵌套函数，三角内部嵌套函数。因此我也顺便重构了这里的逻辑，让<em><strong>alter</strong></em>作为<strong>接口统一的方法</strong>，在每个具体的<code>Factor</code>类中逐一实现。</p>
-<p>​	在<em><strong>alter</strong></em>方法的内部，我又调用了另一个<em><strong>assign</strong></em>方法。意在二者各司其职，<em><strong>alter</strong></em>作为<strong>替换</strong>的主方法，它的职责其实是<strong>遍历查找</strong>，在语法树中一丝不苟地”追杀“需要被替换的函数，而<em><strong>assign</strong></em>方法的职责则是当<em><strong>alter</strong></em>方法锁定目标后，进行<strong>赋值替换</strong>。这个逻辑也在我后续<strong>处理求导因子</strong>再一次使用。</p>
-<p>​	在函数替换结束后，应将表达式转化成多项式。在多项式的构建中，好像大部分人选择重构<code>Mono</code>，而我选择<strong>保留</strong><code>Mono</code>的代码，让它符合单词本意。代价便是新建两个类<code>Fixo</code>与<code>Trigo</code>，在上文已做介绍，这里不再赘述了。好处便是自己看起来<strong>逻辑组成清晰</strong>、<strong>便于迭代与修改</strong>，弊端也许就在于会导致<strong>代码量变大</strong>、<strong>深度变深</strong>。</p>
-<p>​	在第三周的周五早晨——或者中午，我完成了第二次作业的bug修复与重构。</p>
+<p>​    这一部分我且称之为函数的解析。此后便是解析表达式，随后对表达式进行函数的替换。</p>
+<p>​    这里的<strong>函数替换</strong>涉及到一个类似于递归下降的易错点。当我们顺着语法树找到一个又一个函数后，我们需要保证每一个函数都要被替换到位，即<strong>替换到最底层每一个因子</strong>。我最初的实现是在<code>Term</code>的<strong><em>alter</em></strong>方法中列举可能出现的因子，后来想想这无疑是个很糟糕的设计，不仅破坏了<code>Factor</code>接口归一化的统一管理，而且容易遗漏特殊情况，例如函数内部嵌套函数，三角内部嵌套函数。因此我也顺便重构了这里的逻辑，让<strong><em>alter</em></strong>作为<strong>接口统一的方法</strong>，在每个具体的<code>Factor</code>类中逐一实现。</p>
+<p>​    在<strong><em>alter</em></strong>方法的内部，我又调用了另一个<strong><em>assign</em></strong>方法。意在二者各司其职，<strong><em>alter</em></strong>作为<strong>替换</strong>的主方法，它的职责其实是<strong>遍历查找</strong>，在语法树中一丝不苟地”追杀“需要被替换的函数，而<strong><em>assign</em></strong>方法的职责则是当<strong><em>alter</em></strong>方法锁定目标后，进行<strong>赋值替换</strong>。这个逻辑也在我后续<strong>处理求导因子</strong>再一次使用。</p>
+<p>​    在函数替换结束后，应将表达式转化成多项式。在多项式的构建中，好像大部分人选择重构<code>Mono</code>，而我选择<strong>保留</strong><code>Mono</code>的代码，让它符合单词本意。代价便是新建两个类<code>Fixo</code>与<code>Trigo</code>，在上文已做介绍，这里不再赘述了。好处便是自己看起来<strong>逻辑组成清晰</strong>、<strong>便于迭代与修改</strong>，弊端也许就在于会导致<strong>代码量变大</strong>、<strong>深度变深</strong>。</p>
+<p>​    在第三周的周五早晨——或者中午，我完成了第二次作业的bug修复与重构。</p>
 <ul>
 <li>在当周周五晚上，我才开始第三次作业的迭代。但重构第二次作业的时候已经为迭代做了一定的考虑，普通函数也和递推函数一同被储存在了<code>FuncSolver</code>当中，几乎不需要做太大的改变，只需要为<code>FuncSolver</code>类添加属性<strong>funcName</strong>与对应的<strong>get</strong>方法，即可完成<code>FuncSolver</code>的迭代。在<code>Main</code>中重构出一个静态方法，将预处理与后续操作分离开，需要完成的迭代是<strong>逆序</strong>将函数依次替换，此处<strong>逆序</strong>是指<strong>与定义顺序相反</strong>，否则会在<strong>函数嵌套定义</strong>的情况下出现替换不彻底的问题。</li>
 </ul>
-<p>​	第三次作业迭代的另一部分便是<strong>处理求导因子</strong>，如上所述，仍然是采取一个**”查找+处理“<strong>分离的逻辑，分别是</strong><em>derivative</em><strong>方法与</strong><em>derive</em>**方法，这里同样需要做到将求导因子替换干净，以免影响后续展开以及输出。</p>
-<p>​	最后，第三次作业迭代在24小时内被速通了，但我脑海里仍是hw2重构的影子，希望自己以后不要犯这样的错误，在迭代作业中<strong>保持谨慎、长远考虑</strong>。</p>
-<h2 id="迭代情景设想">迭代情景设想</h2>
-<p>​	设想<strong>迭代情景</strong>如下：</p>
+<p>​    第三次作业迭代的另一部分便是<strong>处理求导因子</strong>，如上所述，仍然是采取一个<strong>”查找+处理“</strong>分离的逻辑，分别是<strong><em>derivative</em></strong>方法与<strong><em>derive</em></strong>方法，这里同样需要做到将求导因子替换干净，以免影响后续展开以及输出。</p>
+<p>​    最后，第三次作业迭代在24小时内被速通了，但我脑海里仍是hw2重构的影子，希望自己以后不要犯这样的错误，在迭代作业中<strong>保持谨慎、长远考虑</strong>。</p>
+<h2 id="迭代情景设想"><a href="#迭代情景设想" class="headerlink" title="迭代情景设想"></a>迭代情景设想</h2><p>​    设想<strong>迭代情景</strong>如下：</p>
 <ul>
-<li>
-<p>新增其他类型的函数，如分段函数。</p>
+<li><p>新增其他类型的函数，如分段函数。</p>
 <p>可扩展性：只需在<code>FuncSolver</code>中针对新的函数开发新的方法，或是将<code>FuncSolver</code>设计成类似<code>Factor</code>的接口，统一管理或替换不同的函数。</p>
 </li>
-<li>
-<p>新增其他变量字母，如**‘y’**。</p>
+<li><p>新增其他变量字母，如<strong>‘y’</strong>。</p>
 </li>
 </ul>
-<p>​	可扩展性：可以在解析时让token匹配x或y，在<code>PowFac</code>与<code>Mono</code>中增添属性<strong>Variable</strong>即可完成大致的迭代。</p>
-<h2 id="程序bug分析">程序bug分析</h2>
-<ul>
+<p>​    可扩展性：可以在解析时让token匹配x或y，在<code>PowFac</code>与<code>Mono</code>中增添属性<strong>Variable</strong>即可完成大致的迭代。</p>
+<h2 id="程序bug分析"><a href="#程序bug分析" class="headerlink" title="程序bug分析"></a>程序bug分析</h2><ul>
 <li>在迭代原因中提及过的bug，因为审题不到位致使数据<strong>形参顺序颠倒</strong>导致程序中止。</li>
 </ul>
 <p>解决方案：重构了<code>FuncSolver</code></p>
 <ul>
-<li>
-<p>在判断<code>poly</code>或<code>fixo</code>是否相等或是否为同类项时，我使用了**”带值对比法“**，即将其中自变量的值代换为随机数，进行100次计算判断是否相等。导致两个bug：</p>
+<li><p>在判断<code>poly</code>或<code>fixo</code>是否相等或是否为同类项时，我使用了<strong>”带值对比法“</strong>，即将其中自变量的值代换为随机数，进行100次计算判断是否相等。导致两个bug：</p>
 <ul>
 <li>计算太多次数，导致程序<strong>CTLE</strong></li>
 </ul>
@@ -632,26 +599,20 @@ $$</p>
 <p>解决方案B（未果）：取对数（难以实现且遇到值为0的表达式会出现负的<code>Inifinity</code>）</p>
 <p>解决方案C（最终方案）：<strong>遍历查找</strong>其中每个元素（单项式，三角式），虽然修复了bug，但是直接导致了上文所述的复杂度超标的问题，相应的策略则是对此方法进行<strong>拆分与重构</strong>，最终降低了复杂度，也完成了bug修复。</p>
 </li>
-<li>
-<p>在出现形似<code>dx(sin(dx(x)))</code>此类，求导因子隔一层三角函数，层层嵌套时，会出现处理不彻底的问题，在第三次强测中喜提一个<strong>RUNTIME_ERROR</strong>。</p>
+<li><p>在出现形似<code>dx(sin(dx(x)))</code>此类，求导因子隔一层三角函数，层层嵌套时，会出现处理不彻底的问题，在第三次强测中喜提一个<strong>RUNTIME_ERROR</strong>。</p>
 </li>
 </ul>
-<p>解决方法：对于所有内部仍有可能有多层语法树的因子进行更深层次的<em><strong>derivative</strong></em>处理。</p>
+<p>解决方法：对于所有内部仍有可能有多层语法树的因子进行更深层次的<strong><em>derivative</em></strong>处理。</p>
 <p>例如：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// in TriFunc</span></span><br><span class="line"><span class="type">TriFunc</span> <span class="variable">triFunc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">TriFunc</span>(TriType.SIN, <span class="built_in">this</span>.term, <span class="number">1</span>); <span class="comment">// previous</span></span><br><span class="line"><span class="type">TriFunc</span> <span class="variable">triFunc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">TriFunc</span>(TriType.SIN, <span class="built_in">this</span>.term.derivate(), <span class="number">1</span>); <span class="comment">// repaired</span></span><br><span class="line"><span class="comment">// in  DerivFunc</span></span><br><span class="line"><span class="keyword">public</span> Factor <span class="title function_">deriviate</span><span class="params">()</span> &#123;<span class="keyword">return</span> expr;&#125; <span class="comment">// previous</span></span><br><span class="line"><span class="keyword">public</span> Factor <span class="title function_">deriviate</span><span class="params">()</span> &#123;<span class="keyword">return</span> expr.derive();&#125; <span class="comment">// repaired</span></span><br></pre></td></tr></table></figure>
 <p>对于我个人的bug而言，基本都是在修bug之后，复杂度会得以不同程度的提升，有的只是小范围的，有的则需要通过将几个方法解耦，哪怕会出现更多的方法，但只要符合模块化设计的理念就不算是坏的重构。</p>
-<h2 id="互刀策略分析">互刀策略分析</h2>
-<p>​	在第一次作业中借用了学长的评测机，属于是在舒适圈中躺了一周。</p>
-<p>​	第二次作业往后，没有了评测机，也没有时间动手搭自己的数据生成器，只写了一个sympy脚本进行对拍，那这时就要考虑数据构造的问题了。相比手握核弹般的评测机的同学，构造数据必然是效率低下，那就需要多多动脑子提高一定的效率。首先是可以关注题目要求细节与易错点，比如<code>sin((x-x))^0</code>，将他们结合在几组数据当中，不出意外便有一些人出现了bug。但是归根结底还是太过原始了，后期有时间一定要搭建一个自己的全套评测机~</p>
-<h2 id="优化化简分析">优化化简分析</h2>
-<p>​	 第二周在最需要优化的时间我在大幅进行重构，优化化简几乎没有进行，只完成了同类项的合并、sin(0)/cos(0)的简化以及多层括号的去除。</p>
-<p>​	同类项的合并基于判断多项式是否相同或相似的方法，三角函数的化简在生成时就可以进行特判简化，冗余括号去除在<code>Trigo</code>中进行了特判。</p>
-<h2 id="心得体会分享">心得体会分享</h2>
-<p>​	以周为单位的OO学习周期让人只得<strong>苦中作乐</strong>，不断地重复写代码，修代码的工作，周六晚上交完最后一版，周天早上两眼一睁就是互刀（），总体感觉还是很有收获，收获的来源主要是<strong>犯错的经历</strong>与<strong>误入的歧途</strong>，如果没有第二周的误入歧途，我恐怕很难获得如此深刻的<strong>重构经历</strong>与沉痛的<strong>总结反思</strong>，当然正所谓有失必有得，我也在这段日子失去了优化化简与搭评测机的机会。但是还是庆幸自己做出了迷途知返的决定，不是在史山上疯狂加码，而是推倒重来。希望自己在今后的迭代工作中，不只是OO，更包括生活中的各种小事，都要在每次迭代时从宏观的视角出发，<strong>保持慎重</strong>的同时也<strong>满怀勇气</strong>。</p>
-<h2 id="未来方向建议">未来方向建议</h2>
-<p>​	将几次迭代工作的任务量尽量平均些许，减少一周内出现”业务高峰“的情况吧。此外希望老师在理论课上适当讲解<strong>评测机搭建</strong>的实现？对于大部分人，这件事情本身就耗时耗力，更不必谈对于大部分还处于”万事开头难“阶段的同学，望课程组考虑~</p>
-<h2 id="后记">后记</h2>
-<blockquote>
+<h2 id="互刀策略分析"><a href="#互刀策略分析" class="headerlink" title="互刀策略分析"></a>互刀策略分析</h2><p>​    在第一次作业中借用了学长的评测机，属于是在舒适圈中躺了一周。</p>
+<p>​    第二次作业往后，没有了评测机，也没有时间动手搭自己的数据生成器，只写了一个sympy脚本进行对拍，那这时就要考虑数据构造的问题了。相比手握核弹般的评测机的同学，构造数据必然是效率低下，那就需要多多动脑子提高一定的效率。首先是可以关注题目要求细节与易错点，比如<code>sin((x-x))^0</code>，将他们结合在几组数据当中，不出意外便有一些人出现了bug。但是归根结底还是太过原始了，后期有时间一定要搭建一个自己的全套评测机~</p>
+<h2 id="优化化简分析"><a href="#优化化简分析" class="headerlink" title="优化化简分析"></a>优化化简分析</h2><p>​     第二周在最需要优化的时间我在大幅进行重构，优化化简几乎没有进行，只完成了同类项的合并、sin(0)/cos(0)的简化以及多层括号的去除。</p>
+<p>​    同类项的合并基于判断多项式是否相同或相似的方法，三角函数的化简在生成时就可以进行特判简化，冗余括号去除在<code>Trigo</code>中进行了特判。</p>
+<h2 id="心得体会分享"><a href="#心得体会分享" class="headerlink" title="心得体会分享"></a>心得体会分享</h2><p>​    以周为单位的OO学习周期让人只得<strong>苦中作乐</strong>，不断地重复写代码，修代码的工作，周六晚上交完最后一版，周天早上两眼一睁就是互刀（），总体感觉还是很有收获，收获的来源主要是<strong>犯错的经历</strong>与<strong>误入的歧途</strong>，如果没有第二周的误入歧途，我恐怕很难获得如此深刻的<strong>重构经历</strong>与沉痛的<strong>总结反思</strong>，当然正所谓有失必有得，我也在这段日子失去了优化化简与搭评测机的机会。但是还是庆幸自己做出了迷途知返的决定，不是在史山上疯狂加码，而是推倒重来。希望自己在今后的迭代工作中，不只是OO，更包括生活中的各种小事，都要在每次迭代时从宏观的视角出发，<strong>保持慎重</strong>的同时也<strong>满怀勇气</strong>。</p>
+<h2 id="未来方向建议"><a href="#未来方向建议" class="headerlink" title="未来方向建议"></a>未来方向建议</h2><p>​    将几次迭代工作的任务量尽量平均些许，减少一周内出现”业务高峰“的情况吧。此外希望老师在理论课上适当讲解<strong>评测机搭建</strong>的实现？对于大部分人，这件事情本身就耗时耗力，更不必谈对于大部分还处于”万事开头难“阶段的同学，望课程组考虑~</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><blockquote>
 <p>愿我们永远满怀热忱，拥有坚持向前的永恒毅力，也不曾缺从头再来的勇气。</p>
 </blockquote>
 
@@ -759,7 +720,7 @@ $$</p>
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">BUAA_OO2025第一单元总结</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E5%9B%9E%E9%A1%BE"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">程序结构回顾</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%A1%B9%E7%9B%AE%E5%BA%A6%E9%87%8F%E5%88%86%E6%9E%90"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">项目度量分析</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E4%BD%93%E9%AA%8C"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">架构设计体验</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%BF%AD%E4%BB%A3%E6%83%85%E6%99%AF%E8%AE%BE%E6%83%B3"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">迭代情景设想</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%A8%8B%E5%BA%8Fbug%E5%88%86%E6%9E%90"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">程序bug分析</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%92%E5%88%80%E7%AD%96%E7%95%A5%E5%88%86%E6%9E%90"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">互刀策略分析</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BC%98%E5%8C%96%E5%8C%96%E7%AE%80%E5%88%86%E6%9E%90"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">优化化简分析</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A%E5%88%86%E4%BA%AB"><span class="toc-nav-number">1.9.</span> <span class="toc-nav-text">心得体会分享</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%9C%AA%E6%9D%A5%E6%96%B9%E5%90%91%E5%BB%BA%E8%AE%AE"><span class="toc-nav-number">1.10.</span> <span class="toc-nav-text">未来方向建议</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-nav-number">1.11.</span> <span class="toc-nav-text">后记</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#BUAA-OO2025%E7%AC%AC%E4%B8%80%E5%8D%95%E5%85%83%E6%80%BB%E7%BB%93"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">BUAA_OO2025第一单元总结</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E5%9B%9E%E9%A1%BE"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">程序结构回顾</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%A1%B9%E7%9B%AE%E5%BA%A6%E9%87%8F%E5%88%86%E6%9E%90"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">项目度量分析</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E4%BD%93%E9%AA%8C"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">架构设计体验</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%BF%AD%E4%BB%A3%E6%83%85%E6%99%AF%E8%AE%BE%E6%83%B3"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">迭代情景设想</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%A8%8B%E5%BA%8Fbug%E5%88%86%E6%9E%90"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">程序bug分析</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%92%E5%88%80%E7%AD%96%E7%95%A5%E5%88%86%E6%9E%90"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">互刀策略分析</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BC%98%E5%8C%96%E5%8C%96%E7%AE%80%E5%88%86%E6%9E%90"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">优化化简分析</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A%E5%88%86%E4%BA%AB"><span class="toc-nav-number">1.9.</span> <span class="toc-nav-text">心得体会分享</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%9C%AA%E6%9D%A5%E6%96%B9%E5%90%91%E5%BB%BA%E8%AE%AE"><span class="toc-nav-number">1.10.</span> <span class="toc-nav-text">未来方向建议</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-nav-number">1.11.</span> <span class="toc-nav-text">后记</span></a></li></ol></li></ol>
         
         </div>
       </aside>
