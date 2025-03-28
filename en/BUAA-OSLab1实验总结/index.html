@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://s7am1na.github.io/en/BUAA-OO2025第一单元总结/">
+  <link rel="canonical" href="http://s7am1na.github.io/en/BUAA-OSLab1实验总结/">
   <title>
     
-      BUAA_OO2025第一单元总结 - just a private corner
+      BUAA-OSLab1实验总结 - just a private corner
     
   </title>
 <meta name="generator" content="Hexo 5.4.2"></head>
@@ -352,19 +352,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/categories_bg.WebP');
-      --intro-header-background-image-url-post: url('/img/header_img/lml_bg.jpg');
-      --intro-header-background-image-url-page: url('//img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-post: url('/img/header_img/ghost_knife1.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/ghost_knife1.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/categories_bg.WebP');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg.jpg');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/ghost_knife1.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/ghost_knife1.jpg');
     }
 
     header.intro-header {
        /*post*/
         background-image: var(--intro-header-background-image-url-post);
-        /* background-image: url('/img/header_img/lml_bg.jpg'); */
+        /* background-image: url('/img/header_img/ghost_knife1.jpg'); */
       
     }
 
@@ -385,14 +385,14 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#OO" title="OO">OO</a>
+              <a class="tag" href="/tags/#OS" title="OS">OS</a>
               
             </div>
-            <h1>BUAA_OO2025第一单元总结</h1>
-            <h2 class="subheading">表达式展开与化简</h2>
+            <h1>BUAA-OSLab1实验总结</h1>
+            <h2 class="subheading">printk(&#34;hello, MOS!&#34;)</h2>
             <span class="meta">
               Posted by S7AM1NA on
-              2025-03-22
+              2025-03-28
             </span>
 
 
@@ -400,11 +400,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">14</span> Minutes
+              Estimated Reading Time <span class="post-count">11</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">4k</span> In Total
+              Words <span class="post-count">2.8k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -475,179 +475,152 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1 id="buaa_oo2025第一单元总结">BUAA_OO2025第一单元总结</h1>
+        <h1 id="buaa-oslab1实验总结">BUAA-OSLab1实验总结</h1>
 <blockquote>
-<p>又是一年花开时，亦当进取亦当歌。</p>
+<p>自我之像，犹在镜中。</p>
 </blockquote>
-<h2 id="前言">前言</h2>
+<h2 id="壹-前言">壹 前言</h2>
 <p>​
-OO第一单元的迭代已然落下帷幕，余下的是对此的总结与反思。本单元的学习主题是【<strong>表达式展开与化简</strong>】，三次作业迭代让我更熟悉了用类管理对象，也提升了模块化的设计能力。作业内容包括：<strong>多项式展开、三角函数、递推函数、普通函数与求导因子</strong>。</p>
-<p>​
-对于快节奏生活当下的我们，总结与反思往往是不可多得的，众人像脱缰野马奔驰，却少有回望来时路的时候。因此我将借此机会，对我的OO学习生活做一次全面的回顾。:D</p>
-<h2 id="程序结构回顾">程序结构回顾</h2>
-<p>​
-迭代作业初始时，参考了OO加油站与往年博客的架构，将整体流程解耦分成三个部分，即<strong>预处理、表达式解析、表达式展开与输出</strong>。在迭代过程中，第二次作业在预处理部分添加<strong>函数解析</strong>，表达式解析与展开添加<strong>三角因子处理</strong>，增添了一些相应的<strong>输出优化</strong>；第三次作业在第二次作业的基础大幅重构<strong>函数解析与替换</strong>（详见BUG反思），增添了<strong>求导因子</strong>。迭代过程整体保证了一定的架构，没有出现很大的结构问题。</p>
-<p>​ 请看<strong>类图</strong>：</p>
-<figure>
-<img src="hw3UML.svg" alt="hw3UML" />
-<figcaption aria-hidden="true">hw3UML</figcaption>
-</figure>
-<p>在<strong>输入预处理</strong>部分，我们分别对<strong>目标字符串</strong>与<strong>函数群</strong>进行处理：</p>
-<ul>
-<li><p><code>Main</code>：</p>
-<p>程序的主入口，负责调用<code>Processor</code>与<code>FuncSolver</code>进行预处理，然后通过静态方法
-<strong><em>getString</em></strong>进入表达式展开与输出环节。</p></li>
-<li><p><code>Processor</code>：</p>
-<p>负责化简表达式的方法类。在字符串层面化简表达式，化简效果有清除空白符、去除多余负号等。</p></li>
-<li><p><code>FuncSolver</code>：本意是负责解析函数的方法类，在第三次作业前重构时，为了复用此类解析普通函数，为其添加三个属性：<strong>函数名</strong>，<strong>函数序号与函数表达式的键值对</strong>，<strong>函数形参</strong>。</p></li>
-</ul>
-<p>在<strong>表达式解析</strong>部分包括<strong>文法解析</strong>与<strong>词法解析</strong>：</p>
-<ul>
-<li><p><code>Lexer</code>：</p>
-<p>负责文法解析，借鉴第一次上机的写法，将字符串按照<strong><em>token</em></strong>的方式解析。</p></li>
-<li><p><code>Parser</code>：</p>
-<p>负责语法解析，依赖于文法解析，对不同的<strong><em>token</em></strong>进行不同的解析，运用【<strong>递归下降</strong>】的思想，构建<code>Expr</code>类的目标表达式。</p></li>
-</ul>
-<p>在<strong>表达式展开与化简</strong>部分，主体任务便是将<strong><em>expr</em>
-转化为<em>poly</em></strong>:</p>
-<ul>
-<li><p><code>Expr</code>、<code>Term</code>与<code>Factor</code>：</p>
-<p>分别代表着<strong>语法树</strong>的三个层次，<code>Expr</code>由<code>Term</code>组成，<code>Term</code>又由<code>Factor</code>组成，而其中<code>Factor</code>仅是一个<strong>接口</strong>，这是出于<strong>归一化多类型因子</strong>的考虑。</p></li>
-<li><p><code>DefFac</code>、<code>PowFac</code>、<code>DerivFac</code>、<code>TriFunc</code>、<code>NormFunc</code>与<code>ConstFac</code>：</p>
-<p>六种实现<code>Factor</code>接口的因子类型。</p></li>
-<li><p><code>Poly</code>、<code>Fixo</code>、<code>Mono</code>与<code>Trigo</code>：</p>
-<p>是<strong>多项式</strong>的组成类。在多项式输出的时候，已经不存在求导因子、自定义函数，因此<strong>多项式</strong><code>Poly</code>的形式可以由数个<strong>混合积</strong><code>Fixo</code>相加组成，而<strong>混合积</strong><code>Fixo</code>由一个<strong>单项式</strong><code>Mono</code>与数个<strong>三角式</strong><code>Trigo</code>相乘得到。形式化表达可用公式表示如下：</p></li>
-</ul>
-<p><span class="math display">\[
-poly = \sum_{i = 1}^{n} fixo_i
-\]</span></p>
-<p><span class="math display">\[
-fixo = coef * mono * \prod_{i=1}^{n}trigo_i
-\]</span></p>
-<p><span class="math display">\[
-mono = x^{exp}
-\]</span></p>
-<p><span class="math display">\[
-trigo = (\sin {factor})^{exp} or (\cos {factor})^{exp}
-\]</span></p>
-<ul>
-<li><p><code>Optimizer</code>：</p>
-<p>接受<code>Poly</code>的
-<strong><em>toString</em></strong>方法得到的字符串为输入，最后完成一次字符串层面的优化。</p></li>
-</ul>
-<h2 id="项目度量分析">项目度量分析</h2>
-<figure>
-<img src="Class_metrics.png" alt="Class_metrics" />
-<figcaption aria-hidden="true">Class_metrics</figcaption>
-</figure>
-<p>​
-上图是有关程序中所有类的度量，其中有3-4个类的整体<strong>复杂度偏高</strong>，难以维护，本人确实也在后期调整<code>Main</code>时感到有些困难，作为一个程序的主类，下次作业我会格外注意尽量降低主类的复杂度。</p>
-<figure>
-<img src="Method_metrics.png" alt="Method_metrics" />
-<figcaption aria-hidden="true">Method_metrics</figcaption>
-</figure>
-<p>​
-上图是方法层面的复杂度部分指标，分别为<strong>认知复杂度、本质复杂度、设计复杂度与圈复杂度</strong>，主要截出了复杂度较高的方法做本次总结的参考：</p>
-<ul>
-<li><p>其中<strong><em>parseFactor</em></strong>一直是我想要拆分的方法之一，按照因子类型不同细化为<strong><em>parseXxx</em></strong>方法，如此即可保持更高的可读性与逻辑性。</p></li>
-<li><p>下面的<strong><em>isSame</em></strong>和<strong><em>isSimilar</em></strong>都是极其【炸裂】的存在，自己回头看一遍很难不小，还依稀记得当时写的时候自己绕了半天硬要挑战自己的逻辑。现在一看认知复杂度20+，老实了。在这里放一段我的代码结构，仅供充当反例：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isSame</span><span class="params">(Fixo other)</span> &#123;</span><br><span class="line">	<span class="keyword">if</span>(...) &#123;<span class="keyword">return</span> <span class="literal">false</span>;&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(...) &#123;<span class="keyword">return</span> <span class="literal">false</span>;&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(...) &#123;<span class="keyword">return</span> <span class="literal">false</span>;&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">if</span>(...)&#123;<span class="keyword">return</span> <span class="literal">false</span>;&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">for</span>(...)&#123;</span><br><span class="line">				<span class="comment">// ...</span></span><br><span class="line">				<span class="keyword">for</span>(...)&#123;</span><br><span class="line">					<span class="keyword">if</span>(...)&#123;</span><br><span class="line">						<span class="comment">// ...</span></span><br><span class="line">						<span class="keyword">break</span>;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (...) &#123;<span class="keyword">return</span> <span class="literal">false</span>;&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><del>在AI大人的指引下</del>，我顺利将这两个相似的方法重构拆分成三个方法，更加清晰地展现了这段代码本身的逻辑。给自己也留下一个深刻的教训，不要只顾写代码，而不思考代码本身的可读性与思考量，写完debug的还是自己，只会徒增烦恼。</p></li>
-<li><p>最后的<strong><em>multiply</em></strong>方法也是同理，同样是<code>if</code>和<code>for</code>语句”错落有致“，严重影响了可读性的同时，耦合度和复杂度也高居不下，并不符合我们模块化设计的初衷，也希望自己能在后续的学习中谨记这次关于复杂度的反思，不要在debug与重构时给自己上难度。</p></li>
-</ul>
-<h2 id="架构设计体验">架构设计体验</h2>
-<ul>
-<li><p>在第一次作业中，我感觉难度适中，可能是因为第一次上机的代码框架给人很大的启发与帮助，主要难点位于<strong>递归下降</strong>的解析中，给人一种<strong>【纸上得来终觉浅，绝知此事要躬行】</strong>的感受，听了无数遍递归下降的思想，不如亲手编写出一次<code>Parser</code>收获大。此外，关于表达式的展开，仔细琢磨了<strong>hyggge</strong>学长原创（大抵如此？）的<strong>Mono&amp;Poly</strong>实现方法后，感觉吃透了就写得很快。</p></li>
-<li><p>在第二次作业中，在刚拿上迭代要求时感觉不会很难，但是做起来着实很难，本着尽善尽美的想法，我钻进了优化的牛角尖，在周四晚上还在优化三角函数的输出，周五推翻之前的写法重来，周六开始写递推函数，现在回头想想属实不应该，应该先着眼全局，再尽善尽美。</p></li>
-</ul>
-<p>​
-噩耗如约而至，第二次作业强测漏洞百出。最大的bug莫过于没有注意到递推函数形参顺序不固定，形如下面的递推函数，我会直接报错。</p>
-<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f&#123;0&#125;(y,x) = ...</span><br><span class="line">f&#123;1&#125;(y,x) = ...</span><br><span class="line">f&#123;n&#125;(y,x) = ... + ... + ... </span><br></pre></td></tr></table></figure>
-<p>​
-很难去归咎于时间匆忙还是粗心大意，反正事已至此，当时只想老老实实修bug。后续在反复推敲后，感觉用<strong>ArrayList</strong>存储形参是目前最好的方案，但还是无法干净利落地修复bug。外加第三次作业的要求问世，面对普通函数的迭代工作，我在周四才开始决定：<strong>重构我的<code>FuncSolver</code>类</strong>。</p>
-<p>​
-我将<code>FuncSolver</code>视作装载每个函数的<strong>容器</strong>，属性与构造方法如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">FuncSolver</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> HashMap&lt;String,Expr&gt; funcs; <span class="comment">// 装载序号与表达式的键值对</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> ArrayList&lt;String&gt; params; <span class="comment">// 形参有序列表</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">FuncSolver</span><span class="params">(ArrayList&lt;String&gt; funcDefs)</span> &#123;</span><br><span class="line">        params = matchParams(funcDefs); <span class="comment">// 匹配参数</span></span><br><span class="line">        funcs = parseDefFunc(funcDefs); <span class="comment">// 解析表达式</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>​
-这一部分我且称之为函数的解析。此后便是解析表达式，随后对表达式进行函数的替换。</p>
-<p>​
-这里的<strong>函数替换</strong>涉及到一个类似于递归下降的易错点。当我们顺着语法树找到一个又一个函数后，我们需要保证每一个函数都要被替换到位，即<strong>替换到最底层每一个因子</strong>。我最初的实现是在<code>Term</code>的<strong><em>alter</em></strong>方法中列举可能出现的因子，后来想想这无疑是个很糟糕的设计，不仅破坏了<code>Factor</code>接口归一化的统一管理，而且容易遗漏特殊情况，例如函数内部嵌套函数，三角内部嵌套函数。因此我也顺便重构了这里的逻辑，让<strong><em>alter</em></strong>作为<strong>接口统一的方法</strong>，在每个具体的<code>Factor</code>类中逐一实现。</p>
-<p>​
-在<strong><em>alter</em></strong>方法的内部，我又调用了另一个<strong><em>assign</em></strong>方法。意在二者各司其职，<strong><em>alter</em></strong>作为<strong>替换</strong>的主方法，它的职责其实是<strong>遍历查找</strong>，在语法树中一丝不苟地”追杀“需要被替换的函数，而<strong><em>assign</em></strong>方法的职责则是当<strong><em>alter</em></strong>方法锁定目标后，进行<strong>赋值替换</strong>。这个逻辑也在我后续<strong>处理求导因子</strong>再一次使用。</p>
-<p>​
-在函数替换结束后，应将表达式转化成多项式。在多项式的构建中，好像大部分人选择重构<code>Mono</code>，而我选择<strong>保留</strong><code>Mono</code>的代码，让它符合单词本意。代价便是新建两个类<code>Fixo</code>与<code>Trigo</code>，在上文已做介绍，这里不再赘述了。好处便是自己看起来<strong>逻辑组成清晰</strong>、<strong>便于迭代与修改</strong>，弊端也许就在于会导致<strong>代码量变大</strong>、<strong>深度变深</strong>。</p>
-<p>​
-在第三周的周五早晨——或者中午，我完成了第二次作业的bug修复与重构。</p>
-<ul>
-<li>在当周周五晚上，我才开始第三次作业的迭代。但重构第二次作业的时候已经为迭代做了一定的考虑，普通函数也和递推函数一同被储存在了<code>FuncSolver</code>当中，几乎不需要做太大的改变，只需要为<code>FuncSolver</code>类添加属性<strong>funcName</strong>与对应的<strong>get</strong>方法，即可完成<code>FuncSolver</code>的迭代。在<code>Main</code>中重构出一个静态方法，将预处理与后续操作分离开，需要完成的迭代是<strong>逆序</strong>将函数依次替换，此处<strong>逆序</strong>是指<strong>与定义顺序相反</strong>，否则会在<strong>函数嵌套定义</strong>的情况下出现替换不彻底的问题。</li>
-</ul>
-<p>​
-第三次作业迭代的另一部分便是<strong>处理求导因子</strong>，如上所述，仍然是采取一个<strong>”查找+处理“</strong>分离的逻辑，分别是<strong><em>derivative</em></strong>方法与<strong><em>derive</em></strong>方法，这里同样需要做到将求导因子替换干净，以免影响后续展开以及输出。</p>
-<p>​
-最后，第三次作业迭代在24小时内被速通了，但我脑海里仍是hw2重构的影子，希望自己以后不要犯这样的错误，在迭代作业中<strong>保持谨慎、长远考虑</strong>。</p>
-<h2 id="迭代情景设想">迭代情景设想</h2>
-<p>​ 设想<strong>迭代情景</strong>如下：</p>
-<ul>
-<li><p>新增其他类型的函数，如分段函数。</p>
-<p>可扩展性：只需在<code>FuncSolver</code>中针对新的函数开发新的方法，或是将<code>FuncSolver</code>设计成类似<code>Factor</code>的接口，统一管理或替换不同的函数。</p></li>
-<li><p>新增其他变量字母，如<strong>‘y’</strong>。</p></li>
-</ul>
-<p>​
-可扩展性：可以在解析时让token匹配x或y，在<code>PowFac</code>与<code>Mono</code>中增添属性<strong>Variable</strong>即可完成大致的迭代。</p>
-<h2 id="程序bug分析">程序bug分析</h2>
-<ul>
-<li>在迭代原因中提及过的bug，因为审题不到位致使数据<strong>形参顺序颠倒</strong>导致程序中止。</li>
-</ul>
-<p>解决方案：重构了<code>FuncSolver</code></p>
-<ul>
-<li><p>在判断<code>poly</code>或<code>fixo</code>是否相等或是否为同类项时，我使用了<strong>”带值对比法“</strong>，即将其中自变量的值代换为随机数，进行100次计算判断是否相等。导致两个bug：</p>
-<ul>
-<li>计算太多次数，导致程序<strong>CTLE</strong></li>
-</ul>
-<p>解决方案A（缓兵之计）：将计算次数改为10次，解决了超时bug（实则<strong>治标不治本</strong>）</p>
-<ul>
-<li>当强测中出现类似于<code>x^4096</code>的式子，我代入的x往往会超出<strong>double</strong>范围，被自动变为<code>Infinity</code></li>
-</ul>
-<p>解决方案B（未果）：取对数（难以实现且遇到值为0的表达式会出现负的<code>Inifinity</code>）</p>
-<p>解决方案C（最终方案）：<strong>遍历查找</strong>其中每个元素（单项式，三角式），虽然修复了bug，但是直接导致了上文所述的复杂度超标的问题，相应的策略则是对此方法进行<strong>拆分与重构</strong>，最终降低了复杂度，也完成了bug修复。</p></li>
-<li><p>在出现形似<code>dx(sin(dx(x)))</code>此类，求导因子隔一层三角函数，层层嵌套时，会出现处理不彻底的问题，在第三次强测中喜提一个<strong>RUNTIME_ERROR</strong>。</p></li>
-</ul>
-<p>解决方法：对于所有内部仍有可能有多层语法树的因子进行更深层次的<strong><em>derivative</em></strong>处理。</p>
-<p>例如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// in TriFunc</span></span><br><span class="line"><span class="type">TriFunc</span> <span class="variable">triFunc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">TriFunc</span>(TriType.SIN, <span class="built_in">this</span>.term, <span class="number">1</span>); <span class="comment">// previous</span></span><br><span class="line"><span class="type">TriFunc</span> <span class="variable">triFunc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">TriFunc</span>(TriType.SIN, <span class="built_in">this</span>.term.derivate(), <span class="number">1</span>); <span class="comment">// repaired</span></span><br><span class="line"><span class="comment">// in  DerivFunc</span></span><br><span class="line"><span class="keyword">public</span> Factor <span class="title function_">deriviate</span><span class="params">()</span> &#123;<span class="keyword">return</span> expr;&#125; <span class="comment">// previous</span></span><br><span class="line"><span class="keyword">public</span> Factor <span class="title function_">deriviate</span><span class="params">()</span> &#123;<span class="keyword">return</span> expr.derive();&#125; <span class="comment">// repaired</span></span><br></pre></td></tr></table></figure>
-<p>对于我个人的bug而言，基本都是在修bug之后，复杂度会得以不同程度的提升，有的只是小范围的，有的则需要通过将几个方法解耦，哪怕会出现更多的方法，但只要符合模块化设计的理念就不算是坏的重构。</p>
-<h2 id="互刀策略分析">互刀策略分析</h2>
-<p>​ 在第一次作业中借用了学长的评测机，属于是在舒适圈中躺了一周。</p>
-<p>​
-第二次作业往后，没有了评测机，也没有时间动手搭自己的数据生成器，只写了一个sympy脚本进行对拍，那这时就要考虑数据构造的问题了。相比手握核弹般的评测机的同学，构造数据必然是效率低下，那就需要多多动脑子提高一定的效率。首先是可以关注题目要求细节与易错点，比如<code>sin((x-x))^0</code>，将他们结合在几组数据当中，不出意外便有一些人出现了bug。但是归根结底还是太过原始了，后期有时间一定要搭建一个自己的全套评测机~</p>
-<h2 id="优化化简分析">优化化简分析</h2>
-<p>​
-第二周在最需要优化的时间我在大幅进行重构，优化化简几乎没有进行，只完成了同类项的合并、sin(0)/cos(0)的简化以及多层括号的去除。</p>
-<p>​
-同类项的合并基于判断多项式是否相同或相似的方法，三角函数的化简在生成时就可以进行特判简化，冗余括号去除在<code>Trigo</code>中进行了特判。</p>
-<h2 id="心得体会分享">心得体会分享</h2>
-<p>​
-以周为单位的OO学习周期让人只得<strong>苦中作乐</strong>，不断地重复写代码，修代码的工作，周六晚上交完最后一版，周天早上两眼一睁就是互刀（），总体感觉还是很有收获，收获的来源主要是<strong>犯错的经历</strong>与<strong>误入的歧途</strong>，如果没有第二周的误入歧途，我恐怕很难获得如此深刻的<strong>重构经历</strong>与沉痛的<strong>总结反思</strong>，当然正所谓有失必有得，我也在这段日子失去了优化化简与搭评测机的机会。但是还是庆幸自己做出了迷途知返的决定，不是在史山上疯狂加码，而是推倒重来。希望自己在今后的迭代工作中，不只是OO，更包括生活中的各种小事，都要在每次迭代时从宏观的视角出发，<strong>保持慎重</strong>的同时也<strong>满怀勇气</strong>。</p>
-<h2 id="未来方向建议">未来方向建议</h2>
-<p>​
-将几次迭代工作的任务量尽量平均些许，减少一周内出现”业务高峰“的情况吧。此外希望老师在理论课上适当讲解<strong>评测机搭建</strong>的实现？对于大部分人，这件事情本身就耗时耗力，更不必谈对于大部分还处于”万事开头难“阶段的同学，望课程组考虑~</p>
-<h2 id="后记">后记</h2>
+这周<strong>自律饮食、规律锻炼</strong>很成功！虽然学习时间减少了，但还是希望保持这样的生活节奏！</p>
+<p>​ 事不宜迟！下面请看近两周的<strong>Lab1实验总结</strong>吧！</p>
+<h2 id="贰-正文">贰 正文</h2>
+<h3 id="一-思考题汇总">一 思考题汇总</h3>
+<h4 id="thinking1.1">Thinking1.1</h4>
 <blockquote>
-<p>愿我们永远满怀热忱，拥有坚持向前的永恒毅力，也不曾缺乏从头再来的勇气。</p>
+<p>在阅读 附录中的编译链接详解 以及本章内容后，尝试分别使用实验环境中
+的原生 x86 工具链（gcc、ld、readelf、objdump 等）和 MIPS
+交叉编译工具链（带有 mips-linux-gnu- 前缀，如
+mips-linux-gnu-gcc、mips-linux-gnu-ld），重复其中的编
+译和解析过程，观察相应的结果，并解释其中向 objdump
+传入的参数的含义。</p>
 </blockquote>
+<p>​ <code>objdump</code>使用格式：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">objdump -DS &lt;TODO.o&gt; &gt; &lt;output&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><strong><code>-D</code></strong>:</p>
+<p><strong>--disassemble-all</strong> Like -d, but disassemble the
+contents of all non-empty non-bss sections, not just those expected to
+contain instructions. -j may be used to select specific
+sections.</p></li>
+</ul>
+<p>​ <code>-D</code>提供了反汇编所有 section的功能。</p>
+<ul>
+<li><p><strong><code>-S</code></strong>:</p>
+<p><strong>--source</strong> Display source code intermixed with
+disassembly, if possible. Implies -d.</p></li>
+</ul>
+<p>​
+<code>-S</code>在可能的情况下，显示源代码与反汇编代码的混合视图，并且隐含启用<code>-d</code>选项，搜索当前目录或调试信息中的路径来访问源文件代码。</p>
+<p>​ 下面复刻<strong>“A.3 编译与链接详解”</strong>的操作：</p>
+<ol type="1">
+<li><p>首先我们有一个简单的C语言程序<code>helloworld.c</code>：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Hello World!\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>对源代码只预处理不编译：<code>gcc -E helloworld.c &gt; preprocess</code>:</p>
+<p>输出较长，下述节选摘自指导书：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 由于原输出太长，这里只能留下很少很少的一部分。 */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">unsigned</span> <span class="type">char</span> __u_char;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">unsigned</span> <span class="type">short</span> <span class="type">int</span> __u_short;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">unsigned</span> <span class="type">int</span> __u_int;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">unsigned</span> <span class="type">long</span> <span class="type">int</span> __u_long;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">signed</span> <span class="type">char</span> <span class="type">__int8_t</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">unsigned</span> <span class="type">char</span> <span class="type">__uint8_t</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">signed</span> <span class="type">short</span> <span class="type">int</span> <span class="type">__int16_t</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">unsigned</span> <span class="type">short</span> <span class="type">int</span> <span class="type">__uint16_t</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">signed</span> <span class="type">int</span> <span class="type">__int32_t</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">unsigned</span> <span class="type">int</span> <span class="type">__uint32_t</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">signed</span> <span class="type">long</span> <span class="type">int</span> <span class="type">__int64_t</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">unsigned</span> <span class="type">long</span> <span class="type">int</span> <span class="type">__uint64_t</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="class"><span class="keyword">struct</span> _<span class="title">IO_FILE</span> *<span class="title">stdin</span>;</span></span><br><span class="line"><span class="keyword">extern</span> <span class="class"><span class="keyword">struct</span> _<span class="title">IO_FILE</span> *<span class="title">stdout</span>;</span></span><br><span class="line"><span class="keyword">extern</span> <span class="class"><span class="keyword">struct</span> _<span class="title">IO_FILE</span> *<span class="title">stderr</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="type">int</span> <span class="title function_">printf</span> <span class="params">(<span class="type">const</span> <span class="type">char</span> *__restrict __format, ...)</span>;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello World!\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>对源代码编译而不链接，这里自动会生成同名.o目标文件，即<code>helloworld.o</code>，然后对其进行反汇编并重定向输出。操作代码如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gcc -c helloworld.c</span><br><span class="line">objdump -DS helloworld.o &gt; tmptext.txt</span><br></pre></td></tr></table></figure>
+<p>此时在<code>tmptext.txt</code>中生成了反汇编结果，我的main函数部分结果如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">0000000000000000 &lt;main&gt;:</span><br><span class="line">   0:   f3 0f 1e fa             endbr64</span><br><span class="line">   4:   55                      push   %rbp</span><br><span class="line">   5:   48 89 e5                mov    %rsp,%rbp</span><br><span class="line">   8:   48 8d 05 00 00 00 00    lea    0x0(%rip),%rax        # f &lt;main+0xf&gt;</span><br><span class="line">   f:   48 89 c7                mov    %rax,%rdi</span><br><span class="line">  12:   e8 00 00 00 00          call   17 &lt;main+0x17&gt;</span><br><span class="line">  17:   b8 00 00 00 00          mov    $0x0,%eax</span><br><span class="line">  1c:   5d                      pop    %rbp</span><br><span class="line">  1d:   c3                      ret</span><br></pre></td></tr></table></figure>
+<p>在指导书的引导下，我们发现在<code>call</code>中<code>printf</code>的地址仍然为<code>00_00_00_00</code>，即截止链接以前，<code>printf</code>仍然不在我们的程序当中，最后我们允许gcc正常编译出可执行文件，再用<code>objdump</code>查看反汇编结果。</p>
+<p>操作代码如下：</p></li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gcc -o helloworld helloworld.c</span><br><span class="line">objdump -DS helloworld.o &gt; tmptext.txt</span><br></pre></td></tr></table></figure>
+<p>​ 截取新的反汇编结果中的main函数部分：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">0000000000001149 &lt;main&gt;:</span><br><span class="line">     1149:       f3 0f 1e fa             endbr64</span><br><span class="line">     114d:       55                      push   %rbp</span><br><span class="line">     114e:       48 89 e5                mov    %rsp,%rbp</span><br><span class="line">     1151:       48 8d 05 ac 0e 00 00    lea    0xeac(%rip),%rax        # 2004 &lt;_IO_stdin_used+0x4&gt;</span><br><span class="line">     1158:       48 89 c7                mov    %rax,%rdi</span><br><span class="line">     115b:       e8 f0 fe ff ff          call   1050 &lt;puts@plt&gt;</span><br><span class="line">     1160:       b8 00 00 00 00          mov    $0x0,%eax</span><br><span class="line">     1165:       5d                      pop    %rbp</span><br><span class="line">     1166:       c3                      ret</span><br></pre></td></tr></table></figure>
+<p>​
+自此，我们的call指令的地址不再为0，就在被标记为<code>&lt;puts@plt&gt;</code>的位置上，在我的跳板机中位于<code>f0 fe ff ff</code>。由此我们可以知道，作为一个被大量使用的函数<code>printf</code>，它应该是早就<strong>被编译成了二进制的形式</strong>，只是还没有与目标程序进行链接，而在编译的最后我们完成链接，<code>printf</code>的实现便与目标程序结合于一体，形成最终的<strong>可执行文件</strong>。</p>
+<h3 id="thinking1.2">Thinking1.2</h3>
+<blockquote>
+<p>思考下述问题：</p>
+<p>• 尝试使用我们编写的 readelf 程序，解析之前在 target 目录下生成的内核
+ELF 文 件。</p>
+<p>• 也许你会发现我们编写的 readelf 程序是不能解析 readelf
+文件本身的，而我们刚 才介绍的系统工具 readelf
+则可以解析，这是为什么呢？（提示：尝试使用 readelf -h，并阅读
+tools/readelf 目录下的 Makefile，观察 readelf 与 hello 的不同）</p>
+</blockquote>
+<ul>
+<li><p>先在<code>./tools/readelf/</code>中运行make指令，然后在实验主目录下运行<code>./tools/readelf/readelf ./target/mos</code>指令，得到以下输出：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">0</span>:<span class="number">0</span>x0</span><br><span class="line"><span class="attribute">1</span>:<span class="number">0</span>x80020000</span><br><span class="line"><span class="attribute">2</span>:<span class="number">0</span>x80021900</span><br><span class="line"><span class="attribute">3</span>:<span class="number">0</span>x80021918</span><br><span class="line"><span class="attribute">4</span>:<span class="number">0</span>x80021930</span><br><span class="line"><span class="attribute">5</span>:<span class="number">0</span>x0</span><br><span class="line"><span class="attribute">6</span>:<span class="number">0</span>x0</span><br><span class="line"><span class="attribute">7</span>:<span class="number">0</span>x0</span><br><span class="line"><span class="attribute">8</span>:<span class="number">0</span>x0</span><br><span class="line"><span class="attribute">9</span>:<span class="number">0</span>x0</span><br><span class="line"><span class="attribute">10</span>:<span class="number">0</span>x0</span><br><span class="line"><span class="attribute">11</span>:<span class="number">0</span>x0</span><br><span class="line"><span class="attribute">12</span>:<span class="number">0</span>x0</span><br><span class="line"><span class="attribute">13</span>:<span class="number">0</span>x0</span><br><span class="line"><span class="attribute">14</span>:<span class="number">0</span>x0</span><br><span class="line"><span class="attribute">15</span>:<span class="number">0</span>x0</span><br><span class="line"><span class="attribute">16</span>:<span class="number">0</span>x0</span><br><span class="line"><span class="attribute">17</span>:<span class="number">0</span>x0</span><br><span class="line"><span class="attribute">18</span>:<span class="number">0</span>x0</span><br></pre></td></tr></table></figure>
+<p>我们利用题目提到的hint：使用<code>readelf -h</code>来阅读相关信息：</p>
+<figure>
+<img src="readelf_mos.png" alt="readelf mos" />
+<figcaption aria-hidden="true">readelf mos</figcaption>
+</figure>
+<p>可以看到类别是<strong>ELF32</strong>，数据是小端序的。</p></li>
+<li><p>此外我们发现题目提示中的hello也是相同的效果，可以用readelf操作获得输出，对其使用<code>readelf -h</code>后获得输出如下：</p>
+<figure>
+<img src="readelf_hello.png" alt="readelf_hello" />
+<figcaption aria-hidden="true">readelf_hello</figcaption>
+</figure>
+<p>可以看到类别同样是<strong>ELF32</strong>，数据是小端序的。</p></li>
+<li><p>下面我们执行命令<code>./readelf readelf.o</code>发现并没有输出，再执行命令<code>readelf -h readelf.o</code>，结果如下：</p>
+<figure>
+<img src="readelf_readelf.png" alt="readelf_readelf" />
+<figcaption aria-hidden="true">readelf_readelf</figcaption>
+</figure>
+<p>最明显的区别出现了！<strong>readelf.o</strong>的类别是<strong>ELF64</strong>！但是我们清楚地明白，<strong>ELF32</strong>是我们贯穿始终的唯一数据结构，自然是无法解析类别为<strong>ELF64</strong>的文件了。</p>
+<h3 id="thinking1.3">Thinking1.3</h3>
+<blockquote>
+<p>在理论课上我们了解到，MIPS 体系结构上电时，启动入口地址为 0xBFC00000
+（其实启动入口地址是根据具体型号而定的，由硬件逻辑确定，也有可能不是这个地址，但
+一定是一个确定的地址），但实验操作系统的内核入口并没有放在上电启动地址，而是按照
+内存布局图放置。思考为什么这样放置内核还能保证内核入口被正确跳转到？
+（提示：思考实验中启动过程的两阶段分别由谁执行。）</p>
+</blockquote>
+<p>​
+我们在理论课上进行了学习，并将<strong>启动过程</strong>分为了两个阶段：</p>
+<ol type="1">
+<li><p>完成硬件初始化，加载并跳转到
+<strong>Bootloader</strong>。</p></li>
+<li><p><strong>Bootloader</strong>
+根据内核链接脚本的地址布局，加载内核到指定物理地址，并跳转至其入口。</p>
+<p>因此，我们可以说，上电的启动入口地址只是CPU执行的起点，对硬件进行初始化，而内核的入口会由<strong>Bootloader</strong>加载后跳转过去。</p></li>
+</ol>
+<h3 id="二-实验难点分析">二 实验难点分析</h3>
+<p>本次实验的核心内容：</p></li>
+<li><p>理解<strong>ELF文件</strong></p></li>
+<li><p><strong>printk</strong>函数实现</p>
+<h4 id="理解elf文件">1 理解ELF文件</h4>
+<p>​ ELF文件 (Executable and Linkable Format) 正是 Unix
+上常用的一种目标文件格式。因此它包含了大致三种文件类型：<strong>可重定位文件</strong>、<strong>可执行文件</strong>与<strong>共享对象文件</strong>。实验的一部分是让我们完善我们的<strong>readelf</strong>文件</p>
+<p>对ELF文件进行解析。</p>
+<figure>
+<img src="ELF.png" alt="ELF structure" />
+<figcaption aria-hidden="true">ELF structure</figcaption>
+</figure>
+<p>​
+这里截取指导书上很简明的一张关于ELF文件结构的图，其中包含五个内容：<strong>ELF头、段头表、段头表的表项、节头表与节头表的表项</strong>。其中段头表与节头表中指向的内容其实是相同的区域，即他们只是ELF文件中2种不一样的<strong>结构视图</strong>，节相关的内容用于<strong>链接可重定位文件</strong>、而段相关的内容是在<strong>运行可运行文件</strong>和<strong>可共享文件</strong>时为加载器提供信息。这里我们采用了32bit的数据结构，在<strong>elf.h</strong>文件中定义了<strong>ELF32</strong>，其中<code>Elf32_Ehdr</code>描述ELF头，<code>Elf32_Shdr</code>描述节(Section)头表，<code>Elf32_Phdr</code>描述段(Segment)头表，又叫做程序(Program)头表，大抵为了区分于节头表，称作<code>Phdr</code>。</p>
+<p>​
+exercise中的一项任务便是实现自己的readelf，根据前面的思考题，我们清楚它只能解析<strong>ELF32</strong>类型的节地址。练习代码如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">void</span> *sh_table;</span><br><span class="line">   Elf32_Half sh_entry_count;</span><br><span class="line">   Elf32_Half sh_entry_size;</span><br><span class="line">   <span class="comment">/* Exercise 1.1: Your code here. (1/2) */</span></span><br><span class="line">   sh_table = (<span class="type">const</span> <span class="type">void</span> *)((<span class="type">const</span> <span class="type">char</span> *)binary + ehdr-&gt;e_shoff); </span><br><span class="line"><span class="comment">// 节头表首项地址</span></span><br><span class="line">   sh_entry_count = ehdr-&gt;e_shnum; <span class="comment">// 节头表项个数</span></span><br><span class="line">   sh_entry_size = ehdr-&gt;e_shentsize; <span class="comment">// 节头表项大小</span></span><br><span class="line">   <span class="comment">// For each section header, output its index and the section address.</span></span><br><span class="line">   <span class="comment">// The index should start from 0.</span></span><br><span class="line">   <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; sh_entry_count; i++) &#123;</span><br><span class="line">         <span class="type">const</span> Elf32_Shdr *shdr;</span><br><span class="line">         <span class="type">unsigned</span> <span class="type">int</span> addr;</span><br><span class="line">         <span class="comment">/* Exercise 1.1: Your code here. (2/2) */</span></span><br><span class="line">         shdr = (<span class="type">const</span> Elf32_Shdr *)((<span class="type">const</span> <span class="type">char</span> *)sh_table + i * sh_entry_size);</span><br><span class="line">         <span class="comment">// shdr = (Elf32_Shdr *)sh_table + i; 即跳到下一项，属同样效果</span></span><br><span class="line">         addr = shdr-&gt;sh_addr;</span><br><span class="line">         <span class="built_in">printf</span>(<span class="string">&quot;%d:0x%x\n&quot;</span>, i, addr);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>​
+最后，只需要将所有节放在一起，我们就可以将他们链接起来。那么如何将他们放在一起呢，指导书举了一个简单的例子：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1 SECTIONS</span><br><span class="line">2 &#123;</span><br><span class="line">3 . = 0x10000; # 将定位计数器放在0x10000</span><br><span class="line">4 .text : &#123; *(.text) &#125; # 把所有的.text放在.的位置</span><br><span class="line">5 . = 0x8000000; # 指定新的地址，在此处继续放置</span><br><span class="line">6 .data : &#123; *(.data) &#125; # 同上.text，放在一起后，自动跳转到最新的位置，继续放置</span><br><span class="line">7 .bss : &#123; *(.bss) &#125; # 同上.text</span><br><span class="line">8 &#125;</span><br></pre></td></tr></table></figure>
+<p>​ 以上也是我们在<code>kernel.lds</code>中做的链接工作。</p></li>
+</ul>
+<h4 id="printk函数的实现">2 <strong>printk</strong>函数的实现</h4>
+<p>​
+经过了OS这段时间的学习，我们明白了在构建操作系统的时候，是没有C语言标准库支持的，而我们在kern文件夹中看到的<code>printk.c</code>文件中，其实并没有直接的输出，而是传参利用了<code>vprintfmt</code>，其中运用了一个新的知识点：<strong>变长参数</strong>。在完成exercise之前我一直好奇于为什么<code>vprintfmt</code>中的va_list没有指导书所谓必须要有的<code>va_start(va_list ap, lastarg)</code>和<code>va_end(va_list ap)</code>，原来是在<code>printk.c</code>中完成了初始化与中止，而<code>vprintfmt</code>只是接收了<code>va_list</code>、<code>fmt</code>字符串、<code>data</code>上下文信息和<code>outputk</code>的函数指针，进行具体的输出工作。其中<code>data</code>还没太理解它的作用，<code>printk</code>传递的<code>data</code>是<strong>NULL</strong>🤔，希望以后能有所了解。</p>
+<p>​
+我们需要完成的任务便是在<code>vprintfmt</code>中解析字符串并处理<strong>占位符</strong>的问题。我们都知道<strong>占位符</strong>都是由<strong>'%'</strong>起手。<del>补全代码的时候，莫名其妙给我一种OOU1写Parser的感受</del>，顺着字符串依次解析，核心逻辑即：遍历遇到<strong>'%'</strong>便直接输出在此之前的所有东西，并开始解析<strong>占位符</strong>，将<strong>对齐、填充、正负</strong>的flag都解析到位后，进入case语句进行输出，遍历到<strong>'\0'</strong>的时候即可结束遍历。对整个<code>vprintfmt</code>的感觉还是非常美妙的~</p>
+<h3 id="三-我的实验体会">三 我的实验体会</h3>
+<p>​
+本次实验刚上手的时候感觉十分的困难，毕竟一下子拿到了如此多的文件，虽然每个文件都不可或缺，但是毕竟不能全部精读一遍，因此跟着指导书的思路，尽可能高效地获取更多的知识，并将他们纳入我的思维体系当中以谋求对操作系统一点点的理解。做之前感觉很难，写实验报告感觉很有收获。大抵就是难者不会，会者不难吧~</p>
+<h2 id="叁-后记">叁 后记</h2>
+<p>​
+笔者在周五晚上极限完成实验总结，但是OOhw5还没写完哈哈哈~<strong>时间紧迫</strong>！各位！下次再见！！！</p>
+<p>​ <strong>(●'◡'●)</strong></p>
 
 
         <hr>
         <!-- Pager -->
         <ul class="pager">
           
-          <li class="previous">
-            <a href="/en/BUAA-OSLab1实验总结/" data-toggle="tooltip" data-placement="top" title="BUAA-OSLab1实验总结">&larr; Previous Post</a>
-          </li>
-          
           
           <li class="next">
-            <a href="/en/BUAA-OSLab0实验总结/" data-toggle="tooltip" data-placement="top" title="BUAA-OSLab0实验总结">Next Post &rarr;</a>
+            <a href="/en/BUAA-OO2025第一单元总结/" data-toggle="tooltip" data-placement="top" title="BUAA_OO2025第一单元总结">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -691,7 +664,7 @@ trigo = (\sin {factor})^{exp} or (\cos {factor})^{exp}
       repo: '',
       owner: '',
       admin: '',
-      id: 'Sat Mar 22 2025 22:44:14 GMT+0800', // Ensure uniqueness and length less than 50
+      id: 'Fri Mar 28 2025 22:12:55 GMT+0800', // Ensure uniqueness and length less than 50
       distractionFreeMode: false, // Facebook-like distraction free mode
       perPage: 10,
       pagerDirection: 'last',
@@ -744,7 +717,7 @@ trigo = (\sin {factor})^{exp} or (\cos {factor})^{exp}
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#buaa_oo2025%E7%AC%AC%E4%B8%80%E5%8D%95%E5%85%83%E6%80%BB%E7%BB%93"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">BUAA_OO2025第一单元总结</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E5%9B%9E%E9%A1%BE"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">程序结构回顾</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%A1%B9%E7%9B%AE%E5%BA%A6%E9%87%8F%E5%88%86%E6%9E%90"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">项目度量分析</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E4%BD%93%E9%AA%8C"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">架构设计体验</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%BF%AD%E4%BB%A3%E6%83%85%E6%99%AF%E8%AE%BE%E6%83%B3"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">迭代情景设想</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%A8%8B%E5%BA%8Fbug%E5%88%86%E6%9E%90"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">程序bug分析</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%92%E5%88%80%E7%AD%96%E7%95%A5%E5%88%86%E6%9E%90"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">互刀策略分析</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BC%98%E5%8C%96%E5%8C%96%E7%AE%80%E5%88%86%E6%9E%90"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">优化化简分析</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A%E5%88%86%E4%BA%AB"><span class="toc-nav-number">1.9.</span> <span class="toc-nav-text">心得体会分享</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%9C%AA%E6%9D%A5%E6%96%B9%E5%90%91%E5%BB%BA%E8%AE%AE"><span class="toc-nav-number">1.10.</span> <span class="toc-nav-text">未来方向建议</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-nav-number">1.11.</span> <span class="toc-nav-text">后记</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#buaa-oslab1%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">BUAA-OSLab1实验总结</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%A3%B9-%E5%89%8D%E8%A8%80"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">壹 前言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%B4%B0-%E6%AD%A3%E6%96%87"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">贰 正文</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%80-%E6%80%9D%E8%80%83%E9%A2%98%E6%B1%87%E6%80%BB"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">一 思考题汇总</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#thinking1.1"><span class="toc-nav-number">1.2.1.1.</span> <span class="toc-nav-text">Thinking1.1</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#thinking1.2"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">Thinking1.2</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#thinking1.3"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">Thinking1.3</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BA%8C-%E5%AE%9E%E9%AA%8C%E9%9A%BE%E7%82%B9%E5%88%86%E6%9E%90"><span class="toc-nav-number">1.2.4.</span> <span class="toc-nav-text">二 实验难点分析</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%90%86%E8%A7%A3elf%E6%96%87%E4%BB%B6"><span class="toc-nav-number">1.2.4.1.</span> <span class="toc-nav-text">1 理解ELF文件</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#printk%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-nav-number">1.2.4.2.</span> <span class="toc-nav-text">2 printk函数的实现</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%89-%E6%88%91%E7%9A%84%E5%AE%9E%E9%AA%8C%E4%BD%93%E4%BC%9A"><span class="toc-nav-number">1.2.5.</span> <span class="toc-nav-text">三 我的实验体会</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%8F%81-%E5%90%8E%E8%AE%B0"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">叁 后记</span></a></li></ol></li></ol>
         
         </div>
       </aside>
@@ -767,7 +740,7 @@ trigo = (\sin {factor})^{exp} or (\cos {factor})^{exp}
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#OO" title="OO">OO</a>
+            <a class="tag" href="/tags/#OS" title="OS">OS</a>
             
           </div>
         </section>
