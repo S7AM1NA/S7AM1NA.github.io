@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://s7am1na.github.io/categories/OS/">
+  <link rel="canonical" href="http://s7am1na.github.io/en/BUAA-OSLab2实验总结/">
   <title>
     
-      just a private corner
+      BUAA-OSLab2实验总结 - just a private corner
     
   </title>
 <meta name="generator" content="Hexo 5.4.2"></head>
@@ -300,29 +300,7 @@
           <!-- LangSelect -->
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      English
-    </span>
-    <select id="lang-select" data-canonical="categories/OS/index.html">
-      
-      
-      <option value="en"  selected >
-        English
-      </option>
-      
-      <option value="cn" >
-        简体中文
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -374,19 +352,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/categories_bg.WebP');
-      --intro-header-background-image-url-post: url('');
-      --intro-header-background-image-url-page: url('/img/header_img/archive_bg3.jpg');
+      --intro-header-background-image-url-post: url('/img/header_img/ghost_knife2.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/ghost_knife2.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/categories_bg.WebP');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg3.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/ghost_knife2.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/ghost_knife2.jpg');
     }
 
     header.intro-header {
-       /*page*/
-        background-image: var(--intro-header-background-image-url-page);
-        /* background-image: url('/img/header_img/archive_bg3.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/header_img/ghost_knife2.jpg'); */
       
     }
 
@@ -404,10 +382,42 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>S7的温柔时空角</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">我们需要说很多话，然后保持沉默.</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#OS" title="OS">OS</a>
+              
+            </div>
+            <h1>BUAA-OSLab2实验总结</h1>
+            <h2 class="subheading">Memory Management so complicated!!</h2>
+            <span class="meta">
+              Posted by S7AM1NA on
+              2025-04-10
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">9</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">2.7k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
           </div>
           
         </div>
@@ -448,324 +458,405 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
-    
+		<!-- Modify by Yu-Hsuan Yen -->
+ <!-- MathJax v3（推荐） -->
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+        <h1 id="buaa-oslab2实验总结">BUAA-OSLab2实验总结</h1>
+<blockquote>
+<p>想全是问题，做才有答案。</p>
+</blockquote>
+<h2 id="壹-前言">壹 前言</h2>
+<p>​
+这两周冯如杯快要截稿啦，笔者的任务还是蛮多的，下周几乎与截稿日期同时还有OS期中考试！压力还是蛮大的，笔者也痛痛快快经历了一场焦虑与崩溃，但是理清思绪又是一次<strong>涅槃</strong>
+，事实就是不用太在乎每个事情的结果，就好比人生一场，路过人间的我们并不用每天在想自己什么时候离开这里，而是尽情享受自己生活的每一天吧。过程远大于结果，<strong>诗酒须趁年华，人生活在当下</strong>！</p>
+<h2 id="贰-正文">贰 正文</h2>
+<h3 id="一-思考题汇总">一 思考题汇总</h3>
+<h4 id="thinking-2.1">Thinking 2.1</h4>
+<blockquote>
+<p>请根据上述说明，回答问题：在编写的 C 程序中，指针变量中存储的地址
+被视为虚拟地址，还是物理地址？MIPS 汇编程序中 lw 和 sw
+指令使用的地址被视为虚拟地址，还是物理地址？</p>
+</blockquote>
+<p>​ 指导书有言：</p>
+<p>​ 在实际程序中，访存、跳转等指令以及用于取指的 PC
+寄存器中的访存目标地址都是虚拟地址。我们编写的 C
+程序中也经常通过对指针解引用来进行访存，其中指针的值也会被视为虚拟地址，经过编译后生成相应的访存指令。</p>
+<p>​ 因此二者都被视为<strong>虚拟地址</strong>。</p>
+<h4 id="thinking-2.2">Thinking 2.2</h4>
+<blockquote>
+<ol type="1">
+<li><p>从可重用性的角度，阐述用宏来实现链表的好处。</p></li>
+<li><p>查看实验环境中的
+/usr/include/sys/queue.h，了解其中单向链表与循环链表的实
+现，比较它们与本实验中使用的双向链表，分析三者在插入与删除操作上的性能差
+异。</p></li>
+</ol>
+</blockquote>
+<ol type="1">
+<li><p>首先，用宏本身就是一个<strong>提高可读性</strong>，<strong>简化代码量</strong>且更加<strong>易于维护</strong>的操作。</p>
+<p>此外，对于Lab2实现的链表而言，许多复杂的宏可以套用简单的宏，大幅提高了可重用性。</p>
+<p>以下图<code>LIST_INSERT_BEFORE</code>举例：</p>
+<figure>
+<img src="LIST_INSERT_BEFORE.png" alt="LIST_INSERT_BEFORE" />
+<figcaption aria-hidden="true">LIST_INSERT_BEFORE</figcaption>
+</figure>
+<p>这里就反复重用了宏<code>LIST_NEXT</code>。</p></li>
+<li><p>比较单向、双向以及循环链表：</p>
+<p>其中循环链表分为单向循环链表与双向循环链表。它们在性能与实现上分别与<strong>单双向链表</strong>相差无几。但是有一点值得注意：请看双向链表与循环链表在实验环境中的定义~</p>
+<figure>
+<img src="双向链表.png" alt="双向链表" />
+<figcaption aria-hidden="true">双向链表</figcaption>
+</figure>
+<figure>
+<img src="循环链表.png" alt="循环链表" />
+<figcaption aria-hidden="true">循环链表</figcaption>
+</figure></li>
+</ol>
+<p>​
+如你所见，实验环境中的双向链表和我们Lab2所用到的链表结构类似，存在一个<code>struct type **le_prev</code>的结构。也就是说双向链表中的prev是前一个结点的next指针的指针。而循环链表则只是单纯存储了两个前后节点的指针。</p>
+<p>​
+言归正传，我们来分析单向链表与双向链表在<strong>插入、删除</strong>过程中性能表现。</p>
+<p>​
+对于任意第i个节点的插入和删除来说，二者的性能大相径庭。实际上，插入与删除是两个时间复杂度为O(1)的操作，而导致性能差异的其实是单向链表在插入与删除前后，需要定位其在链表中的位置，更准确地说，他需要通过<strong>遍历</strong>找到它的前一个节点。既然说到链表结构的遍历了，时间复杂度自然就从O(1)上升到了O(n)，而与此同时，<code>**le_prev</code>已经迅速找到了前节点，时间复杂度仍然保持在O(1)。</p>
+<h4 id="thinking-2.3">Thinking 2.3</h4>
+<blockquote>
+<p>请阅读 include/queue.h 以及 include/pmap.h, 将 Page_list 的结构梳
+理清楚，选择正确的展开结构。</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 选C</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Page_list</span>&#123;</span></span><br><span class="line">   <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">      <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">         <span class="class"><span class="keyword">struct</span> <span class="title">Page</span> *<span class="title">le_next</span>;</span></span><br><span class="line">         <span class="class"><span class="keyword">struct</span> <span class="title">Page</span> **<span class="title">le_prev</span>;</span></span><br><span class="line">      &#125; pp_link;</span><br><span class="line">      u_short pp_ref;</span><br><span class="line">   &#125;* lh_first;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​
+具体来说就是在<code>queue.h</code>中找出最基本的结构体<code>LIST_ENTRY</code>，并根据<code>pmap.h</code>中的typedef与struct的嵌套获取<code>Page</code>，最后需要注意的是<code>LIST_HEAD</code>中构建Page_list的时候，注意结构体内应该是头指针<code>*lh_first</code>。</p>
+<h4 id="thinking-2.4">Thinking 2.4</h4>
+<blockquote>
+<ol type="1">
+<li>请阅读上面有关 TLB
+的描述，从虚拟内存和多进程操作系统的实现角度，阐述 ASID 的必要性。</li>
+<li>请阅读 MIPS 4Kc 文档《MIPS32® 4K™ Processor Core Family Software
+User’s Manual》的 Section 3.3.1 与 Section 3.4，结合 ASID 段的位数，说明
+4Kc 中可容纳 不同的地址空间的最大数量。</li>
+</ol>
+</blockquote>
+<p>​ 指导书有言：</p>
+<blockquote>
+<p>ASID：Address Space IDentifier 用于区分不同的地址空间。 查找 TLB
+表项时，除了需要提供 VPN，还需要提供ASID
+同一虚拟地址在不同的地址空间中通常映射到不同的物理地址。</p>
+</blockquote>
+<p>​
+换言之，操作系统在多进程操作中，每个进程都会有一个专属于自己的虚拟地址空间。为了避免错误或者紊乱的地址映射出现，<code>ASID</code>便是作为唯一的标识符，用来区分不同进程的地址空间。</p>
+<p>​
+<code>ASID</code>段的位数通常有8位，因此对应可以容纳<code>2^8 = 256</code>个不同进程的地址空间。</p>
+<h4 id="thinking-2.5">Thinking 2.5</h4>
+<blockquote>
+<ol type="1">
+<li>tlb_invalidate 和 tlb_out 的调用关系？</li>
+<li>请用一句话概括 tlb_invalidate 的作用。</li>
+<li>逐行解释 tlb_out 中的汇编代码。</li>
+</ol>
+</blockquote>
+<ol type="1">
+<li><p>前者调用后者。</p></li>
+<li><p>通过把页表项清空使之无效。</p></li>
+<li><pre class="assembly"><code>LEAF(tlb_out)
+.set noreorder # 令代码按照顺序执行
+ mfc0    t0, CP0_ENTRYHI # 保存 CP0_ENTRYHI 寄存器至&amp;t0，用于函数结束时恢复
+ mtc0    a0, CP0_ENTRYHI # 修改 CP0_ENTRYHI 寄存器为传入的&amp;a0
+ nop
+ tlbp  # 查找TLB 与 ENTRYHI 寄存器中值匹配的表项，将表项索引存入CP0_INDEX
+ nop
+ mfc0    t1, CP0_INDEX # 取出index
+.set reorder # 允许汇编器重排指令
+ bltz    t1, NO_SUCH_ENTRY # 没有查到该表项
+.set noreorder # tlb表项存在，代码按照顺序执行
+ mtc0    zero, CP0_ENTRYHI # 清空以便于清空表项
+ mtc0    zero, CP0_ENTRYLO0 # 清空以便于清空表项
+ mtc0    zero, CP0_ENTRYLO1 # 清空以便于清空表项
+ nop
+ tlbwi # 以填入0的方式清空该tlb表项
+.set reorder
 
-      <!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
-      <!-- 归档列表 -->
+NO_SUCH_ENTRY:
+ mtc0    t0, CP0_ENTRYHI # 恢复CP0_ENTRYHI，即原来的VPN与ASID
+ j       ra # 返回到调用该函数的tlb_invalidate
+END(tlb_out)</code></pre></li>
+</ol>
+<h4 id="thinking-2.6">Thinking 2.6</h4>
+<blockquote>
+<p>请结合 Lab2 开始的 CPU 访存流程与下图中的 Lab2 用户函数部分，尝试
+将函数调用与 CPU 访存流程对应起来，思考函数调用与 CPU
+访存流程的关系。</p>
+</blockquote>
+<figure>
+<img src="lab2用户函数.png" alt="lab2用户函数" />
+<figcaption aria-hidden="true">lab2用户函数</figcaption>
+</figure>
+<ul>
+<li>函数调用需要开启其独有的进程，如图中，<code>env_init</code>就需要<code>pgdir_walk</code>进行遍历。</li>
+<li><code>env_create</code>中的<code>env_alloc</code>用<code>pgdir_alloc</code>为其分配页。</li>
+<li>另一方面<code>load_icode</code>用于加载进程中的代码，需要用<code>page_alloc</code>和<code>page_insert</code>分配物理页给代码段并建立好地址映射关系。</li>
+<li>当进程结束或内存区域不再使用时，即进入<code>env_destroy</code>使用<code>env_free</code>，需要<code>page_remove</code>从页表移除相关映射，并使用<code>page_decref</code>减少页引用计数。</li>
+</ul>
+<h4 id="thinking-a.1">Thinking A.1</h4>
+<blockquote>
+<p>在现代的 64 位系统中，提供了 64 位的字长，但实际上不是 64 位页式存
+储系统。假设在 64 位系统中采用三级页表机制，页面大小 4KB。由于 64
+位系统中字长为 8B，且页目录也占用一页，因此页目录中有 512
+个页目录项，因此每级页表都需要 9 位。 因此在 64 位系统下，总共需要 3 × 9
++ 12 = 39 位就可以实现三级页表机制，并不需要 64 位。</p>
+<p>现考虑上述 39 位的三级页式存储系统，虚拟地址空间为 512
+GB，若三级页表的基地 址为 PTbase，请计算：</p>
+<ol type="1">
+<li>三级页表页目录的基地址。</li>
+<li>映射到页目录自身的页目录项（自映射）。</li>
+</ol>
+</blockquote>
+<ul>
+<li><p>页面大小4KB，所以页内偏移为12位。</p></li>
+<li><p>一级页表内含有512个二级页表，每个二级页表亦含有512个三级页表。</p></li>
+<li><p>若三级页表的基地址为<code>PTbase</code>，则页号为<code>PTbase &gt;&gt; 12</code></p></li>
+</ul>
+<p>​
+则二级页表的基地址应当是<code>PTbase + (PTbase &gt;&gt; 12) &lt;&lt; 3</code></p>
+<p>​
+则页目录基地址为<code>PTbase + (PTbase &gt;&gt; 12) &lt;&lt; 3 + (((PTbase &gt;&gt; 12) &lt;&lt; 3) &gt;&gt; 12) &lt;&lt; 3</code></p>
+<p>​
+而映射到页目录自身的页目录项地址为<code>PTbase + (PTbase &gt;&gt; 12) &lt;&lt; 3 + (((PTbase &gt;&gt; 12) &lt;&lt; 3) &gt;&gt; 12) &lt;&lt; 3 + (((((PTbase &gt;&gt; 12) &lt;&lt; 3) &gt;&gt; 12) &lt;&lt; 3) &gt;&gt; 12) &lt;&lt; 3</code></p>
+<h3 id="二-难点分析">二 难点分析</h3>
+<p>​
+感觉本次Lab2的难点主要落在了物理内存与虚拟内存的交织。第一遍研究几乎无法将整个逻辑框架整理出来。个人偏爱于思考式学习，想要从目的到结果、从原理到实现地整个理解，整体而言，反复学习的过程，一直都有收获。</p>
+<figure>
+<img src="地址变换机制.png" alt="地址变换机制" />
+<figcaption aria-hidden="true">地址变换机制</figcaption>
+</figure>
+<p>​
+此外，由于项目庞大的特点，对项目整体的把控以及宏定义的使用熟练度也是笔者上机前焦虑的事情。在实存、虚存以及页控制块之间转换的宏更是在exercise中反复出现，让我在<code>.c</code>与<code>.h</code>文件之间反复横跳。例如下面这段代码，<del>想法在脑子中，但是表达出来竟如此之难</del>：</p>
+<figure>
+<img src="code_segment.png" alt="code_segment" />
+<figcaption aria-hidden="true">code_segment</figcaption>
+</figure>
+<h3 id="三-实验体会">三 实验体会</h3>
+<p>​ <strong>难！</strong>🤯</p>
+<p>​
+感觉在深入感受一个前所未有的庞大项目。之前无论是CO还是OO，亦或是手头的科研项目，感觉都没有如此的庞大。顶多需要自己做一些迭代，而OS给人感觉是<strong>置身于崇山之中</strong>，要做的不仅是登顶，还要一览众山小，洞悉我们脚下的所有“地形”，说到底终究不是自己一步一步爬上来的，代码补全的唯一坏处就是给人以不安全感。因此感觉读代码的能力在OS的帮助下也在迅速提高。希望以后有时间还是更多的去思考、主要是要在爬山的路上，观察脚下的每一粒碎石，不徐不疾，拾阶而上吧。😊</p>
+<h2 id="叁-后记">叁 后记</h2>
+<p>​ 最近在关注中美关税大战之事啊，真是闻所未闻😂。</p>
+<p>​
+虽然最近倍感压力，但是感受到了自己作为青年，和国家共同度过一段艰难的日子也是很光荣且令人热血沸腾的事情吧。</p>
+<p>​
+最后，借央视新闻B站官号视频下的热评收尾，与同流时代青年心跳共振、灵魂共鸣，真令人斗志昂扬吧。</p>
+<p>​ 言语终有竟时，我们下次再见！👋</p>
+<blockquote>
+<p>活在这个时代，就得承担这个时代的责任。如果需要这一代必须牺牲，那么希望下一代能够好过一些。没有一身血，但也可以两脚泥，代代如此，自强不息。</p>
+</blockquote>
 
-      
 
-      <!-- 归档列表 -->
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2025">
-          <span class="tag-text">2025</span>
-        </span>
-        <ul>
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
           
-          <li>
-            04-10
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/BUAA-OSLab2实验总结/" style="color: #0085a1">
-              <span>
-                BUAA-OSLab2实验总结
-                
-              </span>
-            </a>
-          </li>
           
-          <li>
-            03-28
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/BUAA-OSLab1实验总结/" style="color: #0085a1">
-              <span>
-                BUAA-OSLab1实验总结
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            03-22
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/BUAA-OO2025第一单元总结/" style="color: #0085a1">
-              <span>
-                BUAA_OO2025第一单元总结
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            03-13
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/BUAA-OSLab0实验总结/" style="color: #0085a1">
-              <span>
-                BUAA-OSLab0实验总结
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            02-23
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/BUAA-OS-Pre/" style="color: #0085a1">
-              <span>
-                BUAA-OS Pre
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            02-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/炉石传说31-4-2补丁相关/" style="color: #0085a1">
-              <span>
-                炉石传说31.4.2补丁相关
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-30
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/新春快乐之温馨小家庭“日记”/" style="color: #0085a1">
-              <span>
-                新春快乐之温馨小家庭“日记”
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-24
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/寒冬假日小记-第一篇文/" style="color: #0085a1">
-              <span>
-                寒冬假日小记&第一篇文
-                
-              </span>
-            </a>
+          <li class="next">
+            <a href="/en/BUAA-OSLab1实验总结/" data-toggle="tooltip" data-placement="top" title="BUAA-OSLab1实验总结">Next Post &rarr;</a>
           </li>
           
         </ul>
-      </div>
-      
-    </div>
-  </div>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+    
+  </p>
 </div>
+<!-- tip end -->
 
+        <!-- tip end -->
+        
 
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Visitors -->
-<h5><a href="/">VISITORS</a></h5>
-
-<div class="widget">
-  <span>
-    Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
-  </span>
-  <br />
-  <span>
-    <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
-  </span>
-</div>
-
-
+        
         <hr>
-    
-        <!-- Featured Tags -->
 
-<section>
-  <h5><a href="/tags/">FEATURED TAGS</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#OO" title="OO" rel="1">OO</a>
-    
-    
-    
-    <a href="/tags/#OS" title="OS" rel="4">OS</a>
-    
-    
-    
-    <a href="/tags/#Life" title="Life" rel="2">Life</a>
-    
-    
-    
-    <a href="/tags/#Game" title="Game" rel="1">Game</a>
-    
-    
-  </div>
-</section>
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
 
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
 
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">ABOUT ME</a></h5>
-  <div class="short-about">
+  <div id="gitalk-container"></div>
 
-    
-    <img id="avatar_pic" src="/img/avatar/avatar3.WebP" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>stay hungry, stay foolish</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/S7AM1NA">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        <!-- RECENT POSTS -->
-
-<h5><a href="/">RECENT POSTS</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../../en/BUAA-OSLab2%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93/">
-      <li>BUAA-OSLab2实验总结</li>
-    </a>
-    
-    <a href="../../en/BUAA-OSLab1%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93/">
-      <li>BUAA-OSLab1实验总结</li>
-    </a>
-    
-    <a href="../../en/BUAA-OO2025%E7%AC%AC%E4%B8%80%E5%8D%95%E5%85%83%E6%80%BB%E7%BB%93/">
-      <li>BUAA_OO2025第一单元总结</li>
-    </a>
-    
-    <a href="../../en/BUAA-OSLab0%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93/">
-      <li>BUAA-OSLab0实验总结</li>
-    </a>
-    
-    <a href="../../en/BUAA-OS-Pre/">
-      <li>BUAA-OS Pre</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Friends Blog -->
-
-<h5><a href="/">FRIENDS</a></h5>
-<ul class="list-inline">
   
-</ul>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Thu Apr 10 2025 10:57:52 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
 
 
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
         <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
     
-        <!-- Archives -->
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#buaa-oslab2%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">BUAA-OSLab2实验总结</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%A3%B9-%E5%89%8D%E8%A8%80"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">壹 前言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%B4%B0-%E6%AD%A3%E6%96%87"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">贰 正文</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%80-%E6%80%9D%E8%80%83%E9%A2%98%E6%B1%87%E6%80%BB"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">一 思考题汇总</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#thinking-2.1"><span class="toc-nav-number">1.2.1.1.</span> <span class="toc-nav-text">Thinking 2.1</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#thinking-2.2"><span class="toc-nav-number">1.2.1.2.</span> <span class="toc-nav-text">Thinking 2.2</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#thinking-2.3"><span class="toc-nav-number">1.2.1.3.</span> <span class="toc-nav-text">Thinking 2.3</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#thinking-2.4"><span class="toc-nav-number">1.2.1.4.</span> <span class="toc-nav-text">Thinking 2.4</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#thinking-2.5"><span class="toc-nav-number">1.2.1.5.</span> <span class="toc-nav-text">Thinking 2.5</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#thinking-2.6"><span class="toc-nav-number">1.2.1.6.</span> <span class="toc-nav-text">Thinking 2.6</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#thinking-a.1"><span class="toc-nav-number">1.2.1.7.</span> <span class="toc-nav-text">Thinking A.1</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BA%8C-%E9%9A%BE%E7%82%B9%E5%88%86%E6%9E%90"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">二 难点分析</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%89-%E5%AE%9E%E9%AA%8C%E4%BD%93%E4%BC%9A"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">三 实验体会</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%8F%81-%E5%90%8E%E8%AE%B0"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">叁 后记</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
 
-<h5><a href="/archives/">archives</a></h5>
-<div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2025/04/">April 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2025/03/">March 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2025/02/">February 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2025/01/">January 2025</a><span class="archive-list-count">2</span></li></ul>
-</div>
 
 
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#OS" title="OS">OS</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
         <hr>
-    
-        <!-- Categories -->
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
 
-<h5><a href="/categories/">categories</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#OO">
-      <li>OO</li>
-    </a>
-    
-    <a href="/categories/#OS">
-      <li>OS</li>
-    </a>
-    
-    <a href="/categories/#Life">
-      <li>Life</li>
-    </a>
-    
-    <a href="/categories/#Game">
-      <li>Game</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-</div>
-
-
-    
+          
+        </ul>
+        
+      </div>
+    </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
