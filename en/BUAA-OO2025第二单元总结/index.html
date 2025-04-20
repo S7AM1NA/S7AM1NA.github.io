@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://s7am1na.github.io/en/BUAA-OSLab2实验总结/">
+  <link rel="canonical" href="http://s7am1na.github.io/en/BUAA-OO2025第二单元总结/">
   <title>
     
-      BUAA-OSLab2实验总结 - just a private corner
+      BUAA-OO2025第二单元总结 - just a private corner
     
   </title>
 <meta name="generator" content="Hexo 5.4.2"></head>
@@ -352,19 +352,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/categories_bg.WebP');
-      --intro-header-background-image-url-post: url('/img/header_img/ghost_knife2.jpg');
-      --intro-header-background-image-url-page: url('//img/header_img/ghost_knife2.jpg');
+      --intro-header-background-image-url-post: url('/img/header_img/ghost_knife3.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/ghost_knife3.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/categories_bg.WebP');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/ghost_knife2.jpg');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/ghost_knife2.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/ghost_knife3.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/ghost_knife3.jpg');
     }
 
     header.intro-header {
        /*post*/
         background-image: var(--intro-header-background-image-url-post);
-        /* background-image: url('/img/header_img/ghost_knife2.jpg'); */
+        /* background-image: url('/img/header_img/ghost_knife3.jpg'); */
       
     }
 
@@ -385,14 +385,14 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#OS" title="OS">OS</a>
+              <a class="tag" href="/tags/#OO" title="OO">OO</a>
               
             </div>
-            <h1>BUAA-OSLab2实验总结</h1>
-            <h2 class="subheading">Memory Management so complicated!!</h2>
+            <h1>BUAA-OO2025第二单元总结</h1>
+            <h2 class="subheading">Do you want to take a lift in MY ELEVATOR?😈</h2>
             <span class="meta">
               Posted by S7AM1NA on
-              2025-04-10
+              2025-04-19
             </span>
 
 
@@ -400,11 +400,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">9</span> Minutes
+              Estimated Reading Time <span class="post-count">13</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">2.7k</span> In Total
+              Words <span class="post-count">3.9k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -475,206 +475,162 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1 id="buaa-oslab2实验总结">BUAA-OSLab2实验总结</h1>
+        <h1 id="buaa_oo2025第二单元总结">BUAA_OO2025第二单元总结</h1>
 <blockquote>
-<p>想全是问题，做才有答案。</p>
+<p>疾风知劲草，路遥知马力。</p>
 </blockquote>
-<h2 id="壹-前言">壹 前言</h2>
+<h2 id="前言">前言</h2>
+<p>​ 起风了。</p>
 <p>​
-这两周冯如杯快要截稿啦，笔者的任务还是蛮多的，下周几乎与截稿日期同时还有OS期中考试！压力还是蛮大的，笔者也痛痛快快经历了一场焦虑与崩溃，但是理清思绪又是一次<strong>涅槃</strong>
-，事实就是不用太在乎每个事情的结果，就好比人生一场，路过人间的我们并不用每天在想自己什么时候离开这里，而是尽情享受自己生活的每一天吧。过程远大于结果，<strong>诗酒须趁年华，人生活在当下</strong>！</p>
-<h2 id="贰-正文">贰 正文</h2>
-<h3 id="一-思考题汇总">一 思考题汇总</h3>
-<h4 id="thinking-2.1">Thinking 2.1</h4>
-<blockquote>
-<p>请根据上述说明，回答问题：在编写的 C 程序中，指针变量中存储的地址
-被视为虚拟地址，还是物理地址？MIPS 汇编程序中 lw 和 sw
-指令使用的地址被视为虚拟地址，还是物理地址？</p>
-</blockquote>
-<p>​ 指导书有言：</p>
-<p>​ 在实际程序中，访存、跳转等指令以及用于取指的 PC
-寄存器中的访存目标地址都是虚拟地址。我们编写的 C
-程序中也经常通过对指针解引用来进行访存，其中指针的值也会被视为虚拟地址，经过编译后生成相应的访存指令。</p>
-<p>​ 因此二者都被视为<strong>虚拟地址</strong>。</p>
-<h4 id="thinking-2.2">Thinking 2.2</h4>
-<blockquote>
-<ol type="1">
-<li><p>从可重用性的角度，阐述用宏来实现链表的好处。</p></li>
-<li><p>查看实验环境中的
-/usr/include/sys/queue.h，了解其中单向链表与循环链表的实
-现，比较它们与本实验中使用的双向链表，分析三者在插入与删除操作上的性能差
-异。</p></li>
-</ol>
-</blockquote>
-<ol type="1">
-<li><p>首先，用宏本身就是一个<strong>提高可读性</strong>，<strong>简化代码量</strong>且更加<strong>易于维护</strong>的操作。</p>
-<p>此外，对于Lab2实现的链表而言，许多复杂的宏可以套用简单的宏，大幅提高了可重用性。</p>
-<p>以下图<code>LIST_INSERT_BEFORE</code>举例：</p>
-<figure>
-<img src="LIST_INSERT_BEFORE.png" alt="LIST_INSERT_BEFORE" />
-<figcaption aria-hidden="true">LIST_INSERT_BEFORE</figcaption>
-</figure>
-<p>这里就反复重用了宏<code>LIST_NEXT</code>。</p></li>
-<li><p>比较单向、双向以及循环链表：</p>
-<p>其中循环链表分为单向循环链表与双向循环链表。它们在性能与实现上分别与<strong>单双向链表</strong>相差无几。但是有一点值得注意：请看双向链表与循环链表在实验环境中的定义~</p>
-<figure>
-<img src="双向链表.png" alt="双向链表" />
-<figcaption aria-hidden="true">双向链表</figcaption>
-</figure>
-<figure>
-<img src="循环链表.png" alt="循环链表" />
-<figcaption aria-hidden="true">循环链表</figcaption>
-</figure></li>
-</ol>
+上个周末的北京起风了。官方提前预警大狂风，周五晚上不信邪的我和🐝想尝尝风的咸淡。嗯，俩人回寝路上吃了俩嘴沙子。</p>
+<p>​ 怎么评价呢？我觉得不算咸口😋，嗓子痒痒的。</p>
 <p>​
-如你所见，实验环境中的双向链表和我们Lab2所用到的链表结构类似，存在一个<code>struct type **le_prev</code>的结构。也就是说双向链表中的prev是前一个结点的next指针的指针。而循环链表则只是单纯存储了两个前后节点的指针。</p>
+我还是蛮喜欢在大风中漫步的感觉的😊，感觉是为数不多和大自然较劲的机会，当然最好不要让我吃到沙子。<strong>疾风知劲草</strong>，前人道理说的不错，但是我这周迎来了自己的<strong>【超级疾风】</strong>，期中考试、校园论文截稿、会议论文截稿。笔者想想都头皮发麻，今天好好睡了一个懒觉，也是因为实在起不来了😴。在这里写博客，也算许下一个简单的愿望，希望我的家人、朋友和自己都能做自己生命风暴中的<strong>【劲草】</strong>。我们不一定终于伟大，但一定忠于自己，任尔东西南北疾风暴风大狂风，<strong>当人生千磨万击，请诸君务必坚劲</strong>。</p>
 <p>​
-言归正传，我们来分析单向链表与双向链表在<strong>插入、删除</strong>过程中性能表现。</p>
+下面请看正文，为大家带来<strong>多线程电梯</strong>的OO单元总结。</p>
+<h2 id="壹-同步块与锁">壹 同步块与锁</h2>
+<h3 id="同步块的设置">1 同步块的设置</h3>
+<p>​ 同步块是 Java
+中实现线程同步的一种基本方式。它的核心思想是：<strong>为一段代码指定一个“锁对象”，任何线程想要执行这段代码，必须先获得这个锁对象的所有权（Monitor
+Lock）。一次只有一个线程能持有该锁，其他试图获取锁的线程会被阻塞，直到持有锁的线程执行完毕并释放锁。</strong></p>
+<p>​ 代码语法如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">synchronized</span> (lockObject) &#123;</span><br><span class="line">    <span class="comment">// 需要同步的代码块 (临界区 - Critical Section)</span></span><br><span class="line">    <span class="comment">// 这部分代码在同一时间只允许一个线程执行</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>​
-对于任意第i个节点的插入和删除来说，二者的性能大相径庭。实际上，插入与删除是两个时间复杂度为O(1)的操作，而导致性能差异的其实是单向链表在插入与删除前后，需要定位其在链表中的位置，更准确地说，他需要通过<strong>遍历</strong>找到它的前一个节点。既然说到链表结构的遍历了，时间复杂度自然就从O(1)上升到了O(n)，而与此同时，<code>**le_prev</code>已经迅速找到了前节点，时间复杂度仍然保持在O(1)。</p>
-<h4 id="thinking-2.3">Thinking 2.3</h4>
-<blockquote>
-<p>请阅读 include/queue.h 以及 include/pmap.h, 将 Page_list 的结构梳
-理清楚，选择正确的展开结构。</p>
-</blockquote>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 选C</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Page_list</span>&#123;</span></span><br><span class="line">   <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">      <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">         <span class="class"><span class="keyword">struct</span> <span class="title">Page</span> *<span class="title">le_next</span>;</span></span><br><span class="line">         <span class="class"><span class="keyword">struct</span> <span class="title">Page</span> **<span class="title">le_prev</span>;</span></span><br><span class="line">      &#125; pp_link;</span><br><span class="line">      u_short pp_ref;</span><br><span class="line">   &#125;* lh_first;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>​
-具体来说就是在<code>queue.h</code>中找出最基本的结构体<code>LIST_ENTRY</code>，并根据<code>pmap.h</code>中的typedef与struct的嵌套获取<code>Page</code>，最后需要注意的是<code>LIST_HEAD</code>中构建Page_list的时候，注意结构体内应该是头指针<code>*lh_first</code>。</p>
-<h4 id="thinking-2.4">Thinking 2.4</h4>
-<blockquote>
-<ol type="1">
-<li>请阅读上面有关 TLB
-的描述，从虚拟内存和多进程操作系统的实现角度，阐述 ASID 的必要性。</li>
-<li>请阅读 MIPS 4Kc 文档《MIPS32® 4K™ Processor Core Family Software
-User’s Manual》的 Section 3.3.1 与 Section 3.4，结合 ASID 段的位数，说明
-4Kc 中可容纳 不同的地址空间的最大数量。</li>
-</ol>
-</blockquote>
-<p>​ 指导书有言：</p>
-<blockquote>
-<p>ASID：Address Space IDentifier 用于区分不同的地址空间。 查找 TLB
-表项时，除了需要提供 VPN，还需要提供ASID
-同一虚拟地址在不同的地址空间中通常映射到不同的物理地址。</p>
-</blockquote>
-<p>​
-换言之，操作系统在多进程操作中，每个进程都会有一个专属于自己的虚拟地址空间。为了避免错误或者紊乱的地址映射出现，<code>ASID</code>便是作为唯一的标识符，用来区分不同进程的地址空间。</p>
-<p>​
-<code>ASID</code>段的位数通常有8位，因此对应可以容纳<code>2^8 = 256</code>个不同进程的地址空间。</p>
-<h4 id="thinking-2.5">Thinking 2.5</h4>
-<blockquote>
-<ol type="1">
-<li>tlb_invalidate 和 tlb_out 的调用关系？</li>
-<li>请用一句话概括 tlb_invalidate 的作用。</li>
-<li>逐行解释 tlb_out 中的汇编代码。</li>
-</ol>
-</blockquote>
-<ol type="1">
-<li><p>前者调用后者。</p></li>
-<li><p>通过把页表项清空使之无效。</p></li>
-<li><pre class="assembly"><code>LEAF(tlb_out)
-.set noreorder # 令代码按照顺序执行
- mfc0    t0, CP0_ENTRYHI # 保存 CP0_ENTRYHI 寄存器至&amp;t0，用于函数结束时恢复
- mtc0    a0, CP0_ENTRYHI # 修改 CP0_ENTRYHI 寄存器为传入的&amp;a0
- nop
- tlbp  # 查找TLB 与 ENTRYHI 寄存器中值匹配的表项，将表项索引存入CP0_INDEX
- nop
- mfc0    t1, CP0_INDEX # 取出index
-.set reorder # 允许汇编器重排指令
- bltz    t1, NO_SUCH_ENTRY # 没有查到该表项
-.set noreorder # tlb表项存在，代码按照顺序执行
- mtc0    zero, CP0_ENTRYHI # 清空以便于清空表项
- mtc0    zero, CP0_ENTRYLO0 # 清空以便于清空表项
- mtc0    zero, CP0_ENTRYLO1 # 清空以便于清空表项
- nop
- tlbwi # 以填入0的方式清空该tlb表项
-.set reorder
-
-NO_SUCH_ENTRY:
- mtc0    t0, CP0_ENTRYHI # 恢复CP0_ENTRYHI，即原来的VPN与ASID
- j       ra # 返回到调用该函数的tlb_invalidate
-END(tlb_out)</code></pre></li>
-</ol>
-<h4 id="thinking-2.6">Thinking 2.6</h4>
-<blockquote>
-<p>请结合 Lab2 开始的 CPU 访存流程与下图中的 Lab2 用户函数部分，尝试
-将函数调用与 CPU 访存流程对应起来，思考函数调用与 CPU
-访存流程的关系。</p>
-</blockquote>
-<figure>
-<img src="lab2用户函数.png" alt="lab2用户函数" />
-<figcaption aria-hidden="true">lab2用户函数</figcaption>
-</figure>
+<code>lockObject</code>（锁对象）的选择直接决定了<strong>同步的范围和行为</strong>。常见的选择有：</p>
 <ul>
-<li>函数调用需要开启其独有的进程，如图中，<code>env_init</code>就需要<code>pgdir_walk</code>进行遍历。</li>
-<li><code>env_create</code>中的<code>env_alloc</code>用<code>pgdir_alloc</code>为其分配页。</li>
-<li>另一方面<code>load_icode</code>用于加载进程中的代码，需要用<code>page_alloc</code>和<code>page_insert</code>分配物理页给代码段并建立好地址映射关系。</li>
-<li>当进程结束或内存区域不再使用时，即进入<code>env_destroy</code>使用<code>env_free</code>，需要<code>page_remove</code>从页表移除相关映射，并使用<code>page_decref</code>减少页引用计数。</li>
-</ul>
-<h4 id="thinking-a.1">Thinking A.1</h4>
-<blockquote>
-<p>在现代的 64 位系统中，提供了 64 位的字长，但实际上不是 64 位页式存
-储系统。假设在 64 位系统中采用三级页表机制，页面大小 4KB。由于 64
-位系统中字长为 8B，且页目录也占用一页，因此页目录中有 512
-个页目录项，因此每级页表都需要 9 位。 因此在 64 位系统下，总共需要 3 × 9
-+ 12 = 39 位就可以实现三级页表机制，并不需要 64 位。</p>
-<p>现考虑上述 39 位的三级页式存储系统，虚拟地址空间为 512
-GB，若三级页表的基地 址为 PTbase，请计算：</p>
-<ol type="1">
-<li>三级页表页目录的基地址。</li>
-<li>映射到页目录自身的页目录项（自映射）。</li>
-</ol>
-</blockquote>
-<ul>
-<li><p>页面大小4KB，所以页内偏移为12位。</p></li>
-<li><p>一级页表内含有512个二级页表，每个二级页表亦含有512个三级页表。</p></li>
-<li><p>若三级页表的基地址为<code>PTbase</code>，则页号为<code>PTbase &gt;&gt; 12</code></p></li>
+<li><strong><code>this</code></strong> <strong>对象</strong></li>
+<li><strong><code>.class</code></strong> <strong>对象</strong></li>
+<li><strong>任意指定的对象</strong></li>
 </ul>
 <p>​
-则二级页表的基地址应当是<code>PTbase + (PTbase &gt;&gt; 12) &lt;&lt; 3</code></p>
+在本单元的代码迭代中，笔者主要选择的锁对象是第三种——即任意指定的对象。</p>
 <p>​
-则页目录基地址为<code>PTbase + (PTbase &gt;&gt; 12) &lt;&lt; 3 + (((PTbase &gt;&gt; 12) &lt;&lt; 3) &gt;&gt; 12) &lt;&lt; 3</code></p>
+其实我们在设置同步块时，需要考量的方面有两个：粒度尽可能细、选择合适的保护资源</p>
+<p>​ 那如此看来第三种锁对象的优越性就很明显了，主要的优点也有两个：</p>
+<ul>
+<li>缓解竞争：如果一个类中有多个需要同步的独立资源，可以为每个资源分配不同的锁对象。这样，访问不同资源的线程就<strong>不会互相阻塞</strong>，提高了并发性（锁的<strong>粒度更细</strong>）。</li>
+<li>清晰性：无论在写还是改代码，总能<strong>明确同步的对象</strong>。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">unloadAllPassengersForUpdate</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">// copy curQuestList</span></span><br><span class="line">    	</span><br><span class="line">    	<span class="comment">// clear curQuestList</span></span><br><span class="line">        <span class="keyword">synchronized</span> (curQuestList) &#123; curQuestList.clear(); &#125;</span><br><span class="line">        <span class="comment">/* 1. 为了维护电梯中的请求列表，我们无需对elevator这整个对象进行同步，最好的选择应该是只维护这个可能做出修改导致并发问题的属性就可以 */</span></span><br><span class="line">    	<span class="comment">/* 2. 明确了同步对象，若是写作`synchronized(this)`，无法直观地看出为什么使用同步。</span></span><br><span class="line"><span class="comment">    	// perform output logic</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="锁的选择">2 锁的选择</h3>
 <p>​
-而映射到页目录自身的页目录项地址为<code>PTbase + (PTbase &gt;&gt; 12) &lt;&lt; 3 + (((PTbase &gt;&gt; 12) &lt;&lt; 3) &gt;&gt; 12) &lt;&lt; 3 + (((((PTbase &gt;&gt; 12) &lt;&lt; 3) &gt;&gt; 12) &lt;&lt; 3) &gt;&gt; 12) &lt;&lt; 3</code></p>
-<h3 id="二-难点分析">二 难点分析</h3>
+在本单元作业中，流行的锁主要就是两种，都是OOlens官方推荐的：<code>synchronized</code>
+关键字实现的隐式锁和
+<code>ReentrantLock</code>为代表的显式锁。他们的优劣对比我们用表格对比一下：</p>
+<table>
+<thead>
+<tr>
+<th>锁</th>
+<th>synchronized</th>
+<th>ReentrantLock</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>复杂度</td>
+<td>低，自动释放</td>
+<td>高，手动释放</td>
+</tr>
+<tr>
+<td>功能性</td>
+<td>低，不够灵活</td>
+<td>高，可中断获取锁、实现公平锁等</td>
+</tr>
+<tr>
+<td>性能</td>
+<td><strong>低竞争</strong>场景较优</td>
+<td><strong>极高竞争</strong>场景较优</td>
+</tr>
+</tbody>
+</table>
 <p>​
-感觉本次Lab2的难点主要落在了物理内存与虚拟内存的交织。第一遍研究几乎无法将整个逻辑框架整理出来。个人偏爱于思考式学习，想要从目的到结果、从原理到实现地整个理解，整体而言，反复学习的过程，一直都有收获。</p>
+在本单元作业中，笔者认为<code>synchronized</code>的简洁性和自动管理能满足要求，于是沿用至第三次作业，且性能与读写锁确实几乎持平。</p>
+<h3 id="锁同步块与处理语句之间的关系">3
+锁/同步块与处理语句之间的关系</h3>
+<p>​
+在锁中的处理语句虽然看上去是被保护的对象，但是其实我们上锁是为了保护所谓的<strong>“共享的状态与属性”</strong>，而同步块则是划定了一个<strong>“临界区”</strong>，在<strong>临界区</strong>中的代码可以单独访问或者修改其中的<strong>状态与属性</strong>。他们不仅保证了<strong>共享的状态与属性</strong>的<strong>变化</strong>对各个线程的<strong>可见性</strong>，还保证了临界区的操作的原子性，使之完整且连贯的执行完其中所有的操作。</p>
+<p>​
+如果说<strong>可见性</strong>可以用关键字<code>volatile</code>维护，那<strong>原子性</strong>的维护应该是锁所独有的。而且原子性这个性质强的出人意料😮，举例如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">volatile</span> <span class="type">int</span> count; </span><br><span class="line">count++;</span><br><span class="line"><span class="comment">// 这个volatile关键字修饰的变量count只是做了一个自增的操作，怎么会引起线程安全问题？</span></span><br><span class="line"><span class="comment">// 原来count++不具原子性！它实际上包含了三个步骤：读-→改-→写，这就相当棘手，我们从代码层面无法维护它的原子性了。</span></span><br><span class="line"><span class="comment">// 这么简单的一个操作甚至都不是原子的，可见锁对多线程的不可或缺！</span></span><br></pre></td></tr></table></figure>
+<h2 id="贰-调度器设计与调度策略">贰 调度器设计与调度策略</h2>
+<h3 id="调度器设计与交互">1 调度器设计与交互</h3>
+<p>​
+尽管第一次作业的要求是直接分配，但是考虑到后期还是要采取不同分配策略，可能还要对比不同策略的性能，在第一次迭代作业中笔者便设计了一个<strong>分配策略接口</strong>，这让笔者在迭代与测试中感觉很是方便😃。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">DispatchStrategy</span> &#123;</span><br><span class="line">    <span class="comment">// 同时作为DispatchThread的一个属性：</span></span><br><span class="line">    <span class="comment">// private final DispatchStrategy dispatchStrategy = new ***Dispatch();</span></span><br><span class="line">    Integer <span class="title function_">dispatch</span><span class="params">(PersonRequest request, HashMap&lt;Integer, QuestTable&gt; questTableMap)</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DirectDispatch</span> <span class="keyword">implements</span> <span class="title class_">DispatchStrategy</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Integer <span class="title function_">dispatch</span><span class="params">(...)</span> &#123;</span><br><span class="line">        <span class="comment">// hw5直接分配</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">PriorityCostBasedDispatch</span> <span class="keyword">implements</span> <span class="title class_">DispatchStrategy</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Integer <span class="title function_">dispatch</span><span class="params">(...)</span> &#123;</span><br><span class="line">    	<span class="comment">// hw6&amp;7简易打分</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RandomDispatch</span> <span class="keyword">implements</span> <span class="title class_">DispatchStrategy</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Integer <span class="title function_">dispatch</span><span class="params">(...)</span> &#123;</span><br><span class="line">        <span class="comment">// 随机分配对比测试策略性能 </span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​
+我们一共设计了三种线程（不包括主线程），<strong>输入线程、分配器线程与电梯线程</strong>，分配器在二者之间完成<strong>管理总队列并分配请求</strong>给电梯的任务。三种线程构成了两个<strong>“生产者-消费者”模式</strong>：</p>
+<ol type="1">
+<li>输入线程是生产者，向总队列中添加请求信息；分配器线程是消费者，从中取出请求信息并分配。</li>
+<li>分配器线程是生产者，在指派电梯后将请求添加进电梯请求表；各电梯线程是消费者，从各自的请求表中取出请求。</li>
+</ol>
+<h3 id="调度策略">2 调度策略</h3>
+<p>​
+第一次作业直接分配指定的电梯，各电梯采用<strong>LOOK策略</strong>各自运作。<del>（祖传的策略配方</del></p>
+<p>​
+第二次作业起，就正式进入了调度策略的构建了。最初想要综合各项指标去设计，但是后来发现收益不大的同时，难度却是大得夸张😭。最后采用的是一个<strong>简易的打分策略</strong>，因为没有时间和能力去调参。主要考虑了两个指标：<strong>ETA（预计用时）</strong>与容量惩罚。前者其实类似于影子电梯，而后者是出于另一个奇怪设计的考虑。因为笔者在第一次作业就设计了<strong>踢人策略</strong>，即当优先级较高的人想要乘梯，会将优先级较低的人踢出去😈。虽然在算加权时间上提高了性能，但是可能会导致耗电量增加。因此在后续迭代的分配中，笔者的想法是：除非竞争太过激烈，所有电梯都几近满员，否则尽量在<strong>分配的时候就减少踢人的概率</strong>。因此设立了第二项指标——容量惩罚，旨在给接近满员的电梯加惩罚分数，某种意义上也有点<strong>均匀分配</strong>的意思。</p>
+<h2 id="叁-宏观回顾架构分析与总结">叁 宏观回顾：架构分析与总结</h2>
+<h3 id="基于uml图的迭代分析">1 基于UML图的迭代分析</h3>
+<p>​
+这次整体迭代的内容主要集中在<code>Elevator</code>内部，整体架构保持稳定，请看最后一次迭代后的UML类图：</p>
 <figure>
-<img src="地址变换机制.png" alt="地址变换机制" />
-<figcaption aria-hidden="true">地址变换机制</figcaption>
+<img src="hw7UML.svg" alt="hw7classUML" />
+<figcaption aria-hidden="true">hw7classUML</figcaption>
 </figure>
 <p>​
-此外，由于项目庞大的特点，对项目整体的把控以及宏定义的使用熟练度也是笔者上机前焦虑的事情。在实存、虚存以及页控制块之间转换的宏更是在exercise中反复出现，让我在<code>.c</code>与<code>.h</code>文件之间反复横跳。例如下面这段代码，<del>想法在脑子中，但是表达出来竟如此之难</del>：</p>
+因为整体架构变化不大，就不画三张图了，整体稳定地采用<strong>“生产者-消费者”</strong>架构模式。第六次作业新增的是<strong>分配策略</strong>以及<strong>回调接口</strong>、第七次作业新增<strong>换乘层</strong>。</p>
+<p>​
+如类图所示，我们的设计可以对<strong>电梯改造</strong>进行扩展，修改运行楼层、速度以及容量等等，同时策略接口也允许我们对<strong>多策略进行扩展</strong>，甚至可以随着竞争压力大小切换策略。最后，我们为电梯设计的多模式，可以相对轻松地<strong>应对类似临时调度与更新的需求</strong>，或者对电梯进行还原。</p>
+<p>​ UML协作图如下：</p>
 <figure>
-<img src="code_segment.png" alt="code_segment" />
-<figcaption aria-hidden="true">code_segment</figcaption>
+<img src="hw7sequenceUML.svg" alt="hw7sequenceUML" />
+<figcaption aria-hidden="true">hw7sequenceUML</figcaption>
 </figure>
-<h3 id="三-实验体会">三 实验体会</h3>
-<p>​ <strong>难！</strong>🤯</p>
+<h3 id="识别稳定与易变">2 识别稳定与易变</h3>
 <p>​
-感觉在深入感受一个前所未有的庞大项目。之前无论是CO还是OO，亦或是手头的科研项目，感觉都没有如此的庞大。顶多需要自己做一些迭代，而OS给人感觉是<strong>置身于崇山之中</strong>，要做的不仅是登顶，还要一览众山小，洞悉我们脚下的所有“地形”，说到底终究不是自己一步一步爬上来的，代码补全的唯一坏处就是给人以不安全感。因此感觉读代码的能力在OS的帮助下也在迅速提高。希望以后有时间还是更多的去思考、主要是要在爬山的路上，观察脚下的每一粒碎石，不徐不疾，拾阶而上吧。😊</p>
-<h2 id="叁-后记">叁 后记</h2>
-<p>​ 最近在关注中美关税大战之事啊，真是闻所未闻😂。</p>
+首先，毋庸置疑的是总的<strong>流水线架构</strong>始终保持稳定，不随着迭代的变化而修改，变化的主要是线程内部的指令。其次，在我们处理请求的时候，我们发现无论是哪种请求，它都是<code>Request</code>的子类，第一次迭代的时候还不明确<code>Request</code>存在的意义，后来才能理解，是它为我们提供了各种请求的“数据结构”，并在共性特征中以父类的方式<strong>保持各种请求的统一</strong>。</p>
 <p>​
-虽然最近倍感压力，但是感受到了自己作为青年，和国家共同度过一段艰难的日子也是很光荣且令人热血沸腾的事情吧。</p>
+与之相对的，实现的线程运行细节则会跟随用户需求发生变化，包括临时调度、更新，甚至调度策略也是根据用户是否指定电梯来更改的，他们相对来说就是易变的。</p>
+<p>​ 大结构稳定，小细节易变，这完全符合我们做项目迭代的完美状况。</p>
+<h2 id="肆-特别讨论双轿厢问题">肆 特别讨论：双轿厢问题</h2>
 <p>​
-最后，借央视新闻B站官号视频下的热评收尾，与同流时代青年心跳共振、灵魂共鸣，真令人斗志昂扬吧。</p>
-<p>​ 言语终有竟时，我们下次再见！👋</p>
-<blockquote>
-<p>活在这个时代，就得承担这个时代的责任。如果需要这一代必须牺牲，那么希望下一代能够好过一些。没有一身血，但也可以两脚泥，代代如此，自强不息。</p>
-</blockquote>
+学长巧妙的<code>TransFloor</code>类的设计也是被我用上了😊，通过此类对换乘层进行管理。首先从面向对象的角度考虑，如果你要在电梯内部运行的时候，得知另一个电梯的运行状态，那可太影响类内部的封装性了。其次，出于对对称性的考虑，应该要设计一个类出来，保证它对两个电梯的态度都是<strong>"公平对等"</strong>的。</p>
+<p>​ 那具体如何避免碰撞呢？说白了就是：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="type">boolean</span> <span class="title function_">Occupy</span><span class="params">()</span> &#123; <span class="comment">// 电梯A进去前要问问：“换乘层有没有梯？”</span></span><br><span class="line">        <span class="keyword">if</span> (!isOccupied) &#123; <span class="comment">// 换乘层：“没有！”</span></span><br><span class="line">            isOccupied = <span class="literal">true</span>; <span class="comment">// 电梯A：“窝莱拉！”</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">// *换乘层拒绝了电梯A*</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title function_">ReleaseAndNotify</span><span class="params">()</span> &#123; <span class="comment">// 电梯A出来后要告诉换乘层：“我走啦！”</span></span><br><span class="line">        isOccupied = <span class="literal">false</span>;</span><br><span class="line">        <span class="built_in">this</span>.notifyAll(); <span class="comment">// 换乘层：“告诉大家我有空了！” </span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>​
+此外，便是要实现双轿厢<strong>同步开始改造</strong>。其实同理，但是我们引入两个布尔值，在一个方法里完成<strong>互斥</strong>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title function_">synchronizeElevators</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (!isFirstReady.get()) &#123; <span class="comment">// 第一个准备好了</span></span><br><span class="line">            isFirstReady.set(<span class="literal">true</span>);</span><br><span class="line">            <span class="keyword">while</span> (!bothReady.get()) &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    wait();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123; <span class="comment">// 第二个准备好了</span></span><br><span class="line">            bothReady.set(<span class="literal">true</span>); <span class="comment">// 更改状态并通知</span></span><br><span class="line">            notifyAll();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="伍-bugdebug">伍 BUG&amp;DEBUG</h2>
+<p>​ <del>最折磨的一集😈</del></p>
+<p>​
+先说DEBUG，不会用多线程调试，也有大佬说多线程调试给到的信息过少，根本无法定位错误。因此果断采用<strong>Print大法</strong>，其实不知道哪位先提出的，就是统一设置一个debug开关，可以大幅减少工作量。我在公共定义类中的代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">boolean</span> <span class="variable">debug</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">debugp</span><span class="params">(String str)</span> &#123;</span><br><span class="line">       <span class="keyword">if</span> (debug) &#123;</span><br><span class="line">           System.out.println(str);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>​
+再说说BUG，这个单元的bug主要都围绕着踢人策略。第一次作业中就是为了实现踢人导致的粗心错误，具体而言即当一个优先级较高的请求将另一个优先级较低的请求踢掉后，没有输入上电梯的信息😭，因此导致了上电梯但没有记录的鬼魂事件👻。</p>
+<p>​
+对于第二、三次作业陆续出现的临时操作：<code>SCHE</code>与<code>UPDATE</code>，它们一方面在运行时不能接人，另一方面要把电梯内外的请求清空。对于不能接人这一要求，我在分配器线程与电梯线程中通过延迟输出RECEIVE的方式解决；而后者中清空请求列表相对棘手，为了保持低耦合度，电梯类内部不应该能洞察到外部总列表的信息，因此把电梯列表里的请求返还给总请求列表这里用到了<strong>回调接口</strong>，而没有直接让电梯能在内部对总请求队列进行修改。</p>
+<p>​
+第二次作业中第一次尝试写回调接口，最后出了很多线程问题，太赶时间导致中测甚至爆了两个点。🤦‍</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 函数接口声明</span></span><br><span class="line"><span class="meta">@FunctionalInterface</span> <span class="comment">// 标记为函数式接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">RequestReturnCallback</span> &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 处理一个从电梯返还的请求。</span></span><br><span class="line"><span class="comment">     * DispatchThread应该将此请求重新加入主请求队列。</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> returnedRequest 从电梯中移除并需要重新调度的请求。</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">returnRequest</span><span class="params">(PersonRequest returnedRequest)</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Disapatch Thread中的属性</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> <span class="type">RequestReturnCallback</span> <span class="variable">callback</span> <span class="operator">=</span> (returnedRequest) -&gt; &#123;</span><br><span class="line">    <span class="keyword">synchronized</span> (<span class="built_in">this</span>.requestQueue) &#123;</span><br><span class="line">        <span class="built_in">this</span>.requestQueue.addRequest(returnedRequest);</span><br><span class="line">        <span class="built_in">this</span>.requestQueue.notifyAll(); <span class="comment">// 唤醒可能等待的 run() 循环</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// Elevator中初始化接口实例</span></span><br><span class="line"><span class="built_in">this</span>.returnCallback = returnCallback; </span><br><span class="line"><span class="comment">// Elevator中复制请求并重新放入队列</span></span><br><span class="line"><span class="type">PersonRequest</span> <span class="variable">newRequest</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">PersonRequest</span>(newFloorStr,request.getToFloor(), 											request.getPersonId(), request.getPriority());</span><br><span class="line"><span class="built_in">this</span>.returnCallback.returnRequest(newRequest);</span><br></pre></td></tr></table></figure>
+<h2 id="陆-心得体会">陆 心得体会</h2>
+<h3 id="线程安全">1 线程安全</h3>
+<p>​
+这个单元的主题就是多线程编程，其中最重要的就是保护线程的安全。我在编写代码的时候会有意识地尽可能少上锁，因为在第五次作业debug时曾疯狂加锁，发现容易<strong>导致死锁</strong>等问题，程序甚至无法正常运行。因此在第六次作业分配策略中计算ETA时，我没有选择像传统影子电梯为<strong>每个电梯都挂锁</strong>，而是选择为电梯拍下快照，第一直觉是误差增大，但是想想影子电梯也会有一定的误差后，我就觉得这点误差可以接收了。我只需要在<strong>拍快照的时候维护电梯线程的数据安全</strong>，真正调用分配策略的时候，电梯就可以正常运行了。少用一些同步块，或者有意识减小同步块的颗粒度都是可以<strong>保证正确</strong>的同时<strong>提升性能</strong>的。另外就是同步块到底同步的是谁，能不能锁住，在debug的时候要仔细推敲，避免被小bug硬控🤬。</p>
+<h3 id="层次化设计">2 层次化设计</h3>
+<p>​
+笨人没有用到太多的设计模式，但是紧紧抓紧了“生产者-消费者”的大腿，构建出来的“流水线”设计让人在写代码和改代码的时候都可以思路清晰地完成。更重要的是在debug时，可以通过输出调试法，一步一步定位出错的环节，有一种类似顺藤摸瓜的感觉。<strong>峰回路转，但是你确信、也确实一定能找到问题所在。</strong></p>
+<h2 id="后记">后记</h2>
+<p>​
+交完了OO单元总结，后面的话就是想在网站上说的了（bushi）。也没什么不能说的，我感觉我有一种莫名的慢热，当我写总结的时候，我才对OO展现出了比较浓厚的兴趣🧐，希望这段时间把学习状态控制好，最主要是让我睡个好觉呗😴，已经连续快一周没睡好了。</p>
+<p>​ 好的！言尽于此，周末也快要告一段落了，抓紧去玩一会！🤩</p>
 
 
         <hr>
         <!-- Pager -->
         <ul class="pager">
           
-          <li class="previous">
-            <a href="/en/BUAA-OO2025第二单元总结/" data-toggle="tooltip" data-placement="top" title="BUAA-OO2025第二单元总结">&larr; Previous Post</a>
-          </li>
-          
           
           <li class="next">
-            <a href="/en/BUAA-OSLab1实验总结/" data-toggle="tooltip" data-placement="top" title="BUAA-OSLab1实验总结">Next Post &rarr;</a>
+            <a href="/en/BUAA-OSLab2实验总结/" data-toggle="tooltip" data-placement="top" title="BUAA-OSLab2实验总结">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -718,7 +674,7 @@ GB，若三级页表的基地 址为 PTbase，请计算：</p>
       repo: '',
       owner: '',
       admin: '',
-      id: 'Thu Apr 10 2025 10:57:52 GMT+0800', // Ensure uniqueness and length less than 50
+      id: 'Sat Apr 19 2025 16:02:05 GMT+0800', // Ensure uniqueness and length less than 50
       distractionFreeMode: false, // Facebook-like distraction free mode
       perPage: 10,
       pagerDirection: 'last',
@@ -771,7 +727,8 @@ GB，若三级页表的基地 址为 PTbase，请计算：</p>
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#buaa-oslab2%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">BUAA-OSLab2实验总结</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%A3%B9-%E5%89%8D%E8%A8%80"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">壹 前言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%B4%B0-%E6%AD%A3%E6%96%87"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">贰 正文</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%80-%E6%80%9D%E8%80%83%E9%A2%98%E6%B1%87%E6%80%BB"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">一 思考题汇总</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#thinking-2.1"><span class="toc-nav-number">1.2.1.1.</span> <span class="toc-nav-text">Thinking 2.1</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#thinking-2.2"><span class="toc-nav-number">1.2.1.2.</span> <span class="toc-nav-text">Thinking 2.2</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#thinking-2.3"><span class="toc-nav-number">1.2.1.3.</span> <span class="toc-nav-text">Thinking 2.3</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#thinking-2.4"><span class="toc-nav-number">1.2.1.4.</span> <span class="toc-nav-text">Thinking 2.4</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#thinking-2.5"><span class="toc-nav-number">1.2.1.5.</span> <span class="toc-nav-text">Thinking 2.5</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#thinking-2.6"><span class="toc-nav-number">1.2.1.6.</span> <span class="toc-nav-text">Thinking 2.6</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#thinking-a.1"><span class="toc-nav-number">1.2.1.7.</span> <span class="toc-nav-text">Thinking A.1</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BA%8C-%E9%9A%BE%E7%82%B9%E5%88%86%E6%9E%90"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">二 难点分析</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%89-%E5%AE%9E%E9%AA%8C%E4%BD%93%E4%BC%9A"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">三 实验体会</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%8F%81-%E5%90%8E%E8%AE%B0"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">叁 后记</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#buaa_oo2025%E7%AC%AC%E4%BA%8C%E5%8D%95%E5%85%83%E6%80%BB%E7%BB%93"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">BUAA_OO2025第二单元总结</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%A3%B9-%E5%90%8C%E6%AD%A5%E5%9D%97%E4%B8%8E%E9%94%81"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">壹 同步块与锁</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%90%8C%E6%AD%A5%E5%9D%97%E7%9A%84%E8%AE%BE%E7%BD%AE"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">1 同步块的设置</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%94%81%E7%9A%84%E9%80%89%E6%8B%A9"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">2 锁的选择</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%94%81%E5%90%8C%E6%AD%A5%E5%9D%97%E4%B8%8E%E5%A4%84%E7%90%86%E8%AF%AD%E5%8F%A5%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">3
+锁&#x2F;同步块与处理语句之间的关系</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%B4%B0-%E8%B0%83%E5%BA%A6%E5%99%A8%E8%AE%BE%E8%AE%A1%E4%B8%8E%E8%B0%83%E5%BA%A6%E7%AD%96%E7%95%A5"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">贰 调度器设计与调度策略</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%B0%83%E5%BA%A6%E5%99%A8%E8%AE%BE%E8%AE%A1%E4%B8%8E%E4%BA%A4%E4%BA%92"><span class="toc-nav-number">1.3.1.</span> <span class="toc-nav-text">1 调度器设计与交互</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%B0%83%E5%BA%A6%E7%AD%96%E7%95%A5"><span class="toc-nav-number">1.3.2.</span> <span class="toc-nav-text">2 调度策略</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%8F%81-%E5%AE%8F%E8%A7%82%E5%9B%9E%E9%A1%BE%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90%E4%B8%8E%E6%80%BB%E7%BB%93"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">叁 宏观回顾：架构分析与总结</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%9F%BA%E4%BA%8Euml%E5%9B%BE%E7%9A%84%E8%BF%AD%E4%BB%A3%E5%88%86%E6%9E%90"><span class="toc-nav-number">1.4.1.</span> <span class="toc-nav-text">1 基于UML图的迭代分析</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%AF%86%E5%88%AB%E7%A8%B3%E5%AE%9A%E4%B8%8E%E6%98%93%E5%8F%98"><span class="toc-nav-number">1.4.2.</span> <span class="toc-nav-text">2 识别稳定与易变</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%82%86-%E7%89%B9%E5%88%AB%E8%AE%A8%E8%AE%BA%E5%8F%8C%E8%BD%BF%E5%8E%A2%E9%97%AE%E9%A2%98"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">肆 特别讨论：双轿厢问题</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BC%8D-bugdebug"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">伍 BUG&amp;DEBUG</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%99%86-%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">陆 心得体会</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8"><span class="toc-nav-number">1.7.1.</span> <span class="toc-nav-text">1 线程安全</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%B1%82%E6%AC%A1%E5%8C%96%E8%AE%BE%E8%AE%A1"><span class="toc-nav-number">1.7.2.</span> <span class="toc-nav-text">2 层次化设计</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">后记</span></a></li></ol></li></ol>
         
         </div>
       </aside>
@@ -794,7 +751,7 @@ GB，若三级页表的基地 址为 PTbase，请计算：</p>
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#OS" title="OS">OS</a>
+            <a class="tag" href="/tags/#OO" title="OO">OO</a>
             
           </div>
         </section>
