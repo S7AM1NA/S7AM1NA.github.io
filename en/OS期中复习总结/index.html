@@ -352,19 +352,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/categories_bg.WebP');
-      --intro-header-background-image-url-post: url('/img/header_img/ghost_knife4.jpg');
-      --intro-header-background-image-url-page: url('//img/header_img/ghost_knife4.jpg');
+      --intro-header-background-image-url-post: url('/img/header_img/ghost_blade4.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/ghost_blade4.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/categories_bg.WebP');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/ghost_knife4.jpg');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/ghost_knife4.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/ghost_blade4.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/ghost_blade4.jpg');
     }
 
     header.intro-header {
        /*post*/
         background-image: var(--intro-header-background-image-url-post);
-        /* background-image: url('/img/header_img/ghost_knife4.jpg'); */
+        /* background-image: url('/img/header_img/ghost_blade4.jpg'); */
       
     }
 
@@ -1671,6 +1671,10 @@ Set）、WSClock。</li>
         <!-- Pager -->
         <ul class="pager">
           
+          <li class="previous">
+            <a href="/en/BUAA-OSLab3实验总结/" data-toggle="tooltip" data-placement="top" title="BUAA-OSLab3实验总结">&larr; Previous Post</a>
+          </li>
+          
           
           <li class="next">
             <a href="/en/BUAA-OO2025第二单元总结/" data-toggle="tooltip" data-placement="top" title="BUAA-OO2025第二单元总结">Next Post &rarr;</a>
@@ -2341,5 +2345,20 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	</body>
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>
