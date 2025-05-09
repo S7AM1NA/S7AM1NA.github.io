@@ -404,7 +404,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">3.9k</span> In Total
+              Words <span class="post-count">4k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -682,6 +682,10 @@ vpd 和 vpt 就是访问这些对象的便捷指针。</li>
 <blockquote>
 <p><code>cow_entry</code>到底做了什么？它在整个fork中又是什么角色？</p>
 </blockquote>
+<p>​ cow_entry 是一个<strong>用户态函数</strong>，作为 fork
+后写时复制机制的一部分。当进程尝试写入一个被 fork
+标记为COW（只读）的页面时，它被内核通过异常处理机制调用。它的核心任务是<strong>响应这个写保护错误，通过系统调用请求内核分配新页面、复制数据、并以可写权限重新映射出错的虚拟地址，从而完成页面的“写时复制”，最后恢复到原先失败的写操作处继续执行。</strong>
+它正是保证COW语义正确实现的关键执行单元。</p>
 <h3 id="thinking4.8">Thinking4.8</h3>
 <blockquote>
 <p>在用户态处理页写入异常，相比于在内核态处理有什么优势？</p>
