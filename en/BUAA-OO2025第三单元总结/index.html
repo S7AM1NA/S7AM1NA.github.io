@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://s7am1na.github.io/en/20250511/">
+  <link rel="canonical" href="http://s7am1na.github.io/en/BUAA-OO2025第三单元总结/">
   <title>
     
-      20250511 - just a private corner
+      BUAA-OO2025第三单元总结 - just a private corner
     
   </title>
 <meta name="generator" content="Hexo 5.4.2"></head>
@@ -352,19 +352,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/categories_bg.WebP');
-      --intro-header-background-image-url-post: url('/img/header_img/mom1.jpg');
-      --intro-header-background-image-url-page: url('//img/header_img/mom1.jpg');
+      --intro-header-background-image-url-post: url('/img/header_img/MVP!.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/MVP!.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/categories_bg.WebP');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/mom1.jpg');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/mom1.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/MVP!.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/MVP!.jpg');
     }
 
     header.intro-header {
        /*post*/
         background-image: var(--intro-header-background-image-url-post);
-        /* background-image: url('/img/header_img/mom1.jpg'); */
+        /* background-image: url('/img/header_img/MVP!.jpg'); */
       
     }
 
@@ -385,14 +385,14 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#Life" title="Life">Life</a>
+              <a class="tag" href="/tags/#OO" title="OO">OO</a>
               
             </div>
-            <h1>20250511</h1>
-            <h2 class="subheading">特别的一天呢😊</h2>
+            <h1>BUAA-OO2025第三单元总结</h1>
+            <h2 class="subheading">Gemini2.5拿了MVP！S7AM1NA是townInGo！</h2>
             <span class="meta">
               Posted by S7AM1NA on
-              2025-05-10
+              2025-05-17
             </span>
 
 
@@ -400,11 +400,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">3</span> Minutes
+              Estimated Reading Time <span class="post-count">17</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">916</span> In Total
+              Words <span class="post-count">5k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -475,54 +475,403 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1 id="section">20250511</h1>
-<p>​ 明天早上就要<strong>入围答辩</strong>啦，还没怎么好好准备呢...</p>
+        <h1 id="buaa-oo2025第三单元总结">BUAA-OO2025第三单元总结</h1>
+<h2 id="前言">前言</h2>
 <p>​
-不管啦！明天是个特别的日子，对的对的😃，明天是一年一度为最爱我们的人过的节。五月的第二个周末嘛！<strong>祝全天下的妈妈母亲节快乐♥！！！</strong>但是这里是我的博客😊，所以这里要专门祝我坠亲爱坠可爱全天下坠棒的妈妈说一声！<strong>节日快乐呀老妈！</strong>🎉</p>
+本月的OO比之前的强度低了一些🤭，但是刚好也是遇到冯如杯的一个月，整体感觉很充实。而我们的面向对象变得相当亲民，提升了我们对<strong>算法与数据结构</strong>的认知，也让我们了解到了<strong>JML规格设计与测试</strong>的要点。</p>
+<h2 id="一-测试过程">一 测试过程</h2>
+<h3
+id="对测试类型的理解及在本单元的应用"><strong>1、对测试类型的理解及在本单元的应用</strong></h3>
+<ul>
+<li><p><strong>单元测试 :</strong></p>
+<p>单元测试是针对程序中最小的可测试单元（通常是类中的一个方法，或者一个独立的类）进行的测试。目标是验证这个单元在<strong>隔离的环境</strong>下是否能按预期工作。例如我们本单元为<code>queryBestAcquaintance</code>设计了很多单元测试用例。这是保证每个组件质量的基础。如果单元都有问题，集成起来必然问题更多。</p></li>
+<li><p><strong>功能测试 :</strong></p>
+<p>基于 JML
+和指令说明，验证软件的各项功能是否按预期工作。它通常是黑盒测试，不关心内部实现，只关心输入和输出是否匹配规格。</p></li>
+<li><p><strong>集成测试 :</strong></p>
+<p><strong>在单元测试的基础上</strong>，将已测试的模块组合起来，测试它们之间的接口和交互是否正确。目标是发现模块间协作时可能出现的问题。通常是自底向上（先测试基础类，再测试依赖它们的类）。</p></li>
+<li><p><strong>压力测试 :</strong></p>
+<p>测试系统在极端负载（大量数据、高并发、长时间运行）下的稳定性和性能。目标是找出系统的瓶颈和在崩溃点。主要有两种测试方法：一是通过构造巨大数据量，如大量<code>Person</code>或者<code>Relation</code>，提高程序的运行压力；二是通过高频使用复杂的操作，如<code>qts</code>,<code>qcs</code>与
+<code>qsp</code>。二者都可以一定程度上挑战我们的CTLE，这也正是我们强测所关注的。</p></li>
+<li><p><strong>回归测试:</strong></p>
+<p>在对软件进行了修改（Bug修复、功能增强）之后，重新运行之前的测试用例，以确保新的修改没有引入新的错误，或者没有使之前已修复的错误再次出现。</p></li>
+</ul>
+<h3 id="数据构造策略"><strong>2. 数据构造策略 </strong></h3>
+<ul>
+<li><strong>初始阶段 (基本功能实现):</strong>
+<ul>
+<li><strong>简单、直接的有效数据:</strong> 构造能触发方法
+normal_behavior
+的最基本输入。例如，<code>ap 1 A 20</code>，<code>ap 2 B 20</code>，<code>ar 1 2 10</code>，<code>qv 1 2</code>。</li>
+<li><strong>边界值 (针对参数):</strong>
+对于有数值参数的指令，测试其边界值。例如 <code>deleteColdEmoji</code> 的
+limit 为 0, 1, 恰好等于某个热度,
+大于所有热度。<code>modifyRelation</code>的 value 使总值恰好为 0, 1,
+-1。</li>
+<li><strong>空状态:</strong> 测试对空集合（如空网络、空
+Tag、空关注者列表）的操作。</li>
+<li><strong>单一元素状态:</strong> 网络中只有一个人，Tag
+中只有一个人等。</li>
+</ul></li>
+<li><strong>JML 异常条件覆盖:</strong>
+<ul>
+<li>针对 JML 中每个 signals
+子句，精心构造<strong>恰好</strong>能触发该异常的最小数据集。例如，<code>addRelation</code>
+要构造：id1 不存在、id2 不存在、id1 和 id2 已存在关系这三种情况。</li>
+</ul></li>
+<li><strong>针对特定逻辑/算法的测试数据:</strong>
+<ul>
+<li><strong>图算法 (<code>qci</code>, <code>qsp</code>,
+<code>qts</code>):</strong>
+<ul>
+<li>构造不同图结构：链、环、星型、完全图、二分图、不连通图。</li>
+<li>测试特殊情况：自环路径 (qci 1 1)，查询到自身的距离 (qsp 1 1)。</li>
+</ul></li>
+<li><strong>ID 优先规则:</strong> 构造关系值/贡献度相等，但 ID
+不同，需要通过 ID 排序来确定唯一最佳者/贡献者的情况。</li>
+</ul></li>
+<li><strong>组合与交互测试:</strong>
+<ul>
+<li>构造一系列操作，测试不同功能模块之间的交互。例如：
+<ul>
+<li><code>add_person_to_tag</code> -&gt; <code>modify_relation</code>
+(改变 Tag 内成员关系值) -&gt; <code>query_tag_value_sum</code>。</li>
+</ul></li>
+</ul></li>
+<li><strong>随机生成与状态跟踪 (DataGenerator):</strong>
+<ul>
+<li><strong>优点:</strong>
+可以产生大量、多样的测试数据，可能发现手动设计时遗漏的组合。</li>
+<li><strong>策略:</strong>
+<ul>
+<li><strong>维护内部状态:</strong>
+生成器内部维护一个简化的网络模型状态（如已存在的 Person ID, Tag ID,
+Account ID, 文章, 关系等）。</li>
+<li><strong>基于状态生成有效指令:</strong>
+尽量生成在当前状态下“有意义”的指令（例如，删除一个已存在的
+Tag，而不是随机一个不存在的 Tag ID）。</li>
+<li><strong>控制指令分布:</strong>
+使用加权随机或其他策略，确保所有指令（包括新旧、常用和不常用）都有机会被生成。可以调整权重以侧重测试新功能或复杂功能。</li>
+<li><strong>引入少量错误指令:</strong> 故意生成一些会触发 JML
+exceptional_behavior 的指令，测试异常处理。</li>
+<li><strong>长指令序列:</strong>
+生成足够长的指令序列来测试累积效应和长期运行的稳定性。</li>
+<li><strong>“压力块”:</strong>
+在随机序列中插入一些特定设计的、用于高强度测试某个复杂查询（如
+<code>qcs</code>,
+<code>qbc</code>）的指令子序列，在查询前后进行状态修改。</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="二-大模型与我们">二 大模型与我们</h2>
 <p>​
-我自己感觉不算是个脆弱的人，但是每学期貌似都需要远在天边的妈妈帮我<strong>兜一次底</strong>，仔细想想，上次和爸妈好好唠嗑也是很久以前了？🤔感觉还是怀念以前，每天都在家里瘫瘫的日子。不仅有爸有妈在家，还有好吃的饭🤤，哈哈哈上大学后出门在外才略感怀念，可能还真是应了那句话，<strong>离梦想越近，离家越远吧</strong>。</p>
+整体体验感是相当好的，大模型其实几乎能帮助我们做完所有的事情。我在与大模型不断地交流中结合了多种对话方式，包括提出要求、询问建议以及发出质疑，它一般都可以给我不错的答复，这与一两年前的“人工智障”的自我矛盾、死不悔改完全不同了。此外，大模型可以直接根据JML语言生成对应的代码，很大程度上减少了我们在底层代码上的耗时。</p>
 <p>​
-但是我相信包括我在内的大部分大学生都会定期找爸爸妈妈要安慰，而我每次坏情绪的爆发都是被爸爸妈妈用力抗下的，感觉有点愧疚，出门在外也许就是这样的吧，哈哈（苦笑）。</p>
-<figure>
-<img src="mom2.jpg" alt="mom2" />
-<figcaption aria-hidden="true">mom2</figcaption>
-</figure>
+那么<strong>如何引导大模型在不同场景下完成复杂任务</strong>？我的总结归纳如下：</p>
+<ol type="1">
+<li><strong>清晰定义问题和目标:</strong>
+<ul>
+<li><strong>场景1 (JML 实现):</strong> 提供完整的 JML
+规格，明确要求“请实现这个方法”。</li>
+<li><strong>场景2 (Bug 定位):</strong>
+提供精确的错误信息、相关的代码片段、日志、以及我们认为的预期行为。。</li>
+<li><strong>场景3 (性能优化):</strong>
+指出性能瓶颈所在的方法，提供相关代码，明确优化的目标（例如，“将复杂度从
+O(N^2) 降到 O(N)以下”等等）。</li>
+<li><strong>场景4 (测试设计):</strong>
+明确要测试的功能点、边界条件、以及期望的测试强度。</li>
+</ul></li>
+<li><strong>提供充足的上下文信息:</strong>
+<ul>
+<li><strong>相关的 JML 规格:</strong>
+对于任何涉及接口或方法行为的讨论，JML 都是绝对标准。</li>
+<li><strong>相关的代码片段:</strong>
+只给方法签名通常不够，我们需要提供相关的实现逻辑。</li>
+<li><strong>数据结构定义:</strong> 当讨论到 Map、List、Set
+或自定义数据结构时，明确其 Key-Value 类型和用途。</li>
+</ul></li>
+<li><strong>采用迭代和交互的方式:</strong>
+<ul>
+<li><strong>不要期望一次完美。</strong>
+把复杂任务分解成小步骤，逐步推进，ai在直面复杂任务的时候能力也很有限。</li>
+<li><strong>对模型回答进行追问和质疑。</strong>
+大模型有时候的回复不一定准确无误，<strong>不可盲信！！</strong>这要求我们对他们的输出运用批判性思维。<strong>我们需要利用，而不是依靠。</strong></li>
+</ul></li>
+<li><strong>主导方向，利用模型作为辅助工具:</strong>
+<ul>
+<li><strong>我们是项目的主人。</strong>
+我们对整体架构、核心难点有更深的理解。利用模型来完成具体的代码生成、逻辑分析、信息检索等任务，而不是直接把所有事情都交给它。</li>
+<li><strong>提出假设，让模型验证或提供实现。</strong>
+例如我们想用TreeSet存储数据以提高性能，我们可以提出并询问它是否有可行性，是否有可观的提升。</li>
+<li><strong>当模型给出多个选项时，我们来做决策。</strong>
+例如，关于增量开发或缓存策略，大模型可能给出几种方案及其优缺点，最终选择权在我们手里。</li>
+</ul></li>
+</ol>
+<h2 id="三-架构设计">三 架构设计</h2>
+<h3 id="uml类图">1、UML类图</h3>
+<img src="en/BUAA-OO2025%E7%AC%AC%E4%B8%89%E5%8D%95%E5%85%83%E6%80%BB%E7%BB%93/%E6%9E%B6%E6%9E%84%E7%B1%BB%E5%9B%BE.svg" class="">
+<h3 id="图模型组成">2、图模型组成</h3>
+<ul>
+<li><strong>核心社交网络图:</strong> 主要通过 Network 类中的
+<code>personMap</code>（存储 Person 节点）和 Person 类内部的
+<code>sortedAcquaintances (TreeSet)</code> 及
+<code>acquaintanceIdToEntryMap</code>（存储熟人关系边及其权重）来构建。<code>addPerson</code>
+指令添加节点，<code>addRelation</code> 和 <code>modifyRelation</code>
+指令构建和修改边。</li>
+<li><strong>Tag-Person 成员关系图:</strong> Person 对象通过其内部的
+<code>tags Map</code> 持有它拥有的 Tag 对象。Tag 对象通过其内部的
+<code>personMap</code> 记录它的成员 Person。Network 类还维护一个反向索引
+<code>personIdToMemberOfTagsMap</code>，用于记录一个 Person
+作为成员出现在哪些具体的 Tag 实例中，方便在关系变化时更新相关的 Tag
+状态。</li>
+<li><strong>OfficialAccount 关注与贡献图:</strong> OfficialAccount
+类内部通过 <code>followersMap</code> 构建关注关系，并通过
+<code>contributionsMap</code> 和
+<code>sortedContributors (TreeSet)</code>记录和管理关注者的贡献度及最佳贡献者。</li>
+<li><strong>消息与实体关联:</strong> 通过 Network 中的
+<code>allMessagesMap</code> 存储所有消息。Person 的
+<code>messagesList</code> 记录其接收到的消息。Network 的
+<code>articleToContributorMap</code> 和 <code>emojiToMessagesMap</code>
+分别将文章和 Emoji 与相关的 Person 或 Message
+关联起来，用于特定功能的实现和优化。</li>
+<li><strong>辅助图算法的输入:</strong> <code>GraphAlgorithms</code>
+类直接接收 Network 的 <code>personMap</code>
+作为其操作图结构的输入，用于执行如路径查找、连通性判断和三元环计数等算法。</li>
+</ul>
+<h3 id="维护策略">3、维护策略</h3>
+<ul>
+<li><strong>直接存储与索引:</strong> 对 Person、OfficialAccount、全局
+Message、全局 Emoji 使用 <code>HashMap</code> 进行 ID
+到对象的直接存储和快速查找。</li>
+<li><strong>有序集合优化查询:</strong> 在 Person（最佳熟人）和
+OfficialAccount（最佳贡献者）内部使用 <code>TreeSet</code>
+来自动维护排序，使得相关查询非常高效。</li>
+<li><strong>反向索引:</strong>
+<ul>
+<li><code>Network.personIdToMemberOfTagsMap</code>:
+用于在关系变化时快速定位受影响的 Tag，用于优化qtvs。</li>
+<li><code>Network.emojiToMessagesMap</code>: 用于在删除冷门 Emoji
+时快速定位并删除相关的消息。</li>
+</ul></li>
+<li><strong>增量更新缓存:</strong>
+<code>Tag.getValueSum</code>与<code>Network.triSum</code>
+等复杂的query对象采用增量更新策略，以避免大量查询导致CTLE。</li>
+</ul>
+<h2 id="四-出现的性能问题与修复情况">四 出现的性能问题与修复情况</h2>
+<ol type="1">
+<li><strong><code>Person.queryBestAcquaintance()</code> :</strong>
+<ul>
+<li><strong>初始问题:</strong> 如果每次调用都遍历所有熟人
+(O(degree))，在 Network.queryCoupleSum() (O(N) 次调用) 中会导致整体 O(N
+* degree) 甚至 O(N^2) 的复杂度，容易超时。</li>
+<li><strong>第一次迭代优化 (手动缓存):</strong> 我们引入了
+<strong>bestAcquaintanceId</strong>,
+<strong>bestAcquaintanceValue</strong>, <strong>isValid</strong>
+手动缓存。
+<ul>
+<li><strong>优点:</strong> 缓存命中时 O(1)。</li>
+<li><strong>不足:</strong> 缓存更新逻辑（特别是 addAcquaintance 和
+modifyValue 中值变小或删除最佳者时）复杂且容易出错，如果频繁失效导致重算
+(O(degree))，性能仍然不稳定。。</li>
+</ul></li>
+<li><strong>第二次迭代优化 (TreeSet):</strong> 最终方案是使用
+TreeSet<AcquaintanceEntry> (配合辅助 Map acquaintanceIdToEntryMap)
+来自动维护熟人的排序。
+<ul>
+<li><strong>修复效果:</strong> <code>queryBestAcquaintance</code> 变为
+O(log degree) 或 O(1) (取 TreeSet.first())。<code>addAcquaintance</code>
+和 <code>modifyValue</code> 的复杂度也稳定在 O(log
+degree)。这显著提升了依赖此方法的 <code>queryCoupleSum</code>
+的性能。</li>
+</ul></li>
+</ul></li>
+<li><strong><code>Network.queryCoupleSum()</code>:</strong>
+<ul>
+<li><strong>初始问题:</strong> 如果采用朴素的双重循环遍历所有 Person 对
+(O(N^2))，并且内部调用未优化的 queryBestAcquaintance
+(O(degree))，则总复杂度可能高达 O(N^2 * degree) 或 O(N^3)。</li>
+<li><strong>第一次迭代优化 (算法层面):</strong>
+将双重循环改为单层循环遍历 Person i -&gt; 找 best(i)=j -&gt; 找
+best(j)=k -&gt; 比较 k==i。</li>
+<li><strong>结合 Person 的 TreeSet 优化:</strong> 如第一点所述。</li>
+</ul></li>
+<li><strong><code>Person.removeReceivedArticle(int articleId)</code> (在
+Network.deleteArticle 中被调用):</strong>
+<ul>
+<li><strong>初始问题:</strong> 如果 Person 的
+<code>receivedArticles</code> 使用 LinkedList<Integer> 实现，那么
+<code>removeFirstOccurrence</code> 或 <code>removeIf</code>
+来删除（所有）匹配项的复杂度是 O(L) (L 为列表长度)。在
+<code>Network.deleteArticle 中</code>，遍历 F 个关注者，每个都执行 O(L)
+操作，导致通知部分为 O(F*L)，可能超时。</li>
+<li><strong>迭代优化 (自定义双向链表 + Map 索引):</strong>
+我们设计了使用 Map&lt;Integer, LinkedList<Node>&gt;
+<code>articleIdToNodesMap</code> 配合自定义双向链表节点 Node 的方案。
+<ul>
+<li>addReceivedArticle 保持 O(1)。</li>
+<li>removeReceivedArticle (删除所有匹配项) 的复杂度优化为 O(K)，K 是特定
+articleId 的重复次数。这在 K 远小于 L 时是显著的优化。</li>
+<li><strong>修复效果:</strong> <code>Network.deleteArticle</code>
+通知部分的复杂度从 O(F·L) 改善为 O(F·K_avg)，平均情况下 K_avg
+通常较小。</li>
+</ul></li>
+</ul></li>
+<li><strong><code>Tag.getValueSum()</code>:</strong>
+<ul>
+<li><strong>初始问题:</strong> 每次调用都进行 O(S^2) 的双重循环计算 (S
+为 Tag 内人数)，在
+<code>queryTagValueSum</code>被频繁调用时会超时。</li>
+<li><strong>迭代优化 (增量缓存 + Network 通知):</strong>
+<ul>
+<li>Tag 内部维护 <code>cachedValueSum</code>。</li>
+<li>Tag.addPerson 和 Tag.delPerson 进行 O(S) 的增量更新
+<code>cachedValueSum</code>。</li>
+<li>Network.addRelation 和 Network.modifyRelation 负责找到受影响的 Tag
+(那些同时包含关系双方的 Tag)，并调用 Tag 新增的
+<code>adjustValueSumForExternalRelationChange(p1Id, p2Id, valueChange)</code>
+方法，该方法对 <code>cachedValueSum</code>进行 O(1) 的调整。</li>
+<li><strong>修复效果:</strong> Tag.getValueSum() 变为 O(1) 查询。代价是
+addPerson/delPerson 变为 O(S)，addRelation/modifyRelation
+需要额外的逻辑来查找和通知 Tag。</li>
+</ul></li>
+</ul></li>
+<li><strong><code>Network.queryTripleSum()</code>:</strong>
+<ul>
+<li><strong>初始问题:</strong> 最初的实现是 O(N^3) 或 O(N^2 *
+degree)，这是非常高的复杂度，极易超时。</li>
+<li><strong>优化方向:</strong> 遍历节点再遍历其邻居对 (O(N *
+avg_degree^2))，并且对<code>triSum</code>进行增量更新。</li>
+</ul></li>
+<li><strong><code>Network.isCircle()</code> 和
+<code>Network.queryShortestPath()</code>:</strong>
+<ul>
+<li><strong>当前实现:</strong> 单向 BFS，复杂度 O(N+M)。</li>
+<li><strong>优化方向 :</strong> 双向 BFS
+可以显著改善实际运行时间（常数因子），但最坏复杂度不变。对于无权图，BFS
+已是较优算法，因此没有使用双向BFS。</li>
+</ul></li>
+</ol>
+<h2 id="五-规格与实现分离">五 规格与实现分离</h2>
+<p>规格与实现分离是软件工程中的核心原则，旨在提高代码的<strong>模块化</strong>、<strong>可维护性</strong>、<strong>可测试性</strong>和<strong>可重用性</strong>。通过这个单元的学习，我对这个原则有了更具体的体会：</p>
+<ol type="1">
+<li><strong>接口 (JML 规格) 定义了“做什么” :</strong>
+<ul>
+<li>JML
+规格扮演了<strong>契约</strong>的角色。它精确地定义了一个组件应该提供的功能、它能接受的输入<strong>（requires）</strong>、它保证产生的输出或状态改变<strong>（ensures）</strong>、它可能修改的状态<strong>（assignable）</strong>以及它在异常情况下应该如何表现<strong>（signals）</strong>。</li>
+<li>当我们严格对照 JML 来<strong>设计和 Debug</strong> 时（比如
+deleteArticle 的异常顺序，红包消息的 socialValue
+计算），思路会更清晰，也更容易发现与JML不符的地方。</li>
+</ul></li>
+<li><strong>实现定义了“怎么做” :</strong>
+<ul>
+<li>我们需要实现的类则关注如何高效、正确地达成 JML
+规定的目标。我们可以自由选择内部数据结构和算法，只要最终的外部行为符合
+JML 即可。</li>
+<li>这种分离给了我们优化的空间，也是我们这个单元主要考察内容之一吧。当我们发现
+<code>queryBestAcquaintance</code> 性能不足时，我们可以<strong>只修改
+Person 类的内部实现</strong>（从手动缓存到 TreeSet），而不需要修改 JML
+规格。</li>
+</ul></li>
+<li><strong>分离带来的好处:</strong>
+<ul>
+<li><strong>模块化:</strong> 基于JML每个组件可以独立开发和测试。我们对
+Person 进行单元测试，确保其缓存正确，然后再集成到 Network 中。</li>
+<li><strong>可维护性:</strong>
+修改一个组件的内部实现（例如优化算法）不应该影响到其他依赖其接口的组件。</li>
+<li><strong>可测试性:</strong>
+<ul>
+<li><strong>单元测试:</strong>
+可以针对实现类进行白盒测试，验证其内部逻辑。</li>
+<li><strong>基于接口的测试/功能测试:</strong> 可以只依赖接口和 JML
+编写测试用例，验证任何符合该接口的实现是否都表现正确。</li>
+</ul></li>
+</ul></li>
+</ol>
+<h2 id="六-规格与junit">六 规格与Junit</h2>
+<h3 id="利用规格设计实现junit测试">1、利用规格设计实现Junit测试</h3>
+<ol type="1">
+<li><strong>测试正常行为 (normal_behavior):</strong>
+<ul>
+<li><strong>根据 requires 子句构造有效输入:</strong> JML 的 requires
+子句定义了方法正常执行的前提条件。测试时，应构造满足这些前提条件的输入数据和对象状态。</li>
+<li><strong>根据 ensures 子句验证输出和状态变化:</strong> JML 的 ensures
+子句描述了方法成功执行后必须达成的状态或返回结果。JUnit 的断言
+(assertEquals, assertTrue, assertFalse 等)
+就应该用来验证这些后置条件。</li>
+<li><strong>考虑边界值和等价类:</strong> 即使 JML
+没有明确列出所有边界，但基于 requires
+中的条件，可以推断出参数的有效范围和边界情况。</li>
+</ul></li>
+<li><strong>测试异常行为 (exceptional_behavior):</strong>
+<ul>
+<li><strong>根据 signals (或 signals_only)
+子句构造触发异常的输入:</strong> JML 的 signals
+子句定义了在何种条件下方法应该抛出何种异常。测试时，应精确构造这些条件。</li>
+<li><strong>使用 JUnit4 的异常测试机制验证异常类型和内容。</strong></li>
+<li><strong>测试异常的优先级:</strong> 如果 JML 定义了多个
+exceptional_behavior
+块，它们的顺序通常表明了检查和抛出异常的优先级。测试用例应该尝试验证这种优先级。</li>
+</ul></li>
+<li><strong>测试不变式 (invariant):</strong>
+<ul>
+<li>不变式定义了对象在任何稳定状态下都必须满足的属性。所有会修改对象状态的<strong>非构造方法</strong>，在执行完毕后，对象都必须仍然满足其不变式。构造方法执行完毕后，对象必须满足不变式。</li>
+<li><strong>测试策略:</strong> 在调用了那些会修改对象状态的 public
+方法之后，设计断言来检查对象是否仍然符合其类 JML 中定义的不变式。</li>
+</ul></li>
+<li><strong>测试 assignable (可修改项) 和 pure 约束:</strong>
+<ul>
+<li><strong>assignable 或 /*@ pure @*/:</strong>
+这些方法不应修改任何可观察状态。
+<ul>
+<li><strong>测试策略:</strong>
+二者都需要利用<strong>深拷贝</strong>验证对象是否完全没有改变。</li>
+</ul></li>
+<li><strong>assignable <locations>;</strong>:
+这些方法只允许修改指定的模型字段。
+<ul>
+<li><strong>测试策略:</strong> 除了验证 ensures
+子句描述的状态变化确实发生外，还要验证<strong>未被列在 assignable
+中的状态确实没有改变</strong>。这通常与 pure
+方法的测试类似，需要<strong>深克隆</strong>比较调用前后的状态。</li>
+</ul></li>
+</ul></li>
+</ol>
+<h3 id="junit-测试检验代码实现与规格的一致性">2、JUnit
+测试检验代码实现与规格的一致性</h3>
+<p>​ JUnit 测试是验证代码实现是否符合 JML
+规格的重要手段，其优势效果明显：</p>
+<ol type="1">
+<li><strong>自动化验证:</strong> JUnit
+可以自动化地执行大量测试用例，快速反馈代码是否符合预期。</li>
+<li><strong>早期发现错误:</strong>
+在开发早期阶段通过单元测试发现问题，避免强测凉掉（×。</li>
+<li><strong>精确的问题定位:</strong>
+良好的单元测试可以帮助快速定位到出错的具体方法或逻辑。</li>
+<li><strong>回归保证:</strong> 一旦为某个 Bug
+编写了测试用例，或者为某个功能点编写了测试，这些测试就可以在后续修改中持续运行，确保
+Bug 不会重现，功能不被破坏。</li>
+<li><strong>促进对规格的理解:</strong> 编写 JUnit
+测试的过程本身就是一个“强迫”开发者仔细阅读和理解 JML
+规格的过程。为了写出好的测试，必须清楚方法的<strong>前提、后置、异常</strong>等。</li>
+</ol>
+<h2 id="七-学习体会">七 学习体会</h2>
 <p>​
-我的妈妈绝对<strong>是世界最坚韧的人之一</strong>，我从小到大一直想要想妈妈一样坚定不移、一样百战不殆。所以我会尽量让自己显得很坚强，但好像还是差点，有时候还是要找妈妈把碎掉的自己拼起来。妈妈碎的时候都是自己拼自己嘛，我不知道，但是我知道妈妈在我这里始终是最后的护盾，没有人能攻破这位人生路上高歌向前的勇士。</p>
+OO是一门内容丰富且多元的课程，第三单元也给我们带来了前所未有的学习体验。一句<strong>规格化设计</strong>涵盖了许多需要我们在实操中慢慢体悟的细节。<strong>JML规格</strong>像是一份指导书，或者说是一份严谨的要求，像一个深入项目结构的甲方，很大程度上提升了我们编写代码的确定性与效率。</p>
 <p>​
-我的妈妈也<strong>是世界上一直把我当小孩的人之一</strong>，另一个就是老爸吧。很小的时候就听说传闻，60岁老爷爷在自己80岁妈妈怀里还像个孩子，在爸妈眼里，也许<strong>孩子永远是孩子，而他们也一直是孩子坚实的后盾</strong>。每当我假期回到家中，感觉自己又变成了小时候的样子，不敢一个人去买菜，不想一个人出远门，一切好像五年前——又好像十年以前？哈哈哈😄不记得了。但是出门在外，尤其是上学的时候，又变成了一个五大三粗的北方男大学生，是不是蛮有反差感的呢？</p>
-<figure>
-<img src="mom3.jpg" alt="mom3" />
-<figcaption aria-hidden="true">mom3</figcaption>
-</figure>
+而随着作业的迭代，一次次CTLE后再优化，让我对<strong>规格与实现分离</strong>有了更深的理解，规格接口定义了我们要<strong>做什么</strong>，而<strong>怎么做</strong>、<strong>怎么做得更好</strong>，是由我们开发者考虑的。严丝合缝的规格设定与自由自在的设计实现，这二者相辅相成，让人更加感受到了项目开发的魅力~</p>
+<h2 id="后记">后记</h2>
 <p>​
-我的妈妈也<strong>是世界上最不扫兴的人之一</strong>！表扬🎭！不管我多幼稚的行为还是多胡闹的话语，妈妈从来不会让它们石沉大海，妈妈的爱虽然深似大海，但它一直都有回应🔈，就像石头激起的涟漪一般。也许正因如此，在家里吃饭永远永远有话说，吃饭开心绝对不止于饭本身好吃，家人一起聊天也是全家最喜欢的一集。</p>
-<p>​
-我的妈妈也<strong>是世界上做饭最好的人！</strong>没有之一！详情请见往期过年篇，真的很好吃，以前吃过或者以后有机会吃的真的有福了！可惜我没有学妈妈的手艺，我妈做饭好吃就行，我还是个小孩呢😊！</p>
-<p>​
-言有尽而意无穷，对妈妈的爱只能以冰山一角的形式向妈妈表达出来。虽然在外求学，但是我和妈妈与爸爸始终保持团结同心！虽然相隔千里，但是还是想要说一句：</p>
-<p>​ <strong>爱你老妈，明天见！</strong></p>
-<figure>
-<img src="mom4.jpg" alt="mom4" />
-<figcaption aria-hidden="true">mom4</figcaption>
-</figure>
-<figure>
-<img src="mom5.jpg" alt="mom5" />
-<figcaption aria-hidden="true">mom5</figcaption>
-</figure>
+这几周的学习强度变化太大<sub>笔者决定要开始自律的一周啦！疑似上个周末玩的太嗨了，学习强度不太高的情况下，我们一定要优先保证睡眠与锻炼的时间呀😊，别让学习耽误了健康的身体，很喜欢沃兹基硕德的一句话：不学习一辈子白过，只学习活不了一辈子</sub>~</p>
+<p>​ 本期总结就到这里！感谢你看到这里~我们下期再见！👋</p>
 
 
         <hr>
         <!-- Pager -->
         <ul class="pager">
           
-          <li class="previous">
-            <a href="/en/BUAA-OO2025第三单元总结/" data-toggle="tooltip" data-placement="top" title="BUAA-OO2025第三单元总结">&larr; Previous Post</a>
-          </li>
-          
           
           <li class="next">
-            <a href="/en/BUAA-OSLab4学习笔记/" data-toggle="tooltip" data-placement="top" title="BUAA-OSLab4学习笔记">Next Post &rarr;</a>
+            <a href="/en/20250511/" data-toggle="tooltip" data-placement="top" title="20250511">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -566,7 +915,7 @@
       repo: '',
       owner: '',
       admin: '',
-      id: 'Sat May 10 2025 22:32:56 GMT+0800', // Ensure uniqueness and length less than 50
+      id: 'Sat May 17 2025 16:42:49 GMT+0800', // Ensure uniqueness and length less than 50
       distractionFreeMode: false, // Facebook-like distraction free mode
       perPage: 10,
       pagerDirection: 'last',
@@ -619,7 +968,8 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#section"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">20250511</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#buaa-oo2025%E7%AC%AC%E4%B8%89%E5%8D%95%E5%85%83%E6%80%BB%E7%BB%93"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">BUAA-OO2025第三单元总结</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%80-%E6%B5%8B%E8%AF%95%E8%BF%87%E7%A8%8B"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">一 测试过程</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%AF%B9%E6%B5%8B%E8%AF%95%E7%B1%BB%E5%9E%8B%E7%9A%84%E7%90%86%E8%A7%A3%E5%8F%8A%E5%9C%A8%E6%9C%AC%E5%8D%95%E5%85%83%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">1、对测试类型的理解及在本单元的应用</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%95%B0%E6%8D%AE%E6%9E%84%E9%80%A0%E7%AD%96%E7%95%A5"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">2. 数据构造策略 </span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%8C-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%B8%8E%E6%88%91%E4%BB%AC"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">二 大模型与我们</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%89-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">三 架构设计</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#uml%E7%B1%BB%E5%9B%BE"><span class="toc-nav-number">1.4.1.</span> <span class="toc-nav-text">1、UML类图</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%9B%BE%E6%A8%A1%E5%9E%8B%E7%BB%84%E6%88%90"><span class="toc-nav-number">1.4.2.</span> <span class="toc-nav-text">2、图模型组成</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%BB%B4%E6%8A%A4%E7%AD%96%E7%95%A5"><span class="toc-nav-number">1.4.3.</span> <span class="toc-nav-text">3、维护策略</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%9B%9B-%E5%87%BA%E7%8E%B0%E7%9A%84%E6%80%A7%E8%83%BD%E9%97%AE%E9%A2%98%E4%B8%8E%E4%BF%AE%E5%A4%8D%E6%83%85%E5%86%B5"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">四 出现的性能问题与修复情况</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%94-%E8%A7%84%E6%A0%BC%E4%B8%8E%E5%AE%9E%E7%8E%B0%E5%88%86%E7%A6%BB"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">五 规格与实现分离</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%AD-%E8%A7%84%E6%A0%BC%E4%B8%8Ejunit"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">六 规格与Junit</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%88%A9%E7%94%A8%E8%A7%84%E6%A0%BC%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0junit%E6%B5%8B%E8%AF%95"><span class="toc-nav-number">1.7.1.</span> <span class="toc-nav-text">1、利用规格设计实现Junit测试</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#junit-%E6%B5%8B%E8%AF%95%E6%A3%80%E9%AA%8C%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E4%B8%8E%E8%A7%84%E6%A0%BC%E7%9A%84%E4%B8%80%E8%87%B4%E6%80%A7"><span class="toc-nav-number">1.7.2.</span> <span class="toc-nav-text">2、JUnit
+测试检验代码实现与规格的一致性</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%83-%E5%AD%A6%E4%B9%A0%E4%BD%93%E4%BC%9A"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">七 学习体会</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-nav-number">1.9.</span> <span class="toc-nav-text">后记</span></a></li></ol></li></ol>
         
         </div>
       </aside>
@@ -642,7 +992,7 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#Life" title="Life">Life</a>
+            <a class="tag" href="/tags/#OO" title="OO">OO</a>
             
           </div>
         </section>
