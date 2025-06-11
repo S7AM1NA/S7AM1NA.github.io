@@ -389,7 +389,7 @@
               
             </div>
             <h1>BUAA-OSLab5学习笔记</h1>
-            <h2 class="subheading">副标题还没写 我会想起来的</h2>
+            <h2 class="subheading">FS means File System or Final Story📕</h2>
             <span class="meta">
               Posted by S7AM1NA on
               2025-05-23
@@ -475,323 +475,327 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>BUAA-OSLab5学习笔记</h1>
+        <h1 id="buaa-oslab5学习笔记">BUAA-OSLab5学习笔记</h1>
 <blockquote>
 <p>失败实为经验，放弃才是失败。</p>
 </blockquote>
 <h2 id="一-前言">一 前言</h2>
-<p>​	首战冯如杯，混了个三等奖😭，有些许不悲不喜的麻木。理想和现实总是千差万别，尤其是在科研的道路上。这几天笔者还在坚持做一些 <em>CV</em> 研究，但是有一种**“山外青山”**的感觉，当克服了重重困难后，发现后面还有更加严峻的问题😡。</p>
-<p>​	无妨无妨！人生难得圆满，笔者知足常乐。祝大家都能完成一些自己想做的事，无论大小、无论是否有人知晓、无论信手拈来或是苦心孤诣，我们只管踏踏实实迈步。有的时候是这样的，我们会<strong>屡战屡败</strong>、我们会<strong>消沉良久</strong>，但是只要我们永不言弃，我们就会在自己的方向上不断超越自己。人生是旷野，<strong>不用和他人比较，你只管超越自我</strong>！不必<strong>懦弱自卑</strong>、亦不用<strong>畏惧失败</strong>，<strong>【失败实为经验，放弃才是失败】</strong>。</p>
-<p><img src="%E8%AE%BA%E5%A4%B1%E8%B4%A5.jpg" alt=""></p>
-<p>​	这个Lab的学习，我们将以与大模型的人机交互为展示思路，分享笔者在利用大模型逐步学习<strong>文件系统</strong>的细节。大模型为笔者构建学习框架，并提供启发性问题，笔者根据阅读与问题回答大模型的问题。</p>
-<p>​	<em>（部分内容与标题复制自大模型，请注意甄别）</em></p>
+<p>​
+首战冯如杯，混了个三等奖😭，有些许不悲不喜的麻木。理想和现实总是千差万别，尤其是在科研的道路上。这几天笔者还在坚持做一些
+<em>CV</em>
+研究，但是有一种<strong>“山外青山”</strong>的感觉，当克服了重重困难后，发现后面还有更加严峻的问题😡。</p>
+<p>​
+无妨无妨！人生难得圆满，笔者知足常乐。祝大家都能完成一些自己想做的事，无论大小、无论是否有人知晓、无论信手拈来或是苦心孤诣，我们只管踏踏实实迈步。有的时候是这样的，我们会<strong>屡战屡败</strong>、我们会<strong>消沉良久</strong>，但是只要我们永不言弃，我们就会在自己的方向上不断超越自己。人生是旷野，<strong>不用和他人比较，你只管超越自我</strong>！不必<strong>懦弱自卑</strong>、亦不用<strong>畏惧失败</strong>，<strong>【失败实为经验，放弃才是失败】</strong>。</p>
+<p><img src="论失败.jpg" /></p>
+<p>​
+这个Lab的学习，我们将以与大模型的人机交互为展示思路，分享笔者在利用大模型逐步学习<strong>文件系统</strong>的细节。大模型为笔者构建学习框架，并提供启发性问题，笔者根据阅读与问题回答大模型的问题。</p>
+<p>​ <em>（部分内容与标题复制自大模型，请注意甄别）</em></p>
 <h2 id="二-正文">二 正文</h2>
-<h3 id="1-理解文件系统和磁盘驱动的基础-对应-5-1-5-2-5-3-1">1 <strong>理解文件系统和磁盘驱动的基础 (对应 5.1, 5.2, 5.3.1)</strong></h3>
-<h4 id="目标："><strong>目标：</strong></h4>
+<h3 id="理解文件系统和磁盘驱动的基础-对应-5.1-5.2-5.3.1">1
+<strong>理解文件系统和磁盘驱动的基础 (对应 5.1, 5.2,
+5.3.1)</strong></h3>
+<h4 id="目标"><strong>目标：</strong></h4>
 <ul>
 <li>明白文件系统是做什么的。</li>
 <li>理解 MOS 文件系统的整体架构 (微内核)。</li>
 <li>掌握内存映射 I/O (MMIO) 的概念及其在 MOS 中的应用。</li>
 </ul>
-<h4 id="问题汇总：">问题汇总：</h4>
+<h4 id="问题汇总">问题汇总：</h4>
 <ul>
-<li>
-<h5 id="问题1：用你自己的话总结一下，为什么操作系统需要文件系统？它解决了什么问题？"><strong>问题1</strong>：用你自己的话总结一下，为什么操作系统需要文件系统？它解决了什么问题？</h5>
-</li>
+<li><h5
+id="问题1用你自己的话总结一下为什么操作系统需要文件系统它解决了什么问题"><strong>问题1</strong>：用你自己的话总结一下，为什么操作系统需要文件系统？它解决了什么问题？</h5></li>
 </ul>
-<p>​	<strong>文件系统的核心作用：</strong></p>
-<ol>
+<p>​ <strong>文件系统的核心作用：</strong></p>
+<ol type="1">
 <li><strong>持久化存储</strong>：解决了<strong>内存易失性</strong>的问题，使得数据可以在断电后依然存在。</li>
 <li><strong>大容量存储</strong>：外部存储设备（如硬盘、SSD）通常比内存容量大得多，可以存储海量数据。</li>
 <li><strong>方便管理和组织</strong>：通过目录、文件名等方式，使得用户和程序可以方便地组织、查找和访问数据，而不是直接面对底层的物理存储块。</li>
 <li><strong>数据共享与保护</strong>：文件系统也为多用户、多进程之间的数据共享和访问控制提供了基础。</li>
 </ol>
 <ul>
-<li>
-<h5 id="问题2：观察图-5-1，如果一个用户程序想读取磁盘上的一个文件，数据流和控制流大概是怎样的？（简单描述一下，不需要非常精确）"><strong>问题2</strong>：观察图 5.1，如果一个用户程序想读取磁盘上的一个文件，数据流和控制流大概是怎样的？（简单描述一下，不需要非常精确）</h5>
-</li>
+<li><h5
+id="问题2观察图-5.1如果一个用户程序想读取磁盘上的一个文件数据流和控制流大概是怎样的简单描述一下不需要非常精确"><strong>问题2</strong>：观察图
+5.1，如果一个用户程序想读取磁盘上的一个文件，数据流和控制流大概是怎样的？（简单描述一下，不需要非常精确）</h5></li>
 </ul>
-<p>​	<img src="%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%80%BB%E8%A7%88.png" alt="文件系统总览"></p>
-<p>​	<em>( p.s.该部分内容充分融合大模型的回复，作为笔者的学习初期框架 )</em></p>
-<ol>
+<p>​ <img src="文件系统总览.png" alt="文件系统总览" /></p>
+<p>​ <em>( p.s.该部分内容充分融合大模型的回复，作为笔者的学习初期框架
+)</em></p>
+<ol type="1">
 <li><strong>用户程序发起请求</strong>:
 <ul>
-<li>用户程序（比如你写的 test.c）调用一个库函数，比如 read() (这个函数可能在 user/lib/fd.c 或 user/lib/file.c 中)。</li>
+<li>用户程序（比如你写的 test.c）调用一个库函数，比如 read()
+(这个函数可能在 user/lib/fd.c 或 user/lib/file.c 中)。</li>
 <li>这个库函数会准备一个包含请求信息（比如要读取哪个文件、从哪里开始读、读多少）的消息。</li>
-</ul>
-</li>
+</ul></li>
 <li><strong>通过 IPC 与文件服务进程通信</strong>:
 <ul>
-<li>用户库函数 (比如 fsipc_read 在 user/lib/fsipc.c) 会使用进程间通信 (IPC) 机制，将这个请求消息发送给<strong>文件系统服务进程 (fs_serv)</strong>。</li>
-<li>此时，用户程序可能会<strong>阻塞</strong>，等待 fs_serv 的响应。</li>
-</ul>
-</li>
+<li>用户库函数 (比如 fsipc_read 在 user/lib/fsipc.c) 会使用进程间通信
+(IPC) 机制，将这个请求消息发送给<strong>文件系统服务进程
+(fs_serv)</strong>。</li>
+<li>此时，用户程序可能会<strong>阻塞</strong>，等待 fs_serv
+的响应。</li>
+</ul></li>
 <li><strong>文件服务进程 (fs_serv) 处理请求</strong>:
 <ul>
 <li>fs_serv 进程在其主循环中通过 IPC 接收到这个请求。</li>
 <li>fs_serv 解析请求，确定要读取的文件和数据范围。</li>
-<li><strong>关键点：磁盘块缓存 (Disk Cache)</strong> (这一部分在图 5.1 中用 “磁盘缓存中没有对应块…” 和 “磁盘缓存存在对应块” 隐晦地表示了)
+<li><strong>关键点：磁盘块缓存 (Disk Cache)</strong> (这一部分在图 5.1
+中用 "磁盘缓存中没有对应块..." 和 "磁盘缓存存在对应块" 隐晦地表示了)
 <ul>
-<li>fs_serv 首先检查它自己管理的<strong>磁盘块缓存</strong>中是否有所需文件的<strong>数据块</strong>。</li>
-<li><strong>缓存命中 (Cache Hit)</strong>：如果数据块在缓存中，fs_serv 可以直接从缓存中获取数据。</li>
-<li><strong>缓存未命中 (Cache Miss)</strong>：如果数据块不在缓存中，fs_serv 就需要从磁盘读取：
-<ol>
-<li>fs_serv 会调用其内部的<strong>磁盘驱动函数</strong> (比如 ide_read 在 fs/ide.c 中)。</li>
-<li>这个磁盘驱动函数会通过<strong>系统调用</strong> (比如 syscall_read_dev) 请求<strong>内核 (Kernel)</strong> 去操作磁盘硬件。</li>
-<li>内核执行磁盘读取操作，将数据从磁盘扇区读到 fs_serv 指定的内存缓冲区（这个缓冲区就是块缓存的一部分）。</li>
+<li>fs_serv
+首先检查它自己管理的<strong>磁盘块缓存</strong>中是否有所需文件的<strong>数据块</strong>。</li>
+<li><strong>缓存命中 (Cache Hit)</strong>：如果数据块在缓存中，fs_serv
+可以直接从缓存中获取数据。</li>
+<li><strong>缓存未命中 (Cache
+Miss)</strong>：如果数据块不在缓存中，fs_serv 就需要从磁盘读取：
+<ol type="1">
+<li>fs_serv 会调用其内部的<strong>磁盘驱动函数</strong> (比如 ide_read
+在 fs/ide.c 中)。</li>
+<li>这个磁盘驱动函数会通过<strong>系统调用</strong> (比如
+syscall_read_dev) 请求<strong>内核 (Kernel)</strong>
+去操作磁盘硬件。</li>
+<li>内核执行磁盘读取操作，将数据从磁盘扇区读到 fs_serv
+指定的内存缓冲区（这个缓冲区就是块缓存的一部分）。</li>
 <li>数据读入块缓存后，fs_serv 就可以从缓存中获取数据了。</li>
-</ol>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+</ol></li>
+</ul></li>
+</ul></li>
 <li><strong>文件服务进程 (fs_serv) 返回数据</strong>:
 <ul>
-<li>fs_serv 将读取到的数据（无论是从缓存直接获取还是从磁盘加载到缓存后再获取）通过 IPC 发送回给发起请求的用户程序。</li>
-</ul>
-</li>
+<li>fs_serv
+将读取到的数据（无论是从缓存直接获取还是从磁盘加载到缓存后再获取）通过
+IPC 发送回给发起请求的用户程序。</li>
+</ul></li>
 <li><strong>用户程序接收数据</strong>:
 <ul>
 <li>用户程序的库函数通过 IPC 接收到 fs_serv 返回的数据。</li>
-<li>read() 函数将数据拷贝到用户指定的缓冲区，并返回实际读取的字节数。</li>
+<li>read()
+函数将数据拷贝到用户指定的缓冲区，并返回实际读取的字节数。</li>
 <li>用户程序解除阻塞，继续执行。</li>
-</ul>
-</li>
+</ul></li>
 </ol>
 <ul>
-<li>
-<h5 id="问题3：MOS-将文件系统服务放在用户态（fs-serv-进程），这种设计和传统的宏内核（文件系统是内核一部分）相比，你觉得各有什么好处和坏处？"><strong>问题3</strong>：MOS 将文件系统服务放在用户态（fs_serv 进程），这种设计和传统的宏内核（文件系统是内核一部分）相比，你觉得各有什么好处和坏处？</h5>
-</li>
+<li><h5
+id="问题3mos-将文件系统服务放在用户态fs_serv-进程这种设计和传统的宏内核文件系统是内核一部分相比你觉得各有什么好处和坏处"><strong>问题3</strong>：MOS
+将文件系统服务放在用户态（fs_serv
+进程），这种设计和传统的宏内核（文件系统是内核一部分）相比，你觉得各有什么好处和坏处？</h5></li>
 </ul>
-<p>​	<strong>微内核设计（MOS的方式）的优点：</strong></p>
-<ol>
-<li><strong>更高的系统稳定性 (Robustness &amp; Fault Isolation)</strong>：
+<p>​ <strong>微内核设计（MOS的方式）的优点：</strong></p>
+<ol type="1">
+<li><strong>更高的系统稳定性 (Robustness &amp; Fault
+Isolation)</strong>：
 <ul>
-<li>文件系统服务（fs_serv）作为独立的用户进程运行。如果 fs_serv 崩溃，通常不会导致整个操作系统内核崩溃，提高了系统的整体健壮性。内核可以保持运行，其他不受文件系统影响的服务也能继续。</li>
-</ul>
-</li>
-<li><strong>更好的模块化和灵活性 (Modularity &amp; Flexibility)</strong>：
+<li>文件系统服务（fs_serv）作为独立的用户进程运行。如果 fs_serv
+崩溃，通常不会导致整个操作系统内核崩溃，提高了系统的整体健壮性。内核可以保持运行，其他不受文件系统影响的服务也能继续。</li>
+</ul></li>
+<li><strong>更好的模块化和灵活性 (Modularity &amp;
+Flexibility)</strong>：
 <ul>
 <li><strong>易于开发、测试和调试</strong>：用户态程序的开发和调试工具链更成熟，比直接在内核中开发模块更方便。</li>
 <li><strong>易于扩展和替换</strong>：可以更容易地更新、替换甚至并行运行不同版本或类型的文件系统服务，而无需修改或重新编译内核。</li>
 <li><strong>清晰的接口</strong>：文件系统服务通过明确的IPC接口与用户程序和内核交互，使得系统结构更清晰。</li>
-</ul>
-</li>
+</ul></li>
 </ol>
-<p>​	<strong>微内核设计的缺点：</strong></p>
-<ol>
+<p>​ <strong>微内核设计的缺点：</strong></p>
+<ol type="1">
 <li><strong>性能开销 (Performance Overhead)</strong>：
 <ul>
 <li><strong>最主要的缺点</strong>。用户程序与文件系统服务之间的通信需要通过IPC，这涉及到多次用户态和内核态之间的<strong>上下文切换</strong>以及<strong>数据拷贝</strong>。</li>
 <li>相比于宏内核中直接的内核函数调用，这些额外的开销（尤其对于频繁、小型的文件操作）可能导致性能下降。</li>
-</ul>
-</li>
+</ul></li>
 <li><strong>通信复杂性 (Communication Complexity)</strong>：
 <ul>
 <li>需要精心设计和实现高效且可靠的IPC机制。</li>
 <li>服务间的接口定义和协议管理可能比内核内部模块间的直接调用更复杂。</li>
-</ul>
-</li>
-<li><strong>功能实现的间接性 (Indirectness of Feature Implementation)</strong>：
+</ul></li>
+<li><strong>功能实现的间接性 (Indirectness of Feature
+Implementation)</strong>：
 <ul>
 <li>某些原本在内核中可以直接访问硬件或内核数据结构的功能，现在可能需要通过额外的IPC请求或者更复杂的机制来实现，增加了实现的间接性。</li>
-</ul>
-</li>
+</ul></li>
 </ol>
 <ul>
-<li>
-<h5 id="问题4：什么是-I-O-端口？什么是内存映射-I-O？MOS-采用的是哪一种？"><strong>问题4</strong>：什么是 I/O 端口？什么是内存映射 I/O？MOS 采用的是哪一种？</h5>
+<li><h5
+id="问题4什么是-io-端口什么是内存映射-iomos-采用的是哪一种"><strong>问题4</strong>：什么是
+I/O 端口？什么是内存映射 I/O？MOS 采用的是哪一种？</h5>
 <ul>
-<li>
-<p>I/O端口其实就是外设寄存器，在数据通信时寄存控制信号、状态信号与数据的寄存器。</p>
-</li>
-<li>
-<p>内存映射I/O则是因为我们的I/O设备拥有的物理地址是固定的，我们通过简单读写固定的内核虚拟地址，即kseg1，就能实现外部设备驱动的功能。</p>
-</li>
-<li>
-<p>MOS采用的是内存映射I/O。</p>
-</li>
-</ul>
-</li>
-<li>
-<h5 id="问题5：kseg0-和-kseg1-在访问内存和外设时有什么关键区别？为什么访问外设通常使用-kseg1？"><strong>问题5</strong>：kseg0 和 kseg1 在访问内存和外设时有什么关键区别？为什么访问外设通常使用 kseg1？</h5>
+<li><p>I/O端口其实就是外设寄存器，在数据通信时寄存控制信号、状态信号与数据的寄存器。</p></li>
+<li><p>内存映射I/O则是因为我们的I/O设备拥有的物理地址是固定的，我们通过简单读写固定的内核虚拟地址，即kseg1，就能实现外部设备驱动的功能。</p></li>
+<li><p>MOS采用的是内存映射I/O。</p></li>
+</ul></li>
+<li><h5
+id="问题5kseg0-和-kseg1-在访问内存和外设时有什么关键区别为什么访问外设通常使用-kseg1"><strong>问题5</strong>：kseg0
+和 kseg1 在访问内存和外设时有什么关键区别？为什么访问外设通常使用
+kseg1？</h5>
 <ul>
-<li><strong>kseg0 (Cached)</strong>：用于访问<strong>主内存 (RAM)</strong>。缓存能显著提升对内存中代码和数据的访问性能。</li>
-<li><strong>kseg1 (Uncached)</strong>：用于访问<strong>I/O设备寄存器</strong>。不使用缓存能确保：
+<li><strong>kseg0 (Cached)</strong>：用于访问<strong>主内存
+(RAM)</strong>。缓存能显著提升对内存中代码和数据的访问性能。</li>
+<li><strong>kseg1
+(Uncached)</strong>：用于访问<strong>I/O设备寄存器</strong>。不使用缓存能确保：
 <ul>
 <li>写操作立即到达设备。</li>
 <li>读操作获取设备最新的实时状态。</li>
 <li>避免因缓存导致的读写副作用问题。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<h5 id="问题6-对应-Thinking-5-1-："><strong>问题6 (对应 Thinking 5.1)</strong>：</h5>
+</ul></li>
+</ul></li>
+<li><h5 id="问题6-对应-thinking-5.1"><strong>问题6 (对应 Thinking
+5.1)</strong>：</h5>
 <blockquote>
-<p>如果通过 kseg0 读写设备，那么对于设备的写入会缓存到 Cache 中。这是 一种错误的行为，在实际编写代码的时候这么做会引发不可预知的问题。请问题：这么做 这会引发什么问题？对于不同种类的设备（如我们提到的串口设备和 IDE 磁盘）的操作会 有差异吗？可以从缓存的性质和缓存更新的策略来考虑。</p>
+<p>如果通过 kseg0 读写设备，那么对于设备的写入会缓存到 Cache 中。这是
+一种错误的行为，在实际编写代码的时候这么做会引发不可预知的问题。请问题：这么做
+这会引发什么问题？对于不同种类的设备（如我们提到的串口设备和 IDE
+磁盘）的操作会 有差异吗？可以从缓存的性质和缓存更新的策略来考虑。</p>
 </blockquote>
 <ul>
-<li>
-<p>如果用 kseg0 访问一个串口的<strong>数据发送寄存器</strong>，你写入一个字符后，这个字符是立刻被发送出去，还是可能会有延迟？为什么？</p>
-<p>字符的发送会<strong>有延迟</strong>。这个延迟可能很小，也可能比较明显，取决于缓存的策略和当前系统负载。在最坏的情况下，如果系统在缓存写回THR之前发生意外（比如重启），这个字符可能永远不会被发送。</p>
-</li>
-<li>
-<p>如果用 kseg0 访问一个 IDE 磁盘的<strong>状态寄存器</strong>来检查它是否忙碌，你读到的状态是实时的，还是可能是过时的？为什么？</p>
-<p>可能是过时的，因为kseg0有缓存机制，如果MMU的cache命中了，那MMU就不会更新实时数据。</p>
-</li>
-<li>
-<p>volatile 关键字在这里起什么作用？如果不用 volatile 修饰指向设备寄存器的指针，可能会发生什么问题？</p>
-<p>确保对映射到设备寄存器的内存地址的<strong>每一次读操作都真正从硬件读取</strong>，<strong>每一次写操作都真正写入硬件</strong>，并且这些操作<strong>不会被编译器优化掉或不当重排</strong>，从而保证与硬件交互的正确性。</p>
-</li>
+<li><p>如果用 kseg0
+访问一个串口的<strong>数据发送寄存器</strong>，你写入一个字符后，这个字符是立刻被发送出去，还是可能会有延迟？为什么？</p>
+<p>字符的发送会<strong>有延迟</strong>。这个延迟可能很小，也可能比较明显，取决于缓存的策略和当前系统负载。在最坏的情况下，如果系统在缓存写回THR之前发生意外（比如重启），这个字符可能永远不会被发送。</p></li>
+<li><p>如果用 kseg0 访问一个 IDE
+磁盘的<strong>状态寄存器</strong>来检查它是否忙碌，你读到的状态是实时的，还是可能是过时的？为什么？</p>
+<p>可能是过时的，因为kseg0有缓存机制，如果MMU的cache命中了，那MMU就不会更新实时数据。</p></li>
+<li><p>volatile 关键字在这里起什么作用？如果不用 volatile
+修饰指向设备寄存器的指针，可能会发生什么问题？</p>
+<p>确保对映射到设备寄存器的内存地址的<strong>每一次读操作都真正从硬件读取</strong>，<strong>每一次写操作都真正写入硬件</strong>，并且这些操作<strong>不会被编译器优化掉或不当重排</strong>，从而保证与硬件交互的正确性。</p></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h3 id="2-学习-5-3-2-IDE-磁盘-5-3-3-驱动程序编写">2 <strong>学习 5.3.2 IDE 磁盘 &amp; 5.3.3 驱动程序编写</strong></h3>
-<h4 id="目标：-2"><strong>目标：</strong></h4>
+<h3 id="学习-5.3.2-ide-磁盘-5.3.3-驱动程序编写">2 <strong>学习 5.3.2 IDE
+磁盘 &amp; 5.3.3 驱动程序编写</strong></h3>
+<h4 id="目标-1"><strong>目标：</strong></h4>
 <ul>
 <li>理解IDE磁盘的物理结构和LBA寻址模式。</li>
 <li>熟悉与IDE磁盘交互涉及的关键寄存器及其功能。</li>
 <li>掌握IDE磁盘读写的基本命令和时序。</li>
 </ul>
-<p>![LBA模式下参数和寄存器映射关系图](LBA 模式下参数和寄存器映射关系图.png)</p>
-<h4 id="问题汇总：-2">问题汇总：</h4>
+<figure>
+<img src="LBA%20模式下参数和寄存器映射关系图.png"
+alt="LBA模式下参数和寄存器映射关系图" />
+<figcaption
+aria-hidden="true">LBA模式下参数和寄存器映射关系图</figcaption>
+</figure>
+<h4 id="问题汇总-1">问题汇总：</h4>
 <ul>
-<li>
-<p><strong>问题1</strong>：为什么说扇区是磁盘进行数据传输的基本单位？它的大小通常是多少？</p>
-<p>因为通过读写 PIIX4 的特定寄存器，我们可以实现以扇区为<strong>最小单元</strong>的读写，大小通常是512字节。</p>
-</li>
-<li>
-<p><strong>问题2</strong>：LBA 寻址相对于 CHS 寻址有什么优点？为什么现代操作系统和驱动程序更倾向于使用 LBA？</p>
-</li>
+<li><p><strong>问题1</strong>：为什么说扇区是磁盘进行数据传输的基本单位？它的大小通常是多少？</p>
+<p>因为通过读写 PIIX4
+的特定寄存器，我们可以实现以扇区为<strong>最小单元</strong>的读写，大小通常是512字节。</p></li>
+<li><p><strong>问题2</strong>：LBA 寻址相对于 CHS
+寻址有什么优点？为什么现代操作系统和驱动程序更倾向于使用 LBA？</p></li>
 </ul>
-<p>​	根据指导书所说，CHS寻址虽然符合物理意义，但是依赖于三个参数，即柱面-磁头-扇区。相比之下LBA根据每个扇区唯一的编号进行寻址，类似于索引寻址的意味？直接且方便。</p>
-<p>​	LBA通过提供一个简单的、线性的扇区编号视图，成功地将操作系统从复杂的、易变的磁盘物理几何参数中解耦出来，使得磁盘管理更简单、更高效，并且能够支持大容量磁盘。<em>（p.s. 本段为AI总结内容）</em></p>
+<p>​
+根据指导书所说，CHS寻址虽然符合物理意义，但是依赖于三个参数，即柱面-磁头-扇区。相比之下LBA根据每个扇区唯一的编号进行寻址，类似于索引寻址的意味？直接且方便。</p>
+<p>​
+LBA通过提供一个简单的、线性的扇区编号视图，成功地将操作系统从复杂的、易变的磁盘物理几何参数中解耦出来，使得磁盘管理更简单、更高效，并且能够支持大容量磁盘。<em>（p.s.
+本段为AI总结内容）</em></p>
 <ul>
-<li>
-<p><strong>问题3</strong>：数据寄存器在读操作和写操作中分别扮演什么角色？它一次可以传输多少位数据（根据图示可能是16位或32位，具体看硬件）？</p>
+<li><p><strong>问题3</strong>：数据寄存器在读操作和写操作中分别扮演什么角色？它一次可以传输多少位数据（根据图示可能是16位或32位，具体看硬件）？</p>
 <ul>
-<li>
-<p>数据寄存器是IDE控制器中用于<strong>暂存正在传输的扇区数据</strong>的硬件部分。</p>
-</li>
-<li>
-<p>在读磁盘时，它是<strong>数据的来源</strong>（对CPU而言）。</p>
-</li>
-<li>
-<p>在写磁盘时，它是<strong>数据的目的地</strong>（对CPU而言）。</p>
-</li>
-<li>
-<p>它的大小（如32位）决定了CPU<strong>一次I/O操作可以处理的数据块大小</strong>，但这通常小于一个完整扇区的大小，所以需要循环操作</p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>问题4</strong>：<strong>扇区数量</strong>寄存器用来指定什么？它的值通常是如何确定的？</p>
+<li><p>数据寄存器是IDE控制器中用于<strong>暂存正在传输的扇区数据</strong>的硬件部分。</p></li>
+<li><p>在读磁盘时，它是<strong>数据的来源</strong>（对CPU而言）。</p></li>
+<li><p>在写磁盘时，它是<strong>数据的目的地</strong>（对CPU而言）。</p></li>
+<li><p>它的大小（如32位）决定了CPU<strong>一次I/O操作可以处理的数据块大小</strong>，但这通常小于一个完整扇区的大小，所以需要循环操作</p></li>
+</ul></li>
+<li><p><strong>问题4</strong>：<strong>扇区数量</strong>寄存器用来指定什么？它的值通常是如何确定的？</p>
 <ul>
 <li>用来指定一次读写的扇区数量。</li>
 <li>在读取/写入扇区函数，即read/write_sector中<code>*((volatile u_char*)(MALTA_IDE_NSECT + 0xA0000000)) = 1;</code>设定为单次读写1个扇区。</li>
-</ul>
-</li>
-<li>
-<p><strong>问题5</strong>：这三个寄存器（LBAL, LBAM, LBAH）是如何组合起来表示一个28位的LBA扇区号的？每个寄存器负责LBA地址的哪一部分？</p>
+</ul></li>
+<li><p><strong>问题5</strong>：这三个寄存器（LBAL, LBAM,
+LBAH）是如何组合起来表示一个28位的LBA扇区号的？每个寄存器负责LBA地址的哪一部分？</p>
 <ul>
 <li>他们分别负责[23:16],[15:8],[7:0]。再从偏移量为0x6的寄存器中借来低四位作为[27:24]，构成28位扇区编号。</li>
-</ul>
-</li>
-<li>
-<p><strong>问题6</strong>：**Device / Head Register (驱动器/磁头寄存器)**寄存器除了选择主盘/从盘 (DEV位) 和设置LBA模式 (LBA位) 外，还用来存放LBA地址的哪一部分？</p>
+</ul></li>
+<li><p><strong>问题6</strong>：<strong>Device / Head Register
+(驱动器/磁头寄存器)</strong>寄存器除了选择主盘/从盘 (DEV位)
+和设置LBA模式 (LBA位) 外，还用来存放LBA地址的哪一部分？</p>
 <ul>
 <li><strong>选择寻址模式</strong> (LBA vs CHS)。</li>
 <li><strong>选择目标驱动器</strong> (主盘 vs 从盘)。</li>
 <li>在LBA模式下，提供<strong>LBA地址的最高4位</strong>。</li>
 <li>在CHS模式下，提供磁头号。</li>
-</ul>
-</li>
-<li>
-<p><strong>问题8</strong>：为什么状态寄存器和命令寄存器可以使用相同的I/O端口地址？它们是如何区分读操作（获取状态）和写操作（发送命令）的？</p>
+</ul></li>
+<li><p><strong>问题8</strong>：为什么状态寄存器和命令寄存器可以使用相同的I/O端口地址？它们是如何区分读操作（获取状态）和写操作（发送命令）的？</p>
 <ul>
-<li>
-<p>因为状态寄存器只在读的时候使用？而命令寄存器只在写的时候使用。</p>
-</li>
-<li>
-<p>相关源码如下：</p>
+<li><p>因为状态寄存器只在读的时候使用？而命令寄存器只在写的时候使用。</p></li>
+<li><p>相关源码如下：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">read_sector</span><span class="params">(<span class="type">int</span> diskno, <span class="type">int</span> secno, <span class="type">void</span>* dst)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">/* code */</span></span><br><span class="line">	*((<span class="keyword">volatile</span> u_char*)(MALTA_IDE_STATUS + <span class="number">0xA0000000</span>)) = MALTA_IDE_CMD_PIO_READ;</span><br><span class="line">	<span class="comment">/* code */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">write_sector</span><span class="params">(<span class="type">int</span> diskno, <span class="type">int</span> secno, <span class="type">void</span>* dst)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">/* code */</span></span><br><span class="line">	*((<span class="keyword">volatile</span> u_char*)(MALTA_IDE_STATUS + <span class="number">0xA0000000</span>)) = MALTA_IDE_CMD_PIO_WRITE;</span><br><span class="line">	<span class="comment">/* code */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>至于这两个宏的具体数值，在<code>include/malta.h</code>当中有定义：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> MALTA_IDE_CMD_PIO_READ 0x20  <span class="comment">/* Read sectors with retry */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MALTA_IDE_CMD_PIO_WRITE 0x30 <span class="comment">/* write sectors with retry */</span></span></span><br></pre></td></tr></table></figure>
-<p>如此便可区分读写啦。</p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>问题9</strong>：状态寄存器中的 BSY (Busy) 位、DRDY (Drive Ready) 位、DRQ (Data Request) 位、ERR (Error) 位分别代表什么含义？它们在磁盘操作的哪个阶段是重要的？</p>
-<p>BSY：是否忙碌<br>
-DRDY：是否就绪<br>
-DRQ：是否有数据请求<br>
-ERR：错误信息</p>
+<p>如此便可区分读写啦。</p></li>
+</ul></li>
+<li><p><strong>问题9</strong>：状态寄存器中的 BSY (Busy) 位、DRDY (Drive
+Ready) 位、DRQ (Data Request) 位、ERR (Error)
+位分别代表什么含义？它们在磁盘操作的哪个阶段是重要的？</p>
+<p>BSY：是否忙碌 DRDY：是否就绪 DRQ：是否有数据请求 ERR：错误信息</p>
 <p><strong>总结一下它们在典型操作流程中的角色：</strong></p>
-<ol>
+<ol type="1">
 <li><strong>操作前</strong>：等待 BSY = 0 (且通常期望 DRDY = 1)。</li>
 <li>发送命令。</li>
 <li><strong>操作中/数据传输前</strong>：等待 BSY = 0。然后检查：
 <ul>
 <li>ERR 位：如果为 1，则处理错误，读取错误寄存器。</li>
-<li>DRQ 位：如果为 1（且 ERR = 0），则可以进行数据传输（从数据寄存器读，或向数据寄存器写）。</li>
-</ul>
-</li>
+<li>DRQ 位：如果为 1（且 ERR =
+0），则可以进行数据传输（从数据寄存器读，或向数据寄存器写）。</li>
+</ul></li>
 <li>数据传输。</li>
-</ol>
-</li>
+</ol></li>
 </ul>
-<h3 id="3-理解磁盘上文件系统的布局与核心数据结构-对应-5-4-1-5-4-2">3 <strong>理解磁盘上文件系统的布局与核心数据结构 (对应 5.4.1, 5.4.2)</strong></h3>
-<h4 id="目标：-3"><strong>目标：</strong></h4>
+<h3 id="理解磁盘上文件系统的布局与核心数据结构-对应-5.4.1-5.4.2">3
+<strong>理解磁盘上文件系统的布局与核心数据结构 (对应 5.4.1,
+5.4.2)</strong></h3>
+<h4 id="目标-2"><strong>目标：</strong></h4>
 <ul>
 <li>掌握MOS文件系统在磁盘上的整体布局（超级块、位图、数据块）。</li>
 <li>理解超级块 (struct Super) 的作用和包含的信息。</li>
 <li>理解位图 (Bitmap) 如何管理空闲数据块。</li>
-<li>深入理解文件控制块 (struct File) 的结构及其在表示文件和目录中的作用（直接指针、间接指针）。</li>
+<li>深入理解文件控制块 (struct File)
+的结构及其在表示文件和目录中的作用（直接指针、间接指针）。</li>
 <li>能够计算文件系统的一些关键限制（如单个文件最大大小、目录中最多文件数）。</li>
 </ul>
-<p><img src="%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4%E5%B8%83%E5%B1%80%E7%A4%BA%E6%84%8F%E5%9B%BE.png" alt="磁盘空间布局示意图.png"></p>
-<h4 id="问题汇总：-3">问题汇总：</h4>
+<figure>
+<img src="磁盘空间布局示意图.png" alt="磁盘空间布局示意图.png" />
+<figcaption aria-hidden="true">磁盘空间布局示意图.png</figcaption>
+</figure>
+<h4 id="问题汇总-2">问题汇总：</h4>
 <ul>
-<li><strong>问题1</strong>：在MOS文件系统中，一个磁盘块 (Block) 的大小是多少字节？它和磁盘扇区 (Sector) 是什么关系？为什么文件系统要以“块”而不是“扇区”作为分配和管理的基本单位？</li>
+<li><strong>问题1</strong>：在MOS文件系统中，一个磁盘块 (Block)
+的大小是多少字节？它和磁盘扇区 (Sector)
+是什么关系？为什么文件系统要以“块”而不是“扇区”作为分配和管理的基本单位？</li>
 </ul>
-<p>​	一个磁盘块有4096字节；它由2的幂次个磁盘扇区组成；文件系统以块作为基本单位是为了对相邻的磁盘扇区进行结合，减少寻址的次数与难度。</p>
+<p>​
+一个磁盘块有4096字节；它由2的幂次个磁盘扇区组成；文件系统以块作为基本单位是为了对相邻的磁盘扇区进行结合，减少寻址的次数与难度。</p>
 <ul>
-<li>
-<p><strong>问题2</strong>：</p>
+<li><p><strong>问题2</strong>：</p>
 <ul>
 <li>磁盘的第0块 (Block 0) 通常用来做什么？</li>
-<li><strong>超级块 (Super Block)</strong> 位于磁盘的哪个块？它的主要作用是什么？</li>
-<li><strong>位图块 (Bitmap Blocks)</strong> 紧跟在超级块之后，它们是用来做什么的？位图中的一个bit代表什么？</li>
+<li><strong>超级块 (Super Block)</strong>
+位于磁盘的哪个块？它的主要作用是什么？</li>
+<li><strong>位图块 (Bitmap Blocks)</strong>
+紧跟在超级块之后，它们是用来做什么的？位图中的一个bit代表什么？</li>
 </ul>
 <p>1.当作<strong>引导扇区</strong>与<strong>分区表</strong></p>
 <p>2.<code>Super Block</code>位于磁盘的第1块，宏观描述文件系统的基本信息</p>
-<p>3.我觉得他们是对应到每个磁盘块的索引？类似于字典，但是其中存的数据是1bit的是否被占用的信号。</p>
-</li>
-<li>
-<p>**问题3：**关于<code>Super Block</code>，定义如下：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Super</span> &#123;</span></span><br><span class="line">	u_int s_magic; <span class="comment">// Magic number: FS_MAGIC 魔数标识符</span></span><br><span class="line">	u_int s_nblocks; <span class="comment">// Total number of blocks on disk 本文件系统有s_nblocks=1024个磁盘块</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">File</span> <span class="title">s_root</span>;</span> <span class="comment">// Root directory node 根目录</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p><strong>问题4</strong>：如果一个磁盘有 N 个数据块（不包括超级块和引导块），并且每个位图块可以管理 M 个数据块的状态，那么大约需要多少个位图块？（提示：一个位图块大小是 BLOCK_SIZE 字节，每个字节8个bit）。</p>
-</li>
+<p>3.我觉得他们是对应到每个磁盘块的索引？类似于字典，但是其中存的数据是1bit的是否被占用的信号。</p></li>
+<li><p><strong>问题3：</strong>关于<code>Super Block</code>，定义如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Super</span> &#123;</span></span><br><span class="line">	u_int s_magic; <span class="comment">// Magic number: FS_MAGIC 魔数标识符</span></span><br><span class="line">	u_int s_nblocks; <span class="comment">// Total number of blocks on disk 本文件系统有s_nblocks=1024个磁盘块</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">File</span> <span class="title">s_root</span>;</span> <span class="comment">// Root directory node 根目录</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>问题4</strong>：如果一个磁盘有 N
+个数据块（不包括超级块和引导块），并且每个位图块可以管理 M
+个数据块的状态，那么大约需要多少个位图块？（提示：一个位图块大小是
+BLOCK_SIZE 字节，每个字节8个bit）。</p></li>
 </ul>
-<p>​	<code>num = (N+M-1)/N</code></p>
+<p>​ <code>num = (N+M-1)/N</code></p>
 <ul>
-<li><strong>问题5 (对应 Exercise 5.4 的前置思考)</strong>：如果要将磁盘上的第 blockno 个数据块标记为空闲（假设空闲用bit 1表示），你需要在位图的哪个字节的哪个位进行操作？如何用位运算来实现这个标记？如果 blockno 为0，是否应该允许将其标记为空闲？为什么？</li>
+<li><strong>问题5 (对应 Exercise 5.4
+的前置思考)</strong>：如果要将磁盘上的第 blockno
+个数据块标记为空闲（假设空闲用bit
+1表示），你需要在位图的哪个字节的哪个位进行操作？如何用位运算来实现这个标记？如果
+blockno 为0，是否应该允许将其标记为空闲？为什么？</li>
 </ul>
-<ol>
-<li>
-<p><strong>执行位操作</strong>：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bitmap[byte_index] |= (1 &lt;&lt; bit_offset); // (假设空闲为1)</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p><strong><code>block 0</code>标记为空闲：</strong></p>
-</li>
+<ol type="1">
+<li><p><strong>执行位操作</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bitmap[byte_index] |= (1 &lt;&lt; bit_offset); // (假设空闲为1)</span><br></pre></td></tr></table></figure></li>
+<li><p><strong><code>block 0</code>标记为空闲：</strong></p></li>
 </ol>
-<p>​	Block 0 在传统PC体系中通常是<strong>主引导记录 (MBR) 和分区表</strong>。即使在MOS中它不被直接使用，它仍然是一个具有特殊含义的块。文件系统的数据块分配不应该涉及到这个块。</p>
+<p>​ Block 0 在传统PC体系中通常是<strong>主引导记录 (MBR)
+和分区表</strong>。即使在MOS中它不被直接使用，它仍然是一个具有特殊含义的块。文件系统的数据块分配不应该涉及到这个块。</p>
 <ul>
 <li><strong>问题6：</strong>(Thinking 5.2)</li>
 </ul>
@@ -799,38 +803,41 @@ ERR：错误信息</p>
 <p>查找代码中的相关定义，试回答一个磁盘块中最多能存储多少个文件控制块？一个目录下最多能有多少个文件？我们的文件系统支持的单个文件最大为多大？</p>
 </blockquote>
 <ul>
-<li>
-<p>一个文件控制块有256B，磁盘块共计4096B，所以最多能够储存<code>4096/256 = 16</code>个文件控制块。</p>
-</li>
-<li>
-<p>根据MOS指导书所说应该共计1024个磁盘块，1个磁盘块可以存16个文件控制块，所以一个目录可以存<code>1024 * 16 = 16384</code>。</p>
-</li>
-<li>
-<p>单个最大文件最大为<code>1024*4096=4MB</code></p>
-</li>
+<li><p>一个文件控制块有256B，磁盘块共计4096B，所以最多能够储存<code>4096/256 = 16</code>个文件控制块。</p></li>
+<li><p>根据MOS指导书所说应该共计1024个磁盘块，1个磁盘块可以存16个文件控制块，所以一个目录可以存<code>1024 * 16 = 16384</code>。</p></li>
+<li><p>单个最大文件最大为<code>1024*4096=4MB</code></p></li>
 </ul>
-<h3 id="4-理解和实现块缓存机制-对应-5-4-3">4 <strong>理解和实现块缓存机制(对应 5.4.3)</strong></h3>
-<h4 id="目标：-4">目标：</h4>
+<h3 id="理解和实现块缓存机制对应-5.4.3">4
+<strong>理解和实现块缓存机制(对应 5.4.3)</strong></h3>
+<h4 id="目标-3">目标：</h4>
 <ul>
 <li>理解引入块缓存的目的和好处。</li>
 <li>掌握MOS中块缓存的实现方式（内存映射）。</li>
 <li>能够实现块地址到缓存虚拟地址的转换。</li>
 <li>能够实现将磁盘块映射到内存缓存（map_block）和解除映射（unmap_block，并处理脏块写回）的逻辑。</li>
 </ul>
-<h4 id="问题汇总：-4">问题汇总：</h4>
+<h4 id="问题汇总-3">问题汇总：</h4>
 <p><strong>问题1：MOS中的块缓存是如何实现的 (参考图 5.7)？</strong></p>
 <ul>
-<li><code>DISKMAP</code> (例如 0x10000000) 和 <code>DISKMAX</code> (例如 0x40000000) 在文件服务进程 (fs_serv) 的用户虚拟地址空间中定义了一个<strong>连续的、巨大的虚拟内存区域</strong>，专门用于作为磁盘块的缓存。这个区域的大小是 <code>DISKMAX</code>。</li>
-<li>磁盘上的第 n 个块被<strong>逻辑上映射</strong>到这个虚拟地址空间的 DISKMAP + n * BLOCK_SIZE。这意味着，如果第 n 个块被加载到缓存中，那么 fs_serv 就可以通过访问虚拟地址 DISKMAP + n * BLOCK_SIZE 来直接读写这个块的内容（就像访问普通内存一样）。<strong>实际的物理页面是在需要时才分配并与这些虚拟地址关联的。</strong></li>
+<li><code>DISKMAP</code> (例如 0x10000000) 和 <code>DISKMAX</code> (例如
+0x40000000) 在文件服务进程 (fs_serv)
+的用户虚拟地址空间中定义了一个<strong>连续的、巨大的虚拟内存区域</strong>，专门用于作为磁盘块的缓存。这个区域的大小是
+<code>DISKMAX</code>。</li>
+<li>磁盘上的第 n 个块被<strong>逻辑上映射</strong>到这个虚拟地址空间的
+DISKMAP + n * BLOCK_SIZE。这意味着，如果第 n 个块被加载到缓存中，那么
+fs_serv 就可以通过访问虚拟地址 DISKMAP + n * BLOCK_SIZE
+来直接读写这个块的内容（就像访问普通内存一样）。<strong>实际的物理页面是在需要时才分配并与这些虚拟地址关联的。</strong></li>
 </ul>
 <p><strong>问题2：Thinking 5.3</strong></p>
 <blockquote>
-<p>请思考，在满足磁盘块缓存的设计的前提下，我们实验使用的内核支持的最 大磁盘大小是多少？</p>
+<p>请思考，在满足磁盘块缓存的设计的前提下，我们实验使用的内核支持的最
+大磁盘大小是多少？</p>
 </blockquote>
 <p>如上所述，这个区域的大小是<code>DISKMAX</code>也就是0x40000000字节，换算可得为1GB</p>
 <p><strong>问题3： Thinking 5.4</strong></p>
 <blockquote>
-<p>在本实验中，fs/serv.h、user/include/fs.h 等文件中出现了许多宏定义， 试列举你认为较为重要的宏定义，同时进行解释，并描述其主要应用之处。</p>
+<p>在本实验中，fs/serv.h、user/include/fs.h 等文件中出现了许多宏定义，
+试列举你认为较为重要的宏定义，同时进行解释，并描述其主要应用之处。</p>
 </blockquote>
 <p><strong>1. 块缓存与磁盘映射相关的宏：</strong></p>
 <ul>
@@ -838,129 +845,161 @@ ERR：错误信息</p>
 <ul>
 <li><strong>含义</strong>：定义了文件系统中一个“块”的大小，单位是字节。</li>
 <li><strong>作用</strong>：文件系统进行磁盘空间分配、数据读写的最小逻辑单位。所有文件大小、偏移量等都与块大小相关。块缓存也是以块为单位进行管理的。</li>
-</ul>
-</li>
+</ul></li>
 <li><strong>DISKMAP</strong>: <code>0x10000000</code>
 <ul>
-<li><strong>含义</strong>：文件服务进程 (fs_serv) 用户虚拟地址空间中，用于映射磁盘块的<strong>起始虚拟地址</strong>。</li>
-<li><strong>作用</strong>：提供了一个统一的虚拟地址窗口，通过这个窗口可以访问到被缓存到内存中的磁盘块。磁盘块 n 的内容如果被缓存，可以通过<code> DISKMAP + n * BLOCK_SIZE</code> 这个虚拟地址访问。</li>
-</ul>
-</li>
+<li><strong>含义</strong>：文件服务进程 (fs_serv)
+用户虚拟地址空间中，用于映射磁盘块的<strong>起始虚拟地址</strong>。</li>
+<li><strong>作用</strong>：提供了一个统一的虚拟地址窗口，通过这个窗口可以访问到被缓存到内存中的磁盘块。磁盘块
+n 的内容如果被缓存，可以通过<code>DISKMAP + n * BLOCK_SIZE</code>
+这个虚拟地址访问。</li>
+</ul></li>
 <li><strong>DISKMAX</strong>: <code>0x40000000</code>
 <ul>
-<li><strong>含义</strong>：文件服务进程 (fs_serv) 用户虚拟地址空间中，用于映射磁盘块的<strong>结束虚拟地址</strong> (不包含此地址)。</li>
+<li><strong>含义</strong>：文件服务进程 (fs_serv)
+用户虚拟地址空间中，用于映射磁盘块的<strong>结束虚拟地址</strong>
+(不包含此地址)。</li>
 <li><strong>作用</strong>：<code>DISKMAX</code>就是块缓存区能容纳的最大虚拟数据量，这也间接限制了文件系统能支持的磁盘大小）。</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <p><strong>2. 文件和目录属性相关的宏：</strong></p>
 <ul>
 <li><strong>MAXNAMELEN</strong>: <code>128</code>
 <ul>
-<li><strong>含义</strong>：定义了一个文件名（或目录名）所允许的最大长度（通常不包括末尾的 \0 空终止符）。</li>
-<li><strong>作用</strong>：限制了 struct File 中 f_name 字符数组的大小。</li>
+<li><strong>含义</strong>：定义了一个文件名（或目录名）所允许的最大长度（通常不包括末尾的
+\0 空终止符）。</li>
+<li><strong>作用</strong>：限制了 struct File 中 f_name
+字符数组的大小。</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h3 id="5-理解文件描述符、用户接口及文件系统服务-对应-5-5">5 <strong>理解文件描述符、用户接口及文件系统服务</strong>  <strong>(对应 5.5)</strong></h3>
-<h4 id="目标：-5"><strong>目标：</strong></h4>
+<h3 id="理解文件描述符用户接口及文件系统服务-对应-5.5">5
+<strong>理解文件描述符、用户接口及文件系统服务</strong> <strong>(对应
+5.5)</strong></h3>
+<h4 id="目标-4"><strong>目标：</strong></h4>
 <ul>
-<li>理解文件描述符 (struct Fd, struct Filefd) 在进程中如何表示打开的文件。</li>
-<li>掌握用户程序通过库函数（如 open, read）和IPC与文件系统服务 (fs_serv) 交互的流程。</li>
-<li>实现 open, read, remove 等用户接口函数及其对应的文件系统服务处理逻辑。</li>
+<li>理解文件描述符 (struct Fd, struct Filefd)
+在进程中如何表示打开的文件。</li>
+<li>掌握用户程序通过库函数（如 open, read）和IPC与文件系统服务 (fs_serv)
+交互的流程。</li>
+<li>实现 open, read, remove
+等用户接口函数及其对应的文件系统服务处理逻辑。</li>
 <li>理解 fork 对文件描述符的影响。</li>
 </ul>
-<h4 id="问题汇总：-5">问题汇总：</h4>
-<p>**问题一：**关于<code>struct Dev</code>，它的定义在哪里？怎样去理解这个设计？</p>
+<h4 id="问题汇总-4">问题汇总：</h4>
+<p><strong>问题一：</strong>关于<code>struct Dev</code>，它的定义在哪里？怎样去理解这个设计？</p>
 <p>在<code>./user/include/fd.h</code>当中，具体代码实现如下：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Device struct:</span></span><br><span class="line"><span class="comment">// It is used to read and write data from corresponding device.</span></span><br><span class="line"><span class="comment">// We can use the five functions to handle data.</span></span><br><span class="line"><span class="comment">// There are three devices in this OS: file, console and pipe.</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Dev</span> &#123;</span></span><br><span class="line">	<span class="type">int</span> dev_id;</span><br><span class="line">	<span class="type">char</span> *dev_name;</span><br><span class="line">	<span class="type">int</span> (*dev_read)(<span class="keyword">struct</span> Fd *, <span class="type">void</span> *, u_int, u_int);</span><br><span class="line">	<span class="type">int</span> (*dev_write)(<span class="keyword">struct</span> Fd *, <span class="type">const</span> <span class="type">void</span> *, u_int, u_int);</span><br><span class="line">	<span class="type">int</span> (*dev_close)(<span class="keyword">struct</span> Fd *);</span><br><span class="line">	<span class="type">int</span> (*dev_stat)(<span class="keyword">struct</span> Fd *, <span class="keyword">struct</span> Stat *);</span><br><span class="line">	<span class="type">int</span> (*dev_seek)(<span class="keyword">struct</span> Fd *, u_int);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p><strong>这正是一种设计的核心思想，也称为“函数指针表”、“虚函数表”（在C++中）或“行为委托”。</strong></p>
-<p>这种设计使得 write() (以及 read(), close() 等) 函数可以保持通用，而将设备相关的特殊逻辑封装在各个设备的具体实现函数中。这是操作系统I/O子系统中非常常见和重要的分层与抽象机制。</p>
+<p>这种设计使得 write() (以及 read(), close() 等)
+函数可以保持通用，而将设备相关的特殊逻辑封装在各个设备的具体实现函数中。这是操作系统I/O子系统中非常常见和重要的分层与抽象机制。</p>
 <p>那作为一个“接口”，它又如何知道我们的设备类型呢？如你所见：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Fd</span> &#123;</span></span><br><span class="line">	u_int fd_dev_id; &lt;---(Fd *)fd 当中与设备类型对应的参数</span><br><span class="line">	u_int fd_offset;</span><br><span class="line">	u_int fd_omode;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p><strong>问题二：为什么需要文件描述符来维护偏移量指针？</strong></p>
 <p>有以下三个主要原因：</p>
 <ul>
-<li>**处理大文件的分段顺序I/O ：使得可以方便地、一部分一部分地处理大文件。</li>
-<li><strong>维护每个打开文件实例的独立上下文</strong>：允许不同打开实例（即使是同一个文件）有各自独立的当前读写位置（除了 fork 的特殊情况）。</li>
-<li><strong>提供简洁和通用的流式I/O API</strong>：让应用程序可以用统一的方式处理各种类型的文件和设备。</li>
+<li>**处理大文件的分段顺序I/O
+：使得可以方便地、一部分一部分地处理大文件。</li>
+<li><strong>维护每个打开文件实例的独立上下文</strong>：允许不同打开实例（即使是同一个文件）有各自独立的当前读写位置（除了
+fork 的特殊情况）。</li>
+<li><strong>提供简洁和通用的流式I/O
+API</strong>：让应用程序可以用统一的方式处理各种类型的文件和设备。</li>
 </ul>
 <p><strong>问题三：(Thinking 5.5)</strong></p>
 <blockquote>
-<p>在 Lab4“系统调用与 fork”的实验中我们实现了极为重要的 fork 函数。那 么 fork 前后的父子进程是否会共享文件描述符和定位指针呢？请在完成上述练习的基础上编写一个程序进行验证。</p>
+<p>在 Lab4“系统调用与 fork”的实验中我们实现了极为重要的 fork 函数。那 么
+fork
+前后的父子进程是否会共享文件描述符和定位指针呢？请在完成上述练习的基础上编写一个程序进行验证。</p>
 </blockquote>
-<p>​	编写测试程序如下：</p>
+<p>​ 编写测试程序如下：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;lib.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> TEST_STRING <span class="string">&quot;0123456789abcdefghijklmnopqrstuvwxyz&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> READ_LEN 5</span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">umain</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> fd_write, fd_read_parent1, fd_read_child, fd_read_parent_after;</span><br><span class="line">    <span class="type">char</span> buf_parent_init[READ_LEN + <span class="number">1</span>];</span><br><span class="line">    <span class="type">char</span> buf_child[READ_LEN + <span class="number">1</span>];</span><br><span class="line">    <span class="type">char</span> buf_parent_after[READ_LEN + <span class="number">1</span>];</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Fd</span> *<span class="title">sfd</span>;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// --- Phase 1: Create and Write to the test file ---</span></span><br><span class="line">    writef(<span class="string">&quot;Phase 1: Creating and writing to /testfdfork.txt\n&quot;</span>);</span><br><span class="line">    <span class="comment">// 打开/创建并清空测试文件</span></span><br><span class="line">    <span class="keyword">if</span> ((fd_write = open(<span class="string">&quot;/testfdfork.txt&quot;</span>, O_WRONLY | O_CREAT | O_TRUNC)) &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        user_panic(<span class="string">&quot;Failed to open/create /testfdfork.txt for writing: %d&quot;</span>, fd_write);</span><br><span class="line">    &#125;</span><br><span class="line">    writef(<span class="string">&quot;Opened /testfdfork.txt for writing with fd: %d\n&quot;</span>, fd_write);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 写入已知内容</span></span><br><span class="line">    n = <span class="built_in">strlen</span>(TEST_STRING);</span><br><span class="line">    <span class="keyword">if</span> (write(fd_write, TEST_STRING, n) != n) &#123;</span><br><span class="line">        user_panic(<span class="string">&quot;Failed to write complete test string to /testfdfork.txt&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    writef(<span class="string">&quot;Wrote %d bytes to /testfdfork.txt\n&quot;</span>, n);</span><br><span class="line">    close(fd_write); <span class="comment">// 关闭写文件描述符</span></span><br><span class="line">    writef(<span class="string">&quot;Closed fd %d after writing.\n&quot;</span>, fd_write);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">// --- Phase 2: Parent&#x27;s initial read ---</span></span><br><span class="line">    writef(<span class="string">&quot;\nPhase 2: Parent&#x27;s initial read\n&quot;</span>);</span><br><span class="line">    <span class="comment">// 重新以只读方式打开文件，偏移量会是0</span></span><br><span class="line">    <span class="keyword">if</span> ((fd_read_parent1 = open(<span class="string">&quot;/testfdfork.txt&quot;</span>, O_RDONLY)) &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        user_panic(<span class="string">&quot;Parent failed to open /testfdfork.txt for initial read: %d&quot;</span>, fd_read_parent1);</span><br><span class="line">    &#125;</span><br><span class="line">    writef(<span class="string">&quot;Parent opened /testfdfork.txt for initial read with fd: %d\n&quot;</span>, fd_read_parent1);</span><br><span class="line"></span><br><span class="line">    n = read(fd_read_parent1, buf_parent_init, READ_LEN);</span><br><span class="line">    <span class="keyword">if</span> (n &lt; <span class="number">0</span>) user_panic(<span class="string">&quot;Parent initial read failed: %d&quot;</span>, n);</span><br><span class="line">    buf_parent_init[n] = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">    <span class="keyword">if</span> (fd_lookup(fd_read_parent1, &amp;sfd) == <span class="number">0</span>) &#123;</span><br><span class="line">        writef(<span class="string">&quot;Parent initial read: \&quot;%s\&quot; (len %d), offset: %d\n&quot;</span>,</span><br><span class="line">               buf_parent_init, n, sfd-&gt;fd_offset);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        writef(<span class="string">&quot;Parent initial read: \&quot;%s\&quot; (len %d), fd_lookup for fd %d failed\n&quot;</span>,</span><br><span class="line">               buf_parent_init, n, fd_read_parent1);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 期望 buf_parent_init 是 &quot;01234&quot;, 偏移量现在是 5</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">// --- Phase 3: Fork and subsequent reads ---</span></span><br><span class="line">    writef(<span class="string">&quot;\nPhase 3: Forking and subsequent reads\n&quot;</span>);</span><br><span class="line">    <span class="type">int</span> child_pid = fork();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (child_pid &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        user_panic(<span class="string">&quot;fork failed&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (child_pid == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="comment">// --- 子进程 ---</span></span><br><span class="line">        <span class="comment">// 子进程继承了 fd_read_parent1 这个文件描述符 (我们叫它 fd_read_child)</span></span><br><span class="line">        fd_read_child = fd_read_parent1;</span><br><span class="line">        writef(<span class="string">&quot;Child process (using inherited fd: %d) started.\n&quot;</span>, fd_read_child);</span><br><span class="line"></span><br><span class="line">        n = read(fd_read_child, buf_child, READ_LEN);</span><br><span class="line">        <span class="keyword">if</span> (n &lt; <span class="number">0</span>) user_panic(<span class="string">&quot;Child read failed: %d&quot;</span>, n);</span><br><span class="line">        buf_child[n] = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">        <span class="keyword">if</span> (fd_lookup(fd_read_child, &amp;sfd) == <span class="number">0</span>) &#123;</span><br><span class="line">            writef(<span class="string">&quot;Child read: \&quot;%s\&quot; (len %d), offset: %d\n&quot;</span>,</span><br><span class="line">                   buf_child, n, sfd-&gt;fd_offset);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            writef(<span class="string">&quot;Child read: \&quot;%s\&quot; (len %d), fd_lookup for fd %d failed\n&quot;</span>,</span><br><span class="line">                   buf_child, n, fd_read_child);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 期望 buf_child 是 &quot;56789&quot; (如果偏移量共享)</span></span><br><span class="line">        <span class="keyword">if</span> (n &gt; <span class="number">0</span> &amp;&amp; <span class="built_in">strcmp</span>(buf_child, <span class="string">&quot;56789&quot;</span>) != <span class="number">0</span>) &#123;</span><br><span class="line">            writef(<span class="string">&quot;CHILD: UNEXPECTED DATA! Expected \&quot;56789\&quot;.\n&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (n == <span class="number">0</span> &amp;&amp; <span class="built_in">strcmp</span>(buf_parent_init, <span class="string">&quot;01234&quot;</span>) == <span class="number">0</span>) &#123; </span><br><span class="line">            writef(<span class="string">&quot;CHILD: Read 0 bytes. This might be an issue if parent already read.\n&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        close(fd_read_child); <span class="comment">// 子进程关闭其fd副本</span></span><br><span class="line">        <span class="built_in">exit</span>();</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// --- 父进程 ---</span></span><br><span class="line">        writef(<span class="string">&quot;Parent process, child pid: %d. Parent continues with fd: %d\n&quot;</span>, child_pid, fd_read_parent1);</span><br><span class="line"></span><br><span class="line">        n = read(fd_read_parent1, buf_parent_after, READ_LEN);</span><br><span class="line">        <span class="keyword">if</span> (n &lt; <span class="number">0</span>) user_panic(<span class="string">&quot;Parent read after fork failed: %d&quot;</span>, n);</span><br><span class="line">        buf_parent_after[n] = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">        <span class="keyword">if</span> (fd_lookup(fd_read_parent1, &amp;sfd) == <span class="number">0</span>) &#123;</span><br><span class="line">            writef(<span class="string">&quot;Parent read after fork: \&quot;%s\&quot; (len %d), offset: %d\n&quot;</span>,</span><br><span class="line">                   buf_parent_after, n, sfd-&gt;fd_offset);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            writef(<span class="string">&quot;Parent read after fork: \&quot;%s\&quot; (len %d), fd_lookup for fd %d failed\n&quot;</span>,</span><br><span class="line">                   buf_parent_after, n, fd_read_parent1);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (n &gt; <span class="number">0</span> &amp;&amp; <span class="built_in">strcmp</span>(buf_parent_after, <span class="string">&quot;abcde&quot;</span>) != <span class="number">0</span> &amp;&amp; <span class="built_in">strcmp</span>(buf_parent_after, <span class="string">&quot;56789&quot;</span>) != <span class="number">0</span>) &#123;</span><br><span class="line">            writef(<span class="string">&quot;PARENT: UNEXPECTED DATA! Data: \&quot;%s\&quot;. Check output order and expected values.\n&quot;</span>, buf_parent_after);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (n == <span class="number">0</span>) &#123;</span><br><span class="line">             writef(<span class="string">&quot;PARENT: Read 0 bytes after fork. This might be an issue.\n&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        close(fd_read_parent1); <span class="comment">// 父进程关闭其fd</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    writef(<span class="string">&quot;Test finished.\n&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>​	对应的输出如下：</p>
+<p>​ 对应的输出如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Phase 1: Creating and writing to /testfdfork.txt</span><br><span class="line">Opened /testfdfork.txt for writing with fd: 0</span><br><span class="line">Wrote 36 bytes to /testfdfork.txt</span><br><span class="line">Closed fd 0 after writing.</span><br><span class="line"></span><br><span class="line">Phase 2: Parent&#x27;s initial read</span><br><span class="line">Parent opened /testfdfork.txt for initial read with fd: 0</span><br><span class="line">Parent initial read: &quot;01234&quot; (len 5), offset: 5</span><br><span class="line"></span><br><span class="line">Phase 3: Forking and subsequent reads</span><br><span class="line">Parent process, child pid: [child_env_id]. Parent continues with fd: 0</span><br><span class="line">Child process (using inherited fd: 0) started.</span><br><span class="line">Child read: &quot;56789&quot; (len 5), offset: 10</span><br><span class="line">[00000400] destroying [00000400]</span><br><span class="line">[00000400] free env [00000400]</span><br><span class="line">i am killed ...</span><br><span class="line">Parent read after fork: &quot;abcde&quot; (len 5), offset: 15</span><br><span class="line">Test finished.</span><br><span class="line">[00001402] destroying [00001402]</span><br><span class="line">[00001402] free env [00001402]</span><br><span class="line">i am killed ...</span><br></pre></td></tr></table></figure>
-<p>由此可见：<strong>fork 前后的父子进程共享文件描述符和定位指针</strong>。</p>
+<p>由此可见：<strong>fork
+前后的父子进程共享文件描述符和定位指针</strong>。</p>
 <p><strong>问题4：(Thinking 5.6)</strong></p>
 <blockquote>
-<p>请解释 File, Fd, Filefd 结构体及其各个域的作用。比如各个结构体会在哪 些过程中被使用，是否对应磁盘上的物理实体还是单纯的内存数据等。说明形式自定，要 求简洁明了，可大致勾勒出文件系统数据结构与物理实体的对应关系与设计框架。</p>
+<p>请解释 File, Fd, Filefd 结构体及其各个域的作用。比如各个结构体会在哪
+些过程中被使用，是否对应磁盘上的物理实体还是单纯的内存数据等。说明形式自定，要
+求简洁明了，可大致勾勒出文件系统数据结构与物理实体的对应关系与设计框架。</p>
 </blockquote>
 <p>先把定义放在这里：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">File</span> &#123;</span></span><br><span class="line">	<span class="type">char</span> f_name[MAXNAMELEN]; <span class="comment">// 文件名称,最大长度MAXNAMELEN值为128</span></span><br><span class="line">	<span class="type">uint32_t</span> f_size; <span class="comment">// 文件的大小，单位:字节</span></span><br><span class="line">	<span class="type">uint32_t</span> f_type; <span class="comment">// 文件类型:  普通文件FTYPE_REG，目录FTYPE_DIR</span></span><br><span class="line">	<span class="type">uint32_t</span> f_direct[NDIRECT];<span class="comment">// 文件的直接指针,用来记录文件的数据块在磁盘上的位置</span></span><br><span class="line">	<span class="type">uint32_t</span> f_indirect;<span class="comment">// 指向一个间接磁盘块，用来存储指向文件内容的磁盘块的指针</span></span><br><span class="line">	</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">File</span> *<span class="title">f_dir</span>;</span> <span class="comment">// 指向文件所属的文件目录</span></span><br><span class="line">	<span class="type">char</span> f_pad[BY2FILE - MAXNAMELEN - (<span class="number">3</span> + NDIRECT) * <span class="number">4</span> - <span class="keyword">sizeof</span>(<span class="type">void</span> *)];</span><br><span class="line">    <span class="comment">//为了让整数个文件结构体占用一个磁盘块，填充结构体中剩下的字节</span></span><br><span class="line">&#125; __attribute__((aligned(<span class="number">4</span>), packed));</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Fd</span> &#123;</span></span><br><span class="line">     u_int fd_dev_id;     <span class="comment">// 外设的id。</span></span><br><span class="line">     <span class="comment">//用户使用fd.c的文件接口时，不同的dev_id会调取不同的文件服务函数。</span></span><br><span class="line">     <span class="comment">//比如File类型的文件服务函数为user/File.c的file_*()函数。</span></span><br><span class="line">     u_int fd_offset;     <span class="comment">// 读写的偏移量</span></span><br><span class="line">     <span class="comment">//seek()时修改。</span></span><br><span class="line">     <span class="comment">//offset会被用来找起始filebno文件块号。</span></span><br><span class="line">     u_int fd_omode;      <span class="comment">// 打开方式，包括只读、只写、读写</span></span><br><span class="line">     <span class="comment">//req和open结构体都会用到</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Filefd</span> &#123;</span></span><br><span class="line">     <span class="class"><span class="keyword">struct</span> <span class="title">Fd</span> <span class="title">f_fd</span>;</span>     <span class="comment">// file descriptor</span></span><br><span class="line">     u_int f_fileid;     <span class="comment">// 文件的id</span></span><br><span class="line">     <span class="comment">//模1024后会用来在opentab[]里索引open结构体</span></span><br><span class="line">     <span class="class"><span class="keyword">struct</span> <span class="title">File</span> <span class="title">f_file</span>;</span> <span class="comment">// 对应文件的文件控制块</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>大体设计框架包括以下三个部分：</p>
-<ol>
+<ol type="1">
 <li><strong>磁盘上 (物理实体)</strong>：
 <ul>
 <li><strong>超级块 (Block 1)</strong>: 包含 struct Super。
 <ul>
-<li>struct Super 内嵌了 <strong>根目录的 struct File</strong> (s_root)。</li>
-</ul>
-</li>
-<li><strong>目录的数据块</strong>: 包含一个或多个 <strong>struct File 结构数组</strong>，描述该目录下的子项。</li>
-<li><strong>普通文件的数据块</strong>: 包含文件的<strong>实际字节内容</strong>。</li>
-<li><strong>间接块</strong>: 包含指向其他数据块的<strong>块号数组</strong>。</li>
-<li><strong>位图块</strong>: 包含表示各数据块空闲/已用状态的<strong>位图</strong>。</li>
-</ul>
-</li>
+<li>struct Super 内嵌了 <strong>根目录的 struct File</strong>
+(s_root)。</li>
+</ul></li>
+<li><strong>目录的数据块</strong>: 包含一个或多个 <strong>struct File
+结构数组</strong>，描述该目录下的子项。</li>
+<li><strong>普通文件的数据块</strong>:
+包含文件的<strong>实际字节内容</strong>。</li>
+<li><strong>间接块</strong>:
+包含指向其他数据块的<strong>块号数组</strong>。</li>
+<li><strong>位图块</strong>:
+包含表示各数据块空闲/已用状态的<strong>位图</strong>。</li>
+</ul></li>
 <li><strong>文件系统服务进程 fs_serv (内存中，服务器端状态)</strong>：
 <ul>
-<li><strong>块缓存</strong>: 内存中缓存了部分磁盘块的内容（包括超级块、位图块、目录数据块、文件数据块、间接块）。</li>
-<li><strong>struct Open 数组/列表 (opentab)</strong>: 每个条目代表一个被打开的文件实例。
+<li><strong>块缓存</strong>:
+内存中缓存了部分磁盘块的内容（包括超级块、位图块、目录数据块、文件数据块、间接块）。</li>
+<li><strong>struct Open 数组/列表 (opentab)</strong>:
+每个条目代表一个被打开的文件实例。
 <ul>
-<li>o_file (类型 struct File *): 指向块缓存中该文件的 struct File 元数据。</li>
+<li>o_file (类型 struct File *): 指向块缓存中该文件的 struct File
+元数据。</li>
 <li>o_fileid: 此打开实例的唯一ID。</li>
 <li>o_mode: 打开模式。</li>
-</ul>
-</li>
-</ul>
-</li>
+</ul></li>
+</ul></li>
 <li><strong>用户进程 (内存中，客户端状态)</strong>：
 <ul>
-<li><strong>文件描述符表 (Fd Table)</strong>: 每个条目对应一个 struct Fd 或其派生类型（如 struct Filefd）的实例，存储在一个由 fd_alloc 分配的虚拟页上。</li>
+<li><strong>文件描述符表 (Fd Table)</strong>: 每个条目对应一个 struct Fd
+或其派生类型（如 struct Filefd）的实例，存储在一个由 fd_alloc
+分配的虚拟页上。</li>
 <li><strong>struct Fd</strong>: 通用打开文件/设备状态。
 <ul>
 <li>fd_offset: 当前读写偏移量。</li>
 <li>fd_omode: 打开模式。</li>
 <li>fd_dev_id: 设备类型。</li>
-</ul>
-</li>
+</ul></li>
 <li><strong>struct Filefd (用于普通文件)</strong>:
 <ul>
 <li>内含 struct Fd f_fd。</li>
 <li>f_fileid: 从 fs_serv 获取的ID，用于后续IPC。</li>
-<li>f_file (类型 struct File): <strong>磁盘上 struct File 的一个本地缓存副本</strong>，在 open 时从 fs_serv 获取。</li>
-</ul>
-</li>
-</ul>
-</li>
+<li>f_file (类型 struct File): <strong>磁盘上 struct File
+的一个本地缓存副本</strong>，在 open 时从 fs_serv 获取。</li>
+</ul></li>
+</ul></li>
 </ol>
 <p><strong>问题5：(Thinking 5.7)</strong></p>
 <blockquote>
-<p>图 5.9 中有多种不同形式的箭头，请解释这些不同箭头的差别，并思考我们 的操作系统是如何实现对应类型的进程间通信的。</p>
+<p>图 5.9 中有多种不同形式的箭头，请解释这些不同箭头的差别，并思考我们
+的操作系统是如何实现对应类型的进程间通信的。</p>
 </blockquote>
-<p>1、<strong>实线箭头，实心三角头 (-&gt;)</strong>:<strong>同步消息 (Synchronous Message)</strong> 或 <strong>阻塞调用 (Blocking Call)</strong>。</p>
-<p>2、<strong>虚线箭头，开放箭头头 (–&gt;)</strong>:<strong>返回消息 (Return Message)</strong> 或 <strong>回复 (Reply)</strong>。</p>
-<p>MOS主要通过一套基于<strong>消息传递</strong>和<strong>页面共享</strong>的IPC机制来实现进程间通信，其核心系统调用是 ipc_send 和 ipc_recv。这种机制本质上是<strong>同步的、阻塞的</strong>。</p>
+<p>1、<strong>实线箭头，实心三角头 (-&gt;)</strong>:<strong>同步消息
+(Synchronous Message)</strong> 或 <strong>阻塞调用 (Blocking
+Call)</strong>。</p>
+<p>2、<strong>虚线箭头，开放箭头头 (--&gt;)</strong>:<strong>返回消息
+(Return Message)</strong> 或 <strong>回复 (Reply)</strong>。</p>
+<p>MOS主要通过一套基于<strong>消息传递</strong>和<strong>页面共享</strong>的IPC机制来实现进程间通信，其核心系统调用是
+ipc_send 和
+ipc_recv。这种机制本质上是<strong>同步的、阻塞的</strong>。</p>
 <h2 id="三-后记">三 后记</h2>
-<p>​	这一周算是期末周的开始吧，事情有点太多了😡，慢慢处理吧，希望自己能稳住情绪，多做事情少打游戏😊，最重要的也许是放平心态，保证精力吧~！大家一起加油，我们下期再见~👋</p>
+<p>​
+这一周算是期末周的开始吧，事情有点太多了😡，慢慢处理吧，希望自己能稳住情绪，多做事情少打游戏😊，最重要的也许是放平心态，保证精力吧<sub>！大家一起加油，我们下期再见</sub>👋</p>
 
 
         <hr>
         <!-- Pager -->
         <ul class="pager">
+          
+          <li class="previous">
+            <a href="/en/BUAA-OSLab6实验总结/" data-toggle="tooltip" data-placement="top" title="BUAA-OSLab6实验总结">&larr; Previous Post</a>
+          </li>
           
           
           <li class="next">
@@ -1061,7 +1100,22 @@ ERR：错误信息</p>
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">BUAA-OSLab5学习笔记</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%80-%E5%89%8D%E8%A8%80"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">一 前言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%8C-%E6%AD%A3%E6%96%87"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">二 正文</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-%E7%90%86%E8%A7%A3%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%92%8C%E7%A3%81%E7%9B%98%E9%A9%B1%E5%8A%A8%E7%9A%84%E5%9F%BA%E7%A1%80-%E5%AF%B9%E5%BA%94-5-1-5-2-5-3-1"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">1 理解文件系统和磁盘驱动的基础 (对应 5.1, 5.2, 5.3.1)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%9B%AE%E6%A0%87%EF%BC%9A"><span class="toc-nav-number">1.2.1.1.</span> <span class="toc-nav-text">目标：</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB%EF%BC%9A"><span class="toc-nav-number">1.2.1.2.</span> <span class="toc-nav-text">问题汇总：</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E9%97%AE%E9%A2%981%EF%BC%9A%E7%94%A8%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84%E8%AF%9D%E6%80%BB%E7%BB%93%E4%B8%80%E4%B8%8B%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%9C%80%E8%A6%81%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%9F%E5%AE%83%E8%A7%A3%E5%86%B3%E4%BA%86%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%EF%BC%9F"><span class="toc-nav-number">1.2.1.2.1.</span> <span class="toc-nav-text">问题1：用你自己的话总结一下，为什么操作系统需要文件系统？它解决了什么问题？</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E9%97%AE%E9%A2%982%EF%BC%9A%E8%A7%82%E5%AF%9F%E5%9B%BE-5-1%EF%BC%8C%E5%A6%82%E6%9E%9C%E4%B8%80%E4%B8%AA%E7%94%A8%E6%88%B7%E7%A8%8B%E5%BA%8F%E6%83%B3%E8%AF%BB%E5%8F%96%E7%A3%81%E7%9B%98%E4%B8%8A%E7%9A%84%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%EF%BC%8C%E6%95%B0%E6%8D%AE%E6%B5%81%E5%92%8C%E6%8E%A7%E5%88%B6%E6%B5%81%E5%A4%A7%E6%A6%82%E6%98%AF%E6%80%8E%E6%A0%B7%E7%9A%84%EF%BC%9F%EF%BC%88%E7%AE%80%E5%8D%95%E6%8F%8F%E8%BF%B0%E4%B8%80%E4%B8%8B%EF%BC%8C%E4%B8%8D%E9%9C%80%E8%A6%81%E9%9D%9E%E5%B8%B8%E7%B2%BE%E7%A1%AE%EF%BC%89"><span class="toc-nav-number">1.2.1.2.2.</span> <span class="toc-nav-text">问题2：观察图 5.1，如果一个用户程序想读取磁盘上的一个文件，数据流和控制流大概是怎样的？（简单描述一下，不需要非常精确）</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E9%97%AE%E9%A2%983%EF%BC%9AMOS-%E5%B0%86%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1%E6%94%BE%E5%9C%A8%E7%94%A8%E6%88%B7%E6%80%81%EF%BC%88fs-serv-%E8%BF%9B%E7%A8%8B%EF%BC%89%EF%BC%8C%E8%BF%99%E7%A7%8D%E8%AE%BE%E8%AE%A1%E5%92%8C%E4%BC%A0%E7%BB%9F%E7%9A%84%E5%AE%8F%E5%86%85%E6%A0%B8%EF%BC%88%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%98%AF%E5%86%85%E6%A0%B8%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%89%E7%9B%B8%E6%AF%94%EF%BC%8C%E4%BD%A0%E8%A7%89%E5%BE%97%E5%90%84%E6%9C%89%E4%BB%80%E4%B9%88%E5%A5%BD%E5%A4%84%E5%92%8C%E5%9D%8F%E5%A4%84%EF%BC%9F"><span class="toc-nav-number">1.2.1.2.3.</span> <span class="toc-nav-text">问题3：MOS 将文件系统服务放在用户态（fs_serv 进程），这种设计和传统的宏内核（文件系统是内核一部分）相比，你觉得各有什么好处和坏处？</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E9%97%AE%E9%A2%984%EF%BC%9A%E4%BB%80%E4%B9%88%E6%98%AF-I-O-%E7%AB%AF%E5%8F%A3%EF%BC%9F%E4%BB%80%E4%B9%88%E6%98%AF%E5%86%85%E5%AD%98%E6%98%A0%E5%B0%84-I-O%EF%BC%9FMOS-%E9%87%87%E7%94%A8%E7%9A%84%E6%98%AF%E5%93%AA%E4%B8%80%E7%A7%8D%EF%BC%9F"><span class="toc-nav-number">1.2.1.2.4.</span> <span class="toc-nav-text">问题4：什么是 I&#x2F;O 端口？什么是内存映射 I&#x2F;O？MOS 采用的是哪一种？</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E9%97%AE%E9%A2%985%EF%BC%9Akseg0-%E5%92%8C-kseg1-%E5%9C%A8%E8%AE%BF%E9%97%AE%E5%86%85%E5%AD%98%E5%92%8C%E5%A4%96%E8%AE%BE%E6%97%B6%E6%9C%89%E4%BB%80%E4%B9%88%E5%85%B3%E9%94%AE%E5%8C%BA%E5%88%AB%EF%BC%9F%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AE%BF%E9%97%AE%E5%A4%96%E8%AE%BE%E9%80%9A%E5%B8%B8%E4%BD%BF%E7%94%A8-kseg1%EF%BC%9F"><span class="toc-nav-number">1.2.1.2.5.</span> <span class="toc-nav-text">问题5：kseg0 和 kseg1 在访问内存和外设时有什么关键区别？为什么访问外设通常使用 kseg1？</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E9%97%AE%E9%A2%986-%E5%AF%B9%E5%BA%94-Thinking-5-1-%EF%BC%9A"><span class="toc-nav-number">1.2.1.2.6.</span> <span class="toc-nav-text">问题6 (对应 Thinking 5.1)：</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-%E5%AD%A6%E4%B9%A0-5-3-2-IDE-%E7%A3%81%E7%9B%98-5-3-3-%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F%E7%BC%96%E5%86%99"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">2 学习 5.3.2 IDE 磁盘 &amp; 5.3.3 驱动程序编写</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%9B%AE%E6%A0%87%EF%BC%9A-2"><span class="toc-nav-number">1.2.2.1.</span> <span class="toc-nav-text">目标：</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB%EF%BC%9A-2"><span class="toc-nav-number">1.2.2.2.</span> <span class="toc-nav-text">问题汇总：</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-%E7%90%86%E8%A7%A3%E7%A3%81%E7%9B%98%E4%B8%8A%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%B8%83%E5%B1%80%E4%B8%8E%E6%A0%B8%E5%BF%83%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%AF%B9%E5%BA%94-5-4-1-5-4-2"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">3 理解磁盘上文件系统的布局与核心数据结构 (对应 5.4.1, 5.4.2)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%9B%AE%E6%A0%87%EF%BC%9A-3"><span class="toc-nav-number">1.2.3.1.</span> <span class="toc-nav-text">目标：</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB%EF%BC%9A-3"><span class="toc-nav-number">1.2.3.2.</span> <span class="toc-nav-text">问题汇总：</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-%E7%90%86%E8%A7%A3%E5%92%8C%E5%AE%9E%E7%8E%B0%E5%9D%97%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6-%E5%AF%B9%E5%BA%94-5-4-3"><span class="toc-nav-number">1.2.4.</span> <span class="toc-nav-text">4 理解和实现块缓存机制(对应 5.4.3)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%9B%AE%E6%A0%87%EF%BC%9A-4"><span class="toc-nav-number">1.2.4.1.</span> <span class="toc-nav-text">目标：</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB%EF%BC%9A-4"><span class="toc-nav-number">1.2.4.2.</span> <span class="toc-nav-text">问题汇总：</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#5-%E7%90%86%E8%A7%A3%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6%E3%80%81%E7%94%A8%E6%88%B7%E6%8E%A5%E5%8F%A3%E5%8F%8A%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1-%E5%AF%B9%E5%BA%94-5-5"><span class="toc-nav-number">1.2.5.</span> <span class="toc-nav-text">5 理解文件描述符、用户接口及文件系统服务  (对应 5.5)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%9B%AE%E6%A0%87%EF%BC%9A-5"><span class="toc-nav-number">1.2.5.1.</span> <span class="toc-nav-text">目标：</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB%EF%BC%9A-5"><span class="toc-nav-number">1.2.5.2.</span> <span class="toc-nav-text">问题汇总：</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%89-%E5%90%8E%E8%AE%B0"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">三 后记</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#buaa-oslab5%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">BUAA-OSLab5学习笔记</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%80-%E5%89%8D%E8%A8%80"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">一 前言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%8C-%E6%AD%A3%E6%96%87"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">二 正文</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%90%86%E8%A7%A3%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%92%8C%E7%A3%81%E7%9B%98%E9%A9%B1%E5%8A%A8%E7%9A%84%E5%9F%BA%E7%A1%80-%E5%AF%B9%E5%BA%94-5.1-5.2-5.3.1"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">1
+理解文件系统和磁盘驱动的基础 (对应 5.1, 5.2,
+5.3.1)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%9B%AE%E6%A0%87"><span class="toc-nav-number">1.2.1.1.</span> <span class="toc-nav-text">目标：</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB"><span class="toc-nav-number">1.2.1.2.</span> <span class="toc-nav-text">问题汇总：</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E9%97%AE%E9%A2%981%E7%94%A8%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84%E8%AF%9D%E6%80%BB%E7%BB%93%E4%B8%80%E4%B8%8B%E4%B8%BA%E4%BB%80%E4%B9%88%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%9C%80%E8%A6%81%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%AE%83%E8%A7%A3%E5%86%B3%E4%BA%86%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98"><span class="toc-nav-number">1.2.1.2.1.</span> <span class="toc-nav-text">问题1：用你自己的话总结一下，为什么操作系统需要文件系统？它解决了什么问题？</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E9%97%AE%E9%A2%982%E8%A7%82%E5%AF%9F%E5%9B%BE-5.1%E5%A6%82%E6%9E%9C%E4%B8%80%E4%B8%AA%E7%94%A8%E6%88%B7%E7%A8%8B%E5%BA%8F%E6%83%B3%E8%AF%BB%E5%8F%96%E7%A3%81%E7%9B%98%E4%B8%8A%E7%9A%84%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E6%95%B0%E6%8D%AE%E6%B5%81%E5%92%8C%E6%8E%A7%E5%88%B6%E6%B5%81%E5%A4%A7%E6%A6%82%E6%98%AF%E6%80%8E%E6%A0%B7%E7%9A%84%E7%AE%80%E5%8D%95%E6%8F%8F%E8%BF%B0%E4%B8%80%E4%B8%8B%E4%B8%8D%E9%9C%80%E8%A6%81%E9%9D%9E%E5%B8%B8%E7%B2%BE%E7%A1%AE"><span class="toc-nav-number">1.2.1.2.2.</span> <span class="toc-nav-text">问题2：观察图
+5.1，如果一个用户程序想读取磁盘上的一个文件，数据流和控制流大概是怎样的？（简单描述一下，不需要非常精确）</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E9%97%AE%E9%A2%983mos-%E5%B0%86%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1%E6%94%BE%E5%9C%A8%E7%94%A8%E6%88%B7%E6%80%81fs_serv-%E8%BF%9B%E7%A8%8B%E8%BF%99%E7%A7%8D%E8%AE%BE%E8%AE%A1%E5%92%8C%E4%BC%A0%E7%BB%9F%E7%9A%84%E5%AE%8F%E5%86%85%E6%A0%B8%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%98%AF%E5%86%85%E6%A0%B8%E4%B8%80%E9%83%A8%E5%88%86%E7%9B%B8%E6%AF%94%E4%BD%A0%E8%A7%89%E5%BE%97%E5%90%84%E6%9C%89%E4%BB%80%E4%B9%88%E5%A5%BD%E5%A4%84%E5%92%8C%E5%9D%8F%E5%A4%84"><span class="toc-nav-number">1.2.1.2.3.</span> <span class="toc-nav-text">问题3：MOS
+将文件系统服务放在用户态（fs_serv
+进程），这种设计和传统的宏内核（文件系统是内核一部分）相比，你觉得各有什么好处和坏处？</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E9%97%AE%E9%A2%984%E4%BB%80%E4%B9%88%E6%98%AF-io-%E7%AB%AF%E5%8F%A3%E4%BB%80%E4%B9%88%E6%98%AF%E5%86%85%E5%AD%98%E6%98%A0%E5%B0%84-iomos-%E9%87%87%E7%94%A8%E7%9A%84%E6%98%AF%E5%93%AA%E4%B8%80%E7%A7%8D"><span class="toc-nav-number">1.2.1.2.4.</span> <span class="toc-nav-text">问题4：什么是
+I&#x2F;O 端口？什么是内存映射 I&#x2F;O？MOS 采用的是哪一种？</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E9%97%AE%E9%A2%985kseg0-%E5%92%8C-kseg1-%E5%9C%A8%E8%AE%BF%E9%97%AE%E5%86%85%E5%AD%98%E5%92%8C%E5%A4%96%E8%AE%BE%E6%97%B6%E6%9C%89%E4%BB%80%E4%B9%88%E5%85%B3%E9%94%AE%E5%8C%BA%E5%88%AB%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AE%BF%E9%97%AE%E5%A4%96%E8%AE%BE%E9%80%9A%E5%B8%B8%E4%BD%BF%E7%94%A8-kseg1"><span class="toc-nav-number">1.2.1.2.5.</span> <span class="toc-nav-text">问题5：kseg0
+和 kseg1 在访问内存和外设时有什么关键区别？为什么访问外设通常使用
+kseg1？</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E9%97%AE%E9%A2%986-%E5%AF%B9%E5%BA%94-thinking-5.1"><span class="toc-nav-number">1.2.1.2.6.</span> <span class="toc-nav-text">问题6 (对应 Thinking
+5.1)：</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%AD%A6%E4%B9%A0-5.3.2-ide-%E7%A3%81%E7%9B%98-5.3.3-%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F%E7%BC%96%E5%86%99"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">2 学习 5.3.2 IDE
+磁盘 &amp; 5.3.3 驱动程序编写</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%9B%AE%E6%A0%87-1"><span class="toc-nav-number">1.2.2.1.</span> <span class="toc-nav-text">目标：</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB-1"><span class="toc-nav-number">1.2.2.2.</span> <span class="toc-nav-text">问题汇总：</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%90%86%E8%A7%A3%E7%A3%81%E7%9B%98%E4%B8%8A%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%B8%83%E5%B1%80%E4%B8%8E%E6%A0%B8%E5%BF%83%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%AF%B9%E5%BA%94-5.4.1-5.4.2"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">3
+理解磁盘上文件系统的布局与核心数据结构 (对应 5.4.1,
+5.4.2)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%9B%AE%E6%A0%87-2"><span class="toc-nav-number">1.2.3.1.</span> <span class="toc-nav-text">目标：</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB-2"><span class="toc-nav-number">1.2.3.2.</span> <span class="toc-nav-text">问题汇总：</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%90%86%E8%A7%A3%E5%92%8C%E5%AE%9E%E7%8E%B0%E5%9D%97%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6%E5%AF%B9%E5%BA%94-5.4.3"><span class="toc-nav-number">1.2.4.</span> <span class="toc-nav-text">4
+理解和实现块缓存机制(对应 5.4.3)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%9B%AE%E6%A0%87-3"><span class="toc-nav-number">1.2.4.1.</span> <span class="toc-nav-text">目标：</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB-3"><span class="toc-nav-number">1.2.4.2.</span> <span class="toc-nav-text">问题汇总：</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%90%86%E8%A7%A3%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6%E7%94%A8%E6%88%B7%E6%8E%A5%E5%8F%A3%E5%8F%8A%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1-%E5%AF%B9%E5%BA%94-5.5"><span class="toc-nav-number">1.2.5.</span> <span class="toc-nav-text">5
+理解文件描述符、用户接口及文件系统服务 (对应
+5.5)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%9B%AE%E6%A0%87-4"><span class="toc-nav-number">1.2.5.1.</span> <span class="toc-nav-text">目标：</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB-4"><span class="toc-nav-number">1.2.5.2.</span> <span class="toc-nav-text">问题汇总：</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%89-%E5%90%8E%E8%AE%B0"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">三 后记</span></a></li></ol></li></ol>
         
         </div>
       </aside>
