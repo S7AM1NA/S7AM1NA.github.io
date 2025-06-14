@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://s7am1na.github.io/en/%E4%BD%86%E6%84%BF%E8%BA%AB%E5%BC%BA%E5%81%A5-%E6%B5%AE%E4%B8%96%E6%8B%9A%E6%82%A0%E6%82%A0/</loc>
+    
+    <lastmod>2025-06-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://s7am1na.github.io/en/BUAA-OO2025%E7%AC%AC%E5%9B%9B%E5%8D%95%E5%85%83%E6%80%BB%E7%BB%93-%E7%BB%88%E7%AB%A0%E5%9B%9E%E9%A6%96/</loc>
     
     <lastmod>2025-06-12</lastmod>
@@ -202,7 +211,7 @@
 
   <url>
     <loc>http://s7am1na.github.io/</loc>
-    <lastmod>2025-06-13</lastmod>
+    <lastmod>2025-06-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -210,28 +219,28 @@
   
   <url>
     <loc>http://s7am1na.github.io/tags/OO/</loc>
-    <lastmod>2025-06-13</lastmod>
+    <lastmod>2025-06-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://s7am1na.github.io/tags/OS/</loc>
-    <lastmod>2025-06-13</lastmod>
+    <lastmod>2025-06-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://s7am1na.github.io/tags/Life/</loc>
-    <lastmod>2025-06-13</lastmod>
+    <lastmod>2025-06-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://s7am1na.github.io/tags/Game/</loc>
-    <lastmod>2025-06-13</lastmod>
+    <lastmod>2025-06-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -240,28 +249,28 @@
   
   <url>
     <loc>http://s7am1na.github.io/categories/OO/</loc>
-    <lastmod>2025-06-13</lastmod>
+    <lastmod>2025-06-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://s7am1na.github.io/categories/OS/</loc>
-    <lastmod>2025-06-13</lastmod>
+    <lastmod>2025-06-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://s7am1na.github.io/categories/Life/</loc>
-    <lastmod>2025-06-13</lastmod>
+    <lastmod>2025-06-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://s7am1na.github.io/categories/Game/</loc>
-    <lastmod>2025-06-13</lastmod>
+    <lastmod>2025-06-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
