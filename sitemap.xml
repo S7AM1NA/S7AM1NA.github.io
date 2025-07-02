@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://s7am1na.github.io/en/%E6%9A%91%E6%9C%9FGNSS%E5%AD%A6%E4%B9%A0%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/</loc>
+    
+    <lastmod>2025-07-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://s7am1na.github.io/en/OS-Challenge-Shell/</loc>
     
     <lastmod>2025-06-27</lastmod>
@@ -220,7 +229,7 @@
 
   <url>
     <loc>http://s7am1na.github.io/</loc>
-    <lastmod>2025-06-28</lastmod>
+    <lastmod>2025-07-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -228,28 +237,35 @@
   
   <url>
     <loc>http://s7am1na.github.io/tags/OO/</loc>
-    <lastmod>2025-06-28</lastmod>
+    <lastmod>2025-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://s7am1na.github.io/tags/OS/</loc>
-    <lastmod>2025-06-28</lastmod>
+    <lastmod>2025-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://s7am1na.github.io/tags/Life/</loc>
-    <lastmod>2025-06-28</lastmod>
+    <lastmod>2025-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://s7am1na.github.io/tags/Game/</loc>
-    <lastmod>2025-06-28</lastmod>
+    <lastmod>2025-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://s7am1na.github.io/tags/Projects/</loc>
+    <lastmod>2025-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -258,28 +274,35 @@
   
   <url>
     <loc>http://s7am1na.github.io/categories/OO/</loc>
-    <lastmod>2025-06-28</lastmod>
+    <lastmod>2025-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://s7am1na.github.io/categories/OS/</loc>
-    <lastmod>2025-06-28</lastmod>
+    <lastmod>2025-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://s7am1na.github.io/categories/Life/</loc>
-    <lastmod>2025-06-28</lastmod>
+    <lastmod>2025-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://s7am1na.github.io/categories/Game/</loc>
-    <lastmod>2025-06-28</lastmod>
+    <lastmod>2025-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://s7am1na.github.io/categories/Projects/</loc>
+    <lastmod>2025-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
