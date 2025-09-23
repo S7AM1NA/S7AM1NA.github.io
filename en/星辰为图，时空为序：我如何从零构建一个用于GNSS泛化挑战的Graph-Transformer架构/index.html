@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxx-xx');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="It&#39;s a private blog about a human being, welcome to subscribe!"/>
+  <meta name="keyword" content="Learning,living,gaming"/>
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="http://s7am1na.github.io/en/星辰为图，时空为序：我如何从零构建一个用于GNSS泛化挑战的Graph-Transformer架构/">
+  <title>
+    
+      星辰为图，时空为序：我如何从零构建一个用于GNSS泛化挑战的Graph Transformer架构 - just a private corner
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'dark';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'your-community/your-room'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">S7的温柔时空角</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">HOME</a>
+          </li>
+
+          
+          
+          <li>
+            <a href="/about/">
+              
+              ABOUT
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              CATEGORIES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              ARCHIVES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              TAGS
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>SEARCH</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/categories_bg.WebP');
+      --intro-header-background-image-url-post: url('/img/header_img/Constellation.png');
+      --intro-header-background-image-url-page: url('//img/header_img/Constellation.png');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/categories_bg.WebP');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/Constellation.png');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/Constellation.png');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/header_img/Constellation.png'); */
+      
+    }
+
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#Projects" title="Projects">Projects</a>
+              
+            </div>
+            <h1>星辰为图，时空为序：我如何从零构建一个用于GNSS泛化挑战的Graph Transformer架构</h1>
+            <h2 class="subheading">一次从“信号指纹匹配”到“物理规律建模”的范式跃迁</h2>
+            <span class="meta">
+              Posted by S7AM1NA on
+              2025-09-23
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">19</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">5.6k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+ <!-- MathJax v3（推荐） -->
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h2 id="壹-前言">壹 前言</h2>
+<p>​	开学未久，国庆将至。</p>
+<p>​	这段日子课程压力较小，BUAA的CS少有的清闲时刻。但是本学期后续的压力令人想想就窒息，抓紧赶路吧🏃‍。</p>
+<p><img src="%E6%9C%AA%E5%BD%92%E4%B9%8B%E5%A4%8F.jpg" alt=""></p>
+<p>​	本篇博客主要作为下一篇论文的构思，这篇论文其实构思许久，笔者难得有个说得过去的奇思，着实让人朝思暮想。为此，特开一个博客记录整体论文的思考框架，希望能借此文章理清思路，也尽可能考虑到一些重要细节，防止后续推翻重来心态爆炸😉。如果您和笔者一样，对<strong>GNSS安全</strong>、<strong>时空数据分析</strong>或是<strong>前沿的图学习模型</strong>感兴趣，那么希望这篇文章能为您带来一些新的思考。</p>
+<h2 id="贰-正文">贰 正文</h2>
+<h3 id="1、故事的起点">1、故事的起点</h3>
+<p>​	一切源于我们暑期的一项论文研究。在那项工作中，我们发现了一个领域内的“灾难级”现象——我们称之为GNSS欺骗检测的**“泛化鸿沟”**。</p>
+<p>​	简单来说，一个在实验室里用设备A的数据训练得近乎完美的深度学习模型，当部署到一台新的、从未见过的消费级设备B上时，其性能可能会一落千丈。我们通过实验证实，这背后的“罪魁祸首”是**“特征异构性”**：不同品牌、型号的消费级设备，其内部的硬件和软件差异，导致它们在面对同一种欺骗攻击时，GNSS信号特征（如AGC、C/No）的响应模式——我们称之为“信号指纹”——截然不同。</p>
+<p>​	这让我们被push不得不思考一个关于前景的问题：<strong>我们能训练出一个不依赖特定“设备指纹”，能在所有设备上都通用的“万能”检测模型吗？</strong></p>
+<h3 id="2、山重水复疑无路-柳暗花明又一村——从“指纹匹配”到“物理规律检验”">2、山重水复疑无路 柳暗花明又一村——<strong>从“指纹匹配”到“物理规律检验”</strong></h3>
+<p>​	面对这个难题，我们同组的成员的尝试是将问题转化为图像分类，站在CV巨人的肩上，获得了很不错的泛化性能回暖，XGBoost为首的机器学习以及LSTM这些基础的深度学习在泛化测试中F1-Score相比基础性能平均下降0.5左右的性能，而ViT、ConvNeXt等视觉模型通过学习欺骗的”视觉纹理“，能将泛化鸿沟缩小至0.1~0.2的水平。	笔者认为本身这已经是一个很好的实验结果，但是另一个想法在心中愈加强烈，”视觉纹理“是通过小波变换得到的结果，它本身也必然存在泛化问题。因此很难不认为这是一种缓兵之计，它无法从根源上解决这个**”泛化鸿沟“<strong>。当然同事的工作也相当卓越且极具参考价值，巨人的肩膀相当坚实，而笔者的思路虽然理论可靠，但实验落地仍是空中楼阁，几乎没有前辈的工作可以做参考，笔者要做的也是从头构建一个全新的模型，而且不计划搬用任何现存的SOTA模型，而是想要通过对项目需求与现有数据的考量进行”私人化定制“。针对</strong>”泛化鸿沟“<strong>问题，笔者一共总结出四种解决问题的</strong>”流派“**，总结表格如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>流派</strong></th>
+<th style="text-align:center"><strong>举例</strong></th>
+<th style="text-align:center"><strong>解决问题的思路</strong></th>
+<th style="text-align:center"><strong>笔者粗浅的考量</strong></th>
+<th style="text-align:center">论文布局中的价值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>数据派🔢</strong></td>
+<td style="text-align:center"><strong>Domain Adaptation</strong></td>
+<td style="text-align:center">试图通过数据处理，在模型输入前“抹平”设备差异。</td>
+<td style="text-align:center">在严格的LODO场景下，存在<strong>灾难性的“数据泄露”风险</strong>或因信息不对称而失效。</td>
+<td style="text-align:center"><strong>不考虑</strong>，杜绝数据泄露带来的弄虚作假。</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>模型派🚗</strong></td>
+<td style="text-align:center"><strong>Mamba/SSM/PatchTST</strong></td>
+<td style="text-align:center">试图用更强大的时序建模能力，“看穿”设备指纹。</td>
+<td style="text-align:center">依然是“单通道”处理，<strong>无法利用空间信息</strong>来检验物理一致性。</td>
+<td style="text-align:center"><strong>Baseline1</strong>，是我们强有力的对手，只在空间信息上略有缺失。</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>视觉派</strong>👀</td>
+<td style="text-align:center"><strong>ConvNeXt</strong></td>
+<td style="text-align:center">将问题转化为图像分类，学习欺骗的“视觉纹理”。</td>
+<td style="text-align:center">丢失了最关键的<strong>空间拓扑信息</strong>，且其学习的“视觉指纹”本身也存在泛化问题。</td>
+<td style="text-align:center"><strong>Baseline2</strong>，ViT的上位替代品，代表着我们和CV领域的正面交锋。</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>物理派</strong>🌏</td>
+<td style="text-align:center"><strong>ConstellationFormer</strong><br />（姑且为我们的模型起这个名字）</td>
+<td style="text-align:center">试图将问题从“模式匹配”提升到“物理规律检验”的维度。</td>
+<td style="text-align:center"><strong>正面解决了核心矛盾</strong>。不回避、不抹平异构性，而是通过引入一个<strong>更高维度的信息（空间物理关系）</strong>。</td>
+<td style="text-align:center">我们期望创新的<strong>SOTA模型</strong>，能够学习到真正通用的、跨越设备差异的判别依据。</td>
+</tr>
+</tbody>
+</table>
+<p>​	笔者意识到，沿着老路——即试图用更强大的模型去学习和记忆所有可能的“信号指纹”——可能是一条死胡同。因为新的设备层出不穷，我们永远无法穷尽所有的“指纹”。于是笔者试图转变思路，仔细想想：</p>
+<p>​	<em><strong>是否存在一种独立于设备、共通于所有GNSS接收场景的“特征”？</strong></em></p>
+<p>​	答案是肯定的——那就是<strong>物理规律</strong>。</p>
+<p>​	无论消费级设备是什么品牌，它头顶上的那片卫星星座，其运行都遵循着天体力学和电磁波传播的基本定律。而我们关注的“接收转发式”欺骗，其最核心的物理本质，就是用一个**“单点源”<strong>的错误物理模型，去破坏真实卫星星座</strong>“多点源”<strong>的</strong>空间一致性**。</p>
+<p>​	这给了笔者一个巨大的启发：<strong>我们的模型，或许不应该再只是扮演一个“指纹鉴定专家”，而应该成为一个“物理学家”</strong>。它的任务，不再只是去匹配某个特定的信号波形，而是去<strong>检验当前的观测数据，是否与已知的空间物理规律相符</strong>。</p>
+<p><img src="Comparison.png" alt=""></p>
+<p>​	作为一个导航领域的门外汉，笔者查了一些资料，试图从基于导航原理的角度来剖析**“空间一致性”<strong>的意义。感兴趣请与笔者一同回归最基础的</strong>物理与数学**，不感兴趣的读者请直接移步第三小节。</p>
+<p>​	**“空间一致性”**的真正含义：<strong>一个完美方程组的唯一解</strong>：</p>
+<p>​	所有消费级设备都能测量出一个关键数据：<strong>伪距 (Pseudorange)</strong>，记为 ρ。简单来说，伪距是信号从卫星传播到你这里所花费的时间，再乘以光速。但它不仅仅是几何距离，还包含了一个讨厌的“杂质”——你接收机的时钟与卫星的GPS标准时间之间的<strong>钟差 (Clock Bias)</strong>，我们记为 <code>dt_user</code>。</p>
+<p>​	对于第<code>i</code>颗卫星而言，这个关系可以写成一个方程：<br>
+$$<br>
+ρ_i = (real_dis) + (c * dt_user)<br>
+$$<br>
+​	我们把这个方程用三维坐标展开。假设你的未知位置是<code> (x_u, y_u, z_u)</code>，而第 i 颗卫星的已知位置是 <code>(x_si, y_si, z_si)</code>（这个位置信息由卫星广播的星历数据提供）。根据<s>小学二年级学习的</s>勾股定理，真实的几何距离就是：<br>
+$$<br>
+real_dis = \sqrt{( (x_{si} - x_u)² + (y_{si} - y_u)² + (z_{si} - z_u)² )}<br>
+$$<br>
+​	于是，对于每一颗卫星，我们都有一个独立的方程。如果设备能同时看到N颗卫星，我们就得到了一个包含N个方程的方程组：<br>
+$$<br>
+\begin{cases}<br>
+ρ_1 = \sqrt{( (x_{s1} - x_u)² + (y_{s1} - y_u)² + (z_{s1} - z_u)² )} + c * dt_user\<br>
+ρ_2 = \sqrt{( (x_{s2} - x_u)² + (y_{s2} - y_u)² + (z_{s2} - z_u)² )} + c * dt_user\<br>
+…\<br>
+ρ_N = \sqrt{( (x_{sN} - x_u)² + (y_{sN} - y_u)² + (z_{sN} - z_u)² )} + c * dt_user\<br>
+\end{cases}<br>
+$$<br>
+​	这个方程组有<strong>4个未知数</strong>：<code>x_u</code>, <code>y_u</code>, <code>z_u</code>, <code>dt_user</code>。根据线性代数的基本原理，只要我们有至少4个独立的方程（即N ≥ 4），我们通常就能解出这4个未知数的唯一确定值。</p>
+<p>​	<strong>这就是“空间一致性”的数学定义：</strong></p>
+<p>​	<strong>存在一个唯一的四维时空点 (x_u, y_u, z_u, dt_user)，能够让上述所有N个方程同时成立。</strong></p>
+<p>+++</p>
+<p>​	我们的实验是用的典型的“接收转发式”欺骗设备，和笔者一起回忆一下它的工作流程：</p>
+<ol>
+<li>
+<p><strong>在A点接收</strong>：欺骗器在它自己的位置 A = (x_A, y_A, z_A) 接收了所有N颗卫星的真实信号。在A点，这组信号是空间一致的。这意味着存在一个钟差 dt_A，使得对于所有卫星 i，A点测量到的伪距 ρ_A_i 满足：<br>
+$$<br>
+ρ_{Ai} = \sqrt{( (x_{si} - x_A)² + … )} + c * dt_A<br>
+$$</p>
+</li>
+<li>
+<p><strong>延迟并转发</strong>：欺骗器将接收到的<strong>物理信号</strong>（电磁波）通过一段物理介质（如同轴电缆、电子线路等）。这个过程必然会引入一个<strong>时间延迟 d</strong>。然后，它将这个被延迟过的信号在你（目标接收机）附近广播出去。</p>
+</li>
+</ol>
+<p>​	此时我们的消费级设备在B点，收到了这个更强的压制式欺骗信号。对于第 i 颗卫星，你测量到的新伪距 ρ’<em>i 是多少呢？<strong>时间延迟d</strong>引入了一个统一的“虚拟距离”，因此公式如下：<br>
+$$<br>
+ρ’<em>i ≈ ρ</em>{Ai} + c * d<br>
+$$<br>
+​	我们的接收机得到的方程组因此变为：<br>
+$$<br>
+\begin{cases}<br>
+ρ’<em>1 = \sqrt{( (x</em>{s1} - x_u)² + (y</em>{s1} - y_u)² + (z_{s1} - z_u)² )} + c * dt_user\<br>
+ρ’<em>2 = \sqrt{( (x</em>{s2} - x_u)² + (y_{s2} - y_u)² + (z_{s2} - z_u)² )} + c * dt_user\<br>
+…\<br>
+ρ’<em>N = \sqrt{( (x</em>{sN} - x_u)² + (y_{sN} - y_u)² + (z_{sN} - z_u)² )} + c * dt_user\<br>
+\end{cases}<br>
+$$<br>
+​	新的方程组还有解吗？应当是没有了…🧐</p>
+<p>​	你要问为什么？那我们推导一下：</p>
+<p>​	通过简单的数学变化，将<code>ρ</code>全部消掉可以得到下式（以第<code>i</code>颗卫星举例）<br>
+$$<br>
+\sqrt{( (x_{si} - x_u)² + … )} = \sqrt{( (x_{si} - x_A)² + … )} + c * (dt_A + d - dt_user)<br>
+$$<br>
+​	这个等式必须对<strong>所有</strong>的卫星 i = 1, 2, …, N 都成立。</p>
+<p>​	我们令<code> Δ = c * (dt_A + d - dt_user)</code>。这个 Δ 是一个非零常数，因为它不依赖于具体的卫星 i。</p>
+<p>​	呼之欲出的是几何问题的题面：<br>
+​	【<strong>是否存在一个点</strong> <strong>U = (x_u, y_u, z_u)</strong> <strong>和一个常数</strong> <strong>Δ</strong> <strong>，使得对于太空中所有已知的卫星点</strong> **S_i = (x_si, y_si, z_si) ** <strong>，都满足以下关系？<code>距离(S_i, U) = 距离(S_i, A) + Δ</code></strong>】</p>
+<p>​	先考虑三颗卫星S1, S2, S3：</p>
+<p>​	每一个方程都在三维空间中构成一个独一无二的<strong>旋转双曲面</strong>，他们的特点是有一个共同的焦点——也是我们欺骗位置所在——<code>A</code>。</p>
+<p>​	除非卫星 S1, S2, S3… 和点 A 处于某种极其特殊、几乎不可能在现实中出现的共线或共面位置，否则这<strong>三个（或更多）独立的旋转双曲面是无法交于同一个点</strong>的！</p>
+<p>​	<strong>因此我们可以得到结论：</strong></p>
+<p>​	“接收转发式”欺骗攻击的数学“指纹”就在于此：它产生了一组在几何上自相矛盾的伪距测量值。接收机的解算器在求解这个方程组时，无论如何“挣扎”（调整 x_u, y_u, z_u, dt_user 的值），都无法让所有方程的残差同时为零。它最终会得出一个巨大的残差，或者干脆无法收敛。这，就是我们通过数学分析，捕捉到的欺骗的铁证。</p>
+<p>​	吁（长舒一口气.jpg</p>
+<h3 id="3、工欲善其事-必先利其器——为什么是“时空异构图”？">3、工欲善其事 必先利其器——为什么是“时空异构图”？</h3>
+<p>​	一旦确定了“检验物理规律”这个新方向，笔者便开始寻找最合适的建模工具。</p>
+<h4 id="3-1-”图“-Graph-？为什么是图？">3.1 ”图“(Graph)？为什么是图？</h4>
+<p>​	因为我们要检验的核心是“空间一致性”。**图，是唯一能够将卫星的观测特征（我们称之为“内容”）与其在天空中的物理拓扑关系（我们称之为“物理承载形式”）相结合的数学语言。**没有图，空间规律就无从谈起。</p>
+<h4 id="3-2-”异构图“-Heterogeneous-Graph-？为什么是异构图？">3.2 ”异构图“(Heterogeneous Graph)？为什么是异构图？</h4>
+<p>​	笔者再一次仔细审视了我们实验的数据，发现它远比想象中复杂。我们的观测世界里，天然就存在不同类型的“实体”（如L1频段观测、L5频段观测）和不同类型的“关系”（如卫星间的空间几何关系、同一卫星L1/L5信号的同源关系）。为了最真实、最无损地构建我们GNSS世界的**“数字孪生”<strong>模型，采用异构图是对这种复杂现实的尊重和精确描述。这也优雅地解决了数据中</strong>L1/L5/单频/双频混杂的“不对齐”**问题。当然数据参差不齐是主要原因，我们还有AGC等特征数据在不同设备上也十分参差，笔者不想在最开始被同构图限制住手脚，当然这也会付出更多的开发时间与精力成本，但是总比没有扩展性要好（确信）。</p>
+<h4 id="3-3-”时空图“-Spatio-Temporal-Graph-？为什么是时空图？">3.3 ”时空图“(Spatio-Temporal Graph)？为什么是时空图？</h4>
+<p>​	欺骗是一个动态过程。仅仅分析瞬时的“空间快照”是不够的。我们需要将这些快照连成一部“时序电影”，才能理解欺骗的注入和演化。因此，我们模型的输入，必须是一个<strong>图的时间序列</strong>。</p>
+<p><img src="pipeline.png" alt=""></p>
+<h3 id="4、铸为双剑倚苍穹-时空编码定乾坤——ConstellationFormer构思问世">4、铸为双剑倚苍穹 时空编码定乾坤——ConstellationFormer构思问世</h3>
+<p>​	有了清晰的目标（检验物理规律）和合适的数据结构（时空异构图），我们便开始着手设计并铸造我们的SOTA模型——一个我们称之为<strong>ConstellationFormer</strong>的时空异构图网络。这个模型的每一个设计细节，都不是凭空想象，而是由我们试图解决的复杂问题让我们面临的必然选择。<s><strong>Motivation</strong>不就有素材了吗</s>(●’◡’●)</p>
+<h4 id="4-1-顶层设计：“先空间，后时间”的认知架构">4.1.<strong>顶层设计：“先空间，后时间”的认知架构</strong></h4>
+<p>​	笔者认为，一个合理的认知过程是“先看懂单张照片，再看懂整部电影”。因此，我们设计了一个逻辑解耦的架构，来模拟这个过程：</p>
+<ol>
+<li><strong>空间编码器 (The Spatial Encoder)</strong>: 它的任务是学习成为一个“瞬间物理学家”，在<strong>每一个时刻</strong>（每一帧画面），深入分析该时刻卫星星座的“空间结构”是否与观测到的“物理特征”相自洽。</li>
+<li><strong>时间编码器 (The Temporal Encoder)</strong>: 它的任务是成为一个“资深影评人”。它接收空间编码器对每一帧画面的“分析报告”（即“状态指纹”向量），然后将这些报告串联起来，分析整部“电影”的<strong>时间演化</strong>是否合乎逻辑，是否存在异常的剧情转折。</li>
+</ol>
+<h4 id="4-2-核心引擎：空间编码器-Constellation-Graphormer-的精巧构造"><strong>4.2. 核心引擎：空间编码器 (Constellation Graphormer) 的精巧构造</strong></h4>
+<p>​	这是我们整个方案的“心脏”，负责最核心的物理规律检验。它的强大，源于对GNSS世界“数字孪生”的精确模拟。</p>
+<ol>
+<li><strong>第一层：构建“异构”的宇宙画布</strong>
+<ul>
+<li><strong>为什么是“异构”？</strong> 因为我们自己采集的数据集现实中就是异构的。为了最真实地建模，笔者希望定义了不同类型的**节点（Nodes）**来代表不同实体，例如 L1观测节点 和 L5观测节点。</li>
+<li><strong>“关系解耦”的边（Edges）</strong>: 我们摒弃了为边打上单一“类型”的僵化方法。取而代之，我们用一个<strong>多维度的边特征向量</strong>来描述任意两个节点间可能<strong>同时存在</strong>的多种关系，当然这里的<strong>多种关系还有待商榷</strong>，避免过拟合或者再次产生设备依赖性等问题：
+<ol>
+<li><strong>空间几何关系</strong>: 由卫星间的<strong>角距离</strong>量化。</li>
+<li><strong>行为相似性</strong>: 由节点特征（如Cn0DbHz）的<strong>动态相关性</strong>量化。</li>
+<li><strong>内在关联性</strong>: 通过**“是否同设备”、“是否同卫星”、“是否同频段”**等二进制标志位来描述。</li>
+<li><strong>差分一致性</strong>: 对于“同卫星”的节点对，可以加入了<strong>跨设备/跨频段的观测差分</strong>作为关键特征。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><strong>第二层：融合GNN与Transformer的推理引擎</strong><br>
+我们相信，欺骗的物理痕迹兼具<strong>局部</strong>（邻域关系破坏）和<strong>全局</strong>（全星座协同异常）的双重特性。因此，我们借鉴了前沿的<strong>Graph Transformer</strong>思想，让模型同时拥有两种能力：
+<ol>
+<li><strong>GNN的结构先验——学习“局部物理”</strong>:
+<ul>
+<li>模型首先通过类似消息传递的机制，利用我们精心设计的<strong>边特征</strong>，来理解<strong>局部的、基础的</strong>物理规则。GNN结构能让模型能够感知到“这两个节点在空间上很近，它们的行为应该相似”或者“这两个节点来自同一颗卫星的L1和L5频段，它们的差分值应该在一个正常范围内”。</li>
+</ul>
+</li>
+<li><strong>Transformer的全局注意力——进行“全局推理”</strong>:
+<ul>
+<li>在理解了局部规则后，模型启动其核心的<strong>全局自注意力</strong>机制，开始思考整个宇宙的全局规律。</li>
+<li><strong>与“接收转发”手法的完美匹配</strong>: “接收转发式”欺骗最本质的特征，就是<strong>所有被欺骗的卫星都被同一个“中央大脑”（欺骗器）所控制</strong>。Transformer的全局注意力，允许天空中任意两个相距遥远的卫星节点直接进行信息交互，正是为了捕捉这种**“全局协同异常”**而生的。</li>
+<li><strong>注意力偏置 (Attention Bias)</strong>: 我们将图中丰富的结构信息（如角距离、边类型），作为一种**“偏置”**，巧妙地注入到注意力分数的计算中。保证模型在处理全局注意力事项的时候不会忘记物理位置</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>第三层：注入“先验知识”——层级感知的注意力</strong>
+<ul>
+<li>最后，为了让模型“站在巨人的肩膀上”，笔者想要将上一篇论文的核心结论——<strong>“特征鲁棒性层级体系”</strong>——作为一种强先验知识融入模型。</li>
+<li>我们通过特殊的设计（例如，为处理不同层级特征的注意力头赋予不同权重），来<strong>引导模型</strong>更信任那些我们已知更可靠的特征（如Tier 1的Cn0DbHz），同时审慎地使用那些可能包含“设备指纹”的特征。</li>
+</ul>
+</li>
+</ol>
+<h4 id="4-3-动态分析引擎：时间编码器-TimesNet-的画龙点睛"><strong>4.3. 动态分析引擎：时间编码器 (TimesNet) 的画龙点睛</strong></h4>
+<ol>
+<li>
+<p><strong>为什么需要SOTA？</strong></p>
+<p>空间编码器为我们提供了每一瞬间高质量的“状态指纹”。为了不让后续的时间分析成为性能瓶颈，笔者选用当前时间序列分类领域的SOTA模型——<strong>TimesNet</strong>。当然还有另一种思路，用大道至简的线性时间模型做时间编码器，从而凸显我们的空间编码器非常之强。但是故事还是强强联手更好讲，双剑合璧，登峰造极嘛。</p>
+</li>
+<li>
+<p><strong>它带来了什么？</strong></p>
+<p>TimesNet擅长将一维时序分解，自动发现其中隐藏的<strong>多尺度周期性 (Multi-periodicity)</strong>。我们推测，欺骗攻击的动态过程，可能会在“星座状态”的演化中，引入常规模型难以察觉的、<strong>异常的周期性模式</strong>。TimesNet正是捕捉这种高级动态特征的专家，为我们的模型提供了“画龙点睛”的一笔。</p>
+</li>
+</ol>
+<p>​	通过以上三个层次的精心设计，我们的<strong>ConstellationFormer</strong>不是一个像ViT那样的简单“黑箱”模型。小波变换后的图像是否能否摆脱“设备指纹”？这是一个不得而知、也永远无法证明的命题。但是<strong>ConstellationFormer</strong>是一个被我们<strong>数据现实、物理规律和前期研究结论</strong>共同雕琢出来的、具有清晰物理内涵的多领域透明系统。笔者认为、并且愿意相信，这种源于深刻理解的设计，将是最终跨越“泛化鸿沟”的关键。</p>
+<img src="en/%E6%98%9F%E8%BE%B0%E4%B8%BA%E5%9B%BE%EF%BC%8C%E6%97%B6%E7%A9%BA%E4%B8%BA%E5%BA%8F%EF%BC%9A%E6%88%91%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E6%9E%84%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%94%A8%E4%BA%8EGNSS%E6%B3%9B%E5%8C%96%E6%8C%91%E6%88%98%E7%9A%84Graph-Transformer%E6%9E%B6%E6%9E%84/Model.png" class="">
+<h4 id="5、待到秋来九月八-我花开后百花杀——ConstellationFormer给予我们的极高上限与强扩展性"><strong>5、待到秋来九月八 我花开后百花杀——ConstellationFormer给予我们的极高上限与强扩展性</strong></h4>
+<p>​	我们清醒地认识到，我们并非唯一的探索者。以<strong>ConvNeXt</strong>为代表的“视觉派”，通过将信号转换为图像进行分析，在LODO（留一设备）测试中已经取得了约85% F1-score的优异成绩。</p>
+<p>​	然而，我们相信我们的“物理派”路线具有更根本的优势。</p>
+<p><img src="VisionVSGraph.png" alt=""></p>
+<ul>
+<li><strong>“视觉派”的上限</strong>: 他们的方法，本质上还是在匹配一种“泛化能力有限的视觉指纹”，并且完全丢弃了我们认为最宝贵的<strong>空间拓扑信息</strong>。85%的成绩，可能已经接近其范式的天花板。</li>
+<li><strong>我们的潜力</strong>: 我们的ConstellationFormer，通过在一个<strong>更高维度的、物理意义丰富的时空图</strong>上进行推理，有望发现那些被“视觉派”忽略的、决定性的物理不自洽证据（例如，我们通过初步分析发现的“多普勒时空错配”现象）。</li>
+<li>数据集上的扩展性：我们的ConstellationFormer在动态或者有遮蔽的场景下的性能会更加优越，核心还是物理规律是独立于信号特征之外的，这是我们亘古不变的根基。</li>
+</ul>
+<p>​	笔者的构思并非在追求一个“更好”的图像分类器，而是在探索一个全新的、可能更根本的解题范式。笔者的目标，是<strong>将LODO测试的性能天花板，从85%提升到90%甚至95%以上</strong>。</p>
+<h3 id="叁-结语与邀请">叁 <strong>结语与邀请</strong></h3>
+<p>​	这条探索之路无疑充满挑战——数据的不完美、模型的复杂性、实验的繁琐。但笔者相信，由问题本质驱动的、有清晰物理直觉指引的研究，是最有可能取得突破的。</p>
+<p>​	笔者在这里分享出尚在探索中的构思，既是作为团队的蓝图，也希望能抛砖引玉，与同样对这个问题感兴趣的朋友们交流、碰撞思想。如果您有任何建议或想法，我们都非常期待听到您的声音！</p>
+<p>​	感谢您的阅读。</p>
+<blockquote>
+<p><strong>我总是惊讶地发现，我不假思索地上路，因为出发的感觉太好了。世界突然充满了可能性。</strong></p>
+<p>—— <strong>凯鲁亚克</strong> <strong>《在路上》</strong></p>
+</blockquote>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/en/暑期GNSS学习工作记录-持续更新/" data-toggle="tooltip" data-placement="top" title="暑期GNSS学习工作记录(已完结)">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Tue Sep 23 2025 15:29:09 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%A3%B9-%E5%89%8D%E8%A8%80"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">壹 前言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%B4%B0-%E6%AD%A3%E6%96%87"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">贰 正文</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1%E3%80%81%E6%95%85%E4%BA%8B%E7%9A%84%E8%B5%B7%E7%82%B9"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">1、故事的起点</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2%E3%80%81%E5%B1%B1%E9%87%8D%E6%B0%B4%E5%A4%8D%E7%96%91%E6%97%A0%E8%B7%AF-%E6%9F%B3%E6%9A%97%E8%8A%B1%E6%98%8E%E5%8F%88%E4%B8%80%E6%9D%91%E2%80%94%E2%80%94%E4%BB%8E%E2%80%9C%E6%8C%87%E7%BA%B9%E5%8C%B9%E9%85%8D%E2%80%9D%E5%88%B0%E2%80%9C%E7%89%A9%E7%90%86%E8%A7%84%E5%BE%8B%E6%A3%80%E9%AA%8C%E2%80%9D"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">2、山重水复疑无路 柳暗花明又一村——从“指纹匹配”到“物理规律检验”</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3%E3%80%81%E5%B7%A5%E6%AC%B2%E5%96%84%E5%85%B6%E4%BA%8B-%E5%BF%85%E5%85%88%E5%88%A9%E5%85%B6%E5%99%A8%E2%80%94%E2%80%94%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E2%80%9C%E6%97%B6%E7%A9%BA%E5%BC%82%E6%9E%84%E5%9B%BE%E2%80%9D%EF%BC%9F"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">3、工欲善其事 必先利其器——为什么是“时空异构图”？</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-1-%E2%80%9D%E5%9B%BE%E2%80%9C-Graph-%EF%BC%9F%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E5%9B%BE%EF%BC%9F"><span class="toc-nav-number">2.3.1.</span> <span class="toc-nav-text">3.1 ”图“(Graph)？为什么是图？</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-2-%E2%80%9D%E5%BC%82%E6%9E%84%E5%9B%BE%E2%80%9C-Heterogeneous-Graph-%EF%BC%9F%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E5%BC%82%E6%9E%84%E5%9B%BE%EF%BC%9F"><span class="toc-nav-number">2.3.2.</span> <span class="toc-nav-text">3.2 ”异构图“(Heterogeneous Graph)？为什么是异构图？</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-3-%E2%80%9D%E6%97%B6%E7%A9%BA%E5%9B%BE%E2%80%9C-Spatio-Temporal-Graph-%EF%BC%9F%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E7%A9%BA%E5%9B%BE%EF%BC%9F"><span class="toc-nav-number">2.3.3.</span> <span class="toc-nav-text">3.3 ”时空图“(Spatio-Temporal Graph)？为什么是时空图？</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4%E3%80%81%E9%93%B8%E4%B8%BA%E5%8F%8C%E5%89%91%E5%80%9A%E8%8B%8D%E7%A9%B9-%E6%97%B6%E7%A9%BA%E7%BC%96%E7%A0%81%E5%AE%9A%E4%B9%BE%E5%9D%A4%E2%80%94%E2%80%94ConstellationFormer%E6%9E%84%E6%80%9D%E9%97%AE%E4%B8%96"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">4、铸为双剑倚苍穹 时空编码定乾坤——ConstellationFormer构思问世</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#4-1-%E9%A1%B6%E5%B1%82%E8%AE%BE%E8%AE%A1%EF%BC%9A%E2%80%9C%E5%85%88%E7%A9%BA%E9%97%B4%EF%BC%8C%E5%90%8E%E6%97%B6%E9%97%B4%E2%80%9D%E7%9A%84%E8%AE%A4%E7%9F%A5%E6%9E%B6%E6%9E%84"><span class="toc-nav-number">2.4.1.</span> <span class="toc-nav-text">4.1.顶层设计：“先空间，后时间”的认知架构</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#4-2-%E6%A0%B8%E5%BF%83%E5%BC%95%E6%93%8E%EF%BC%9A%E7%A9%BA%E9%97%B4%E7%BC%96%E7%A0%81%E5%99%A8-Constellation-Graphormer-%E7%9A%84%E7%B2%BE%E5%B7%A7%E6%9E%84%E9%80%A0"><span class="toc-nav-number">2.4.2.</span> <span class="toc-nav-text">4.2. 核心引擎：空间编码器 (Constellation Graphormer) 的精巧构造</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#4-3-%E5%8A%A8%E6%80%81%E5%88%86%E6%9E%90%E5%BC%95%E6%93%8E%EF%BC%9A%E6%97%B6%E9%97%B4%E7%BC%96%E7%A0%81%E5%99%A8-TimesNet-%E7%9A%84%E7%94%BB%E9%BE%99%E7%82%B9%E7%9D%9B"><span class="toc-nav-number">2.4.3.</span> <span class="toc-nav-text">4.3. 动态分析引擎：时间编码器 (TimesNet) 的画龙点睛</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#5%E3%80%81%E5%BE%85%E5%88%B0%E7%A7%8B%E6%9D%A5%E4%B9%9D%E6%9C%88%E5%85%AB-%E6%88%91%E8%8A%B1%E5%BC%80%E5%90%8E%E7%99%BE%E8%8A%B1%E6%9D%80%E2%80%94%E2%80%94ConstellationFormer%E7%BB%99%E4%BA%88%E6%88%91%E4%BB%AC%E7%9A%84%E6%9E%81%E9%AB%98%E4%B8%8A%E9%99%90%E4%B8%8E%E5%BC%BA%E6%89%A9%E5%B1%95%E6%80%A7"><span class="toc-nav-number">2.4.4.</span> <span class="toc-nav-text">5、待到秋来九月八 我花开后百花杀——ConstellationFormer给予我们的极高上限与强扩展性</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%8F%81-%E7%BB%93%E8%AF%AD%E4%B8%8E%E9%82%80%E8%AF%B7"><span class="toc-nav-number">2.5.</span> <span class="toc-nav-text">叁 结语与邀请</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#Projects" title="Projects">Projects</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
+
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/S7AM1NA">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          S7AM1NA
+          2025
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='The first step is as good as half over...,Laugh and grow fat...,Man proposes God disposes...,When all else is lost the future still remains...,Wasting time is robbing oneself...,Sharp tools make good work...,Cease to struggle and you cease to live...,A friend in need is a friend indeed...,Faith can move mountains...' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+    <!-- Line start -->
+    <script async="text/javascript" src="/js/line.js"></script>
+    <!-- Line end -->
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("http://s7am1na.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="SEARCH..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

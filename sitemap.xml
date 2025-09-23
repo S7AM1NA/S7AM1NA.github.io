@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://s7am1na.github.io/en/%E6%98%9F%E8%BE%B0%E4%B8%BA%E5%9B%BE%EF%BC%8C%E6%97%B6%E7%A9%BA%E4%B8%BA%E5%BA%8F%EF%BC%9A%E6%88%91%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E6%9E%84%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%94%A8%E4%BA%8EGNSS%E6%B3%9B%E5%8C%96%E6%8C%91%E6%88%98%E7%9A%84Graph-Transformer%E6%9E%B6%E6%9E%84/</loc>
+    
+    <lastmod>2025-09-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://s7am1na.github.io/en/%E6%9A%91%E6%9C%9FGNSS%E5%AD%A6%E4%B9%A0%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/</loc>
     
     <lastmod>2025-07-01</lastmod>
@@ -229,7 +238,7 @@
 
   <url>
     <loc>http://s7am1na.github.io/</loc>
-    <lastmod>2025-09-21</lastmod>
+    <lastmod>2025-09-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -237,35 +246,35 @@
   
   <url>
     <loc>http://s7am1na.github.io/tags/OO/</loc>
-    <lastmod>2025-09-21</lastmod>
+    <lastmod>2025-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://s7am1na.github.io/tags/OS/</loc>
-    <lastmod>2025-09-21</lastmod>
+    <lastmod>2025-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://s7am1na.github.io/tags/Life/</loc>
-    <lastmod>2025-09-21</lastmod>
+    <lastmod>2025-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://s7am1na.github.io/tags/Game/</loc>
-    <lastmod>2025-09-21</lastmod>
+    <lastmod>2025-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://s7am1na.github.io/tags/Projects/</loc>
-    <lastmod>2025-09-21</lastmod>
+    <lastmod>2025-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -274,35 +283,35 @@
   
   <url>
     <loc>http://s7am1na.github.io/categories/OO/</loc>
-    <lastmod>2025-09-21</lastmod>
+    <lastmod>2025-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://s7am1na.github.io/categories/OS/</loc>
-    <lastmod>2025-09-21</lastmod>
+    <lastmod>2025-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://s7am1na.github.io/categories/Life/</loc>
-    <lastmod>2025-09-21</lastmod>
+    <lastmod>2025-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://s7am1na.github.io/categories/Game/</loc>
-    <lastmod>2025-09-21</lastmod>
+    <lastmod>2025-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://s7am1na.github.io/categories/Projects/</loc>
-    <lastmod>2025-09-21</lastmod>
+    <lastmod>2025-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
