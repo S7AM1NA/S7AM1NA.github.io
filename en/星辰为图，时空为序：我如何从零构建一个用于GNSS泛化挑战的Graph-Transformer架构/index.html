@@ -752,7 +752,7 @@ id="动态分析引擎时间编码器-timesnet-的画龙点睛"><strong>动态�
 </ol>
 <p>​
 通过以上三个层次的精心设计，我们的<strong>ConstellationFormer</strong>不是一个像ViT那样的简单“黑箱”模型。小波变换后的图像是否能否摆脱“设备指纹”？这是一个不得而知、也永远无法证明的命题。但是<strong>ConstellationFormer</strong>是一个被我们<strong>数据现实、物理规律和前期研究结论</strong>共同雕琢出来的、具有清晰物理内涵的多领域透明系统。笔者认为、并且愿意相信，这种源于深刻理解的设计，将是最终跨越“泛化鸿沟”的关键。</p>
-<img src="en/%E6%98%9F%E8%BE%B0%E4%B8%BA%E5%9B%BE%EF%BC%8C%E6%97%B6%E7%A9%BA%E4%B8%BA%E5%BA%8F%EF%BC%9A%E6%88%91%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E6%9E%84%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%94%A8%E4%BA%8EGNSS%E6%B3%9B%E5%8C%96%E6%8C%91%E6%88%98%E7%9A%84Graph-Transformer%E6%9E%B6%E6%9E%84/Model.png" class="">
+<p><img src="Model.png" /></p>
 <h4
 id="待到秋来九月八-我花开后百花杀constellationformer给予我们的极高上限与强扩展性"><strong>待到秋来九月八
 我花开后百花杀——ConstellationFormer给予我们的极高上限与强扩展性</strong></h4>
@@ -1464,5 +1464,20 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	</body>
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>
