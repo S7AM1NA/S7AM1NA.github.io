@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://s7am1na.github.io/archives/2025/">
+  <link rel="canonical" href="http://s7am1na.github.io/en/Regex-Redux-Why-Regular-Expression-Matching-Can-Be-Simple-And-Fast-Still-Matters-Today/">
   <title>
     
-      just a private corner
+      Regex Redux: Why &#39;Regular Expression Matching Can Be Simple And Fast&#39; Still Matters Today - just a private corner
     
   </title>
 <meta name="generator" content="Hexo 5.4.2"></head>
@@ -300,29 +300,7 @@
           <!-- LangSelect -->
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      English
-    </span>
-    <select id="lang-select" data-canonical="archives/2025/index.html">
-      
-      
-      <option value="en"  selected >
-        English
-      </option>
-      
-      <option value="cn" >
-        简体中文
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -374,19 +352,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/categories_bg.WebP');
-      --intro-header-background-image-url-post: url('');
-      --intro-header-background-image-url-page: url('/img/header_img/archive_bg3.jpg');
+      --intro-header-background-image-url-post: url('/img/header_img/TimePerception.png');
+      --intro-header-background-image-url-page: url('//img/header_img/TimePerception.png');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/categories_bg.WebP');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg3.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/TimePerception.png');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/TimePerception.png');
     }
 
     header.intro-header {
-       /*page*/
-        background-image: var(--intro-header-background-image-url-page);
-        /* background-image: url('/img/header_img/archive_bg3.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/header_img/TimePerception.png'); */
       
     }
 
@@ -404,10 +382,42 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>S7的温柔时空角</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">我们需要说很多话，然后保持沉默.</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#CT" title="CT">CT</a>
+              
+            </div>
+            <h1>Regex Redux: Why &#39;Regular Expression Matching Can Be Simple And Fast&#39; Still Matters Today</h1>
+            <h2 class="subheading">古早论文《Regular Expression Matching Can Be Simple And Fast》阅读有感</h2>
+            <span class="meta">
+              Posted by S7AM1NA on
+              2025-09-29
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">10</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">2.9k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
           </div>
           
         </div>
@@ -448,525 +458,349 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
-    
+		<!-- Modify by Yu-Hsuan Yen -->
+ <!-- MathJax v3（推荐） -->
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+        <h2 id="foreword">Foreword</h2>
+<p>​
+国庆前夕，编译原理的老师留了一个论文Research并制作slides展示的作业，这篇论文是<strong>2007年Russ
+Cox</strong>的大作，大概讲的是正则表达式的<strong>安全、效率、兼容性等问题之间的权衡</strong>。他对Perl、Python以及Java使用的正则语言匹配算法感到十分的不满，并且提出一个融合两种算法的解决方案，令人不禁联想到年迈且威严的白发老教授。一搜才了解到，<strong>Russ
+Cox</strong>在2008年才在MIT获得博士学位，也就是说他在校期间提出了如此深刻的问题。对于笔者而言，笔者最震撼的点就是这篇论文像是一记回旋镖，让人不得不佩服其<strong>前瞻性的科研视野</strong>。</p>
+<p>​
+slides都做出来了，笔者干脆物尽其用产出一篇分享博客吧，同时笔者会持续拜读，因为一天短时间内的阅读深度肯定是不够的，如有偏颇，欢迎指正。</p>
+<p>​
+实际上无论您是否从事这个行业，我们每个人每天都在与正则表达式打交道，用它验证邮箱、提取URL、清理数据……它就像是字符串处理领域的瑞士军刀，强大而便捷。但笔者如果说就是在这种场景下的一个<strong>看上去简单</strong>的正则表达式会让你的程序卡死、CPU飙升，您会怎么想？这其实就是这个经典故事的序章。</p>
+<h2 id="suspense60s-vs-20μs">Suspense：60s vs 20μs？</h2>
+<p><img src="幻灯片2.PNG" /></p>
+<p>这是来自RSC论文中真实的测试：用同一个“病态”的正则表达式（形如
+a?ⁿaⁿ）去匹配一个不到30个字符的字符串。</p>
+<ul>
+<li>在<strong>Perl</strong>（以及Python、Java等多数主流语言）的回溯引擎中，这个任务耗时<strong>超过60秒</strong>。</li>
+<li>而在一个基于<strong>Thompson
+NFA理论</strong>的引擎中，完成它仅需<strong>20微秒</strong>。</li>
+</ul>
+<p>这不是简单的性能差异，这是百万倍量级的鸿沟。是什么导致了如此戏剧化的结果？答案在于，驱动这两种场景的，是两种思想截然不同的算法引擎。</p>
+<h2 id="two-approaches-explorer-vs.-flood">Two Approaches: Explorer vs.
+Flood</h2>
+<p>主角登场（当当当当）（大声</p>
+<p><img src="幻灯片3.PNG" /></p>
+<ul>
+<li><p><strong>左边是回溯法 (Backtracking
+Engine)</strong>，我们可以把它想象成一个在复杂迷宫中探索的<strong>探险家</strong>。当遇到岔路口（比如
+| 或
+?），他只能选择一条路前进。如果这条路是死胡同，他唯一的选择就是原路返回（Backtrack），然后尝试下一条未走过的路。这是一种“试错与回退”的策略，其核心是追踪<strong>路径</strong>。</p></li>
+<li><p><strong>右边是有限自动机法 (Finite Automata
+Engine)</strong>，它的思维方式如同<strong>洪水</strong>。从入口开始，洪水会同时涌入所有相连的通道，并行地探索所有可能性。它不关心“哪条路径是正确的”，只关心在任何时刻“水淹没了哪些地方”。这是一种“并行推进”的策略，其核心是追踪<strong>状态</strong>。</p></li>
+</ul>
+<h2 id="the-nightmare-of-backtracking-the-trap-of-exponential-paths">The
+Nightmare of Backtracking: The Trap of Exponential Paths</h2>
+<p>那么，探险家式的回溯法为什么会陷入困境？让我们通过一个简化的例子来看看它的工作流程。</p>
+<p><img src="幻灯片4.PNG" /></p>
+<p>假设我们用正则表达式 <code>a?a?a?a</code> 去匹配字符串
+a。回溯法的引擎天性“贪婪”，它会优先尝试匹配尽可能多的字符。</p>
+<ol type="1">
+<li><strong>第一次尝试</strong>：引擎遇到第一个
+<code>a?</code>，它会选择匹配字符
+<code>a</code>。此时，字符串<code>a</code>
+被消耗完毕。但正则表达式后面还有 <code>a?a?a</code>
+需要匹配，此路不通，宣告失败。</li>
+<li><strong>回溯与再尝试</strong>：引擎不会放弃。它会退回到上一个选择点，做出不同的选择。它会尝试“第一个<code>a?</code>不匹配，第二个<code>a?</code>匹配<code>a</code>”，结果再次失败。</li>
+<li><strong>最终的成功</strong>：在经历了多次失败的回溯后，引擎最终会找到那条唯一正确的路径：前两个
+<code>a?</code> 都不匹配任何字符，最后的 <code>a</code> 与字符串
+<code>a</code> 成功匹配。</li>
+</ol>
+<p>在这个简单的例子中，引擎需要探索多种可能性。而当我们面对像 a?¹⁵a¹⁵
+这样的表达式时，需要尝试的错误路径数量会暴增到
+<strong>2¹⁵-1</strong>，即 <strong>32,767</strong>
+条！这就是所谓的“灾难性回溯”，也是指数级复杂度的根源。</p>
+<h2
+id="gods-eye-view-of-automata-one-traversal-tracking-all-possibilities">God's-eye
+view of automata: One traversal, tracking all possibilities</h2>
+<p>相比之下，有限自动机（NFA）引擎的处理方式则显得优雅而高效。</p>
+<p><img src="幻灯片5.PNG" /></p>
+<p>它从不猜测，也从不回头。在读取输入字符串的每一个字符时，它都会并行地计算出从当前所有可能的状态，能够转移到的<strong>下一组全新的状态集</strong>。</p>
+<p>整个过程就像动画里展示的那样，状态被一波一波地“点亮”。无论有多少条路径汇合到同一个状态，NFA引擎都只将其视为状态集中的一个元素。</p>
+<p>这种方法的关键优势在于：</p>
+<ul>
+<li><strong>文本只被读取一遍</strong>。</li>
+<li>计算的复杂度只与<strong>状态的数量</strong>（与正则表达式长度成正比）有关，而与<strong>路径的数量</strong>（可能是指数级）无关。</li>
+</ul>
+<h2 id="core-difference-path-vs.-state">Core Difference: Path vs.
+State</h2>
+<p>现在，我们可以清晰地总结这两种算法的根本区别了。</p>
+<p><img src="幻灯片6.PNG" /></p>
+<ul>
+<li><strong>回溯法</strong>
+关注的是“<strong>如何到达？</strong>”。它通过探索一条条独立的<strong>路径</strong>来寻找答案，因此受限于路径数量的爆炸式增长，最坏情况下的时间复杂度是
+<strong>O(2ⁿ)</strong>。</li>
+<li><strong>有限自动机法</strong>
+关注的是“<strong>能到达哪里？</strong>”。它通过维护一个<strong>状态</strong>集合来追踪所有可能性，因此性能稳定可预测，时间复杂度始终在多项式级别，如
+<strong>O(n²)</strong>。</li>
+</ul>
+<h2 id="the-cost-of-trade-offs-functionality-vs.-performance">The Cost
+of Trade-offs: Functionality vs. Performance</h2>
+<p>看到这里，你一定会问：既然自动机法如此高效和稳定，为什么我们日常使用的Python、Java等主流语言，反而都选择了那个“慢速”的回溯引擎呢？</p>
+<p><img src="幻灯片7.PNG" /></p>
+<p>答案在于一个功能与性能之间的经典权衡。这个权衡的核心，是一个叫做<strong>反向引用
+(Backreferences)</strong> 的强大功能。</p>
+<p>反向引用（如
+\1）允许正则表达式引用前面捕获组匹配到的<strong>具体文本内容</strong>。例如，<code>\b(\w+)\s+\1\b</code>
+可以精确地匹配到重复的单词，如 "the
+the"。这种能力需要引擎“记住”任意长度的字符串，这超出了有限自动机“状态有限”的数学模型能力。</p>
+<p>然而，回溯引擎的程序化搜索机制，可以轻易地用变量来存储和比较这些捕获到的文本。</p>
+<p>因此，现代主流语言的设计者们做出了一次历史性的权衡：为了获得反向引用等强大的<strong>功能</strong>（如同瑞士军刀），他们牺牲了引擎在最坏情况下的<strong>性能与安全</strong>（如同火箭的速度）。</p>
+<h2
+id="reflections-and-insights-rebuilding-on-the-ruins-of-good-enough">Reflections
+and Insights: Rebuilding on the Ruins of “Good Enough”</h2>
+<p>至此，我们已经清晰地看到了正则表达式背后那两条截然不同的技术路径。一条是充满妥协、背负着历史包袱但功能强大的“回溯之路”；另一条则是理论完美、性能如磐石般稳固的“自动机之路”。</p>
+<p>我们不禁要问，为什么像Python、Java这些拥有庞大生态的语言巨头，明知“自动机之路”在安全和性能上更优，却依然选择在“回溯之路”上蹒跚前行？</p>
+<p>答案复杂而沉重：<strong>向后兼容性的枷锁</strong>。在一个拥有数百万行存量代码、无数开发者已经习惯了现有行为的“屎山”生态中，任何颠覆性的改变都无异于一场地震。推倒重来的成本是如此之高，以至于“足够好”的现状成了无法撼动的铁律。我们似乎陷入了一个工程上的“局部最优解”，为了维护过去的兼容性，而牺牲了未来的可能性。</p>
+<p>然而，这真的是唯一的答案吗？</p>
+<p>让我们把目光投向这篇文章的作者——<strong>Russ
+Cox</strong>。作为贝尔实验室的传承者，Plan
+9的开发者，以及后来Go语言的技术领袖，他的职业生涯本身就是对这个问题的一种回答。他与Ken
+Thompson, Rob
+Pike等前辈一样，深受Unix哲学的熏陶：<strong>做一件事，并把它做好；追求简单、清晰和可预测性。</strong></p>
+<p>当他们从零开始创造Go语言时，他们没有历史的包袱。在设计Go的regexp库时，Russ
+Cox毫不犹豫地选择了那条“少有人走的路”——基于RE2和有限自动机理论，确保了所有正则表达式的线性时间性能，默认免疫ReDoS攻击。他没有为了迎合所谓的“事实标准”而去支持反向引用，而是做出了一个基于第一性原理的、在技术上“正确”的选择。</p>
+<p>这不仅仅是一个技术决策，这是一种<strong>勇气</strong>。一种敢于对历史惯例说“不”的勇气，一种相信“更好的设计”终将被认可的勇气，一种在看似“足够好”的废墟之上，推倒重来、构建更坚固大厦的勇气。</p>
+<p>我们中的大多数人，或许没有机会去创造一门新的语言。我们日常的工作，就是在已有的庞大系统中添砖加瓦。但是，Russ
+Cox和Go语言的故事提醒我们：</p>
+<ul>
+<li><strong>永远不要停止对“第一性原理”的思考。</strong>
+当我们面对一个“约定俗成”的实践时，要敢于追问：它在今天，在我们的场景下，依然是最好的选择吗？</li>
+<li><strong>在自己的能力范围内，做出“正确”而非“容易”的选择。</strong>
+也许我们无法改变整个生态，但我们可以在项目中选择使用更安全的第三方库（如Python的re2），可以在代码审查中指出潜在的性能风险，可以在团队内部分享这些被遗忘的“简单而快速”的智慧。</li>
+<li><strong>认识到“屎山”并非永恒。</strong>
+技术的演进总是在不断地“扬弃”中前行。新的语言（如Rust）、新的框架、新的工具正在涌现，它们之所以能获得青睐，正是因为它们在某些关键问题上，勇敢地抛弃了历史包袱。</li>
+</ul>
+<p>正则表达式的故事，从一个“理论指导实践”的光辉典范，到后来“无视理论导致坏程序”的普遍现实，再到如今新一代工具的“价值回归”，它就像一面镜子，映照出软件工程领域永恒的博弈：<strong>在复杂性、兼容性、性能和简单性之间，我们究竟该如何抉择？</strong></p>
+<p>或许，并没有唯一的答案。但下一次，当你面对一个看似无法撼动的“历史问题”时，希望你能想起那个关于正则表达式的古老智慧，和那份推倒重来的勇气。</p>
+<p>没错，坚持到底是勇气，从头来过也是勇气，而站在科学边缘的年轻人们——我们从不缺乏勇气。</p>
+<p>感谢阅读。</p>
+<blockquote>
+<p>话说Russ
+Cox也是神人，个人网页简洁得像张A4纸的情况下，最上面的是两个冷笑话，放在最后一起品味一下：</p>
+<p><em>A C, an E-flat, and a G walk into a bar. The bartender says, “<a
+target="_blank" rel="noopener" href="https://web.archive.org/web/20060506162726/http://davidduff.blogspot.com/2005/12/c-e-flat-and-g-go-into-bar.html">Sorry,
+but we don't serve minors</a>.”</em></p>
+<p><em>What's grey? A melted penguin.</em></p>
+</blockquote>
 
-      <!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
-      <!-- 归档列表 -->
 
-      
-
-      <!-- 归档列表 -->
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2025">
-          <span class="tag-text">2025</span>
-        </span>
-        <ul>
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
           
-          <li>
-            09-29
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/Regex-Redux-Why-Regular-Expression-Matching-Can-Be-Simple-And-Fast-Still-Matters-Today/" style="color: #0085a1">
-              <span>
-                Regex Redux: Why 'Regular Expression Matching Can Be Simple And Fast' Still Matters Today
-                
-              </span>
-            </a>
-          </li>
           
-          <li>
-            09-26
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/MedMamba 深度解析学习笔记/" style="color: #0085a1">
-              <span>
-                MedMamba 深度解析学习笔记
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            09-23
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/星辰为图，时空为序：我如何从零构建一个用于GNSS泛化挑战的Graph-Transformer架构/" style="color: #0085a1">
-              <span>
-                星辰为图，时空为序：我如何从零构建一个用于GNSS泛化挑战的Graph Transformer架构
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-01
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/暑期GNSS学习工作记录-持续更新/" style="color: #0085a1">
-              <span>
-                暑期GNSS学习工作记录(已完结)
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            06-27
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/OS-Challenge-Shell/" style="color: #0085a1">
-              <span>
-                OS-Challenge:Shell
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            06-14
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/但愿身强健-浮世拚悠悠/" style="color: #0085a1">
-              <span>
-                但愿身强健 浮世拚悠悠
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            06-12
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/BUAA-OO2025第四单元总结-终章回首/" style="color: #0085a1">
-              <span>
-                BUAA-OO2025第四单元总结 && 终章回首
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            06-11
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/BUAA-OSLab6实验总结/" style="color: #0085a1">
-              <span>
-                BUAA-OSLab6实验总结
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            05-23
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/BUAA-OSLab5学习笔记/" style="color: #0085a1">
-              <span>
-                BUAA-OSLab5学习笔记
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            05-17
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/BUAA-OO2025第三单元总结/" style="color: #0085a1">
-              <span>
-                BUAA-OO2025第三单元总结
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            05-10
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/20250511/" style="color: #0085a1">
-              <span>
-                20250511
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            05-02
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/BUAA-OSLab4学习笔记/" style="color: #0085a1">
-              <span>
-                BUAA-OSLab4学习笔记
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            04-21
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/BUAA-OSLab3实验总结/" style="color: #0085a1">
-              <span>
-                BUAA-OSLab3实验总结
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            04-20
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/OS期中复习总结/" style="color: #0085a1">
-              <span>
-                OS期中复习总结
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            04-19
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/BUAA-OO2025第二单元总结/" style="color: #0085a1">
-              <span>
-                BUAA-OO2025第二单元总结
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            04-10
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/BUAA-OSLab2实验总结/" style="color: #0085a1">
-              <span>
-                BUAA-OSLab2实验总结
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            03-28
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/BUAA-OSLab1实验总结/" style="color: #0085a1">
-              <span>
-                BUAA-OSLab1实验总结
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            03-22
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/BUAA-OO2025第一单元总结/" style="color: #0085a1">
-              <span>
-                BUAA_OO2025第一单元总结
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            03-13
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/BUAA-OSLab0实验总结/" style="color: #0085a1">
-              <span>
-                BUAA-OSLab0实验总结
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            02-23
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/BUAA-OS-Pre/" style="color: #0085a1">
-              <span>
-                BUAA-OS Pre
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            02-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/炉石传说31-4-2补丁相关/" style="color: #0085a1">
-              <span>
-                炉石传说31.4.2补丁相关
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-30
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/新春快乐之温馨小家庭“日记”/" style="color: #0085a1">
-              <span>
-                新春快乐之温馨小家庭“日记”
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-24
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/寒冬假日小记-第一篇文/" style="color: #0085a1">
-              <span>
-                寒冬假日小记&第一篇文
-                
-              </span>
-            </a>
+          <li class="next">
+            <a href="/en/MedMamba 深度解析学习笔记/" data-toggle="tooltip" data-placement="top" title="MedMamba 深度解析学习笔记">Next Post &rarr;</a>
           </li>
           
         </ul>
-      </div>
-      
-    </div>
-  </div>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+    
+  </p>
 </div>
+<!-- tip end -->
 
+        <!-- tip end -->
+        
 
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Visitors -->
-<h5><a href="/">VISITORS</a></h5>
-
-<div class="widget">
-  <span>
-    Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
-  </span>
-  <br />
-  <span>
-    <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
-  </span>
-</div>
-
-
+        
         <hr>
-    
-        <!-- Featured Tags -->
 
-<section>
-  <h5><a href="/tags/">FEATURED TAGS</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#OO" title="OO" rel="4">OO</a>
-    
-    
-    
-    <a href="/tags/#OS" title="OS" rel="10">OS</a>
-    
-    
-    
-    <a href="/tags/#Life" title="Life" rel="4">Life</a>
-    
-    
-    
-    <a href="/tags/#Game" title="Game" rel="1">Game</a>
-    
-    
-    
-    <a href="/tags/#Projects" title="Projects" rel="1">Projects</a>
-    
-    
-    
-    <a href="/tags/#MedicalImage" title="MedicalImage" rel="1">MedicalImage</a>
-    
-    
-    
-    <a href="/tags/#GNSS,GraphTransformer" title="GNSS,GraphTransformer" rel="1">GNSS,GraphTransformer</a>
-    
-    
-    
-    <a href="/tags/#CT" title="CT" rel="1">CT</a>
-    
-    
-  </div>
-</section>
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
 
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
 
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">ABOUT ME</a></h5>
-  <div class="short-about">
+  <div id="gitalk-container"></div>
 
-    
-    <img id="avatar_pic" src="/img/avatar/avatar3.WebP" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>stay hungry, stay foolish</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/S7AM1NA">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        <!-- RECENT POSTS -->
-
-<h5><a href="/">RECENT POSTS</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../../en/Regex-Redux-Why-Regular-Expression-Matching-Can-Be-Simple-And-Fast-Still-Matters-Today/">
-      <li>Regex Redux: Why &#39;Regular Expression Matching Can Be Simple And Fast&#39; Still Matters Today</li>
-    </a>
-    
-    <a href="../../en/MedMamba%20%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-      <li>MedMamba 深度解析学习笔记</li>
-    </a>
-    
-    <a href="../../en/%E6%98%9F%E8%BE%B0%E4%B8%BA%E5%9B%BE%EF%BC%8C%E6%97%B6%E7%A9%BA%E4%B8%BA%E5%BA%8F%EF%BC%9A%E6%88%91%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E6%9E%84%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%94%A8%E4%BA%8EGNSS%E6%B3%9B%E5%8C%96%E6%8C%91%E6%88%98%E7%9A%84Graph-Transformer%E6%9E%B6%E6%9E%84/">
-      <li>星辰为图，时空为序：我如何从零构建一个用于GNSS泛化挑战的Graph Transformer架构</li>
-    </a>
-    
-    <a href="../../en/%E6%9A%91%E6%9C%9FGNSS%E5%AD%A6%E4%B9%A0%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/">
-      <li>暑期GNSS学习工作记录(已完结)</li>
-    </a>
-    
-    <a href="../../en/OS-Challenge-Shell/">
-      <li>OS-Challenge:Shell</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Friends Blog -->
-
-<h5><a href="/">FRIENDS</a></h5>
-<ul class="list-inline">
   
-</ul>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Mon Sep 29 2025 14:22:31 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
 
 
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
         <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
     
-        <!-- Archives -->
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#foreword"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Foreword</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#suspense60s-vs-20%CE%BCs"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Suspense：60s vs 20μs？</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#two-approaches-explorer-vs.-flood"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Two Approaches: Explorer vs.
+Flood</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#the-nightmare-of-backtracking-the-trap-of-exponential-paths"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">The
+Nightmare of Backtracking: The Trap of Exponential Paths</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#gods-eye-view-of-automata-one-traversal-tracking-all-possibilities"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">God&#39;s-eye
+view of automata: One traversal, tracking all possibilities</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#core-difference-path-vs.-state"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">Core Difference: Path vs.
+State</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#the-cost-of-trade-offs-functionality-vs.-performance"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">The Cost
+of Trade-offs: Functionality vs. Performance</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#reflections-and-insights-rebuilding-on-the-ruins-of-good-enough"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">Reflections
+and Insights: Rebuilding on the Ruins of “Good Enough”</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
 
-<h5><a href="/archives/">archives</a></h5>
-<div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="09/">September 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="07/">July 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="06/">June 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="05/">May 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="04/">April 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="03/">March 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="02/">February 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="01/">January 2025</a><span class="archive-list-count">2</span></li></ul>
-</div>
 
 
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#CT" title="CT">CT</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
         <hr>
-    
-        <!-- Categories -->
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
 
-<h5><a href="/categories/">categories</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#OO">
-      <li>OO</li>
-    </a>
-    
-    <a href="/categories/#OS">
-      <li>OS</li>
-    </a>
-    
-    <a href="/categories/#Life">
-      <li>Life</li>
-    </a>
-    
-    <a href="/categories/#Game">
-      <li>Game</li>
-    </a>
-    
-    <a href="/categories/#Projects">
-      <li>Projects</li>
-    </a>
-    
-    <a href="/categories/#MedicalImage">
-      <li>MedicalImage</li>
-    </a>
-    
-    <a href="/categories/#GNSS">
-      <li>GNSS</li>
-    </a>
-    
-    <a href="/categories/#GraphTransformer">
-      <li>GraphTransformer</li>
-    </a>
-    
-    <a href="/categories/#CT">
-      <li>CT</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-</div>
-
-
-    
+          
+        </ul>
+        
+      </div>
+    </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
