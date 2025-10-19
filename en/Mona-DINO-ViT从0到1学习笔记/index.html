@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://s7am1na.github.io/en/Regex-Redux-Why-Regular-Expression-Matching-Can-Be-Simple-And-Fast-Still-Matters-Today/">
+  <link rel="canonical" href="http://s7am1na.github.io/en/Mona-DINO-ViT从0到1学习笔记/">
   <title>
     
-      Regex Redux: Why &#39;Regular Expression Matching Can Be Simple And Fast&#39; Still Matters Today - just a private corner
+      Mona-DINO-ViT从0到1学习笔记 - just a private corner
     
   </title>
 <meta name="generator" content="Hexo 5.4.2"></head>
@@ -352,19 +352,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/categories_bg.WebP');
-      --intro-header-background-image-url-post: url('/img/header_img/TimePerception.png');
-      --intro-header-background-image-url-page: url('//img/header_img/TimePerception.png');
+      --intro-header-background-image-url-post: url('/img/header_img/VSCappearance.png');
+      --intro-header-background-image-url-page: url('//img/header_img/VSCappearance.png');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/categories_bg.WebP');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/TimePerception.png');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/TimePerception.png');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/VSCappearance.png');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/VSCappearance.png');
     }
 
     header.intro-header {
        /*post*/
         background-image: var(--intro-header-background-image-url-post);
-        /* background-image: url('/img/header_img/TimePerception.png'); */
+        /* background-image: url('/img/header_img/VSCappearance.png'); */
       
     }
 
@@ -385,14 +385,14 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#CT" title="CT">CT</a>
+              <a class="tag" href="/tags/#MedicalImage" title="MedicalImage">MedicalImage</a>
               
             </div>
-            <h1>Regex Redux: Why &#39;Regular Expression Matching Can Be Simple And Fast&#39; Still Matters Today</h1>
-            <h2 class="subheading">古早论文《Regular Expression Matching Can Be Simple And Fast》阅读有感</h2>
+            <h1>Mona-DINO-ViT从0到1学习笔记</h1>
+            <h2 class="subheading">模型微调入门篇</h2>
             <span class="meta">
               Posted by S7AM1NA on
-              2025-09-29
+              2025-10-19
             </span>
 
 
@@ -400,11 +400,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">10</span> Minutes
+              Estimated Reading Time <span class="post-count">8</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">2.9k</span> In Total
+              Words <span class="post-count">1.7k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -475,144 +475,82 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h2 id="foreword">Foreword</h2>
-<p>​
-国庆前夕，编译原理的老师留了一个论文Research并制作slides展示的作业，这篇论文是<strong>2007年Russ
-Cox</strong>的大作，大概讲的是正则表达式的<strong>安全、效率、兼容性等问题之间的权衡</strong>。他对Perl、Python以及Java使用的正则语言匹配算法感到十分的不满，并且提出一个融合两种算法的解决方案，令人不禁联想到年迈且威严的白发老教授。一搜才了解到，<strong>Russ
-Cox</strong>在2008年才在MIT获得博士学位，也就是说他在校期间提出了如此深刻的问题。对于笔者而言，笔者最震撼的点就是这篇论文像是一记回旋镖，让人不得不佩服其<strong>前瞻性的科研视野</strong>。</p>
-<p>​
-slides都做出来了，笔者干脆物尽其用产出一篇分享博客吧，同时笔者会持续拜读，因为一天短时间内的阅读深度肯定是不够的，如有偏颇，欢迎指正。</p>
-<p>​
-实际上无论您是否从事这个行业，我们每个人每天都在与正则表达式打交道，用它验证邮箱、提取URL、清理数据……它就像是字符串处理领域的瑞士军刀，强大而便捷。但笔者如果说就是在这种场景下的一个<strong>看上去简单</strong>的正则表达式会让你的程序卡死、CPU飙升，您会怎么想？这其实就是这个经典故事的序章。</p>
-<h2 id="suspense60s-vs-20μs">Suspense：60s vs 20μs？</h2>
-<p><img src="幻灯片2.PNG" /></p>
-<p>这是来自RSC论文中真实的测试：用同一个“病态”的正则表达式（形如
-a?ⁿaⁿ）去匹配一个不到30个字符的字符串。</p>
+        <h2 id="Foreword">Foreword</h2>
+<p>​	北京已经快入冬了。笔者今早差点冻死在自行车上。</p>
+<p>​	最近事情很多很多，但是想了一想还是觉得需要写一篇博客记录这段不凡的旅程。如若没有一个稳定的记录，恐怕过几天也会被笨人遗忘，故下定决心以记之。</p>
+<p>​	此外，笔者忙里偷闲安置了一个子域名网站做随笔日记本，但是cloudflare配置最近出了点问题，感兴趣的朋友可以先搜索<code>http://101.200.30.9:6277/</code><s>（放在这里会不会不太安全）</s>，后续将以<code>echo.0mnilink.top</code>的形态和大家见面，笔者会在里面定期真实发疯，更抽象、更贴近生活😮</p>
+<h2 id="Beginning-of-the-story">Beginning of the story</h2>
+<p>​	我们的核心目标就是学习、了解adaptor微调模型的部分细节与项目框架，并且和调研需求紧密结合，最后给出一个比较reasonable的result，思路流程如图所示：<br>
+<img src="pipeline.png" alt="pipeline"></p>
+<p>​	这篇博客将作为记录型博客持续更新，伴随笔者完成每一步的任务！事不宜迟，准备出发！</p>
+<h2 id="Understand-Prepare">Understand &amp; Prepare</h2>
+<h3 id="理解Mona的核心机制">理解Mona的核心机制</h3>
+<p>​	我们根据经验，为自己准备了三个主线任务：</p>
 <ul>
-<li>在<strong>Perl</strong>（以及Python、Java等多数主流语言）的回溯引擎中，这个任务耗时<strong>超过60秒</strong>。</li>
-<li>而在一个基于<strong>Thompson
-NFA理论</strong>的引擎中，完成它仅需<strong>20微秒</strong>。</li>
+<li><strong>输入/输出：</strong> 搞清楚Mona模块的forward函数接收哪些输入，输出什么。记下它们的维度信息（如 [Batch, Num_Heads, Seq_Len, Head_Dim]）。</li>
+<li><strong>作用位置：</strong> 明白Mona是在Transformer的哪个具体计算步骤中起作用的。是在Q, K, V投影之后，Attention分数计算之前吗？还是作用于FFN层？。</li>
+<li><strong>核心参数：</strong> 知道rank (秩) 是控制Mona参数量的关键超参数。理解rank越大，引入的参数越多，拟合能力可能越强，但训练成本也越高。</li>
 </ul>
-<p>这不是简单的性能差异，这是百万倍量级的鸿沟。是什么导致了如此戏剧化的结果？答案在于，驱动这两种场景的，是两种思想截然不同的算法引擎。</p>
-<h2 id="two-approaches-explorer-vs.-flood">Two Approaches: Explorer vs.
-Flood</h2>
-<p>主角登场（当当当当）（大声</p>
-<p><img src="幻灯片3.PNG" /></p>
+<h4 id="Input-Output-of-Mona-module">Input/Output of Mona module</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MonaOp</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, in_features</span>):</span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        <span class="variable language_">self</span>.conv1 = nn.Conv2d(in_features, in_features, kernel_size=<span class="number">3</span>, padding=<span class="number">3</span> // <span class="number">2</span>, groups=in_features)</span><br><span class="line">        <span class="variable language_">self</span>.conv2 = nn.Conv2d(in_features, in_features, kernel_size=<span class="number">5</span>, padding=<span class="number">5</span> // <span class="number">2</span>, groups=in_features)</span><br><span class="line">        <span class="variable language_">self</span>.conv3 = nn.Conv2d(in_features, in_features, kernel_size=<span class="number">7</span>, padding=<span class="number">7</span> // <span class="number">2</span>, groups=in_features)</span><br><span class="line">		<span class="comment"># 三个并行的 深度可分离卷积</span></span><br><span class="line">        <span class="variable language_">self</span>.projector = nn.Conv2d(in_features, in_features, kernel_size=<span class="number">1</span>, )</span><br><span class="line">		<span class="comment"># 用于特征融合</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):</span><br><span class="line">        identity = x <span class="comment"># 用于第一个残差连接</span></span><br><span class="line">        conv1_x = <span class="variable language_">self</span>.conv1(x)</span><br><span class="line">        conv2_x = <span class="variable language_">self</span>.conv2(x)</span><br><span class="line">        conv3_x = <span class="variable language_">self</span>.conv3(x)</span><br><span class="line"></span><br><span class="line">        x = (conv1_x + conv2_x + conv3_x) / <span class="number">3.0</span> + identity</span><br><span class="line"></span><br><span class="line">        identity = x <span class="comment"># 用于第二个残差连接</span></span><br><span class="line"></span><br><span class="line">        x = <span class="variable language_">self</span>.projector(x)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> identity + x</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Mona</span>(<span class="title class_ inherited__">BaseModule</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,</span></span><br><span class="line"><span class="params">                 in_dim,</span></span><br><span class="line"><span class="params">                 factor=<span class="number">4</span></span>):</span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line"></span><br><span class="line">        <span class="variable language_">self</span>.project1 = nn.Linear(in_dim, <span class="number">64</span>) <span class="comment"># 降维至64</span></span><br><span class="line">        <span class="variable language_">self</span>.nonlinear = F.gelu</span><br><span class="line">        <span class="variable language_">self</span>.project2 = nn.Linear(<span class="number">64</span>, in_dim) <span class="comment"># 从64升维</span></span><br><span class="line"></span><br><span class="line">        <span class="variable language_">self</span>.dropout = nn.Dropout(p=<span class="number">0.1</span>)</span><br><span class="line"></span><br><span class="line">        <span class="variable language_">self</span>.adapter_conv = MonaOp(<span class="number">64</span>)</span><br><span class="line"></span><br><span class="line">        <span class="variable language_">self</span>.norm = nn.LayerNorm(in_dim)</span><br><span class="line">        <span class="variable language_">self</span>.gamma = nn.Parameter(torch.ones(in_dim) * <span class="number">1e-6</span>)</span><br><span class="line">        <span class="variable language_">self</span>.gammax = nn.Parameter(torch.ones(in_dim))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x, hw_shapes=<span class="literal">None</span></span>):</span><br><span class="line">        identity = x</span><br><span class="line"></span><br><span class="line">        x = <span class="variable language_">self</span>.norm(x) * <span class="variable language_">self</span>.gamma + x * <span class="variable language_">self</span>.gammax</span><br><span class="line"></span><br><span class="line">        project1 = <span class="variable language_">self</span>.project1(x)</span><br><span class="line"></span><br><span class="line">        b, n, c = project1.shape</span><br><span class="line">        h, w = hw_shapes</span><br><span class="line">        project1 = project1.reshape(b, h, w, c).permute(<span class="number">0</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">        <span class="comment"># 序列[B, L, 64] ==&gt; 图像网格 [B, 64, H, W]，要用到参数hw_shapes</span></span><br><span class="line">        project1 = <span class="variable language_">self</span>.adapter_conv(project1)</span><br><span class="line">        project1 = project1.permute(<span class="number">0</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>).reshape(b, n, c)</span><br><span class="line"></span><br><span class="line">        nonlinear = <span class="variable language_">self</span>.nonlinear(project1)</span><br><span class="line">        nonlinear = <span class="variable language_">self</span>.dropout(nonlinear)</span><br><span class="line">        project2 = <span class="variable language_">self</span>.project2(nonlinear)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> identity + project2</span><br></pre></td></tr></table></figure>
+<p>Mona 模块的 forward 函数接收 <strong>两个</strong> input：</p>
+<ol>
+<li><strong>x</strong>: 这是主要的特征张量，是上一层（MSA或MLP）的输出。
 <ul>
-<li><p><strong>左边是回溯法 (Backtracking
-Engine)</strong>，我们可以把它想象成一个在复杂迷宫中探索的<strong>探险家</strong>。当遇到岔路口（比如
-| 或
-?），他只能选择一条路前进。如果这条路是死胡同，他唯一的选择就是原路返回（Backtrack），然后尝试下一条未走过的路。这是一种“试错与回退”的策略，其核心是追踪<strong>路径</strong>。</p></li>
-<li><p><strong>右边是有限自动机法 (Finite Automata
-Engine)</strong>，它的思维方式如同<strong>洪水</strong>。从入口开始，洪水会同时涌入所有相连的通道，并行地探索所有可能性。它不关心“哪条路径是正确的”，只关心在任何时刻“水淹没了哪些地方”。这是一种“并行推进”的策略，其核心是追踪<strong>状态</strong>。</p></li>
+<li><strong>维度</strong>: [B, L, C]
+<ul>
+<li>B: Batch Size</li>
+<li>L: Sequence Length  <em>= H * W</em></li>
+<li>C: Channel / Embedding Dimension (特征维度)</li>
 </ul>
-<h2 id="the-nightmare-of-backtracking-the-trap-of-exponential-paths">The
-Nightmare of Backtracking: The Trap of Exponential Paths</h2>
-<p>那么，探险家式的回溯法为什么会陷入困境？让我们通过一个简化的例子来看看它的工作流程。</p>
-<p><img src="幻灯片4.PNG" /></p>
-<p>假设我们用正则表达式 <code>a?a?a?a</code> 去匹配字符串
-a。回溯法的引擎天性“贪婪”，它会优先尝试匹配尽可能多的字符。</p>
-<ol type="1">
-<li><strong>第一次尝试</strong>：引擎遇到第一个
-<code>a?</code>，它会选择匹配字符
-<code>a</code>。此时，字符串<code>a</code>
-被消耗完毕。但正则表达式后面还有 <code>a?a?a</code>
-需要匹配，此路不通，宣告失败。</li>
-<li><strong>回溯与再尝试</strong>：引擎不会放弃。它会退回到上一个选择点，做出不同的选择。它会尝试“第一个<code>a?</code>不匹配，第二个<code>a?</code>匹配<code>a</code>”，结果再次失败。</li>
-<li><strong>最终的成功</strong>：在经历了多次失败的回溯后，引擎最终会找到那条唯一正确的路径：前两个
-<code>a?</code> 都不匹配任何字符，最后的 <code>a</code> 与字符串
-<code>a</code> 成功匹配。</li>
+</li>
+</ul>
+</li>
+<li><strong>hw_shapes</strong>: 这是一个包含特征图高度和宽度的元组 (tuple)。
+<ul>
+<li><strong>作用</strong>: 这个参数至关重要，因为 Mona 模块内部需要进行卷积操作。它必须知道如何将长度为 L 的序列 x 重新塑形 (reshape) 回 [H, W] 的二维空间网格。</li>
+</ul>
+</li>
 </ol>
-<p>在这个简单的例子中，引擎需要探索多种可能性。而当我们面对像 a?¹⁵a¹⁵
-这样的表达式时，需要尝试的错误路径数量会暴增到
-<strong>2¹⁵-1</strong>，即 <strong>32,767</strong>
-条！这就是所谓的“灾难性回溯”，也是指数级复杂度的根源。</p>
-<h2
-id="gods-eye-view-of-automata-one-traversal-tracking-all-possibilities">God's-eye
-view of automata: One traversal, tracking all possibilities</h2>
-<p>相比之下，有限自动机（NFA）引擎的处理方式则显得优雅而高效。</p>
-<p><img src="幻灯片5.PNG" /></p>
-<p>它从不猜测，也从不回头。在读取输入字符串的每一个字符时，它都会并行地计算出从当前所有可能的状态，能够转移到的<strong>下一组全新的状态集</strong>。</p>
-<p>整个过程就像动画里展示的那样，状态被一波一波地“点亮”。无论有多少条路径汇合到同一个状态，NFA引擎都只将其视为状态集中的一个元素。</p>
-<p>这种方法的关键优势在于：</p>
+<p>Mona 模块的 forward 函数输出 <strong>一个</strong> output：</p>
+<ol>
+<li><strong>identity + project2</strong>:
 <ul>
-<li><strong>文本只被读取一遍</strong>。</li>
-<li>计算的复杂度只与<strong>状态的数量</strong>（与正则表达式长度成正比）有关，而与<strong>路径的数量</strong>（可能是指数级）无关。</li>
-</ul>
-<h2 id="core-difference-path-vs.-state">Core Difference: Path vs.
-State</h2>
-<p>现在，我们可以清晰地总结这两种算法的根本区别了。</p>
-<p><img src="幻灯片6.PNG" /></p>
+<li><strong>维度</strong>: [B, L, C]
 <ul>
-<li><strong>回溯法</strong>
-关注的是“<strong>如何到达？</strong>”。它通过探索一条条独立的<strong>路径</strong>来寻找答案，因此受限于路径数量的爆炸式增长，最坏情况下的时间复杂度是
-<strong>O(2ⁿ)</strong>。</li>
-<li><strong>有限自动机法</strong>
-关注的是“<strong>能到达哪里？</strong>”。它通过维护一个<strong>状态</strong>集合来追踪所有可能性，因此性能稳定可预测，时间复杂度始终在多项式级别，如
-<strong>O(n²)</strong>。</li>
+<li>输出的维度与输入的特征张量 x <strong>完全相同</strong>。这是为了确保它可以无缝地接入Transformer的残差连接结构中。</li>
 </ul>
-<h2 id="the-cost-of-trade-offs-functionality-vs.-performance">The Cost
-of Trade-offs: Functionality vs. Performance</h2>
-<p>看到这里，你一定会问：既然自动机法如此高效和稳定，为什么我们日常使用的Python、Java等主流语言，反而都选择了那个“慢速”的回溯引擎呢？</p>
-<p><img src="幻灯片7.PNG" /></p>
-<p>答案在于一个功能与性能之间的经典权衡。这个权衡的核心，是一个叫做<strong>反向引用
-(Backreferences)</strong> 的强大功能。</p>
-<p>反向引用（如
-\1）允许正则表达式引用前面捕获组匹配到的<strong>具体文本内容</strong>。例如，<code>\b(\w+)\s+\1\b</code>
-可以精确地匹配到重复的单词，如 "the
-the"。这种能力需要引擎“记住”任意长度的字符串，这超出了有限自动机“状态有限”的数学模型能力。</p>
-<p>然而，回溯引擎的程序化搜索机制，可以轻易地用变量来存储和比较这些捕获到的文本。</p>
-<p>因此，现代主流语言的设计者们做出了一次历史性的权衡：为了获得反向引用等强大的<strong>功能</strong>（如同瑞士军刀），他们牺牲了引擎在最坏情况下的<strong>性能与安全</strong>（如同火箭的速度）。</p>
-<h2
-id="reflections-and-insights-rebuilding-on-the-ruins-of-good-enough">Reflections
-and Insights: Rebuilding on the Ruins of “Good Enough”</h2>
-<p>至此，我们已经清晰地看到了正则表达式背后那两条截然不同的技术路径。一条是充满妥协、背负着历史包袱但功能强大的“回溯之路”；另一条则是理论完美、性能如磐石般稳固的“自动机之路”。</p>
-<p>我们不禁要问，为什么像Python、Java这些拥有庞大生态的语言巨头，明知“自动机之路”在安全和性能上更优，却依然选择在“回溯之路”上蹒跚前行？</p>
-<p>答案复杂而沉重：<strong>向后兼容性的枷锁</strong>。在一个拥有数百万行存量代码、无数开发者已经习惯了现有行为的“屎山”生态中，任何颠覆性的改变都无异于一场地震。推倒重来的成本是如此之高，以至于“足够好”的现状成了无法撼动的铁律。我们似乎陷入了一个工程上的“局部最优解”，为了维护过去的兼容性，而牺牲了未来的可能性。</p>
-<p>然而，这真的是唯一的答案吗？</p>
-<p>让我们把目光投向这篇文章的作者——<strong>Russ
-Cox</strong>。作为贝尔实验室的传承者，Plan
-9的开发者，以及后来Go语言的技术领袖，他的职业生涯本身就是对这个问题的一种回答。他与Ken
-Thompson, Rob
-Pike等前辈一样，深受Unix哲学的熏陶：<strong>做一件事，并把它做好；追求简单、清晰和可预测性。</strong></p>
-<p>当他们从零开始创造Go语言时，他们没有历史的包袱。在设计Go的regexp库时，Russ
-Cox毫不犹豫地选择了那条“少有人走的路”——基于RE2和有限自动机理论，确保了所有正则表达式的线性时间性能，默认免疫ReDoS攻击。他没有为了迎合所谓的“事实标准”而去支持反向引用，而是做出了一个基于第一性原理的、在技术上“正确”的选择。</p>
-<p>这不仅仅是一个技术决策，这是一种<strong>勇气</strong>。一种敢于对历史惯例说“不”的勇气，一种相信“更好的设计”终将被认可的勇气，一种在看似“足够好”的废墟之上，推倒重来、构建更坚固大厦的勇气。</p>
-<p>我们中的大多数人，或许没有机会去创造一门新的语言。我们日常的工作，就是在已有的庞大系统中添砖加瓦。但是，Russ
-Cox和Go语言的故事提醒我们：</p>
-<ul>
-<li><strong>永远不要停止对“第一性原理”的思考。</strong>
-当我们面对一个“约定俗成”的实践时，要敢于追问：它在今天，在我们的场景下，依然是最好的选择吗？</li>
-<li><strong>在自己的能力范围内，做出“正确”而非“容易”的选择。</strong>
-也许我们无法改变整个生态，但我们可以在项目中选择使用更安全的第三方库（如Python的re2），可以在代码审查中指出潜在的性能风险，可以在团队内部分享这些被遗忘的“简单而快速”的智慧。</li>
-<li><strong>认识到“屎山”并非永恒。</strong>
-技术的演进总是在不断地“扬弃”中前行。新的语言（如Rust）、新的框架、新的工具正在涌现，它们之所以能获得青睐，正是因为它们在某些关键问题上，勇敢地抛弃了历史包袱。</li>
+</li>
 </ul>
-<p>正则表达式的故事，从一个“理论指导实践”的光辉典范，到后来“无视理论导致坏程序”的普遍现实，再到如今新一代工具的“价值回归”，它就像一面镜子，映照出软件工程领域永恒的博弈：<strong>在复杂性、兼容性、性能和简单性之间，我们究竟该如何抉择？</strong></p>
-<p>或许，并没有唯一的答案。但下一次，当你面对一个看似无法撼动的“历史问题”时，希望你能想起那个关于正则表达式的古老智慧，和那份推倒重来的勇气。</p>
-<p>没错，坚持到底是勇气，从头来过也是勇气，而站在科学边缘的年轻人们——我们从不缺乏勇气。</p>
-<p>感谢阅读。</p>
-<blockquote>
-<p>话说Russ
-Cox也是神人，个人网页简洁得像张A4纸的情况下，最上面的是两个冷笑话，放在最后一起品味一下：</p>
-<p><em>A C, an E-flat, and a G walk into a bar. The bartender says, “<a
-target="_blank" rel="noopener" href="https://web.archive.org/web/20060506162726/http://davidduff.blogspot.com/2005/12/c-e-flat-and-g-go-into-bar.html">Sorry,
-but we don't serve minors</a>.”</em></p>
-<p><em>What's grey? A melted penguin.</em></p>
-</blockquote>
+</li>
+</ol>
+<h4 id="Action-Position">Action Position</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">SwinTransformerBlock</span>(nn.Module):</span><br><span class="line">    <span class="string">&quot;&quot;&quot; Swin Transformer Block.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        dim (int): Number of input channels.</span></span><br><span class="line"><span class="string">        num_heads (int): Number of attention heads.</span></span><br><span class="line"><span class="string">        window_size (int): Window size.</span></span><br><span class="line"><span class="string">        shift_size (int): Shift size for SW-MSA.</span></span><br><span class="line"><span class="string">        mlp_ratio (float): Ratio of mlp hidden dim to embedding dim.</span></span><br><span class="line"><span class="string">        qkv_bias (bool, optional): If True, add a learnable bias to query, key, value. Default: True</span></span><br><span class="line"><span class="string">        qk_scale (float | None, optional): Override default qk scale of head_dim ** -0.5 if set.</span></span><br><span class="line"><span class="string">        drop (float, optional): Dropout rate. Default: 0.0</span></span><br><span class="line"><span class="string">        attn_drop (float, optional): Attention dropout rate. Default: 0.0</span></span><br><span class="line"><span class="string">        drop_path (float, optional): Stochastic depth rate. Default: 0.0</span></span><br><span class="line"><span class="string">        act_layer (nn.Module, optional): Activation layer. Default: nn.GELU</span></span><br><span class="line"><span class="string">        norm_layer (nn.Module, optional): Normalization layer.  Default: nn.LayerNorm</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, dim, num_heads, window_size=<span class="number">7</span>, shift_size=<span class="number">0</span>,</span></span><br><span class="line"><span class="params">                 mlp_ratio=<span class="number">4.</span>, qkv_bias=<span class="literal">True</span>, qk_scale=<span class="literal">None</span>, drop=<span class="number">0.</span>, attn_drop=<span class="number">0.</span>, drop_path=<span class="number">0.</span>,</span></span><br><span class="line"><span class="params">                 act_layer=nn.GELU, norm_layer=nn.LayerNorm</span>):</span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        <span class="variable language_">self</span>.dim = dim</span><br><span class="line">        <span class="variable language_">self</span>.num_heads = num_heads</span><br><span class="line">        <span class="variable language_">self</span>.window_size = window_size</span><br><span class="line">        <span class="variable language_">self</span>.shift_size = shift_size</span><br><span class="line">        <span class="variable language_">self</span>.mlp_ratio = mlp_ratio</span><br><span class="line">        <span class="keyword">assert</span> <span class="number">0</span> &lt;= <span class="variable language_">self</span>.shift_size &lt; <span class="variable language_">self</span>.window_size, <span class="string">&quot;shift_size must in 0-window_size&quot;</span></span><br><span class="line"></span><br><span class="line">        <span class="variable language_">self</span>.norm1 = norm_layer(dim)</span><br><span class="line">        <span class="variable language_">self</span>.attn = WindowAttention(</span><br><span class="line">            dim, window_size=to_2tuple(<span class="variable language_">self</span>.window_size), num_heads=num_heads,</span><br><span class="line">            qkv_bias=qkv_bias, qk_scale=qk_scale, attn_drop=attn_drop, proj_drop=drop)</span><br><span class="line"></span><br><span class="line">        <span class="variable language_">self</span>.drop_path = DropPath(drop_path) <span class="keyword">if</span> drop_path &gt; <span class="number">0.</span> <span class="keyword">else</span> nn.Identity()</span><br><span class="line">        <span class="variable language_">self</span>.norm2 = norm_layer(dim)</span><br><span class="line">        mlp_hidden_dim = <span class="built_in">int</span>(dim * mlp_ratio)</span><br><span class="line">        <span class="variable language_">self</span>.mlp = Mlp(in_features=dim, hidden_features=mlp_hidden_dim, act_layer=act_layer, drop=drop)</span><br><span class="line"></span><br><span class="line">        <span class="variable language_">self</span>.H = <span class="literal">None</span></span><br><span class="line">        <span class="variable language_">self</span>.W = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">        <span class="variable language_">self</span>.my_module_1 = Mona(dim, <span class="number">8</span>)</span><br><span class="line">        <span class="variable language_">self</span>.my_module_2 = Mona(dim, <span class="number">8</span>) <span class="comment"># Adapter_FFN(dim, 8)</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x, mask_matrix</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot; Forward function.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        Args:</span></span><br><span class="line"><span class="string">            x: Input feature, tensor size (B, H*W, C).</span></span><br><span class="line"><span class="string">            H, W: Spatial resolution of the input feature.</span></span><br><span class="line"><span class="string">            mask_matrix: Attention mask for cyclic shift.</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        B, L, C = x.shape</span><br><span class="line">        H, W = <span class="variable language_">self</span>.H, <span class="variable language_">self</span>.W</span><br><span class="line">        <span class="keyword">assert</span> L == H * W, <span class="string">&quot;input feature has wrong size&quot;</span></span><br><span class="line"></span><br><span class="line">        shortcut = x</span><br><span class="line">        x = <span class="variable language_">self</span>.norm1(x)</span><br><span class="line">        x = x.view(B, H, W, C)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># pad feature maps to multiples of window size</span></span><br><span class="line">        pad_l = pad_t = <span class="number">0</span></span><br><span class="line">        pad_r = (<span class="variable language_">self</span>.window_size - W % <span class="variable language_">self</span>.window_size) % <span class="variable language_">self</span>.window_size</span><br><span class="line">        pad_b = (<span class="variable language_">self</span>.window_size - H % <span class="variable language_">self</span>.window_size) % <span class="variable language_">self</span>.window_size</span><br><span class="line">        x = F.pad(x, (<span class="number">0</span>, <span class="number">0</span>, pad_l, pad_r, pad_t, pad_b))</span><br><span class="line">        _, Hp, Wp, _ = x.shape</span><br><span class="line"></span><br><span class="line">        <span class="comment"># cyclic shift</span></span><br><span class="line">        <span class="keyword">if</span> <span class="variable language_">self</span>.shift_size &gt; <span class="number">0</span>:</span><br><span class="line">            shifted_x = torch.roll(x, shifts=(-<span class="variable language_">self</span>.shift_size, -<span class="variable language_">self</span>.shift_size), dims=(<span class="number">1</span>, <span class="number">2</span>))</span><br><span class="line">            attn_mask = mask_matrix</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            shifted_x = x</span><br><span class="line">            attn_mask = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># partition windows</span></span><br><span class="line">        x_windows = window_partition(shifted_x, <span class="variable language_">self</span>.window_size)  <span class="comment"># nW*B, window_size, window_size, C</span></span><br><span class="line">        x_windows = x_windows.view(-<span class="number">1</span>, <span class="variable language_">self</span>.window_size * <span class="variable language_">self</span>.window_size, C)  <span class="comment"># nW*B, window_size*window_size, C</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># W-MSA/SW-MSA</span></span><br><span class="line">        attn_windows = <span class="variable language_">self</span>.attn(x_windows, mask=attn_mask)  <span class="comment"># nW*B, window_size*window_size, C</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># merge windows</span></span><br><span class="line">        attn_windows = attn_windows.view(-<span class="number">1</span>, <span class="variable language_">self</span>.window_size, <span class="variable language_">self</span>.window_size, C)</span><br><span class="line">        shifted_x = window_reverse(attn_windows, <span class="variable language_">self</span>.window_size, Hp, Wp)  <span class="comment"># B H&#x27; W&#x27; C</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># reverse cyclic shift</span></span><br><span class="line">        <span class="keyword">if</span> <span class="variable language_">self</span>.shift_size &gt; <span class="number">0</span>:</span><br><span class="line">            x = torch.roll(shifted_x, shifts=(<span class="variable language_">self</span>.shift_size, <span class="variable language_">self</span>.shift_size), dims=(<span class="number">1</span>, <span class="number">2</span>))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            x = shifted_x</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> pad_r &gt; <span class="number">0</span> <span class="keyword">or</span> pad_b &gt; <span class="number">0</span>:</span><br><span class="line">            x = x[:, :H, :W, :].contiguous()</span><br><span class="line"></span><br><span class="line">        x = x.view(B, H * W, C)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># my_adapter</span></span><br><span class="line">        <span class="comment"># x = self.my_module_1(x)</span></span><br><span class="line"></span><br><span class="line">        x = shortcut + <span class="variable language_">self</span>.drop_path(x)</span><br><span class="line"></span><br><span class="line">        x = <span class="variable language_">self</span>.my_module_1(x,(H,W))</span><br><span class="line"></span><br><span class="line">        identity = x</span><br><span class="line">        x = <span class="variable language_">self</span>.norm2(x)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># my_adapter2</span></span><br><span class="line">        <span class="comment"># x = self.my_module_2(x)</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># FFN</span></span><br><span class="line">        x = <span class="variable language_">self</span>.mlp(x)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># x = self.my_module_2(x)  # todo: correct</span></span><br><span class="line"></span><br><span class="line">        x = identity + <span class="variable language_">self</span>.drop_path(x)</span><br><span class="line"></span><br><span class="line">        x = <span class="variable language_">self</span>.my_module_2(x,(H,W))  <span class="comment"># todo: correct</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> x</span><br></pre></td></tr></table></figure>
+<p><code>SwinTransformerBlock</code>的<code>forward</code>函数中调用两次<code>Mona</code>模块：</p>
+<ol>
+<li>
+<p><code>self.my_module1</code>:</p>
+<p>位于MSA(Multi-Self-Attention)之后，接收经过MSA和其残差连接的特征，并对之进行适配。</p>
+</li>
+<li>
+<p><code>self.my_module2</code>:</p>
+<p>位于MLP之后，接收经过MLP和其残差连接的特征，也同样进行适配。</p>
+</li>
+</ol>
+<p>因此<code>Mona</code>是一个独立的后处理模块，被放置在 Transformer Block 的两个核心计算单元（MSA 和 MLP）的输出位置，对它们的处理结果进行增强和适配。</p>
+<h4 id="Core-Parameters">Core Parameters</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">self</span>.project1 = nn.Linear(in_dim, <span class="number">64</span>) <span class="comment"># Down-projection to n=64</span></span><br><span class="line"><span class="variable language_">self</span>.project2 = nn.Linear(<span class="number">64</span>, in_dim) <span class="comment"># Up-projection from n=64</span></span><br><span class="line"><span class="variable language_">self</span>.adapter_conv = MonaOp(<span class="number">64</span>)       <span class="comment"># Convolutions operate on n=64 channels</span></span><br></pre></td></tr></table></figure>
+<p><strong>核心超参数</strong>: <strong>中间维度 <em>n</em></strong></p>
+<p>​	<em>n</em> 的大小直接控制了 Mona 模块的参数量和计算复杂度。<em>n</em> 越大，降维后的信息损失越少，拟合能力可能越强，但同时引入的参数也越多。</p>
 
 
         <hr>
         <!-- Pager -->
         <ul class="pager">
           
-          <li class="previous">
-            <a href="/en/Mona-DINO-ViT从0到1学习笔记/" data-toggle="tooltip" data-placement="top" title="Mona-DINO-ViT从0到1学习笔记">&larr; Previous Post</a>
-          </li>
-          
           
           <li class="next">
-            <a href="/en/MedMamba 深度解析学习笔记/" data-toggle="tooltip" data-placement="top" title="MedMamba 深度解析学习笔记">Next Post &rarr;</a>
+            <a href="/en/Regex-Redux-Why-Regular-Expression-Matching-Can-Be-Simple-And-Fast-Still-Matters-Today/" data-toggle="tooltip" data-placement="top" title="Regex Redux: Why 'Regular Expression Matching Can Be Simple And Fast' Still Matters Today">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -656,7 +594,7 @@ but we don't serve minors</a>.”</em></p>
       repo: '',
       owner: '',
       admin: '',
-      id: 'Mon Sep 29 2025 14:22:31 GMT+0800', // Ensure uniqueness and length less than 50
+      id: 'Sun Oct 19 2025 10:46:51 GMT+0800', // Ensure uniqueness and length less than 50
       distractionFreeMode: false, // Facebook-like distraction free mode
       perPage: 10,
       pagerDirection: 'last',
@@ -709,13 +647,7 @@ but we don't serve minors</a>.”</em></p>
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#foreword"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Foreword</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#suspense60s-vs-20%CE%BCs"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Suspense：60s vs 20μs？</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#two-approaches-explorer-vs.-flood"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Two Approaches: Explorer vs.
-Flood</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#the-nightmare-of-backtracking-the-trap-of-exponential-paths"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">The
-Nightmare of Backtracking: The Trap of Exponential Paths</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#gods-eye-view-of-automata-one-traversal-tracking-all-possibilities"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">God&#39;s-eye
-view of automata: One traversal, tracking all possibilities</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#core-difference-path-vs.-state"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">Core Difference: Path vs.
-State</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#the-cost-of-trade-offs-functionality-vs.-performance"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">The Cost
-of Trade-offs: Functionality vs. Performance</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#reflections-and-insights-rebuilding-on-the-ruins-of-good-enough"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">Reflections
-and Insights: Rebuilding on the Ruins of “Good Enough”</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Foreword"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Foreword</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Beginning-of-the-story"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Beginning of the story</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Understand-Prepare"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Understand &amp; Prepare</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%90%86%E8%A7%A3Mona%E7%9A%84%E6%A0%B8%E5%BF%83%E6%9C%BA%E5%88%B6"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">理解Mona的核心机制</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Input-Output-of-Mona-module"><span class="toc-nav-number">3.1.1.</span> <span class="toc-nav-text">Input&#x2F;Output of Mona module</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Action-Position"><span class="toc-nav-number">3.1.2.</span> <span class="toc-nav-text">Action Position</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Core-Parameters"><span class="toc-nav-number">3.1.3.</span> <span class="toc-nav-text">Core Parameters</span></a></li></ol></li></ol></li></ol>
         
         </div>
       </aside>
@@ -738,7 +670,7 @@ and Insights: Rebuilding on the Ruins of “Good Enough”</span></a></li></ol>
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#CT" title="CT">CT</a>
+            <a class="tag" href="/tags/#MedicalImage" title="MedicalImage">MedicalImage</a>
             
           </div>
         </section>
