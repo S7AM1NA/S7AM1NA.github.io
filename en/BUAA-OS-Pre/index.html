@@ -391,7 +391,7 @@
             <h1>BUAA-OS Pre</h1>
             <h2 class="subheading">OS预习Linux&amp;&amp;Lab0总结</h2>
             <span class="meta">
-              Posted by John Doe on
+              Posted by GAGAGU on
               2025-02-23
             </span>
 
@@ -727,41 +727,104 @@ target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-awk
 
                       <!-- comments start -->
                       
-                        <!-- Waline 评论系统 -->
+                        <!-- 1. 引入 Waline 官方 CSS -->
 <link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css" />
-<div id="waline"></div>
-<script type="module">
-    import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
 
-    init({
-        el: '#waline',
-        serverURL: 'https://comments.0mnilink.top',
-        placeholder: '在这个无人的角落，留下你的足迹:D',
-        avatar: 'mm',
-        pageSize: '10',
-        visitor: true,
-        lang: 'zh-CN,en,default',
-        dark: 'html[data-theme="dark"]'
-    });
+<!-- 2. 容器 -->
+<div id="waline"></div>
+
+<!-- 3. 初始化脚本 -->
+<script type="module">
+  import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+
+  init({
+    el: '#waline',
+    serverURL: 'https://comments.0mnilink.top',
+    placeholder: '在这个无人的角落，留下你的足迹:D',
+    avatar: 'mm',
+    pageSize: '10',
+    visitor: true,
+    lang: 'zh-CN,en,default',
+    /* 
+       关键修正：
+       不再用 'auto'，而是精确指定由 data-theme 属性控制。
+       这样输入框就不会自己变黑了！
+    */
+    dark: 'html[data-theme="dark"]' 
+  });
 </script>
+
+<!-- 4. 样式配置 -->
 <style>
-  /* 给评论区上方留点空隙，别贴着正文 */
+  /* === 基础布局 === */
   #waline {
     margin-top: 30px;
     padding: 10px;
   }
 
   /* 
-   * 使用 Waline 官方提供的 CSS 变量来控制大小 
-   * 这是最安全的方法，不会破坏布局
+   * =========================================
+   * 区域 1：默认状态 (白天模式) - 强制定义
+   * =========================================
    */
   :root {
-    /* 基础字号：默认是 14px，这里改成了 16px，你可以试着改成 18px */
-    --waline-font-size: 16px !important;
+    /* 1. 强制背景为纯白，修复输入框变黑的问题 */
+    --waline-bgcolor: #ffffff;
+    --waline-bgcolor-light: #f8f9fa;
+    
+    /* 2. 字体和主题色 */
+    --waline-font-size: 16px;
+    --waline-theme-color: #0085a1; 
+    --waline-active-color: #0085a1;
+    
+    /* 3. 边框颜色 */
+    --waline-border-color: #f0f0f0;
+    
+    /* 4. 标签颜色变量 (白天) */
+    --waline-badge-color: #666666;      /* 文字深灰 */
+    --waline-badge-bgcolor: #f2f2f2;    /* 背景浅灰 */
+  }
 
-    /* 主题色：保持和你博客一致的蓝色 */
-    --waline-theme-color: #0085a1 !important; 
-    --waline-active-color: #0085a1 !important;
+  /* 
+   * =========================================
+   * 区域 2：强制覆盖标签样式 (解决黑块问题)
+   * =========================================
+   */
+  /* 针对所有标签（浏览器、系统、博主标签） */
+  .wl-meta-head .wl-badge {
+    background-color: var(--waline-badge-bgcolor) !important;
+    color: var(--waline-badge-color) !important;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 2px 6px;
+    margin-right: 5px; 
+    font-size: 12px;
+  }
+
+  /* 
+   * =========================================
+   * 区域 3：暗色模式 (Dark Mode) - 只有触发时才生效
+   * =========================================
+   */
+  html[data-theme="dark"] {
+    /* 1. 背景变深 */
+    --waline-bgcolor: #232d38;
+    --waline-bgcolor-light: #2d3b48;
+    
+    /* 2. 文字变亮 */
+    --waline-color: #e0e0e0;
+    
+    /* 3. 标签变量重定义 (晚上) */
+    --waline-badge-color: #cccccc;      /* 文字亮灰 */
+    --waline-badge-bgcolor: #3b4b5b;    /* 背景深灰 */
+    
+    /* 4. 边框 */
+    --waline-border-color: #444;
+  }
+
+  /* 暗色模式下微调标签边框 */
+  html[data-theme="dark"] .wl-meta-head .wl-badge {
+    border-color: #555;
   }
 </style>
                           
@@ -821,6 +884,12 @@ Collection，GNU 编译器套件）</span></a></li><li class="toc-nav-item toc-n
                 <ul class="list-inline">
 
                   
+                    <li>
+                      <a href="https://ripplelumen.top/" target="_blank">
+                        風船
+                      </a>
+                    </li>
+                    
                 </ul>
                 
         </div>
@@ -911,7 +980,7 @@ Collection，GNU 编译器套件）</span></a></li><li class="toc-nav-item toc-n
         </ul>
         <p class="copyright text-muted">
           Copyright &copy;
-          John Doe
+          GAGAGU
           2025
           
             <br>
