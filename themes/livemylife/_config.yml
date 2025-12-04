@@ -17,3 +17,12 @@ langselect:
   options:
     en: English
     zh-CN: 简体中文
+
+# Comment System
+waline:
+  enable: true
+  serverURL: https://comments.0mnilink.top 
+  placeholder: 在这个无人的角落，留下你的足迹:D
+  avatar: mm
+  pageSize: 10
+  visitor: true

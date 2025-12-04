@@ -40,6 +40,7 @@ description: "It's a private blog about a human being, welcome to subscribe!"
 keyword: "Learning,living,gaming"
 header-img: img/header_img/categories_bg.WebP
 archives-img: img/header_img/archive_bg3.jpg
+author: GAGAGU
 
 
 # Favicon settings
@@ -91,20 +92,28 @@ featured-condition-size: 0    # A tag will be featured if the size of it is more
 
 ## Friends
 friends: [
-    #{
-    #    title: "V_Vincen",
-    #    href: "https://v-vincen.life/"
-    #}
+    {
+        title: "風船",
+        href: "https://ripplelumen.top/"
+    }
 ]
 
 
 # Comment Settings
 
+waline:
+  enable: true
+  serverURL: https://waline-silk-psi.vercel.app  
+  placeholder: 在这个无人的角落，留下你的足迹:D
+  avatar: mm
+  pageSize: 10
+  visitor: true
+
 ## Gitalk Settings
 ## Doc:https://github.com/gitalk/gitalk/blob/master/readme-cn.md
 ##
-gitalk:
-  owner:                          # 'GitHub repo owner'
+##gitalk:
+##  owner:                          # 'GitHub repo owner'
 ## Doc:https://github.com/imsun/gitment
 ##
 # gitment:
@@ -319,7 +328,7 @@ ribbonDynamic: true
 
 
 # Line config
-bglinecanvas: true  # The special effects will take up a lot of cpu resorces, please open it carefully.
+bglinecanvas: false  # The special effects will take up a lot of cpu resorces, please open it carefully.
 
 
 # Search Setting
