@@ -1,6 +1,9 @@
 (function() {
   function changeLang() {
     var selectLang = this.value;
+    if (selectLang === 'zh-CN') {
+      selectLang = '';
+    }
     var canonical = this.dataset.canonical;
     var url = canonical.split('/')[0];
     var lang = url === 'index.html' ? '/' : (url === 'en' ? '/' : url);

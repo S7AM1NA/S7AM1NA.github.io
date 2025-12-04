@@ -230,7 +230,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">S7的温柔时空角</a>
+      <a class="navbar-brand" href="/">
+        S7的温柔时空角
+      </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -239,70 +241,74 @@
       <div class="navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a href="/">HOME</a>
+            <a href="/">
+              HOME
+            </a>
           </li>
 
           
-          
-          <li>
-            <a href="/about/">
+            
+              <li>
+                <a href="/about/">
+                  
+                        ABOUT
+                          
+                                    
+                </a>
+              </li>
               
-              ABOUT
+                
+            
+                
+            
+              <li>
+                <a href="/categories/">
+                  
+                            CATEGORIES
+                              
+                                    
+                </a>
+              </li>
               
+                
+            
+              <li>
+                <a href="/archive/">
+                  
+                    ARCHIVES
+                      
+                                    
+                </a>
+              </li>
               
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/categories/">
+                
+            
+              <li>
+                <a href="/tags/">
+                  
+                                TAGS
+                                  
+                                    
+                </a>
+              </li>
               
-              CATEGORIES
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              ARCHIVES
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          <li>
-            <a href="/tags/">
-              
-              TAGS
-              
-              
-            </a>
-          </li>
-          
-          
+                
 
-          
-          <li>
-            <a class="popup-trigger">
-              <span class="search-icon"></span>SEARCH</a>
-          </li>
-          
+                  
+                    <li>
+                      <a class="popup-trigger">
+                        <span class="search-icon"></span>
+                        SEARCH
+                      </a>
+                    </li>
+                    
 
-          <!-- LangSelect -->
-          
-          
-          
-          
-          
+                      <!-- LangSelect -->
+                      
+                        
+                          
+                                
+                                      
         </ul>
       </div>
     </div>
@@ -329,7 +335,7 @@
       // CLOSE
       $navbar.className = " ";
       // wait until animation end.
-      setTimeout(function() {
+      setTimeout(function () {
         // prevent frequently toggle
         if ($navbar.className.indexOf('in') < 0) {
           $collapse.style.height = "0px"
@@ -342,7 +348,6 @@
     }
   }
 </script>
-
 
 		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
 		<!-- Modified by Yu-Hsuan Yen -->
@@ -391,7 +396,7 @@
             <h1>暑期GNSS学习工作记录(已完结)</h1>
             <h2 class="subheading">GNSS学习内容更新簿📕</h2>
             <span class="meta">
-              Posted by S7AM1NA on
+              Posted by John Doe on
               2025-07-01
             </span>
 
@@ -475,72 +480,81 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>壹 前言</h1>
-<p>​	第一次以集中时间的方式参与一个项目，因此笔者想要实现上一次没有完成的目标：持续更新科研日志！✊一方面能<strong>促进</strong>自己日复一日地<strong>推动进度</strong>🏃‍，另一方面也能在<strong>记录</strong>自己遇到与亟待解决的<strong>问题</strong>✍</p>
-<p>​	笔者理想状态下是想日更😊，但是肯定在暑期前期还未正式“上班”前难免抽身乏术😔。但是问题不大！抽时间推推进度总是好的✔！</p>
-<p>​	那话不多说，其实项目推进有几天了，让我们简单回顾一下，看看笔者最近做了什么事情~~（磨了什么洋工）~~</p>
-<h1>贰 LOGGING</h1>
-<h2 id="06-29">06.29</h2>
+        <h1 id="壹-前言">壹 前言</h1>
+<p>​
+第一次以集中时间的方式参与一个项目，因此笔者想要实现上一次没有完成的目标：持续更新科研日志！✊一方面能<strong>促进</strong>自己日复一日地<strong>推动进度</strong>🏃‍，另一方面也能在<strong>记录</strong>自己遇到与亟待解决的<strong>问题</strong>✍</p>
+<p>​
+笔者理想状态下是想日更😊，但是肯定在暑期前期还未正式“上班”前难免抽身乏术😔。但是问题不大！抽时间推推进度总是好的✔！</p>
+<p>​
+那话不多说，其实项目推进有几天了，让我们简单回顾一下，看看笔者最近做了什么事情<del>（磨了什么洋工）</del></p>
+<h1 id="贰-logging">贰 LOGGING</h1>
+<h2 id="section">06.29</h2>
 <ul>
 <li>看了看<strong>芬兰GNSS欺骗干扰</strong>论文，搭配gemini2.5食用体验极佳😋</li>
 <li>作者团队的贡献是奠基性的，我本来以为他们提出的是非常鲁棒的欺骗检验算法，读完感觉比提出算法更有贡献意义，他们为行业提供了<strong>实验数据与配套的检验程序</strong>，当我们开发出自己的欺骗检验算法，可以插入到它的<strong>检验程序</strong>当中进行检验，而这篇论文提出的软件接收机则可充当我们<strong>最坚实、最直接</strong>的<strong>baseline</strong>👍</li>
 </ul>
-<h2 id="06-30">06.30</h2>
+<h2 id="section-1">06.30</h2>
 <ul>
 <li>疑似摸🐟的一天，一直在找各种方法加速下载，校园网浏览器直链下载只有100+KB/s，反复尝试了<code>curl</code>,<code>wget</code>,<code>aria2</code>等下载引擎，效果都不太理想，临近晚上才想起来之前下载但是没用上的<strong>Motrix</strong>，上次是从autodl平台下数据，但是平台有加密根本无法用<strong>Motrix</strong>下载，但是这次可以了。</li>
-<li><s>虽然还是很慢</s>，核心原因是这个数据网站是把数据一点一点传给你的，没有文件结束的位置，所以<strong>Motrix</strong>的分段多进程直接失灵了。以后还是去学长办公室下载叭😭</li>
+<li><del>虽然还是很慢</del>，核心原因是这个数据网站是把数据一点一点传给你的，没有文件结束的位置，所以<strong>Motrix</strong>的分段多进程直接失灵了。以后还是去学长办公室下载叭😭</li>
 </ul>
-<h2 id="07-01">07.01</h2>
+<h2 id="section-2">07.01</h2>
 <ul>
-<li>
-<p>数据有了、论文看了，开始跑项目，大致流程就是通过向主程序<code>gsrx.m</code>传入我们对应的配置文件txt，应该就是<code>param_skydelL1band_290923.txt</code>，然后需要根据自己的数据路径调整42、85行的内容，使用全英的绝对路径应该还是比较稳妥。</p>
-</li>
-<li>
-<p>然后没跑起来，不嘻嘻😓，应该还是文件配置出的问题。我的解决方案是精简了一下配置文件内容，把不必要的参数与开关移除了，剩余的应该只有以下核心指令：</p>
+<li><p>数据有了、论文看了，开始跑项目，大致流程就是通过向主程序<code>gsrx.m</code>传入我们对应的配置文件txt，应该就是<code>param_skydelL1band_290923.txt</code>，然后需要根据自己的数据路径调整42、85行的内容，使用全英的绝对路径应该还是比较稳妥。</p></li>
+<li><p>然后没跑起来，不嘻嘻😓，应该还是文件配置出的问题。我的解决方案是精简了一下配置文件内容，把不必要的参数与开关移除了，剩余的应该只有以下核心指令：</p>
 <ul>
 <li><strong>做的内容</strong>：<code>sys,enabledSignals, sys,msToProcess...</code></li>
-<li><strong>数据位置与形态</strong>: <code>sys,dataFileIn, gpsl1c,rfFileName, gpsl1c,samplingFreq...</code></li>
-<li><strong>基本门限</strong>: <code>gpsl1c,acqThreshold, nav,elevationMask, nav,snrMask...</code></li>
+<li><strong>数据位置与形态</strong>:
+<code>sys,dataFileIn, gpsl1c,rfFileName, gpsl1c,samplingFreq...</code></li>
+<li><strong>基本门限</strong>:
+<code>gpsl1c,acqThreshold, nav,elevationMask, nav,snrMask...</code></li>
 <li><strong>信号类型</strong>: <code>gpsl1c,modType...</code></li>
+</ul></li>
+<li><p>跑起来了这个简易版的demo，收获了一些图与数据——以及报错，报错信息记录一下：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Could not <span class="built_in">find</span> valid preambles <span class="keyword">for</span> gpsl1c prn <span class="number">4</span>!</span><br><span class="line">Could not <span class="built_in">find</span> valid preambles <span class="keyword">for</span> gpsl1c prn <span class="number">5</span>!</span><br><span class="line">Could not <span class="built_in">find</span> valid preambles <span class="keyword">for</span> gpsl1c prn <span class="number">9</span>!</span><br><span class="line">Could not <span class="built_in">find</span> valid preambles <span class="keyword">for</span> gpsl1c prn <span class="number">11</span>!</span><br><span class="line">Could not <span class="built_in">find</span> valid preambles <span class="keyword">for</span> gpsl1c prn <span class="number">12</span>!</span><br><span class="line">Could not <span class="built_in">find</span> valid preambles <span class="keyword">for</span> gpsl1c prn <span class="number">18</span>!</span><br><span class="line">Could not <span class="built_in">find</span> valid preambles <span class="keyword">for</span> gpsl1c prn <span class="number">20</span>!</span><br><span class="line">Could not <span class="built_in">find</span> valid preambles <span class="keyword">for</span> gpsl1c prn <span class="number">25</span>!</span><br><span class="line">Could not <span class="built_in">find</span> valid preambles <span class="keyword">for</span> gpsl1c prn <span class="number">26</span>!</span><br><span class="line">Could not <span class="built_in">find</span> valid preambles <span class="keyword">for</span> gpsl1c prn <span class="number">28</span>!</span><br><span class="line">Could not <span class="built_in">find</span> valid preambles <span class="keyword">for</span> gpsl1c prn <span class="number">29</span>!</span><br><span class="line">Could not <span class="built_in">find</span> valid preambles <span class="keyword">for</span> gpsl1c prn <span class="number">31</span>!</span><br><span class="line">调用 <span class="string">&quot;generateCorrectionInputData&quot;</span> 时，未对输出参数 <span class="string">&quot;corrInputData&quot;</span> (可能还包括其他参数)赋值。</span><br><span class="line">出错 doNavigation (line <span class="number">49</span>)</span><br><span class="line">[corrInputData] = generateCorrectionInputData(obsData,ephData, allSettings);</span><br><span class="line">出错 gsrx (line <span class="number">137</span>)</span><br><span class="line">[obsData,satData,navData] = doNavigation(obsData, settings, ephData); </span><br></pre></td></tr></table></figure></li>
 </ul>
-</li>
-<li>
-<p>跑起来了这个简易版的demo，收获了一些图与数据——以及报错，报错信息记录一下：</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Could not <span class="built_in">find</span> valid preambles <span class="keyword">for</span> gpsl1c prn <span class="number">4</span>!</span><br><span class="line">Could not <span class="built_in">find</span> valid preambles <span class="keyword">for</span> gpsl1c prn <span class="number">5</span>!</span><br><span class="line">Could not <span class="built_in">find</span> valid preambles <span class="keyword">for</span> gpsl1c prn <span class="number">9</span>!</span><br><span class="line">Could not <span class="built_in">find</span> valid preambles <span class="keyword">for</span> gpsl1c prn <span class="number">11</span>!</span><br><span class="line">Could not <span class="built_in">find</span> valid preambles <span class="keyword">for</span> gpsl1c prn <span class="number">12</span>!</span><br><span class="line">Could not <span class="built_in">find</span> valid preambles <span class="keyword">for</span> gpsl1c prn <span class="number">18</span>!</span><br><span class="line">Could not <span class="built_in">find</span> valid preambles <span class="keyword">for</span> gpsl1c prn <span class="number">20</span>!</span><br><span class="line">Could not <span class="built_in">find</span> valid preambles <span class="keyword">for</span> gpsl1c prn <span class="number">25</span>!</span><br><span class="line">Could not <span class="built_in">find</span> valid preambles <span class="keyword">for</span> gpsl1c prn <span class="number">26</span>!</span><br><span class="line">Could not <span class="built_in">find</span> valid preambles <span class="keyword">for</span> gpsl1c prn <span class="number">28</span>!</span><br><span class="line">Could not <span class="built_in">find</span> valid preambles <span class="keyword">for</span> gpsl1c prn <span class="number">29</span>!</span><br><span class="line">Could not <span class="built_in">find</span> valid preambles <span class="keyword">for</span> gpsl1c prn <span class="number">31</span>!</span><br><span class="line">调用 <span class="string">&quot;generateCorrectionInputData&quot;</span> 时，未对输出参数 <span class="string">&quot;corrInputData&quot;</span> (可能还包括其他参数)赋值。</span><br><span class="line">出错 doNavigation (line <span class="number">49</span>)</span><br><span class="line">[corrInputData] = generateCorrectionInputData(obsData,ephData, allSettings);</span><br><span class="line">出错 gsrx (line <span class="number">137</span>)</span><br><span class="line">[obsData,satData,navData] = doNavigation(obsData, settings, ephData); </span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="07-02">07.02</h2>
+<h2 id="section-3">07.02</h2>
 <ul>
-<li>
-<p>用大模型快速解读一下生成的图片，下面分享一些我的理解：<br>
-<img src="demoFigure1.png" alt=""></p>
-<p>这个图是<strong>原始信号概览</strong>，最明显的是能看出来是否有异常的干扰与欺骗，其中四张图分别是I信号与Q信号的时域图和直方图，对于I信号与Q信号，大模型的理解如下：</p>
-</li>
+<li><p>用大模型快速解读一下生成的图片，下面分享一些我的理解： <img
+src="demoFigure1.png" /></p>
+<p>这个图是<strong>原始信号概览</strong>，最明显的是能看出来是否有异常的干扰与欺骗，其中四张图分别是I信号与Q信号的时域图和直方图，对于I信号与Q信号，大模型的理解如下：</p></li>
 </ul>
 <blockquote>
 <ul>
-<li>**I和Q值是经过接收机前端处理后，用来“描述”原始卫星信号的一种数学表示方法。**I和Q值是经过接收机前端处理后，用来“描述”原始卫星信号的一种数学表示方法。</li>
-<li><strong>I (同相) 分量</strong>: 代表了信号中与接收机本地产生的<strong>参考载波</strong>“同频同相”的那部分能量。在GNSS中，我们设计的接收机就是要让<strong>所有有用的数据信息</strong>都承载在I分量上。</li>
-<li><strong>Q (正交) 分量</strong>: 代表了信号中与接收机本地产生的参考载波“同频但相位差90度”的那部分能量。在一个理想的、完美锁定的接收机中，Q分量应该<strong>只包含噪声</strong>，不包含任何有用信息。</li>
+<li><strong>I和Q值是经过接收机前端处理后，用来“描述”原始卫星信号的一种数学表示方法。</strong>I和Q值是经过接收机前端处理后，用来“描述”原始卫星信号的一种数学表示方法。</li>
+<li><strong>I (同相) 分量</strong>:
+代表了信号中与接收机本地产生的<strong>参考载波</strong>“同频同相”的那部分能量。在GNSS中，我们设计的接收机就是要让<strong>所有有用的数据信息</strong>都承载在I分量上。</li>
+<li><strong>Q (正交) 分量</strong>:
+代表了信号中与接收机本地产生的参考载波“同频但相位差90度”的那部分能量。在一个理想的、完美锁定的接收机中，Q分量应该<strong>只包含噪声</strong>，不包含任何有用信息。</li>
 </ul>
 </blockquote>
-<p>​		时域图的锯齿状折线展现出了原始数据存在一定的噪声，而直方图展现出高斯分布符合中心极限定理给出的一般结果，说明没有异常的、恶意干扰的噪声。</p>
-<p>​	<img src="demoFigure2.png" alt=""></p>
-<p>​	图Figure2是<strong>信号捕获结果</strong>，每个小图对应着一个对接到的卫星，比较平坦的低值便是大量和本地码无法对接的噪声，而峰值便是对接成功的卫星信号。</p>
-<p>​	<img src="demoFigure3.png" alt=""></p>
-<p>​	Figure3便是展现了哪些卫星被成功捕获，值得我们进一步跟踪。这里貌似是用5-10的一个阈值进行截断的，<s>mark一下，比较好奇不同阈值会有怎样的影响</s></p>
-<p>​	<img src="demoFigure4.png" alt=""></p>
-<p>​	纵轴<code>C/N0</code>，中文翻作“载噪比”，全称为<strong>载波功率和噪声功率谱密度</strong>，值越高，信号强度越高。然而在实际情境中，图像的上升或者下降都是异常事件，如果遇到<strong>同步欺骗信号</strong>，所有卫星对应的折线会<strong>整体异常上升</strong>；遇到<strong>干扰、异步欺骗信号</strong>则会<strong>同步异常下跌</strong>。</p>
-<p>​	<img src="demoPRN4.png" alt=""></p>
-<ol>
-<li>最上面两幅图展现了**锁相环(PLL)**的工作效果非常好，将信号能量集中在I信号上，能量泄露非常少。</li>
-<li>中左展现了**锁频换(FLL)**快速修正频率误差的过程，在0.5秒后便趋于稳定、开始精确跟踪。</li>
+<p>​
+时域图的锯齿状折线展现出了原始数据存在一定的噪声，而直方图展现出高斯分布符合中心极限定理给出的一般结果，说明没有异常的、恶意干扰的噪声。</p>
+<p>​ <img src="demoFigure2.png" /></p>
+<p>​
+图Figure2是<strong>信号捕获结果</strong>，每个小图对应着一个对接到的卫星，比较平坦的低值便是大量和本地码无法对接的噪声，而峰值便是对接成功的卫星信号。</p>
+<p>​ <img src="demoFigure3.png" /></p>
+<p>​
+Figure3便是展现了哪些卫星被成功捕获，值得我们进一步跟踪。这里貌似是用5-10的一个阈值进行截断的，<del>mark一下，比较好奇不同阈值会有怎样的影响</del></p>
+<p>​ <img src="demoFigure4.png" /></p>
+<p>​
+纵轴<code>C/N0</code>，中文翻作“载噪比”，全称为<strong>载波功率和噪声功率谱密度</strong>，值越高，信号强度越高。然而在实际情境中，图像的上升或者下降都是异常事件，如果遇到<strong>同步欺骗信号</strong>，所有卫星对应的折线会<strong>整体异常上升</strong>；遇到<strong>干扰、异步欺骗信号</strong>则会<strong>同步异常下跌</strong>。</p>
+<p>​ <img src="demoPRN4.png" /></p>
+<ol type="1">
+<li>最上面两幅图展现了<strong>锁相环(PLL)</strong>的工作效果非常好，将信号能量集中在I信号上，能量泄露非常少。</li>
+<li>中左展现了<strong>锁频换(FLL)</strong>快速修正频率误差的过程，在0.5秒后便趋于稳定、开始精确跟踪。</li>
 <li>中右展现了捕获信号的<strong>整体强度</strong>。</li>
-<li>下面两侧的<strong>PLL</strong>和<strong>FLL</strong>锁定图可以看到二者迅速上升到1，展现了二者成功锁定。中间的<strong>延迟锁定环(DLL)<strong>展现了</strong>零均值噪声</strong>，在0值附近抖动越小，码跟踪精度越高。</li>
+<li>下面两侧的<strong>PLL</strong>和<strong>FLL</strong>锁定图可以看到二者迅速上升到1，展现了二者成功锁定。中间的<strong>延迟锁定环(DLL)</strong>展现了<strong>零均值噪声</strong>，在0值附近抖动越小，码跟踪精度越高。</li>
 </ol>
 <p>+++</p>
-<p>今天和家乐学长聊了一下🤔，芬兰这篇项目论文对于我们而言是一个<strong>预处理程序</strong>，我们可以把它当作<strong>一个强大的特征提取引擎</strong>，今天花了一些时间把这些图的输出看个大概，那最重要的特征来源大致如下~~(经ai认证)~~ ：</p>
+<p>今天和家乐学长聊了一下🤔，芬兰这篇项目论文对于我们而言是一个<strong>预处理程序</strong>，我们可以把它当作<strong>一个强大的特征提取引擎</strong>，今天花了一些时间把这些图的输出看个大概，那最重要的特征来源大致如下<del>(经ai认证)</del>
+：</p>
 <table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 42%" />
+<col style="width: 42%" />
+</colgroup>
 <thead>
 <tr>
 <th>特征名称</th>
@@ -551,103 +565,96 @@
 <tbody>
 <tr>
 <td><strong>C/N₀ (载噪比) 时序</strong></td>
-<td><strong>欺骗</strong>: 同步上升 (能量注入)。<br><strong>干扰</strong>: 同步下降 (噪声抬升)。<br>这是区分两类攻击的<strong>关键特征</strong>。</td>
+<td><strong>欺骗</strong>: 同步上升
+(能量注入)。<br><strong>干扰</strong>: 同步下降
+(噪声抬升)。<br>这是区分两类攻击的<strong>关键特征</strong>。</td>
 <td>从plotTracking生成的C/N₀图中提取所有卫星的C/N₀时间序列。</td>
 </tr>
 <tr>
 <td><strong>多普勒频移时序</strong></td>
-<td><strong>欺骗</strong>: 出现与真实物理运动不符的、平滑但错误的漂移，或所有通道出现不应有的共同偏置。<br><strong>干扰</strong>: 导致多普勒估计剧烈抖动或跳变。</td>
+<td><strong>欺骗</strong>:
+出现与真实物理运动不符的、平滑但错误的漂移，或所有通道出现不应有的共同偏置。<br><strong>干扰</strong>:
+导致多普勒估计剧烈抖动或跳变。</td>
 <td>从PRN跟踪状态图中提取Estimated Doppler的时间序列。</td>
 </tr>
 <tr>
 <td><strong>I/Q 星座图特征</strong></td>
-<td><strong>欺骗</strong>: 两个点云可能变形、发散，或者因为信号叠加出现“拖尾”。<br><strong>干扰</strong>: 点云会变得非常发散，甚至糊成一团。</td>
-<td>定期对Discrete-Time Scatter Plot进行截图，或者直接提取I/Q prompt值，计算点云的<strong>方差、偏度、峰度</strong>等统计特征。</td>
+<td><strong>欺骗</strong>:
+两个点云可能变形、发散，或者因为信号叠加出现“拖尾”。<br><strong>干扰</strong>:
+点云会变得非常发散，甚至糊成一团。</td>
+<td>定期对Discrete-Time Scatter Plot进行截图，或者直接提取I/Q
+prompt值，计算点云的<strong>方差、偏度、峰度</strong>等统计特征。</td>
 </tr>
 <tr>
 <td><strong>PLL/FLL锁定指示器</strong></td>
-<td><strong>欺骗/干扰</strong>: 强攻击可能导致环路在锁定和失锁之间反复横跳，这个值会剧烈波动。</td>
+<td><strong>欺骗/干扰</strong>:
+强攻击可能导致环路在锁定和失锁之间反复横跳，这个值会剧烈波动。</td>
 <td>从PRN跟踪状态图中提取PLL/FLL Lock Indicator的时间序列。</td>
 </tr>
 <tr>
 <td><strong>DLL鉴别器输出</strong></td>
-<td><strong>欺骗</strong>: 同步欺骗可能导致这个值的均值<strong>持续偏离0</strong>，因为欺骗信号和真实信号的叠加会扭曲相关峰的对称性。<br><strong>干扰</strong>: 会增加这个值的噪声水平（方差变大）。</td>
-<td>从PRN跟踪状态图中提取Raw DLL discriminator的时间序列，计算其<strong>均值和方差</strong>。</td>
+<td><strong>欺骗</strong>:
+同步欺骗可能导致这个值的均值<strong>持续偏离0</strong>，因为欺骗信号和真实信号的叠加会扭曲相关峰的对称性。<br><strong>干扰</strong>:
+会增加这个值的噪声水平（方差变大）。</td>
+<td>从PRN跟踪状态图中提取Raw DLL
+discriminator的时间序列，计算其<strong>均值和方差</strong>。</td>
 </tr>
 </tbody>
 </table>
-<p>接下来的工作应该就是复现论文结果了吧！🤔我们急需跑下来的数据应该就以下两个：<br>
-<img src="dataToDownload.png" alt=""></p>
+<p>接下来的工作应该就是复现论文结果了吧！🤔我们急需跑下来的数据应该就以下两个：
+<img src="dataToDownload.png" /></p>
 <p>明天去临时工位下载数据集咯~</p>
-<h2 id="07-03">07.03</h2>
+<h2 id="section-4">07.03</h2>
 <ul>
 <li>今天下了点雨，下载数据也遇到了一定的挫折，虽然有柏彦的超快网速，但是遇到了下载中断的问题，Motrix报错码为#24，在Github中没有找到明确已知解决方案，但是贴吧有人说修改UA设置，还需尝试。🤔</li>
 </ul>
-<p><img src="error.png" alt=""></p>
+<p><img src="error.png" /></p>
 <ul>
-<li>今日有实践队作业，先歇了…</li>
+<li>今日有实践队作业，先歇了...</li>
 </ul>
-<h2 id="07-04">07.04</h2>
+<h2 id="section-5">07.04</h2>
 <ul>
 <li>和远在江西的舍友風船聊了一下，发现Motrix竟然默认关闭代理😶，于是打开代理，一定要把端口填对了，笨人填错了一回，下载速度直接归零了🤭</li>
 </ul>
-<p><img src="proxy.png" alt=""></p>
+<p><img src="proxy.png" /></p>
 <ul>
-<li>
-<p>此外这个代理节点还有讲究，不仅速度上有差异，稳定性更是天差地别。</p>
+<li><p>此外这个代理节点还有讲究，不仅速度上有差异，稳定性更是天差地别。</p>
 <ul>
-<li>用美国的节点下载速度平均下来只有2-3MB/s~~（目测）~~，主要是因为它在下载后期会疯狂地掉速，掉到1MB/s左右的速度，此外会经常被中断，而对于这种只能下载一次的链接而言就是毁灭性打击。</li>
+<li>用美国的节点下载速度平均下来只有2-3MB/s<del>（目测）</del>，主要是因为它在下载后期会疯狂地掉速，掉到1MB/s左右的速度，此外会经常被中断，而对于这种只能下载一次的链接而言就是毁灭性打击。</li>
 <li>考虑到数据网站在芬兰，我尝试使用德国的节点发现效果出奇的好，速度稳定程度上升了不少，虽然只有4-5MB/s的最高速度，但是架不住它稳定啊，平均下来应该是比美国节点好的更优，此外，它的下载稳定性也更好，第一次下载<code>TGS_L1_E1</code>一遍过，<code>UTG_L1_E1</code>中断了一次🤔，但是第二次就成功了！还是很感谢同事朋友家人们的<strong>交流陪伴</strong>！也很感谢学长提供的<strong>网络环境</strong>！</li>
-</ul>
-</li>
-<li>
-<p>深夜回寝，拿到数据集略感兴奋，试着跑点复现结果。跑完了<code>TGS_L1_E1</code>的结果，但实际上只跑了<strong>同步欺骗</strong>的<code>L1</code>,也就是GPS的单系统，结果还是不错的，由于在数据在130秒左右才加入欺骗信号，所以我们跑的测试从120秒开始，绘图也从120秒为原点，下面展示一下我们的<strong>同步欺骗结果与原文结果</strong>图片对比：</p>
+</ul></li>
+<li><p>深夜回寝，拿到数据集略感兴奋，试着跑点复现结果。跑完了<code>TGS_L1_E1</code>的结果，但实际上只跑了<strong>同步欺骗</strong>的<code>L1</code>,也就是GPS的单系统，结果还是不错的，由于在数据在130秒左右才加入欺骗信号，所以我们跑的测试从120秒开始，绘图也从120秒为原点，下面展示一下我们的<strong>同步欺骗结果与原文结果</strong>图片对比：</p>
 <ul>
-<li>
-<p>首先是载噪比（C/N0），我们与论文结果都在收到同步欺骗信号后出现同步上升的趋势：</p>
-<p><img src="TGS_L1_E1_CN0.png" alt=""></p>
-<p><img src="exp_TGS_CN0.png" alt=""></p>
-</li>
-<li>
-<p>然后是某一个卫星的tracking，复现结果以PRN5为例：</p>
-</li>
+<li><p>首先是载噪比（C/N0），我们与论文结果都在收到同步欺骗信号后出现同步上升的趋势：</p>
+<p><img src="TGS_L1_E1_CN0.png" /></p>
+<p><img src="exp_TGS_CN0.png" /></p></li>
+<li><p>然后是某一个卫星的tracking，复现结果以PRN5为例：</p></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<p>​		<img src="TGS_L1_E1_PRN5.png" alt=""></p>
-<p>​		<img src="exp_TGS_PRNx.png" alt=""></p>
+<p>​ <img src="TGS_L1_E1_PRN5.png" /></p>
+<p>​ <img src="exp_TGS_PRNx.png" /></p>
 <ul>
 <li>本来想着用异步欺骗数据集<code>UTD_L1_E1</code>把Galileo的单系统测试一遍，但是时间有点晚啦，明天再见~👋</li>
 </ul>
-<h2 id="07-05">07.05</h2>
+<h2 id="section-6">07.05</h2>
 <ul>
-<li>
-<p>UTD_L1_E1顺利跑完，并复现了论文的部分内容，同样展示一下我们的<strong>异步欺骗/干扰结果</strong>与原文结果的图片对比：</p>
+<li><p>UTD_L1_E1顺利跑完，并复现了论文的部分内容，同样展示一下我们的<strong>异步欺骗/干扰结果</strong>与原文结果的图片对比：</p>
 <ul>
-<li>
-<p>载噪比（C/N0），我们与论文的结果都出现同步地下降：</p>
-<p><img src="UTD_L1_E1_CN0.png" alt=""></p>
-<p><img src="exp_UTD_CN0.png" alt=""></p>
-</li>
-<li>
-<p>卫星的跟踪图中也呈现出同样的变化趋势，复现结果以PRN4为例：<br>
-<img src="UTD_L1_E1_PRN4_gale1b.png" alt=""></p>
-<p><img src="exp_UTD_PRNx.png" alt=""></p>
-</li>
-</ul>
-</li>
-<li>
-<p>今天缺勤了组会，但是做了PPT和展示视频，得到了学长的认可😊，晚上在柏彦和同事交流了一下代码运行，和学长规划了一下未来工作，并确定了下周以及未来的工作方向：</p>
+<li><p>载噪比（C/N0），我们与论文的结果都出现同步地下降：</p>
+<p><img src="UTD_L1_E1_CN0.png" /></p>
+<p><img src="exp_UTD_CN0.png" /></p></li>
+<li><p>卫星的跟踪图中也呈现出同样的变化趋势，复现结果以PRN4为例： <img
+src="UTD_L1_E1_PRN4_gale1b.png" /></p>
+<p><img src="exp_UTD_PRNx.png" /></p></li>
+</ul></li>
+<li><p>今天缺勤了组会，但是做了PPT和展示视频，得到了学长的认可😊，晚上在柏彦和同事交流了一下代码运行，和学长规划了一下未来工作，并确定了下周以及未来的工作方向：</p>
 <ul>
 <li>首先就是把云南数据集了解清楚，学长建议做一定的可视化，这部分终于可以用python了😭，确定数据的情况之后，我们就可以用这份迷你的数据集做基础的CNN-LSTM的训练了。</li>
 <li>其次就是继续攻克芬兰代码报错，让matlab程序跑通、并呈现出更多的可视化特征。这个部分其实也很重要，但是我对debug的热情不高😓，只能慢慢来了。</li>
+</ul></li>
+<li><p>明天早上06:20集合，08:00高铁发车，早早歇息了~💤明天出差，应该要搁置一下了🚶‍</p></li>
 </ul>
-</li>
-<li>
-<p>明天早上06:20集合，08:00高铁发车，早早歇息了~💤明天出差，应该要搁置一下了🚶‍</p>
-</li>
-</ul>
-<h2 id="07-06-17">07.06~17</h2>
+<h2 id="section-7">07.06~17</h2>
 <blockquote>
 <p>时隔近两周没有更新，原因是实践队工作＋和🐝广东出游，出游博客内容计划单开帖，笔者在这里只回顾总结做的一点点微乎其微的工作，没有持续记录的习惯导致只能在18号苦苦回忆😓。</p>
 </blockquote>
@@ -656,98 +663,100 @@
 <li>简单搭建了一个双向的CNN-LSTM模型，但还是过拟合了，训练了3个epoch便获得了100%的准确度。model核心代码放在下面👇。</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># --- 第1部分：CNN层 (用于提取空间特征) ---</span></span><br><span class="line"><span class="comment"># CNN层将每个时间点的 (卫星数S, 特征数N) &quot;图像&quot; 作为输入</span></span><br><span class="line"><span class="variable language_">self</span>.cnn_layers = nn.Sequential(</span><br><span class="line">    <span class="comment"># 输入: (Batch, 1, S, N)</span></span><br><span class="line">    nn.Conv2d(in_channels=<span class="number">1</span>, out_channels=<span class="number">32</span>, kernel_size=(<span class="number">3</span>, <span class="number">3</span>), padding=<span class="number">1</span>),</span><br><span class="line">    nn.ReLU(),</span><br><span class="line">    nn.BatchNorm2d(<span class="number">32</span>),</span><br><span class="line">    nn.MaxPool2d(kernel_size=(<span class="number">2</span>, <span class="number">1</span>)), <span class="comment"># 在卫星维度上做池化</span></span><br><span class="line"></span><br><span class="line">    nn.Conv2d(in_channels=<span class="number">32</span>, out_channels=<span class="number">64</span>, kernel_size=(<span class="number">3</span>, <span class="number">3</span>), padding=<span class="number">1</span>),</span><br><span class="line">    nn.ReLU(),</span><br><span class="line">    nn.BatchNorm2d(<span class="number">64</span>),</span><br><span class="line">    nn.MaxPool2d(kernel_size=(<span class="number">2</span>, <span class="number">1</span>))</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># --- 计算CNN输出的维度，为LSTM做准备 ---</span></span><br><span class="line"><span class="comment"># 经过两次 (2, 1) 的池化，S维度会减半两次</span></span><br><span class="line">cnn_output_height = S // <span class="number">4</span></span><br><span class="line"><span class="comment"># N维度因为padding=1所以不变</span></span><br><span class="line">cnn_output_width = N</span><br><span class="line"><span class="variable language_">self</span>.lstm_input_size = <span class="number">64</span> * cnn_output_height * cnn_output_width</span><br><span class="line"></span><br><span class="line"><span class="comment"># --- 第2部分：LSTM层 (用于学习时间序列特征) ---</span></span><br><span class="line"><span class="variable language_">self</span>.lstm = nn.LSTM(</span><br><span class="line">    input_size=<span class="variable language_">self</span>.lstm_input_size,</span><br><span class="line">    hidden_size=<span class="number">128</span>, <span class="comment"># LSTM隐藏层的大小</span></span><br><span class="line">    num_layers=<span class="number">2</span>,    <span class="comment"># LSTM的层数</span></span><br><span class="line">    batch_first=<span class="literal">True</span>,<span class="comment"># 输入数据的第一个维度是Batch</span></span><br><span class="line">    dropout=<span class="number">0.5</span>,     <span class="comment"># 在多层LSTM之间添加dropout防止过拟合</span></span><br><span class="line">    bidirectional=<span class="literal">True</span> <span class="comment"># 使用双向LSTM</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># --- 第3部分：全连接分类层 ---</span></span><br><span class="line"><span class="comment"># 因为是双向LSTM, 输出维度是 hidden_size * 2</span></span><br><span class="line"><span class="variable language_">self</span>.classifier = nn.Sequential(</span><br><span class="line">    nn.Linear(<span class="number">128</span> * <span class="number">2</span>, <span class="number">64</span>),</span><br><span class="line">    nn.ReLU(),</span><br><span class="line">    nn.Dropout(<span class="number">0.5</span>),</span><br><span class="line">    nn.Linear(<span class="number">64</span>, num_classes)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<h2 id="07-18">07.18</h2>
-<p>​	返程后梳理完之前的内容进度后，第一想法是整合芬兰数据集的数据，扩大数据容量。但是工程量有点大，于是笔者有了第二想法🤓，缩短时间窗口的长度，扩大数据容量的同时，提升时间精度，而且谈不上什么损失分类准确度，于是令时间窗口长度<code>T = 15s</code>再试试。</p>
-<p>​	<code>T=15s</code>理论上引起的变化已经分析过了，我们在实践中发现数据容量并没有扩大多少，准确度损失也是微乎其微，效果就是在时间精度上取得了精进。</p>
-<p>​	然后今天拿到了学长的移动硬盘，把数据装载进去了。以后做实验就要修改数据集的路径咯。</p>
-<h2 id="07-19">07.19</h2>
-<p>​	今天开组会哇，早上中午做了一些组会的准备，也算是兢兢业业了👉👈</p>
-<p>​	下午和学长聊了很久，对我们未来的工作方向感到更加的清晰👀。我未来一周的主要工作包括以下：</p>
+<h2 id="section-8">07.18</h2>
+<p>​
+返程后梳理完之前的内容进度后，第一想法是整合芬兰数据集的数据，扩大数据容量。但是工程量有点大，于是笔者有了第二想法🤓，缩短时间窗口的长度，扩大数据容量的同时，提升时间精度，而且谈不上什么损失分类准确度，于是令时间窗口长度<code>T = 15s</code>再试试。</p>
+<p>​
+<code>T=15s</code>理论上引起的变化已经分析过了，我们在实践中发现数据容量并没有扩大多少，准确度损失也是微乎其微，效果就是在时间精度上取得了精进。</p>
+<p>​
+然后今天拿到了学长的移动硬盘，把数据装载进去了。以后做实验就要修改数据集的路径咯。</p>
+<h2 id="section-9">07.19</h2>
+<p>​ 今天开组会哇，早上中午做了一些组会的准备，也算是兢兢业业了👉👈</p>
+<p>​
+下午和学长聊了很久，对我们未来的工作方向感到更加的清晰👀。我未来一周的主要工作包括以下：</p>
 <ul>
-<li>
-<p>[x] 继续解析芬兰的iq文件的数据🔢</p>
-</li>
-<li>
-<p>[x] 缩小时间窗口，看看精度与速度的甜点位在哪里❓</p>
-</li>
-<li>
-<p>[ ] 多开发一些云南数据集中的多元特征🔍</p>
-</li>
-<li>
-<p>完成了时间窗口T的缩减的实验：当分类延迟，也就是时间窗口T控制在<code>T=3</code>的时候，我们的分类准确度仍能达到99%左右，实验数据如图所示：<br>
-<img src="YN_npz_T3.png" alt=""></p>
-</li>
+<li><p><label><input type="checkbox"
+checked="" />继续解析芬兰的iq文件的数据🔢</label></p></li>
+<li><p><label><input type="checkbox"
+checked="" />缩小时间窗口，看看精度与速度的甜点位在哪里❓</label></p></li>
+<li><p><label><input
+type="checkbox" />多开发一些云南数据集中的多元特征🔍</label></p></li>
+<li><p>完成了时间窗口T的缩减的实验：当分类延迟，也就是时间窗口T控制在<code>T=3</code>的时候，我们的分类准确度仍能达到99%左右，实验数据如图所示：
+<img src="YN_npz_T3.png" /></p></li>
 </ul>
-<p>​	这样的精度与速度都是可接受的，所以我们在下周自己测数据之前，只需要先提升模型的泛化能力了✔</p>
-<h2 id="07-20">07.20</h2>
+<p>​
+这样的精度与速度都是可接受的，所以我们在下周自己测数据之前，只需要先提升模型的泛化能力了✔</p>
+<h2 id="section-10">07.20</h2>
 <ul>
-<li>
-<p>今天仔细研究了一下为什么芬兰数据处理起来如此的缓慢，之前我将处理缓慢归结为两个原因：</p>
+<li><p>今天仔细研究了一下为什么芬兰数据处理起来如此的缓慢，之前我将处理缓慢归结为两个原因：</p>
 <ul>
 <li>实时画图，每处理完一个单位的数据就要更新图表🖊</li>
 <li>没有开启并行处理🛣</li>
 </ul>
 <p>我们将画图的配置注释掉，并试图打开并行处理，但是这个功能需要专门的toolbox，只能先放一放🤦‍</p>
-<p>目前跑完一个370s的数据需要6个小时左右，所以我选择放在某个晚上让电脑加个班吧~💻😭</p>
-</li>
+<p>目前跑完一个370s的数据需要6个小时左右，所以我选择放在某个晚上让电脑加个班吧~💻😭</p></li>
 </ul>
-<h2 id="07-21">07.21</h2>
+<h2 id="section-11">07.21</h2>
 <ul>
 <li>今天是来天津大学爽玩的一天！笔者同事采到了一段<code>nmea</code>格式的干扰信号，但是包含的信号特征与之前的云南数据集只有载噪比是重合的，并且没有自己独立的干净数据对照组，所以我们只能姑且放一放了~</li>
 </ul>
-<h2 id="07-22-23">07.22~23</h2>
+<h2 id="section-12">07.22~23</h2>
 <ul>
 <li>大概花了两天的功夫完成了对FGI中<code>TGS_L1_E1.dat</code>完成了部分的处理，370秒信号跟踪层的数据得以处理成了.mat文件。其中为了加速，我们选择关闭图像显示，matlab进程多开并行处理，大概3-4个小时可以处理370秒，也算是能跑了🤭</li>
 <li>整体过程还是蛮折磨的，本来放在晚上跑，但是在我睡前睡后各报错中断了一次，所以23号白天才跑出来部分结果，至于为什么是“部分”🧐，是因为我们在导航解算的数据处理中调用的<code>doNavigation</code>函数还存在我不清楚的bug🐛，但是鉴于<code>trackdata</code>已经够忙活了，现阶段不考虑深究。</li>
 </ul>
-<h2 id="07-24">07.24</h2>
+<h2 id="section-13">07.24</h2>
 <ul>
-<li>
-<p>拿到了.mat文件的第一想法是，制作成一个测试集，对我们之前训练的模型进行测试，如果效果理想我们就沿用之前的模型，如若不理想则联合二者数据集进行泛化训练，同时也要考虑对信号特征进行进一步提取了。</p>
-</li>
-<li>
-<p>这个测试集制作最重要的步骤大概有以下几步：</p>
+<li>拿到了.mat文件的第一想法是，制作成一个测试集，对我们之前训练的模型进行测试，如果效果理想我们就沿用之前的模型，如若不理想则联合二者数据集进行泛化训练，同时也要考虑对信号特征进行进一步提取了。</li>
+<li>这个测试集制作最重要的步骤大概有以下几步：
 <ul>
 <li><strong>特征对齐</strong>：特别地，.mat文件中只有<strong>载波相位</strong>（后期补档说明一下，其实没有找到，<code>carrPhase</code>竟然不是<strong>载波相位</strong>），旧数据集中用的<strong>载波相位差分</strong>，这个变量需要我们计算。</li>
 <li><strong>数据格式对齐</strong></li>
 <li><strong>数据归一化</strong>：旧数据集使用了<strong>Z-score归一化</strong>，我们需要从旧数据集中获取<code>mean</code>和<code>std</code>，用他们来归一化我们的新数据集。</li>
 <li><strong>数据打乱</strong></li>
-</ul>
-</li>
-<li>
-<p>🤭又节外生枝了，感觉工作进度已经乱成一锅粥了，热一热还能喝🍚😓，我们在数据归一化的时候，回过头去计算保存云南数据集的<code>mean</code>和<code>std</code>，发现了神奇的数据异常，总结下来大致能分成2点：</p>
+</ul></li>
+<li>🤭又节外生枝了，感觉工作进度已经乱成一锅粥了，热一热还能喝🍚😓，我们在数据归一化的时候，回过头去计算保存云南数据集的<code>mean</code>和<code>std</code>，发现了神奇的数据异常，总结下来大致能分成2点：
 <ul>
 <li>异常值未处理，归一化的时候出大问题😰</li>
 <li>云南数据集的<code>doMes</code>和<code>cpMes</code>的标签标反了😓</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="07-25">07.25</h2>
+<h2 id="section-14">07.25</h2>
 <ul>
 <li>一觉起来没绷住，<code>UTD_L1_E1.dat</code>的处理结果又没拿到，又在357s处报错了，怀疑是受到了学术诈骗😮，论文里明明写的是377s啊，只能晚上再跑一遍了💪</li>
 <li>为了用芬兰数据集测试云南模型下了不少数据一致的功夫，后来发现无论如何都对不上，我们移除了载波相位的信号特征作为训练指标，重新训练并测试，但是我们不应该使用新数据集的<code>mean</code>和<code>std</code>，这样会破坏模型训练与测试的一致性原则，但是用云南数据集的<code>mean</code>和<code>std</code>又能看到明显的无法泛化的情况，最后尽最大的努力，我们对欺骗信号的检测成功率大概有50%，而干净信号的分类成功率为0%⚠，只能姑且认定二者的鸿沟如天堑吧🤦‍</li>
 </ul>
-<h2 id="09-17">09.17</h2>
-<p>​	事实证明没有什么能够让笔者坚持下来🤦‍。</p>
-<p>​	但是好在项目一直在推进，我们在七月末采集了自己的数据，八月初做好了数据处理，八月中旬完成了所有实验和大部分的画图，八月底开始写论文，九月初便完工了。</p>
-<p>​	现在的工作就是等老师把论文审完我们再返工，但是也不闲着，第二篇论文的构思已经大致成型了，顺着上一篇关于系统性地分析欺骗检测的泛化鸿沟问题，我们终于能搬出来我们的图网络（GNN）作为发展核心了。</p>
-<p>​	当然我们之前考虑的就不只是GNN，而是附带注意力机制的GAT，希望每个卫星节点能够对附近的、更重要的卫星赋予更高的权重，从而进一步提升性能，也与时代潮流Transformer接轨。</p>
-<p>​	下面谈一谈我对图网络模型性能的思考，首先第一点就是，图网络无论如何，应该具有绝对的终极扩展性，可以说是应用场景越复杂，泛化能力越卓越。</p>
-<p>​	具体的原因我们在第一篇论文当中其实已经充分说明了，“设备指纹”的存在让所有无法绕过这一点的模型都会吃瘪，泛化性能会在不同程度上受到损伤。因此我们这一篇论文的核心观点之一便是：<strong>“真正的泛化能力，来源于对多卫星系统的内在物理规律的建模，而非对单个信息流更高级的模式适配”</strong>，这一点从目前我的角度来看是板上钉钉之事，就是不清楚这个物理建模的增益会有多么明显，希望有时间可以做个先验实验，而不是上来就调模型😊。话说回来，如果能够实现一个先验实验，也可以反向说明这个图网络的可解释性极强了，这也是我们选择用图网络的原因之一——直观明了易于理解。</p>
-<h2 id="09-21">09.21</h2>
-<p>​	（书接上文.jpg😉</p>
-<p>​	第二点就是基于第一点之上，我们对基线模型的挑选，由于老师对baseline的先进性很执着，那我们就只能选取一些很先进的模型作为baseline，哪怕他们没有在这个领域真正发挥潜力，甚至没有露面。</p>
-<p>​	我们在前面就请同事进行了比较深入的调研，发现整个领域像是一块处女地，没有人穿着深度学习的鞋子涉足过，大部分的前辈只是带着机器学习的想法解决一些不太需要思考的问题🧐。就像老师说的那样，学科交叉是具有滞后性的，很多领域内的专家并不一定能得心应手，这也是我来到这个团队的想要得到的答案。</p>
-<p>​	具体来说就是我在一直问自己两个问题，**别人为我带来什么？我又为别人带来什么？**所以我不希望我在一个组里单方面地汲取知识，而是我也能为这个团队提供一些新鲜血液，和老师的每次争执与分歧都让我感到意义非凡，哈哈哈这么一想，我对老师的态度有些不好，老师太包容我了些。</p>
-<p>​	话又说回来，我在baseline上和老师也有分歧（能看出来很频繁了），但是鉴于老师的论文经验比我多太多了，所以我目前考虑PatchTST和ViT两种不同处理方法的SOTA作为baseline，<s>ViT可以嫖舍友的成果嘻嘻，舍友做实验很容易，我考虑的可就多了</s></p>
-<h1>叁 结语</h1>
-<p>​	具体后续再开一个帖子专门讲构思吧，这篇学习帖就即将关闭了，这个贯穿暑假的博客意义非凡，主要让我有一下两点认识：</p>
+<h2 id="section-15">09.17</h2>
+<p>​ 事实证明没有什么能够让笔者坚持下来🤦‍。</p>
+<p>​
+但是好在项目一直在推进，我们在七月末采集了自己的数据，八月初做好了数据处理，八月中旬完成了所有实验和大部分的画图，八月底开始写论文，九月初便完工了。</p>
+<p>​
+现在的工作就是等老师把论文审完我们再返工，但是也不闲着，第二篇论文的构思已经大致成型了，顺着上一篇关于系统性地分析欺骗检测的泛化鸿沟问题，我们终于能搬出来我们的图网络（GNN）作为发展核心了。</p>
+<p>​
+当然我们之前考虑的就不只是GNN，而是附带注意力机制的GAT，希望每个卫星节点能够对附近的、更重要的卫星赋予更高的权重，从而进一步提升性能，也与时代潮流Transformer接轨。</p>
+<p>​
+下面谈一谈我对图网络模型性能的思考，首先第一点就是，图网络无论如何，应该具有绝对的终极扩展性，可以说是应用场景越复杂，泛化能力越卓越。</p>
+<p>​
+具体的原因我们在第一篇论文当中其实已经充分说明了，“设备指纹”的存在让所有无法绕过这一点的模型都会吃瘪，泛化性能会在不同程度上受到损伤。因此我们这一篇论文的核心观点之一便是：<strong>“真正的泛化能力，来源于对多卫星系统的内在物理规律的建模，而非对单个信息流更高级的模式适配”</strong>，这一点从目前我的角度来看是板上钉钉之事，就是不清楚这个物理建模的增益会有多么明显，希望有时间可以做个先验实验，而不是上来就调模型😊。话说回来，如果能够实现一个先验实验，也可以反向说明这个图网络的可解释性极强了，这也是我们选择用图网络的原因之一——直观明了易于理解。</p>
+<h2 id="section-16">09.21</h2>
+<p>​ （书接上文.jpg😉</p>
+<p>​
+第二点就是基于第一点之上，我们对基线模型的挑选，由于老师对baseline的先进性很执着，那我们就只能选取一些很先进的模型作为baseline，哪怕他们没有在这个领域真正发挥潜力，甚至没有露面。</p>
+<p>​
+我们在前面就请同事进行了比较深入的调研，发现整个领域像是一块处女地，没有人穿着深度学习的鞋子涉足过，大部分的前辈只是带着机器学习的想法解决一些不太需要思考的问题🧐。就像老师说的那样，学科交叉是具有滞后性的，很多领域内的专家并不一定能得心应手，这也是我来到这个团队的想要得到的答案。</p>
+<p>​
+具体来说就是我在一直问自己两个问题，<strong>别人为我带来什么？我又为别人带来什么？</strong>所以我不希望我在一个组里单方面地汲取知识，而是我也能为这个团队提供一些新鲜血液，和老师的每次争执与分歧都让我感到意义非凡，哈哈哈这么一想，我对老师的态度有些不好，老师太包容我了些。</p>
+<p>​
+话又说回来，我在baseline上和老师也有分歧（能看出来很频繁了），但是鉴于老师的论文经验比我多太多了，所以我目前考虑PatchTST和ViT两种不同处理方法的SOTA作为baseline，<del>ViT可以嫖舍友的成果嘻嘻，舍友做实验很容易，我考虑的可就多了</del></p>
+<h1 id="叁-结语">叁 结语</h1>
+<p>​
+具体后续再开一个帖子专门讲构思吧，这篇学习帖就即将关闭了，这个贯穿暑假的博客意义非凡，主要让我有一下两点认识：</p>
 <ul>
 <li>第一次感知到专心做事对人的影响力真的很大，我一整个暑假都充盈着力量与热情，这让我对科研更加感兴趣了😊</li>
 <li>正常人类博客持续日更的概率无限接近于0😴</li>
 </ul>
-<p>​	这次博客又枯燥又水，应该没有什么人会读到这里了叭…</p>
-<p>​	如果有，感谢一路相伴，我们下次再见👋</p>
+<p>​ 这次博客又枯燥又水，应该没有什么人会读到这里了叭...</p>
+<p>​ 如果有，感谢一路相伴，我们下次再见👋</p>
 
 
         <hr>
@@ -806,11 +815,11 @@
       admin: '',
       id: 'Tue Jul 01 2025 20:42:25 GMT+0800', // Ensure uniqueness and length less than 50
       distractionFreeMode: false, // Facebook-like distraction free mode
-      perPage: 10,
-      pagerDirection: 'last',
-      createIssueManually: false,
-      language: 'en',
-      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+      perPage: ,
+      pagerDirection: '',
+      createIssueManually: ,
+      language: '',
+      proxy: ''
     });
     gitalk.render('gitalk-container');
 
@@ -821,7 +830,7 @@
         list.forEach(item => {
           if (item.clientHeight > 250) {
             item.classList.add('gt-comment-body-folded');
-            item.style.maxHeight = '250px';
+            item.style.maxHeight = 'px';
             item.title = 'Click to Expand';
             item.onclick = function () {
               item.classList.remove('gt-comment-body-folded');
@@ -857,7 +866,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">壹 前言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">贰 LOGGING</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#06-29"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">06.29</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#06-30"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">06.30</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#07-01"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">07.01</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#07-02"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">07.02</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#07-03"><span class="toc-nav-number">2.5.</span> <span class="toc-nav-text">07.03</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#07-04"><span class="toc-nav-number">2.6.</span> <span class="toc-nav-text">07.04</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#07-05"><span class="toc-nav-number">2.7.</span> <span class="toc-nav-text">07.05</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#07-06-17"><span class="toc-nav-number">2.8.</span> <span class="toc-nav-text">07.06~17</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#07-18"><span class="toc-nav-number">2.9.</span> <span class="toc-nav-text">07.18</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#07-19"><span class="toc-nav-number">2.10.</span> <span class="toc-nav-text">07.19</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#07-20"><span class="toc-nav-number">2.11.</span> <span class="toc-nav-text">07.20</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#07-21"><span class="toc-nav-number">2.12.</span> <span class="toc-nav-text">07.21</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#07-22-23"><span class="toc-nav-number">2.13.</span> <span class="toc-nav-text">07.22~23</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#07-24"><span class="toc-nav-number">2.14.</span> <span class="toc-nav-text">07.24</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#07-25"><span class="toc-nav-number">2.15.</span> <span class="toc-nav-text">07.25</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#09-17"><span class="toc-nav-number">2.16.</span> <span class="toc-nav-text">09.17</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#09-21"><span class="toc-nav-number">2.17.</span> <span class="toc-nav-text">09.21</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">叁 结语</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%A3%B9-%E5%89%8D%E8%A8%80"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">壹 前言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E8%B4%B0-logging"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">贰 LOGGING</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#section"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">06.29</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#section-1"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">06.30</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#section-2"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">07.01</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#section-3"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">07.02</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#section-4"><span class="toc-nav-number">2.5.</span> <span class="toc-nav-text">07.03</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#section-5"><span class="toc-nav-number">2.6.</span> <span class="toc-nav-text">07.04</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#section-6"><span class="toc-nav-number">2.7.</span> <span class="toc-nav-text">07.05</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#section-7"><span class="toc-nav-number">2.8.</span> <span class="toc-nav-text">07.06~17</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#section-8"><span class="toc-nav-number">2.9.</span> <span class="toc-nav-text">07.18</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#section-9"><span class="toc-nav-number">2.10.</span> <span class="toc-nav-text">07.19</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#section-10"><span class="toc-nav-number">2.11.</span> <span class="toc-nav-text">07.20</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#section-11"><span class="toc-nav-number">2.12.</span> <span class="toc-nav-text">07.21</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#section-12"><span class="toc-nav-number">2.13.</span> <span class="toc-nav-text">07.22~23</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#section-13"><span class="toc-nav-number">2.14.</span> <span class="toc-nav-text">07.24</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#section-14"><span class="toc-nav-number">2.15.</span> <span class="toc-nav-text">07.25</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#section-15"><span class="toc-nav-number">2.16.</span> <span class="toc-nav-text">09.17</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#section-16"><span class="toc-nav-number">2.17.</span> <span class="toc-nav-text">09.21</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%8F%81-%E7%BB%93%E8%AF%AD"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">叁 结语</span></a></li></ol>
         
         </div>
       </aside>
@@ -984,8 +993,20 @@
         </ul>
         <p class="copyright text-muted">
           Copyright &copy;
-          S7AM1NA
+          John Doe
           2025
+          
+            <br>
+            <span id="busuanzi_container_site_pv" style="display:none">
+              <i class="fa fa-eye"></i>
+              <span id="busuanzi_value_site_pv"></span>
+            </span>
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_container_site_uv" style="display:none">
+              <i class="fa fa-user"></i>
+              <span id="busuanzi_value_site_uv"></span>
+            </span>
+          
           <br>
           Theme by
           <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
