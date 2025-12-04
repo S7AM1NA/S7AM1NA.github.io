@@ -118,11 +118,6 @@
     
 
     
-      <!-- gitalk start -->
-      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
-      <link rel="stylesheet" href="/css/gitalk.css"/>
-      <!-- gitalk end -->
-    
   
 
   <!-- Custom Fonts -->
@@ -248,24 +243,24 @@
 
           
             
+                
+            
               <li>
-                <a href="/about/">
+                <a href="/tags/">
                   
-                        ABOUT
-                          
+                                TAGS
+                                  
                                     
                 </a>
               </li>
               
                 
             
-                
-            
               <li>
-                <a href="/categories/">
+                <a href="/about/">
                   
-                            CATEGORIES
-                              
+                        ABOUT
+                          
                                     
                 </a>
               </li>
@@ -284,10 +279,10 @@
                 
             
               <li>
-                <a href="/tags/">
+                <a href="/categories/">
                   
-                                TAGS
-                                  
+                            CATEGORIES
+                              
                                     
                 </a>
               </li>
@@ -464,15 +459,15 @@
 	anchorjs、
 	) -->
 		<!-- Modify by Yu-Hsuan Yen -->
- <!-- MathJax v3（推荐） -->
+<!-- MathJax v3（推荐） -->
 <script>
   MathJax = {
     tex: {
       inlineMath: [['$', '$'], ['\\(', '\\)']]
     }
   };
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <!-- Post Content -->
 <article>
   <div class="container">
@@ -547,24 +542,26 @@
 </blockquote>
 
 
-        <hr>
-        <!-- Pager -->
-        <ul class="pager">
-          
-          <li class="previous">
-            <a href="/en/炉石传说31-4-2补丁相关/" data-toggle="tooltip" data-placement="top" title="炉石传说31.4.2补丁相关">&larr; Previous Post</a>
-          </li>
-          
-          
-          <li class="next">
-            <a href="/en/寒冬假日小记-第一篇文/" data-toggle="tooltip" data-placement="top" title="寒冬假日小记&第一篇文">Next Post &rarr;</a>
-          </li>
-          
-        </ul>
+          <hr>
+          <!-- Pager -->
+          <ul class="pager">
+            
+              <li class="previous">
+                <a href="/en/炉石传说31-4-2补丁相关/" data-toggle="tooltip" data-placement="top"
+                  title="炉石传说31.4.2补丁相关">&larr; Previous Post</a>
+              </li>
+              
+                
+                  <li class="next">
+                    <a href="/en/寒冬假日小记-第一篇文/" data-toggle="tooltip" data-placement="top"
+                      title="寒冬假日小记&第一篇文">Next Post &rarr;</a>
+                  </li>
+                  
+          </ul>
 
-        
-        <!-- tip start -->
-        <!-- tip -->
+          
+            <!-- tip start -->
+            <!-- tip -->
 <!-- tip start -->
 <div class="tip">
   <p>
@@ -575,74 +572,54 @@
 </div>
 <!-- tip end -->
 
-        <!-- tip end -->
-        
+              <!-- tip end -->
+              
 
-        
-        <hr>
+                
+                      <hr>
 
-        <!-- comments start -->
-        <!-- 1. gitalk comment -->
+                      <!-- comments start -->
+                      
+                        <!-- Waline 评论系统 -->
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css" />
+<div id="waline"></div>
+<script type="module">
+    import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
 
-  <!-- gitalk start -->
-  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
-
-  <div id="gitalk-container"></div>
-
-  
-    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
-    <script src="/js/comment/gitalk.js"></script>
-  
-
-  <script>
-    var gitalk = new Gitalk({
-      clientID: '',
-      clientSecret: '',
-      repo: '',
-      owner: '',
-      admin: '',
-      id: 'Thu Jan 30 2025 22:37:21 GMT+0800', // Ensure uniqueness and length less than 50
-      distractionFreeMode: false, // Facebook-like distraction free mode
-      perPage: ,
-      pagerDirection: '',
-      createIssueManually: ,
-      language: '',
-      proxy: ''
+    init({
+        el: '#waline',
+        serverURL: 'https://waline-silk-psi.vercel.app',
+        placeholder: '在这个无人的角落，留下你的足迹:D',
+        avatar: 'mm',
+        pageSize: '10',
+        visitor: true,
+        lang: 'zh-CN,en,default',
+        dark: 'html[data-theme="dark"]'
     });
-    gitalk.render('gitalk-container');
+</script>
+<style>
+  /* 给评论区上方留点空隙，别贴着正文 */
+  #waline {
+    margin-top: 30px;
+    padding: 10px;
+  }
 
-    var gtFolded = () => {
-      setTimeout(function () {
-        let markdownBody = document.getElementsByClassName("markdown-body");
-        let list = Array.from(markdownBody);
-        list.forEach(item => {
-          if (item.clientHeight > 250) {
-            item.classList.add('gt-comment-body-folded');
-            item.style.maxHeight = 'px';
-            item.title = 'Click to Expand';
-            item.onclick = function () {
-              item.classList.remove('gt-comment-body-folded');
-              item.style.maxHeight = '';
-              item.title = '';
-              item.onclick = null;
-            };
-          }
-        })
-      }, 800);
-    }
-  </script>
+  /* 
+   * 使用 Waline 官方提供的 CSS 变量来控制大小 
+   * 这是最安全的方法，不会破坏布局
+   */
+  :root {
+    /* 基础字号：默认是 14px，这里改成了 16px，你可以试着改成 18px */
+    --waline-font-size: 16px !important;
 
-  <!-- gitalk end -->
-
-
-<!-- 2. gitment comment -->
-
-
-<!-- 3. disqus comment -->
-
-
-        <!-- comments end -->
-        <hr>
+    /* 主题色：保持和你博客一致的蓝色 */
+    --waline-theme-color: #0085a1 !important; 
+    --waline-active-color: #0085a1 !important;
+  }
+</style>
+                          
+                                <!-- comments end -->
+                                <hr>
 
       </div>
 
@@ -662,45 +639,51 @@
 
 
 
-      <!-- Sidebar Container -->
-      <div class="
+        <!-- Sidebar Container -->
+        <div class="
                 col-lg-8 col-lg-offset-1
                 col-md-10 col-md-offset-1
                 sidebar-container">
 
-        <!-- Featured Tags -->
-        
-        <section>
-          <!-- no hr -->
-          <h5>
-            <a href="/tags/">FEATURED TAGS</a>
-          </h5>
-          <div class="tags">
-            
-            <a class="tag" href="/tags/#Life" title="Life">Life</a>
-            
-          </div>
-        </section>
-        
-
-        <!-- Friends Blog -->
-        
-        <hr>
-        <h5>FRIENDS</h5>
-        <ul class="list-inline">
-
+          <!-- Featured Tags -->
           
-        </ul>
-        
-      </div>
+            <section>
+              <!-- no hr -->
+              <h5>
+                <a href="/tags/">
+                  FEATURED TAGS
+                </a>
+              </h5>
+              <div class="tags">
+                
+                  <a class="tag" href="/tags/#Life" title="Life">
+                    Life
+                  </a>
+                  
+              </div>
+            </section>
+            
+
+              <!-- Friends Blog -->
+              
+                <hr>
+                <h5>
+                  FRIENDS
+                </h5>
+                <ul class="list-inline">
+
+                  
+                </ul>
+                
+        </div>
     </div>
   </div>
 </article>
 
 
 
-<!-- anchorjs start -->
-<!-- async load function -->
+  <!-- anchorjs start -->
+  <!-- async load function -->
 <!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
 <script type="text/javascript">
   // async load function
@@ -742,9 +725,8 @@
   }
 </style>
 
-<!-- anchorjs end -->
-
-
+    <!-- anchorjs end -->
+    
 
 		<!-- Footer (contains ThemeColor、viewer) -->
 		<!-- Footer -->
